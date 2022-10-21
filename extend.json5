@@ -1,0 +1,294 @@
+{
+  id: "futureboard_extend",
+  name: "$$futureExtend_name",
+  color1: "#ED6A47",
+  color2: "#BF5235",
+  color3: "#B83E1D",
+  initcode: [
+    'from kwatch import *',
+    'kclock = KClock()'
+  ],
+  blocks:[
+    "## $$futureboard_title_watch",
+    {
+      opcode: 'getTime',
+      blockType: "reporter",
+      text: "$$futureExtend_getTime",
+      pycode: "kclock.getTime('[TYPE]')",
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'TIMEFORMAT_TEXT',
+          defaultValue: 'all',
+        }
+      },
+    },
+    {
+      opcode: 'resetTime',
+      blockType: "command",
+      text: "$$futureExtend_resetTime",
+      pycode: 'kclock.setTime(([Y],[M],[D],[W],[H],[m],[S]))',
+      arguments: {
+        Y: {
+          type: "number",
+          defaultValue: '2021',
+        },
+        M: {
+          type: "number",
+          defaultValue: '1',
+        },
+        D: {
+          type: "number",
+          defaultValue: '1',
+        },
+        W: {
+          type: "string",
+          menu: 'WEEK',
+          defaultValue: '5'
+        },
+        H: {
+          type: "number",
+          defaultValue: '1',
+        },
+        m: {
+          type: "number",
+          defaultValue: '1',
+        },
+        S: {
+          type: "number",
+          defaultValue: '1',
+        },
+      }
+    },
+    {
+      opcode: 'controlTime',
+      blockType: "command",
+      text: "$$futureExtend_controlTime",
+      pycode: "kclock.modeSet(state='[TYPE]')",
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'PLAYSTATE',
+          defaultValue: 'pause'
+        }
+      }
+    },
+    {
+      opcode: 'refreshTime',
+      blockType: "command",
+      text: "$$futureExtend_refreshTime",
+      pycode: 'kclock.refreshTime([TIMEZONE])',
+      arguments: {
+        TIMEZONE: {
+          type: "string",
+          menu: 'TIMEZONE',
+          defaultValue: '8'
+        }
+      }
+    },
+    "## $$futureboard_title_intercom",
+    {
+      opcode: 'intercomSet',
+      blockType: "command",
+      text: "$$futureExtend_intercomSet",
+      pycode: 'intercom.setchannel([CHANNEL])',
+      arguments: {
+        CHANNEL: {
+          type: "slider",
+          defaultValue: '1',
+          min: 1,
+          max: 13
+        }
+      }
+    },
+    {
+      opcode: 'intercomSend',
+      blockType: "command",
+      text: "$$futureExtend_intercomSend",
+      pycode: 'intercom.intercomSend([SEC])',
+      arguments: {
+        SEC: {
+          type: "slider",
+          defaultValue: 3,
+          max: 15,
+          min: 3
+        },
+      }
+    },
+    {
+      opcode: 'soundReceive',
+      blockType: "command",
+      text: "$$futureExtend_soundReceive",
+      pycode: 'intercom.play()',
+    },
+    "## $$futureboard_title_weather",
+    {
+      opcode: 'gdKey',
+      blockType: "command",
+      text: "$$futureExtend_gdKey",
+      pycode: "weather = Weather('[KEY]')",
+      arguments: {
+        KEY: {
+          type: "string",
+          defaultValue: 'key'
+        }
+      }
+    },
+    {
+      opcode: 'weatherCity',
+      blockType: "command",
+      text: "$$futureExtend_weatherCity",
+      pycode: 'weather.getActual([CITY])',
+      arguments: {
+        CITY: {
+          type: "string",
+          defaultValue: '深圳'
+        }
+      }
+    },
+    {
+      opcode: 'weatherDate',
+      blockType: "command",
+      text: "$$futureExtend_weatherDate",
+      pycode: 'weather.getForecast([CITY],[DAY])',
+      arguments: {
+        CITY: {
+          type: "string",
+          defaultValue: '深圳'
+        },
+        DAY: {
+          type: "slider",
+          defaultValue: '3',
+          max: 3,
+          min: 1
+        },
+      }
+    },
+    {
+      opcode: 'weatherCurent',
+      blockType: "reporter",
+      text: "$$futureExtend_weatherCurent",
+      pycode: 'weather.[TYPE]()',
+      arguments: {
+        TYPE: {
+          type: "number",
+          defaultValue: 'condition',
+          menu: 'WEATHER_NORMAL'
+        },
+      }
+    },
+    {
+      opcode: 'weatherFuture',
+      blockType: "reporter",
+      text: "$$futureExtend_weatherFuture",
+      pycode: 'weather.[TYPE]()',
+      arguments: {
+        TYPE: {
+          type: "number",
+          defaultValue: 'dayweather',
+          menu: 'WEATHER_PREDIT'
+        },
+      }
+    },
+    "## $$futureboard_title_audio",
+    {
+      opcode: 'soundSave',
+      blockType: "command",
+      text: "$$futureExtend_soundSave",
+      pycode: "au.savewav('[WAVFILENAME]', [SECOND])",
+      arguments: {
+        WAVFILENAME: {
+          type: "string",
+          defaultValue: 'file name'
+        },
+        SECOND: {
+          type: "slider",
+          defaultValue: '3',
+          max: 15,
+          min: 3
+        }
+      }
+    },
+    {
+      opcode: 'soundPlay',
+      blockType: "command",
+      text: "$$futureExtend_soundPlay",
+      pycode: "au.playwav('[WAVFILENAME]')",
+      arguments: {
+        WAVFILENAME: {
+          type: "string",
+          defaultValue: 'filename'
+        }
+      }
+    },
+  ],
+  menus: {
+    TIMEFORMAT_TEXT: [
+      { text: "$$futureExtend_menu_timeformat_all", value: 'all' },
+      { text: "$$futureExtend_menu_timeformat_year", value: 'year' },
+      { text: "$$futureExtend_menu_timeformat_month", value: 'month' },
+      { text: "$$futureExtend_menu_timeformat_day", value: 'day' },
+      { text: "$$futureExtend_menu_timeformat_week", value: 'week' },
+      { text: "$$futureExtend_menu_timeformat_hour", value: 'hour' },
+      { text: "$$futureExtend_menu_timeformat_minute", value: 'minute' },
+      { text: "$$futureExtend_menu_timeformat_second", value: 'second' },
+    ],
+    WEEK: [
+      { text: "$$futureExtend_menu_week_monday", value: '1' },
+      { text: "$$futureExtend_menu_week_tuesday", value: '2' },
+      { text: "$$futureExtend_menu_week_wednesday", value: '3' },
+      { text: "$$futureExtend_menu_week_thursday", value: '4' },
+      { text: "$$futureExtend_menu_week_friday", value: '5' },
+      { text: "$$futureExtend_menu_week_saturday", value: '6' },
+      { text: "$$futureExtend_menu_week_sunday", value: '7' },
+    ],
+    PLAYSTATE: [
+      { text: "$$futureExtend_menu_playstate_open", value: 'open' },
+      { text: "$$futureExtend_menu_playstate_pause", value: 'pause' },
+    ],
+    WEATHER_NORMAL: [
+      { text: "$$futureExtend_menu_weather_condition", value: 'condition', },
+      { text: "$$futureExtend_menu_weather_temp", value: 'temp', },
+      { text: "$$futureExtend_menu_weather_winddir", value: 'winddir', },
+      { text: "$$futureExtend_menu_weather_windpw", value: 'windpw', },
+      { text: "$$futureExtend_menu_weather_humi", value: 'humi', },
+    ],
+    WEATHER_PREDIT: [
+      { text: "$$futureExtend_menu_weather_dayweather", value: 'dayweather' },
+      { text: "$$futureExtend_menu_weather_nightweather", value: 'nightweather' },
+      { text: "$$futureExtend_menu_weather_daytemp", value: 'daytemp' },
+      { text: "$$futureExtend_menu_weather_nighttemp", value: 'nighttemp' },
+      { text: "$$futureExtend_menu_weather_daywind", value: 'daywind' },
+      { text: "$$futureExtend_menu_weather_nightwind", value: 'nightwind' },
+      { text: "$$futureExtend_menu_weather_daypower", value: 'daypower' },
+      { text: "$$futureExtend_menu_weather_nightpower", value: 'nightpower' },
+    ],
+    TIMEZONE: [
+      { text: "$$futureboard_menu_timezone_west_1", value: '-12' },
+      { text: "$$futureboard_menu_timezone_west_2", value: '-11' },
+      { text: "$$futureboard_menu_timezone_west_3", value: '-10' },
+      { text: "$$futureboard_menu_timezone_west_4", value: '-9' },
+      { text: "$$futureboard_menu_timezone_west_5", value: '-8' },
+      { text: "$$futureboard_menu_timezone_west_6", value: '-7' },
+      { text: "$$futureboard_menu_timezone_west_7", value: '-6' },
+      { text: "$$futureboard_menu_timezone_west_8", value: '-5' },
+      { text: "$$futureboard_menu_timezone_west_9", value: '-4' },
+      { text: "$$futureboard_menu_timezone_west_10", value: '-3' },
+      { text: "$$futureboard_menu_timezone_west_11", value: '-2' },
+      { text: "$$futureboard_menu_timezone_west_12", value: '-1' },
+      { text: "$$futureboard_menu_timezone_mid", value: '0' },
+      { text: "$$futureboard_menu_timezone_east_1", value: '1' },
+      { text: "$$futureboard_menu_timezone_east_2", value: '2' },
+      { text: "$$futureboard_menu_timezone_east_3", value: '3' },
+      { text: "$$futureboard_menu_timezone_east_4", value: '4' },
+      { text: "$$futureboard_menu_timezone_east_5", value: '5' },
+      { text: "$$futureboard_menu_timezone_east_6", value: '6' },
+      { text: "$$futureboard_menu_timezone_east_7", value: '7' },
+      { text: "$$futureboard_menu_timezone_east_8", value: '8' },
+      { text: "$$futureboard_menu_timezone_east_9", value: '9' },
+      { text: "$$futureboard_menu_timezone_east_10", value: '10' },
+      { text: "$$futureboard_menu_timezone_east_11", value: '11' },
+      { text: "$$futureboard_menu_timezone_east_12", value: '12' },
+    ]
+  }
+}

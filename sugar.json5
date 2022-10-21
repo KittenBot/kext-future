@@ -1,0 +1,907 @@
+{
+  id: "futureboard_sugar",
+  name: "$$sugar_title",
+  color1: "#9aa4d2",
+  color2: "#8c96bd",
+  color3: "#9aa4d2",
+  initcode:['from sugar import *'],
+  menus: {
+    PINS_DHT11: ['P0','P1','P2','P3','P8','P9','P12','P13','P14','P15','P16'],
+    TRACK_STATE: [
+    { text: '$$sugar_menu_trackstate_black', value: '1' },
+    { text: '$$sugar_menu_trackstate_white', value: '0' },
+    ],
+    BUTTONSTATE: [
+        { text: '$$sugar_menu_btnstate_pressed', value: '0' },
+        { text: '$$sugar_menu_btnstate_released', value: '1' },
+    ],
+    LEDSTATE: [
+        { text: '$$sugar_menu_ledstate_on', value: 'ON' },
+        { text: '$$sugar_menu_ledstate_off', value: 'OFF' },
+    ],
+    PINS_ANALOG_WRITE: ['P0','P1','P2','P3','P8','P13','P14','P15','P16'],
+    PINS_SENSOR: ['P0','P1','P2','P3', 'P12','P14','P15','P16'],
+    MOISTURETYPE: [
+        { text: '$$sugar_menu_moisture_tmp', value: '0' },
+        { text: '$$sugar_menu_moisture_humi', value: '1' },
+    ],
+    JOYSTICK_DIR: [
+        { text: '$$sugar_menu_joystick_dir_up', value: 'up' },
+        { text: '$$sugar_menu_joystick_dir_down', value: 'down' },
+        { text: '$$sugar_menu_joystick_dir_left', value: 'left' },
+        { text: '$$sugar_menu_joystick_dir_right', value: 'right' },
+        { text: '$$sugar_menu_btnstate_pressed', value: 'pressed' },
+    ],
+    JOYSTICK_XY: [
+        'x',
+        'y'
+    ],
+    gestureMode: [
+        { text: '$$sugar_menu_gestureMode_color', value: '1' },
+        { text: '$$sugar_menu_gestureMode_distance', value: '2' },
+        { text: '$$sugar_menu_gestureMode_gesture', value: '3' },
+        { text: '$$sugar_menu_gestureMode_led', value: '4' },
+    ],
+    gestureType: [
+        { text: '$$sugar_menu_gesture_hue', value: 'read(0)' },
+        { text: '$$sugar_menu_gesture_brightness', value: 'read(1)' },
+        { text: '$$sugar_menu_gesture_distance', value: 'distance()' },
+        { text: '$$sugar_menu_gesture_prevgesture', value: 'gesture()' },
+    ],
+    LEDSTATE0_1: [
+        { text: '$$sugar_menu_ledstate_on', value: '1' },
+        { text: '$$sugar_menu_ledstate_off', value: '0' },
+    ],
+
+    mp3Operation: [
+        { text: '$$sugar_menu_mp3op_play', value: 'MP3().PLAY' },
+        { text: '$$sugar_menu_mp3op_stop', value: 'MP3().STOP' },
+        { text: '$$sugar_menu_mp3op_next', value: 'MP3().NEXT' },
+        { text: '$$sugar_menu_mp3op_prev', value: 'MP3().PREV' },
+    ],
+    ttsstate: [
+        { text: '$$sugar_menu_ttsstate_stop', value: "stop", },
+        { text: '$$sugar_menu_ttsstate_pause', value: "pause", },
+        { text: '$$sugar_menu_ttsstate_restore', value: "restore" },
+    ],
+  //   ttsbuzz: generateAToZ(25).map(letter => ({
+  //     value: 'sound${letter}', text: soundMap[letter]
+  // })),
+    TIMEZONE: [
+      { text: "$$futureboard_menu_timezone_west_1", value: '-12' },
+      { text: "$$futureboard_menu_timezone_west_2", value: '-11' },
+      { text: "$$futureboard_menu_timezone_west_3", value: '-10' },
+      { text: "$$futureboard_menu_timezone_west_4", value: '-9' },
+      { text: "$$futureboard_menu_timezone_west_5", value: '-8' },
+      { text: "$$futureboard_menu_timezone_west_6", value: '-7' },
+      { text: "$$futureboard_menu_timezone_west_7", value: '-6' },
+      { text: "$$futureboard_menu_timezone_west_8", value: '-5' },
+      { text: "$$futureboard_menu_timezone_west_9", value: '-4' },
+      { text: "$$futureboard_menu_timezone_west_10", value: '-3' },
+      { text: "$$futureboard_menu_timezone_west_11", value: '-2' },
+      { text: "$$futureboard_menu_timezone_west_12", value: '-1' },
+      { text: "$$futureboard_menu_timezone_mid", value: '0' },
+      { text: "$$futureboard_menu_timezone_east_1", value: '1' },
+      { text: "$$futureboard_menu_timezone_east_2", value: '2' },
+      { text: "$$futureboard_menu_timezone_east_3", value: '3' },
+      { text: "$$futureboard_menu_timezone_east_4", value: '4' },
+      { text: "$$futureboard_menu_timezone_east_5", value: '5' },
+      { text: "$$futureboard_menu_timezone_east_6", value: '6' },
+      { text: "$$futureboard_menu_timezone_east_7", value: '7' },
+      { text: "$$futureboard_menu_timezone_east_8", value: '8' },
+      { text: "$$futureboard_menu_timezone_east_9", value: '9' },
+      { text: "$$futureboard_menu_timezone_east_10", value: '10' },
+      { text: "$$futureboard_menu_timezone_east_11", value: '11' },
+      { text: "$$futureboard_menu_timezone_east_12", value: '12' },
+    ],
+    WEEK: [
+      { text: "$$futureExtend_menu_week_monday", value: '1' },
+      { text: "$$futureExtend_menu_week_tuesday", value: '2' },
+      { text: "$$futureExtend_menu_week_wednesday", value: '3' },
+      { text: "$$futureExtend_menu_week_thursday", value: '4' },
+      { text: "$$futureExtend_menu_week_friday", value: '5' },
+      { text: "$$futureExtend_menu_week_saturday", value: '6' },
+      { text: "$$futureExtend_menu_week_sunday", value: '7' },
+    ],
+    PLAYSTATE: [
+      { text: "$$futureExtend_menu_playstate_open", value: 'open' },
+      { text: "$$futureExtend_menu_playstate_pause", value: 'pause' },
+    ],
+    TIMEFORMAT_TEXT: [
+      { text: "$$futureExtend_menu_timeformat_all", value: 'all' },
+      { text: "$$futureExtend_menu_timeformat_year", value: 'year' },
+      { text: "$$futureExtend_menu_timeformat_month", value: 'month' },
+      { text: "$$futureExtend_menu_timeformat_day", value: 'day' },
+      { text: "$$futureExtend_menu_timeformat_week", value: 'week' },
+      { text: "$$futureExtend_menu_timeformat_hour", value: 'hour' },
+      { text: "$$futureExtend_menu_timeformat_minute", value: 'minute' },
+      { text: "$$futureExtend_menu_timeformat_second", value: 'second' },
+    ],
+      fmDir: [
+        { text: '$$sugar_menu_fmDir_up', value: 'seekUp' },
+        { text: '$$sugar_menu_fmDir_down', value: 'seekDown' },
+        { text: '$$sugar_menu_fmDir_stop', value: 'seekStop' },
+    ],
+  },
+  blocks:[
+    "## $$sugar_title_human",
+    {
+      opcode: 'getHumandetectStatus',
+      blockType: 'Boolean',
+      text: "$$sugar_getHumandetectStatus",
+      pycode: 'PIR([PORT]).value()',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_DHT11',
+        }
+      }
+    },
+    "## $$sugar_title_trace",
+    {
+      opcode: 'getTrackStatus',
+      blockType: 'Boolean',
+      text: "$$sugar_getTractStatus",
+      pycode: 'Tracker([PORT]).value() == [TYPE]',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_DHT11',
+        },
+        TYPE: {
+          type: "string",
+          defaultValue: '0',
+          menu: 'TRACK_STATE',
+        }
+      }
+    },
+    "## $$sugar_title_hall",
+    {
+      opcode: 'getHallStatus',
+      blockType: 'Boolean',
+      text: "$$sugar_getHallStatus",
+      pycode: 'Hall([PORT]).value() == 0',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_DHT11',
+        }
+      }
+    },
+    "## $$sugar_title_btn",
+    {
+      opcode: 'getButtonStatus',
+      blockType: 'Boolean',
+      text: "$$sugar_getButtonStatus",
+      pycode: 'Button([PORT]).value() == [STATE]',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_DHT11',
+        },
+        STATE: {
+          type: "string",
+          defaultValue: '0',
+          menu: 'BUTTONSTATE'
+        }
+      }
+    },
+    "## $$sugar_title_led",
+    {
+      opcode: 'ledToggle',
+      blockType: "command",
+      text: "$$sugar_ledToggle",
+      pycode: 'LED([PORT]).state([STATE])',
+      arguments:{
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_ANALOG_WRITE',
+        },
+        STATE: {
+          type: "string",
+          defaultValue: 'ON',
+          menu: 'LEDSTATE',
+        },
+      }
+    },
+    {
+      opcode: 'ledBrightness',
+      blockType: "command",
+      text: "$$sugar_ledBrightness",
+      pycode: 'LED([PORT]).brightness([BRIGHTNESS])',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_ANALOG_WRITE',
+        },
+        BRIGHTNESS: {
+          type: "slider",
+          defaultValue: 0,
+          max: 100,
+          min: 0,
+        }
+      },
+    },
+    "## $$sugar_title_frame",
+    {
+      opcode: 'getFrameStatus',
+      blockType: 'Boolean',
+      text: "$$sugar_getFrameStatus",
+      pycode: 'Flame([PORT]).value() > 100',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_SENSOR',
+        }
+      }
+    },
+    {
+      opcode: 'getFrameValue',
+      blockType: "reporter",
+      text: "$$sugar_getFrameValue",
+      pycode: 'Flame([PORT]).value()',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_SENSOR',
+        }
+      }
+    },
+    "## $$sugar_title_rotation",
+    {
+      opcode: 'getRotationValue',
+      blockType: "reporter",
+      text: "$$sugar_getRotationValue",
+      pycode: 'Angle([PORT]).value()',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_SENSOR',
+        }
+      }
+    },
+    "## $$sugar_title_light",
+    {
+      opcode: 'getLightValue',
+      blockType: "reporter",
+      text: "$$sugar_getLightValue",
+      pycode: 'Light([PORT]).value()',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_SENSOR',
+        }
+      }
+    },
+    "## $$sugar_title_moisture",
+    {
+      opcode: 'getMoistureValue',
+      blockType: "reporter",
+      text: "$$sugar_getMoistureValue",
+      pycode: 'Soil([PORT]).value()',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_SENSOR',
+        }
+      }
+    },
+    "## $$sugar_title_waterlevel",
+    {
+      opcode: 'getWaterLevelValue',
+      blockType: "reporter",
+      text: "$$sugar_getWaterLevelValue",
+      pycode: 'WaterLevel([PORT]).value()',
+      arguments: {
+        PORT: {
+          type: "string",
+          defaultValue: 'P0',
+          menu: 'PINS_SENSOR',
+        }
+      }
+    },
+    "## $$sugar_title_lazer",
+    {
+      opcode: 'getDistanceValue',
+      blockType: "reporter",
+      text: "$$sugar_getDistanceValue",
+      pycode: 'TOFDistance().value()',
+      disableMonitor: 1,
+    },
+    "## $$sugar_title_tmphum",
+    {
+      opcode: 'getTmpValue',
+      blockType: "reporter",
+      text: "$$sugar_getTmpValue",
+      pycode: 'ENV().update()[[TYPE]]',
+      arguments: {
+        TYPE: {
+          type: "string",
+          defaultValue: '0',
+          menu: 'MOISTURETYPE'
+        }
+      }
+    },
+    "## $$sugar_title_joystick",
+    {
+      opcode: 'getJoyStickStatus',
+      blockType: "Boolean",
+      text: "$$sugar_getJoyStickStatus",
+      pycode: 'Joystick().state() == [STATE]',
+      arguments: {
+        STATE: {
+          type: "string",
+          defaultValue: 'up',
+          menu: 'JOYSTICK_DIR'
+        }
+      }
+    },
+    {
+      opcode: 'getJoyStickValue',
+      blockType: "reporter",
+      text: "$$sugar_getJoyStickValue",
+      pycode: 'Joystick().value([TYPE])',
+      arguments: {
+        TYPE: {
+          type: "string",
+          defaultValue: 'x',
+          menu: 'JOYSTICK_XY'
+        }
+      }
+    },
+
+// -------------------------------------------------------
+    "## $$sugar_title_gesture",
+    {
+      opcode: 'setGestureMode',
+      blockType: "command",
+      text: "$$sugar_setGestureMode",
+      pycode: 'ColorGes().mode([TYPE])',
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'gestureMode',
+          defaultValue: '1'
+        }
+      },
+    },
+    {
+      opcode: 'getGestureValue',
+      blockType: "reporter",
+      text: "$$sugar_getGestureValue",
+      pycode: 'ColorGes().[TYPE]',
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'gestureType',
+          defaultValue: 'read(0)'
+        }
+      },
+    },
+    //{
+      //opcode: 'getHSVToHex',
+      //blockType: "reporter",
+      //func: 'getHSVToHex',
+      //text: "$$sugar_huetohsv",
+      //arguments: {
+        //H: {
+          //type: "number",
+          //defaultValue: '150'
+        //},
+        //S: {
+          //type: "number",
+          //defaultValue: '50'
+        //},
+        //V: {
+          //type: "number",
+          //defaultValue: '50'
+        //},
+      //},
+      //gen: {
+        //micropy: rgbToHsv
+      //},
+    //},
+    {
+      opcode: 'setGestureBrightness',
+      blockType: "command",
+      text: "$$sugar_setGestureBrightness",
+      pycode: 'ColorGes().ledpwm([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "slider",
+          defaultValue: 0,
+          max: 100,
+          min: 0,
+        }
+      },
+    },
+    {
+      opcode: 'setGestureLed',
+      blockType: "command",
+      text: "$$sugar_setGestureLed",
+      pycode: 'ColorGes().led(([LED1],[LED2],[LED3],[LED4]))',
+      arguments: {
+        LED1: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED2: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED3: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED4: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+      },
+    },
+//-------------------------------------------------------------------------------
+    "## $$sugar_title_infra",
+    {
+      opcode: 'whenInfraReceice',
+      blockType: "hat",
+      text: "$$sugar_whenInfraReceice",
+      mode: ['micropython'],
+      arguments: {
+        PORT: {
+          type: "string",
+          menu: 'PINS_DHT11',
+          defaultValue: 'P0',
+        },
+      },
+      micropy: {
+        import: {
+          'infra': 'infra = InfraRx([PORT], printCode)'
+        }
+      },
+      pycode:"def printCode(infraV):",
+    },
+    {
+      opcode: 'getInfraDecodeValue',
+      blockType: "reporter",
+      text: "$$sugar_getInfraDecodeValue",
+      mode: ['micropython'],
+      disableMonitor: true,
+      pycode: 'infraV',
+    },
+    {
+      opcode: 'getInfraValueDiff',
+      blockType: "Boolean",
+      text: "$$sugar_getInfraValueDiff",
+      mode: ['micropython'],
+      pycode: 'infraV == [VALUE]',
+      arguments: {
+        VALUE: {
+          type: "string",
+          defaultValue: 'AABBCCDD',
+        }
+      },
+    },
+//----------------------------------------------------------------------------
+    "## $$sugar_title_rfid",
+    {
+      opcode: 'scanRfid',
+      blockType: "command",
+      text: "$$sugar_scanRfid",
+      pycode: 'RFID().probe(probeCallback if probeCallback in dir() else None)'
+    },
+    {
+      opcode: 'whenProbeRfid',
+      blockType: "hat",
+      isEdgeActivated: false,
+      text: "$$sugar_whenProbeRfid",
+      pycode:"def probeCallback()",
+    },
+    {
+      opcode: 'getRfidUUID',
+      blockType: "reporter",
+      text: "$$sugar_getRfidUUID",
+      pycode: 'RFID().uuid()'
+    },
+    {
+      opcode: 'getIsRfidUUIDEqual',
+      blockType: "Boolean",
+      text: "$$sugar_getRfidUUIDEqual",
+      pycode: 'RFID().uuid() == [VALUE]',
+      arguments: {
+        VALUE: {
+          type: "string",
+          defaultValue: 'AABBCCDD'
+        }
+      }
+    },
+    {
+      opcode: 'getRfidWrite',
+      blockType: "command",
+      text: "$$sugar_getRfidWrite",
+      pycode: 'RFID().write([BLOCK], [SECTION], [VALUE])',
+      arguments: {
+        BLOCK: {
+          type: "number",
+          defaultValue: '8'
+        },
+        SECTION: {
+          type: "number",
+          defaultValue: '2'
+        },
+        VALUE: {
+          type: "string",
+          defaultValue: 'AABBCCDD'
+        }
+      }
+    },
+    {
+      opcode: 'getRfidRead',
+      blockType: "reporter",
+      text: "$$sugar_getRfidRead",
+      pycode: 'RFID().read([BLOCK], [SECTION])',
+      arguments: {
+        BLOCK: {
+          type: "number",
+          defaultValue: '8'
+        },
+        SECTION: {
+          type: "number",
+          defaultValue: '2'
+        },
+      }
+    },
+    {
+      opcode: 'stopRfid',
+      blockType: "command",
+      text: "$$sugar_stopRfid",
+      pycode: 'RFID().stop()'
+    },
+//-------------------------------------------------------------------
+    "## $$sugar_title_mp3",
+    {
+      opcode: 'setMP3Operation',
+      blockType: "command",
+      text: "$$sugar_setMP3Operation",
+      pycode: 'MP3().operate([TYPE])',
+      arguments: {
+        TYPE: {
+          type: "string",
+          defaultValue: 'MP3().PLAY',
+          menu: 'mp3Operation'
+        }
+      }
+    },
+    {
+      opcode: 'setMP3Volumn',
+      blockType: "command",
+      text: "$$sugar_setMP3Volumn",
+      pycode: 'MP3().vol([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "number",
+          defaultValue: '32',
+        }
+      }
+    },
+    {
+      opcode: 'setMP3playIdx',
+      blockType: "command",
+      text: "$$sugar_setMP3playIdx",
+      pycode: 'MP3().playIndex([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "number",
+          defaultValue: '3',
+        }
+      }
+    },
+    {
+      opcode: 'setMP3playname',
+      blockType: "command",
+      text: "$$sugar_setMP3playname",
+      pycode: 'MP3().playName([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "string",
+          defaultValue: 'apple',
+        }
+      },
+      //onHelp: () => window.open('www.baidu.com'),
+      //tooltip: '👋'
+    },
+//----------------------------------------------------------------
+    "## $$sugar_title_tts",
+    {
+      opcode: 'runTTSSpeakUtildone',
+      blockType: "command",
+      text: "$$sugar_runTTSSpeakUtildone",
+      pycode: 'TTS().speak([[TEXTCH]], wait=1)',
+      arguments: {
+        TEXTCH: {
+          type: "string",
+          defaultValue: '小喵科技',
+        },
+      }
+    },
+    {
+      opcode: 'runtTTSSpeakBackground',
+      blockType: "command",
+      text: "$$sugar_runtTTSSpeakBackground",
+      pycode: 'TTS().speak([[TEXTCH]], background=[BACK], wait=1)',
+      arguments: {
+        TEXTCH: {
+          type: "string",
+          defaultValue: '小喵科技',
+        },
+        BACK: {
+          type: "slider",
+          defaultValue: 1,
+          max: 15,
+          min: 1,
+        }
+      }
+    },
+    // {
+    //   opcode: 'runBuzz',
+    //   text: "$$sugar_runBuzz",
+    //   pycode: 'TTS().speak([BUZZ], wait=1)',
+    //   arguments: {
+    //     BUZZ: {
+    //       type: "string",
+    //       defaultValue: 'sounda',
+    //       menu: 'ttsbuzz'
+    //     }
+    //   }
+    // },
+    {
+      opcode: 'runRing',
+      blockType: "command",
+      text: "$$sugar_runRing",
+      pycode: 'TTS().speak(msg[LETTER], wait=1)',
+      arguments: {
+        LETTER: {
+          type: "slider",
+          defaultValue: 1,
+          min: 1,
+          max: 8
+        }
+      }
+    },
+    {
+      opcode: 'runChord',
+      blockType: "command",
+      text: "$$sugar_runChord",
+      pycode: 'TTS().speak(ring[LETTER], wait=1)',
+      arguments: {
+        LETTER: {
+          type: "slider",
+          defaultValue: 1,
+          min: 1,
+          max: 15
+        }
+      }
+    },
+    {
+      opcode: 'runTTSOpt',
+      blockType: "command",
+      text: "$$sugar_runTTSOpt",
+      pycode: 'TTS().[TTSSTATE]()',
+      arguments: {
+        TTSSTATE: {
+          type: "string",
+          defaultValue: 'pause',
+          menu: 'ttsstate'
+        }
+      }
+    },
+    {
+      opcode: 'isIdle',
+      blockType: "boolean",
+      text: "$$sugar_isIdle",
+      pycode: 'TTS().idle()',
+    },
+//-------------------------------------------------------------------------
+    "## $$sugar_title_matrix",
+    {
+      opcode: '$$sugar_runLetmatrixpixel',
+      blockType: "command",
+      text: "$$sugar_runLetmatrixpixel",
+      pycode: 'Matrix16x8().pixel([X], [Y])',
+      arguments: {
+        X: {
+          type: "slider",
+          defaultValue: 1,
+          min: 0,
+          max: 15
+        },
+        Y: {
+          type: "slider",
+          defaultValue: 2,
+          min: 0,
+          max: 7
+        }
+      }
+    },
+    {
+      opcode: '$$sugar_runLetmatrixdraw',
+      blockType: "command",
+      text: "$$sugar_runLetmatrixdraw",
+      pycode: 'Matrix16x8().draw("[MAT]")',
+      arguments: {
+        MAT: {
+          type: "ledmatrix",
+          defaultValue: '00000000024000000000042003c00000'
+        }
+      }
+    },
+    {
+      opcode: '$$sugar_runLetmatrixclear',
+      blockType: "command",
+      text: "$$sugar_runLetmatrixclear",
+      pycode: 'Matrix16x8().clear()',
+    },
+//----------------------------------------------------------------------------
+    "## $$sugar_title_infra",
+    {
+      opcode: 'runInfratx',
+      blockType: "command",
+      text: "$$sugar_runInfratx",
+      pycode: 'IrTRx().write([HEX])',
+      arguments: {
+        HEX: {
+          type: "string",
+          defaultValue: 'aabbccdd',
+        }
+      }
+    },
+    {
+      opcode: 'getInfrarx',
+      blockType: "reporter",
+      text: "$$sugar_getInfrarx",
+      pycode: 'IrTRx().read()',
+    },
+//------------------------------------------------------
+    "## $$sugar_title_watch",
+    {
+      opcode: 'getTime',
+      blockType: "reporter",
+      text: "$$sugar_getTime",
+      pycode: "Clock().getTime([TYPE])",
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'TIMEFORMAT_TEXT',
+          defaultValue: 'all',
+        }
+      },
+    },
+    {
+      opcode: 'resetTime',
+      blockType: "command",
+      text: "$$sugar_resetTime",
+      pycode: 'Clock().setTime(([Y],[M],[D],[W],[H],[m],[S]))',
+      arguments: {
+        Y: {
+          type: "number",
+          defaultValue: '2021',
+        },
+        M: {
+          type: "number",
+          defaultValue: '1',
+        },
+        D: {
+          type: "number",
+          defaultValue: '1',
+        },
+        W: {
+          type: "string",
+          menu: 'WEEK',
+          defaultValue: '5'
+        },
+        H: {
+          type: "number",
+          defaultValue: '1',
+        },
+        m: {
+          type: "number",
+          defaultValue: '1',
+        },
+        S: {
+          type: "number",
+          defaultValue: '1',
+        },
+      }
+    },
+    {
+      opcode: 'controlTime',
+      blockType: "command",
+      text: "$$sugar_controlTime",
+      pycode: "Clock().modeSet(state=[TYPE])",
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'PLAYSTATE',
+          defaultValue: 'pause'
+        }
+      }
+    },
+    {
+      opcode: 'refreshTime',
+      blockType: "command",
+      text: "$$sugar_refreshTime",
+      pycode: 'Clock().refreshTime([TIMEZONE])',
+      arguments: {
+        TIMEZONE: {
+          type: "string",
+          menu: 'TIMEZONE',
+          defaultValue: '8'
+        }
+      }
+    },
+//-----------------------------------------------------------------
+    "## $$sugar_title_temp",
+    {
+      opcode: 'getTempValue',
+      blockType: "reporter",
+      text: "$$sugar_getTempValue",
+      pycode: 'DS18B20("[PORT]").read()',
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: 'P0',
+          menu: 'PINS_DHT11'
+        }
+      }
+    },
+//---------------------------------------------------------------------
+    "## FM",
+    {
+      opcode: 'initFm',
+      blockType: "command",
+      text: "$$sugar_initRadio", 
+      pycode: 'fm = FM()',
+    },
+    {
+      opcode: 'setFmFreq',
+      blockType: "command",
+      text: "$$sugar_setFmFreq", 
+      pycode: 'fm.setFreq([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "number",
+          defaultValue: '7600',
+        },
+      }
+    },
+    {
+      opcode: 'setFmSearchType',
+      blockType: "command",
+      text: "$$sugar_setFmSearchType", 
+      pycode: 'fm.[TYPE]()',
+      arguments: {
+        TYPE: {
+          type: "string",
+          defaultValue: 'seekUp',
+          menu: 'fmDir'
+        },
+      }
+    },
+    {
+      opcode: 'setFmVolumn',
+      blockType: "command",
+      text: "$$sugar_setFmVolumn", 
+      pycode: 'fm.setVol([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "number",
+          defaultValue: '10',
+        },
+      }
+    },
+    {
+      opcode: 'getFmFreqValue',
+      blockType: "reporter",
+      text: "$$sugar_getFmFreqValue", 
+      pycode: 'fm.getFreq()',
+    },
+  ]
+}

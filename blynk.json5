@@ -1,0 +1,210 @@
+{
+    id: "futureboard_blynk",
+    name: "$$blynk_title",
+    color1: "#48e48b",
+    color2: "#00D25B",
+    color3: "#48F894",
+    menus:{
+      intervalType: [
+        { text: "Once" ,value: 'True' },
+        { text: "Multy" ,value: 'False' },
+      ]
+    },
+    initcode:['import blynklib'],
+    blocks: [
+      "## $$blynk_title_basic",
+      {
+        opcode: 'portInit',
+        text: "$$blynk_portInit",
+        blockType: "command",
+        pycode: '\r\n',
+        arguments: {
+          AUTH: {
+            type: "string",
+            defaultValue: 'auth token',
+          },
+          HOST: {
+            type: "string",
+            defaultValue: '116.62.49.166',
+          },
+          PORT: {
+            type: "number",
+            defaultValue: '8080',
+          },
+        },
+        pycode: 'blynk = blynklib.Blynk([AUTH], server=[HOST], port=[PORT])'
+      },
+      {
+        opcode: 'run',
+        text: "$$blynk_run",
+        blockType: "command",
+        pycode: 'blynk.run()'
+      },
+      {
+        opcode: 'whenConnected',
+        text: "$$blynk_whenConnected",
+        blockType: "hat",
+        pycode: [
+          '@blynk.handle_event("connect")',
+          'def connect_handler():',
+        ]
+      },
+      {
+        opcode: 'whenDisconnected',
+        text: "$$blynk_whenDisconnected",
+        blockType: "hat",
+        pycode: [
+          '@blynk.handle_event("disconnect")',
+          'def disconn_handler():',
+        ]
+      },
+      {
+        opcode: 'showNotify',
+        text: "$$blynk_showNotify",
+        blockType: "command",
+        pycode: 'blynk.notify([MSG])',
+        arguments: {
+          MSG: {
+            type: "string",
+            defaultValue: 'notify',
+          },
+        }
+      },
+      "## $$blynk_title_anaPin",
+      {
+        opcode: 'sendData',
+        text: "$$blynk_sendData",
+        blockType: "command",
+        pycode: 'blynk.virtual_write([PIN], [DATA])',
+        arguments: {
+          DATA: {
+            type: "number",
+            defaultValue: '0'
+          },
+          PIN: {
+            type: "string",
+            defaultValue: '0'
+          },
+        }
+      },
+      {
+        opcode: 'whenAcceptData',
+        text: "$$blynk_whenAcceptData",
+        blockType: "hat",
+        arguments: {
+          PIN: {
+            type: "number",
+            defaultValue: '0'
+          },
+        },
+        pycode: [
+          "@blynk.handle_event('write V[PIN]')",
+          "def write_virtual_pin_handler_[PIN](pin, _value):"
+        ]
+      },
+      {
+        opcode: 'acceptData',
+        text: "$$blynk_acceptData",
+        blockType: "reporter",
+        pycode: "_value"
+      },
+      {
+        opcode: 'syncData',
+        text: "$$blynk_syncData",
+        blockType: "command",
+        pycode: "blynk.virtual_sync([PIN])",
+        arguments: {
+          PIN: {
+            type: "string",
+            defaultValue: '0',
+          },
+        }
+      },
+      {
+        opcode: 'setAnaProps',
+        text: "$$blynk_setAnaProps",
+        blockType: "command",
+        pycode: "blynk.set_property(pin, [KEY], [VALUE])",
+        arguments: {
+          KEY: {
+            type: "string",
+            defaultValue: 'color',
+          },
+          VALUE: {
+            type: "string",
+            defaultValue: '#ffffff',
+          },
+        }
+      },
+      "## $$blynk_title_timer",
+      {
+        opcode: 'runTimer',
+        text: "$$blynk_runTimer",
+        blockType: "command",
+        pycode: "blynk_timer.run()",
+      },
+      {
+        opcode: 'setTimer',
+        text: "$$blynk_setTimer",
+        blockType: "hat",
+        arguments: {
+          IDX: {
+            type: "number",
+            defaultValue: '1',
+          },
+          TYPE: {
+            type: "number",
+            defaultValue: 'True',
+            menu: 'intervalType'  
+          },
+          SEC: {
+            type: "number",
+            defaultValue: '2',
+          },
+        },
+        pycode: [
+          "@blynk_timer.register(interval=[SEC], run_once=[TYPE])",
+          "def blynk_timer[IDX]():"
+        ]
+      },
+      {
+        opcode: 'stopTimer',
+        text: "$$blynk_stopTimer",
+        blockType: "command",
+        pycode: "blynk_timer.stop('blynk_timer[IDX]')",
+        arguments: {
+          IDX: {
+            type: "number",
+            defaultValue: '1',
+          },
+        }
+      },
+      {
+        opcode: 'getTimer',
+        text: "$$blynk_getTimer",
+        blockType: "reporter",
+        pycode: "blynk_timer.get_timers()",
+      },
+      "## $$blynk_title_other",
+      {
+        opcode: 'sendEmail',
+        text: "$$blynk_sendEmail",
+        blockType: "command",
+        pycode: "blynk.email([EMAIL], [TOPIC], [CONTENT])",
+        arguments: {
+          EMAIL: {
+            type: "string",
+            defaultValue: '123@example.com',
+          },
+          TOPIC: {
+            type: "string",
+            defaultValue: 'title',
+          },
+          CONTENT: {
+            type: "string",
+            defaultValue: 'body',
+          },
+        }
+      },
+    ],
+}

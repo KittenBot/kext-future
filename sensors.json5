@@ -1,0 +1,135 @@
+{
+  blocks: [
+    "## $$futureboard_title_sensor",
+    {
+      opcode: 'runtime',
+      blockType: 'reporter',
+      text: '$$futureboard_gettime',
+      pycode: 'time.ticks_ms()',
+      disableMonitor: true,
+      importCode: {
+        _timer: 'import time',
+      },
+    },
+    
+    {
+      opcode: 'rgbtuple',
+      blockType: 'reporter',
+      text: 'R [R] G [G] B [B]',
+      pycode: '([R], [G], [B])',
+      arguments: {
+        R: {
+          type: 'number',
+          defaultValue: '0',
+        },
+        G: {
+          type: 'number',
+          defaultValue: '0',
+        },
+        B: {
+          type: 'number',
+          defaultValue: '0',
+        },
+      },
+    },
+    {
+      opcode: 'buttonget',
+      blockType: 'Boolean',
+      text: '$$futureboard_button_get',
+      pycode: "sensor.btnValue([BTN])",
+      // useEvent: true,
+      arguments: {
+        BTN: {
+          type: 'string',
+          menu: 'BTNLIST',
+          defaultValue: 'a',
+        },
+      },
+    },
+    {
+      opcode: 'lightsensor',
+      blockType: 'reporter',
+      text: '$$futureboard_lightsensor',
+      disableMonitor: 1,
+      pycode: 'sensor.getLight()',
+      arguments: {},
+    },
+    {
+      opcode: 'temperature',
+      blockType: 'reporter',
+      text: '$$futureboard_temperature',
+      disableMonitor: 1,
+      pycode: 'sensor.getTemp()',
+    },
+    {
+      opcode: 'imuacc',
+      blockType: 'reporter',
+      text: '$$futureboard_imu_acc',
+      disableMonitor: 1,
+      pycode: 'sensor.acc[AXIS]()',
+      arguments: {
+        AXIS: {
+          type: 'string',
+          menu: 'AXIS',
+          defaultValue: 'X',
+        },
+      },
+    },
+    {
+      opcode: 'imugesture',
+      blockType: 'Boolean',
+      text: '$$futureboard_imu_gesture',
+      pycode: "sensor.gesture([GESTURE])",
+      disableMonitor: 1,
+      arguments: {
+        GESTURE: {
+          type: 'string',
+          menu: 'GESTURE',
+          defaultValue: 'face_up',
+        },
+      },
+    },
+    {
+      opcode: 'imuaxis',
+      blockType: 'reporter',
+      text: '$$futureboard_imu_axis',
+      pycode: 'sensor.[AXIS]()',
+      disableMonitor: 1,
+      arguments: {
+        AXIS: {
+          type: 'number',
+          menu: 'PITCHROLL',
+          defaultValue: 'pitch',
+        },
+      },
+    },
+    {
+      opcode: 'compasscali',
+      blockType: 'command',
+      text: '$$futureboard_compass_cali',
+      pycode: 'calibrateCompass()',
+    },
+    {
+      opcode: 'imumag',
+      blockType: 'reporter',
+      text: '$$futureboard_imu_mag',
+      pycode: 'sensor.mag[AXIS]()',
+      isDebounce: 1,
+      disableMonitor: 1,
+      arguments: {
+        AXIS: {
+          type: 'number',
+          menu: 'AXIS_STRENTH',
+          defaultValue: 'X',
+        },
+      },
+    },
+    {
+      opcode: 'imuheading',
+      blockType: 'reporter',
+      text: '$$futureboard_imu_heading',
+      pycode: 'sensor.heading()',
+      disableMonitor: 1,
+    },
+  ],
+}

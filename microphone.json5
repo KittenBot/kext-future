@@ -1,0 +1,41 @@
+{
+  blocks: [
+    "## $$futureboard_title_microphone",
+    {
+      opcode: 'audiostrentch',
+      blockType: 'reporter',
+      text: '$$futureboard_audio_strentch',
+      disableMonitor: 1,
+      importCode: {
+        __auimport: 'import audio',
+        _au: 'au = audio.Audio()',
+      },
+      pycode: 'au.loudness()',
+    },
+    {
+      opcode: 'audioreconizech',
+      blockType: 'reporter',
+      text: '$$futureboard_audio_reconize_ch',
+      disableMonitor: 1,
+      timeout: 10000,
+      pycode: 'au.recognize(vid=[LANG], sec=[DELAY])',
+      importCode: {
+        __auimport: 'import audio',
+        _au: 'au = audio.Audio()',
+      },
+      arguments: {
+        LANG: {
+          type: 'string',
+          menu: 'LANGUAGE',
+          defaultValue: '1537',
+        },
+        DELAY: {
+          type: 'slider',
+          defaultValue: 1,
+          max: 3,
+          min: 1,
+        },
+      },
+    },
+  ],
+}

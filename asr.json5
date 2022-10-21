@@ -1,0 +1,291 @@
+{
+    id: "futureboard_ASR",
+    name: "$$ASR_title",
+    color1: "#e04913",
+    color2: "#e04913",
+    color3: "#904913",
+    initcode:["from sugar_asr import SugarASR",],
+    menus:{
+        executor: [
+            { value: '300', text: '开门' },
+            { value: '301', text: '关门' },
+            { value: '302', text: '打开窗户' },
+            { value: '303', text: '关闭窗户' },
+            { value: '304', text: '打开窗帘' },
+            { value: '305', text: '关闭窗帘' },
+            { value: '306', text: '晾衣服' },
+            { value: '307', text: '收衣服' },
+            { value: '308', text: '打开风扇' },
+            { value: '309', text: '关闭风扇' },
+            { value: '310', text: '快一点' },
+            { value: '311', text: '慢一点' },
+            { value: '312', text: '打开空调' },
+            { value: '313', text: '关闭空调' },
+            { value: '314', text: '播放音乐' },
+            { value: '315', text: '停止音乐' },
+            { value: '316', text: '暂停音乐' },
+            { value: '317', text: '上一首' },
+            { value: '318', text: '下一首' },
+            { value: '319', text: '增大音量' },
+            { value: '320', text: '减小音量' },
+            { value: '321', text: '启动机器人' },
+            { value: '322', text: '关闭机器人' },
+            { value: '323', text: '停止机器人' },
+            { value: '324', text: '前进' },
+            { value: '325', text: '后退' },
+            { value: '326', text: '左转' },
+            { value: '327', text: '右转' },
+            { value: '328', text: '启动电梯' },
+            { value: '329', text: '去一楼' },
+            { value: '330', text: '去二楼' },
+            { value: '331', text: '去三楼' },
+            { value: '332', text: '测试模式' },
+
+        ],
+        led: [
+            { value: '200', text: '打开台灯' },
+            { value: '201', text: '关闭台灯' },
+            { value: '202', text: '亮一点' },
+            { value: '203', text: '暗一点' },
+            { value: '204', text: '亮红灯' },
+            { value: '205', text: '亮绿灯' },
+            { value: '206', text: '亮黄灯' },
+            { value: '207', text: '亮蓝灯' },
+            { value: '208', text: '打开客厅灯' },
+            { value: '209', text: '关闭客厅灯' },
+            { value: '210', text: '打开厨房灯' },
+            { value: '211', text: '关闭厨房灯' },
+            { value: '212', text: '打开卧室灯' },
+            { value: '213', text: '关闭卧室灯' },
+            { value: '214', text: '打开阳台灯' },
+            { value: '215', text: '关闭阳台灯' },
+            { value: '216', text: '打开浴室灯' },
+            { value: '217', text: '关闭浴室灯' },
+            { value: '218', text: '打开所有灯' },
+            { value: '219', text: '关闭所有灯' },
+        ],
+        query: [
+            { value: '400', text: '查询温度' },
+            { value: '401', text: '查询湿度' },
+            { value: '402', text: '查询天气' },
+            { value: '403', text: '现在时间' },
+            { value: '404', text: '今天日期' },
+            { value: '405', text: '测量距离' },
+            { value: '406', text: '测量体温' },
+            { value: '407', text: '测量重量' },
+            { value: '408', text: '测量身高' },
+        ],
+        customize: [
+            { value: '901', text: '第一条命令词' },
+            { value: '902', text: '第二条命令词' },
+            { value: '903', text: '第三条命令词' },
+            { value: '904', text: '第四条命令词' },
+            { value: '905', text: '第五条命令词' },
+            { value: '906', text: '第六条命令词' },
+            { value: '907', text: '第七条命令词' },
+            { value: '908', text: '第八条命令词' },
+            { value: '909', text: '第九条命令词' },
+            { value: '910', text: '第十条命令词' },
+        ],
+        keyword: [
+            { value: '1', text: '现在温度是' , }, // 'temp'
+            { value: '2', text: '现在湿度是' , }, // 'humi'
+            // { value: '3', text: '现在时间是（unchar）时（unchar）分' , }, // 'time'
+            // { value: '4', text: '今天是（int）年（unchar）月（unchar）日' , }, // 'date'
+            { value: '5', text: '欢迎光临' , }, // 'welcome'
+            { value: '6', text: '距离是' , }, // 'distance'
+            { value: '7', text: '毫米' , }, // 'mm'
+            { value: '8', text: '厘米' , }, // 'cm'
+            { value: '9', text: '米' , }, // 'm'
+            { value: '10', text: '体温是' , }, // 'tiwen'
+            { value: '11', text: '重量是' , }, // 'weight'
+            { value: '12', text: '克' , }, // 'g'
+            { value: '13', text: '千克' , }, // 'kg'
+            { value: '14', text: '请说出口令' , }, // 'key'
+            { value: '15', text: '今天天气' , }, // 'weather'
+            { value: '16', text: '晴天' , }, // 'sunny'
+            { value: '17', text: '阴天' , }, // 'cloudy'
+            { value: '18', text: '雨' , }, // 'rain'
+            { value: '19', text: '雪' , }, // 'snow'
+            { value: '20', text: '雾霾' , }, // 'haze'
+            { value: '21', text: '大' , }, // 'big'
+            { value: '22', text: '中' , }, // 'middle'
+            { value: '23', text: '小' , }, // 'small'
+            { value: '24', text: '请问您要去几楼' , }, // 'jilou'
+            { value: '25', text: '是的' , }, // 'yes'
+            { value: '26', text: '不是' , }, // 'no'
+            { value: '27', text: '百分之' , }, // 'percent'
+            { value: '28', text: '回答正确' , }, // 'right'
+            { value: '29', text: '回答错误' , }, // 'wrong'
+            { value: '30', text: '摄氏度' , }, // 'du'
+            { value: '33', text: '好的' , }, // 'ok'
+        ],
+        port: ['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12'],
+    },
+    blocks: 
+    [
+            {
+              opcode: 'runInit',
+              blockType: "command",
+              text: "$$ASR_runInit",
+              pycode: "asr = SugarASR([PORT1], [PORT2])",
+              arguments:{
+                PORT1:{
+                    type: "string",
+                    defaultValue: 'P2', 
+                    menu: 'port'
+                },
+                PORT2:{
+                    type: "string",
+                    defaultValue: 'P12', 
+                    menu: 'port'
+                },
+              },
+            },
+            { 
+                opcode: 'isAudioFired', 
+                blockType: 'Boolean',
+                pycode: 'asr.detected()', 
+                text: "$$ASR_isAudioFired"
+            },
+            { 
+                opcode: 'isAudioAwake', 
+                blockType: 'Boolean',
+                pycode: "asr.cmdParse() == '100'", 
+                text: "$$ASR_isAudioAwake"
+            },
+            { 
+                opcode: 'isLEDWord', 
+                blockType: 'Boolean',
+                pycode: "asr.cmdParse() == '[LEDWORD]'", 
+                arguments:{
+                    LEDWORD:{
+                        type:"number",
+                        defaultValue: '200', 
+                        menu: 'led'
+                    },
+                },
+                text: "$$ASR_isLEDWord"
+            },
+            { 
+                opcode: 'isExecutorWord', 
+                blockType: 'Boolean',
+                pycode: "asr.cmdParse() == '[EXECUTORWORD]'", 
+                arguments:{
+                    EXECUTORWORD:{
+                        type:"number",
+                        defaultValue: '300', 
+                        menu: 'executor'
+                    },
+                },
+                text: "$$ASR_isExecutorWord"
+            },
+            { 
+                opcode: 'isQueryWord', 
+                blockType: 'Boolean',
+                pycode: "asr.cmdParse() == '[QUERYWORD]'", 
+                arguments:{
+                    QUERYWORD:{
+                        type:"number",
+                        defaultValue: '400', 
+                        menu: 'query'
+                    },
+                },
+                text: "$$ASR_isQueryWord"
+            },
+            { 
+                opcode: 'isCustomizeWord', 
+                blockType: 'Boolean',
+                pycode: "asr.cmdParse() == '[CUSTOMIZE]'", 
+                arguments:{
+                    CUSTOMIZE:{
+                        type:"number",
+                        defaultValue: '901', 
+                        menu: 'customize'
+                    },
+                },
+                text: "$$ASR_isCustomizeWord"
+            },
+            { 
+                opcode: 'runAudioWord', 
+                blockType: "command",
+                pycode: "asr.tts_words([KEYWORD])", 
+                arguments:{
+                    KEYWORD:{
+                        type:"number",
+                        defaultValue: '1', 
+                        menu: 'keyword'
+                    },
+                },
+                text: "$$ASR_runAudioWord"
+            },
+            { 
+                opcode: 'runInt', 
+                blockType: "command",
+                pycode: "asr.tts_int([INT])", 
+                arguments:{
+                    INT:{
+                        type:"number",
+                        defaultValue: '1', 
+                        type: "number"
+                    },
+                },
+                text: "$$ASR_runInt"
+            },
+            { 
+                opcode: 'runDouble', 
+                blockType: "command",
+                pycode: "asr.tts_double([DOUBLE])", 
+                arguments:{
+                    DOUBLE:{
+                        type:"number",
+                        defaultValue: '1.1', 
+                        type: "number"
+                    },
+                },
+                text: "$$ASR_runDouble"
+            },
+            { 
+                opcode: 'runDate', 
+                blockType: "command",
+                pycode: "asr.tts_date([Y], [M], [D])", 
+                arguments:{
+                    Y:{
+                        type:"number",
+                        defaultValue: '1', 
+                        type: "number"                       
+                    },
+                    M:{
+                        type:"number",
+                        defaultValue: '1', 
+                        type: "number"
+                    },
+                    D:{
+                        type:"number",
+                        defaultValue: '1', 
+                        type: "number"
+                    },
+                },
+                text: "$$ASR_runDate"
+            },
+            { 
+                opcode: 'runHour', 
+                blockType: "command",
+                pycode: "asr.tts_clock([H], [MIN])", 
+                arguments:{
+                    H:{
+                        type:"number",
+                        defaultValue: '1', 
+                        type: "number"
+                    },
+                    MIN:{
+                        type:"number",
+                        defaultValue: '1', 
+                        type: "number"
+                    },
+                },
+                text: "$$ASR_runHour"
+            },
+    ],
+
+}

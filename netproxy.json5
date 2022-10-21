@@ -1,0 +1,102 @@
+{
+  blocks: [
+    {
+      opcode: 'netproxy',
+      blockType: 'command',
+      text: '$$futureboard_ntp_proxy',
+      importCode: {
+        _ntptime: 'import ntptime',
+      },
+      pycode: "ntptime.host=[HOST]",
+      arguments: {
+        HOST: {
+          type: 'string',
+          defaultValue: 'ntp.aliyun.com',
+        },
+      },
+    },
+    {
+      opcode: 'ntpsync',
+      blockType: 'command',
+      text: '$$futureboard_ntp_sync',
+      importCode: {
+        _ntptime: 'import ntptime',
+      },
+      pycode: 'ntptime.settime(int([TIMEZONE]))',
+      arguments: {
+        TIMEZONE: {
+          type: 'string',
+          defaultValue: 8,
+          menu: 'TIMEZONE',
+        },
+      },
+    },
+    {
+      opcode: 'ntpgettime',
+      blockType: 'reporter',
+      text: '$$futureboard_ntp_gettime',
+      importCode: {
+        __rtcinit: [
+          'from machine import RTC',
+          'rtc = RTC()',
+        ],
+      },
+      pycode: "rtc.datetime()[int([TIMEFORMAT])]",
+      arguments: {
+        TIMEFORMAT: {
+          type: 'string',
+          defaultValue: 0,
+          menu: 'TIMEFORMAT',
+        },
+      },
+    },
+    "## $$futureboard_title_onenet",
+    {
+      opcode: 'onenetconnect',
+      blockType: 'command',
+      text: '$$futureboard_onenet_connect',
+      importCode: {
+        _onenet: 'import onenet',
+      },
+      pycode: "onenet = onenet.OneNet([ID], [KEY])",
+      arguments: {
+        ID: {
+          type: 'string',
+          defaultValue: '',
+        },
+        KEY: {
+          type: 'string',
+          defaultValue: '',
+        },
+      },
+    },
+    {
+      opcode: 'onenetwrite',
+      blockType: 'command',
+      text: '$$futureboard_onenet_write',
+      pycode: "onenet.write([KEY], [VALUE])",
+      arguments: {
+        KEY: {
+          type: 'string',
+          defaultValue: '',
+        },
+        VALUE: {
+          type: 'string',
+          defaultValue: '',
+        },
+      },
+    },
+    {
+      opcode: 'onenetread',
+      blockType: 'reporter',
+      text: '$$futureboard_onenet_read',
+      pycode: "onenet.read([KEY])",
+      arguments: {
+        KEY: {
+          type: 'string',
+          defaultValue: '',
+        },
+      },
+    },
+  ],
+}

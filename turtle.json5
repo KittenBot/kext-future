@@ -1,0 +1,170 @@
+{
+  blocks: [
+    "## $$futureboard_title_turtle",
+    {
+      opcode: 'turtlesetcolor',
+      blockType: 'command',
+      text: '$$futureboard_turtle_setcolor',
+      arguments: {
+        COLOR: {
+          type: 'colorrgb',
+        },
+      },
+      pycode: 'turtle.fillcolor([COLOR])',
+    },
+    {
+      opcode: 'turtleforward',
+      blockType: 'command',
+      text: '$$futureboard_turtle_forward',
+      arguments: {
+        PIX: {
+          type: 'number',
+          defaultValue: 10,
+        },
+      },
+      pycode: 'turtle.forward([PIX])',
+    },
+    {
+      opcode: 'turtleleft',
+      blockType: 'command',
+      arguments: {
+        DEG: {
+          type: 'number',
+          defaultValue: 90,
+        },
+      },
+      text: '$$futureboard_turtle_left',
+      pycode: 'turtle.left([DEG])',
+    },
+    {
+      opcode: 'turtleright',
+      blockType: 'command',
+      text: '$$futureboard_turtle_right',
+      arguments: {
+        DEG: {
+          type: 'number',
+          defaultValue: 90,
+        },
+      },
+      pycode: 'turtle.right([DEG])',
+    },
+    {
+      opcode: 'turtleheading',
+      blockType: 'command',
+      text: '$$futureboard_turtle_heading',
+      arguments: {
+        DEG: {
+          type: 'number',
+          defaultValue: 90,
+        },
+      },
+      pycode: 'turtle.setheading([DEG])',
+    },
+    {
+      opcode: 'turtlegoto',
+      blockType: 'command',
+      text: '$$futureboard_turtle_goto',
+      arguments: {
+        X: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 128,
+        },
+      },
+      pycode: 'turtle.goto([X],[Y])',
+    },
+    {
+      opcode: 'turtlesetx',
+      blockType: 'command',
+      text: '$$futureboard_turtle_setx',
+      arguments: {
+        POS: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 160,
+        },
+      },
+      pycode: 'turtle.setx([POS])',
+    },
+    {
+      opcode: 'turtlesety',
+      blockType: 'command',
+      text: '$$futureboard_turtle_sety',
+      arguments: {
+        POS: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 128,
+        },
+      },
+      pycode: 'turtle.sety([POS])',
+    },
+    {
+      opcode: 'turtlecircle',
+      blockType: 'command',
+      text: '$$futureboard_turtle_circle',
+      pycode: 'turtle.circle([R],[DEG])',
+      arguments: {
+        R: {
+          type: 'number',
+          defaultValue: 20,
+        },
+        DEG: {
+          type: 'number',
+          defaultValue: 360,
+        },
+      },
+    },
+    {
+      opcode: 'turtledot',
+      blockType: 'command',
+      text: '$$futureboard_turtle_dot',
+      pycode: 'turtle.dot([SIZE])',
+      arguments: {
+        SIZE: {
+          type: 'number',
+          defaultValue: 5,
+        },
+      },
+    },
+    {
+      opcode: 'turtlebeginfill',
+      blockType: 'command',
+      text: '$$futureboard_turtle_beginfill',
+      pycode: 'turtle.begin_fill()',
+    },
+    {
+      opcode: 'turtleendfill',
+      blockType: 'command',
+      text: '$$futureboard_turtle_endfill',
+      pycode: 'turtle.end_fill()',
+    },
+    {
+      opcode: 'turtlependown',
+      blockType: 'command',
+      text: '$$futureboard_turtle_pendown',
+      pycode: 'turtle.pendown()',
+    },
+    {
+      opcode: 'turtlepenup',
+      blockType: 'command',
+      text: '$$futureboard_turtle_penup',
+      pycode: 'turtle.penup()',
+    },
+    {
+      opcode: 'turtleclear',
+      blockType: 'command',
+      text: '$$futureboard_turtle_clear',
+      pycode: 'turtle.clear()',
+    },
+  ],
+}

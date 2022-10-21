@@ -1,0 +1,405 @@
+{
+  blocks: [
+    "## $$futureboard_title_screen",
+    {
+      opcode: 'tftfill',
+      blockType: 'command',
+      text: '$$futureboard_tft_fill',
+      arguments: {
+        COLOR: {
+          type: 'colorrgb',
+        },
+      },
+      pycode: 'screen.fill([COLOR])',
+    },
+    {
+      opcode: 'tftclear',
+      blockType: 'command',
+      text: '$$futureboard_tft_clear',
+      pycode: 'screen.clear()',
+    },
+    {
+      opcode: 'tftredraw',
+      blockType: 'command',
+      text: '$$futureboard_tft_redraw',
+      pycode: 'screen.refresh()',
+    },
+    {
+      opcode: 'tftsyncmode',
+      blockType: 'command',
+      text: '$$futureboard_tft_syncmode',
+      pycode: 'screen.sync = [ONOFF]',
+      arguments: {
+        ONOFF: {
+          type: 'string',
+          menu: 'ONOFF',
+          defaultValue: 0,
+        },
+      },
+    },
+    {
+      opcode: 'tftpix',
+      blockType: 'command',
+      text: '$$futureboard_tft_pix',
+      arguments: {
+        X: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 128,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+      },
+      pycode: 'screen.pixel([X], [Y], [COLOR])',
+    },
+    {
+      opcode: 'tftline',
+      blockType: 'command',
+      text: '$$futureboard_tft_line',
+      arguments: {
+        X0: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 160,
+        },
+        Y0: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 128,
+        },
+        X1: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 160,
+        },
+        Y1: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 128,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+      },
+      pycode: 'screen.line([X0],[Y0],[X1],[Y1],[COLOR])',
+    },
+    {
+      opcode: 'tftrect',
+      blockType: 'command',
+      text: '$$futureboard_tft_rect',
+      arguments: {
+        X: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 128,
+        },
+        W: {
+          type: 'number',
+          defaultValue: 50,
+        },
+        H: {
+          type: 'number',
+          defaultValue: 20,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+        FILL: {
+          type: 'string',
+          menu: 'FILL',
+          defaultValue: '0',
+        },
+      },
+      pycode: 'screen.rect([X],[Y],[W],[H],[COLOR],[FILL])',
+    },
+    {
+      opcode: 'tftcircle',
+      blockType: 'command',
+      text: '$$futureboard_tft_circle',
+      arguments: {
+        X: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 128,
+        },
+        R: {
+          type: 'number',
+          defaultValue: 20,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+        FILL: {
+          type: 'string',
+          menu: 'FILL',
+          defaultValue: '0',
+        },
+      },
+      pycode: 'screen.circle([X],[Y],[R],[COLOR],[FILL])',
+    },
+    {
+      opcode: 'tfttriangle',
+      blockType: 'command',
+      text: '$$futureboard_tft_triangle',
+      arguments: {
+        X0: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 160,
+        },
+        Y0: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 128,
+        },
+        X1: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 160,
+        },
+        Y1: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 128,
+        },
+        X2: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 160,
+        },
+        Y2: {
+          type: 'slider',
+          defaultValue: 100,
+          min: 0,
+          max: 128,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+        FILL: {
+          type: 'string',
+          menu: 'FILL',
+          defaultValue: '0',
+        },
+      },
+      pycode: 'screen.triangle([X0],[Y0],[X1],[Y1],[X2],[Y2],[COLOR],[FILL])',
+    },
+    {
+      opcode: 'tftpolygon',
+      blockType: 'command',
+      text: '$$futureboard_tft_polygon',
+      arguments: {
+        X: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 128,
+        },
+        SIDES: {
+          type: 'number',
+          defaultValue: 3,
+          min: 0,
+          max: 30,
+        },
+        RADIUS: {
+          type: 'slider',
+          defaultValue: 50,
+          min: 0,
+          max: 100,
+        },
+        ROT: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 360,
+        },
+        TH: {
+          type: 'number',
+          defaultValue: 3,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+        FILL: {
+          type: 'string',
+          menu: 'FILL',
+          defaultValue: '0',
+        },
+      },
+      pycode: 'screen.polygon([X],[Y],[SIDES],[RADIUS],[TH],[ROT],[COLOR],[FILL])',
+    },
+    {
+      opcode: 'tfttext',
+      blockType: 'command',
+      text: '$$futureboard_tft_text',
+      arguments: {
+        TXT: {
+          type: 'string',
+          defaultValue: 'Hello world',
+        },
+        X: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 10,
+          min: 0,
+          max: 128,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+        EXT: {
+          type: 'string',
+          menu: 'ENLARGE_MENU',
+          defaultValue: '1',
+        },
+      },
+      pycode: "screen.text([TXT],[X],[Y],[EXT],[COLOR])",
+    },
+    {
+      opcode: 'tfttextcn',
+      blockType: 'command',
+      text: '$$futureboard_tft_textcn',
+      arguments: {
+        TEXTCH: {
+          type: 'string',
+          defaultValue: '你好呀',
+        },
+        X: {
+          type: 'slider',
+          defaultValue: 5,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 10,
+          min: 0,
+          max: 128,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+        EXT: {
+          type: 'string',
+          menu: 'ENLARGE_MENU',
+          defaultValue: '1',
+        },
+      },
+      pycode: 'screen.textCh([TEXTCH],[X],[Y],[EXT],[COLOR])',
+    },
+    {
+      opcode: 'tftpng',
+      blockType: 'command',
+      text: '$$futureboard_tft_png',
+      arguments: {
+        PATH: {
+          type: 'string',
+          defaultValue: 'fileName',
+        },
+        X: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 128,
+        },
+      },
+      pycode: 'screen.loadPng([PATH],[X],[Y])',
+    },
+    {
+      opcode: 'tftbmp',
+      blockType: 'command',
+      text: '$$futureboard_tft_bmp',
+      arguments: {
+        PATH: {
+          type: 'string',
+          defaultValue: 'fileName',
+        },
+        X: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 128,
+        },
+      },
+      pycode: 'screen.loadBmp([PATH],[X],[Y])',
+    },
+    {
+      opcode: 'tftgif',
+      blockType: 'command',
+      text: '$$futureboard_tft_gif',
+      arguments: {
+        PATH: {
+          type: 'string',
+          defaultValue: 'fileName',
+        },
+        X: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 160,
+        },
+        Y: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 128,
+        },
+      },
+      pycode: 'screen.loadGif([PATH],[X],[Y])',
+    },
+  ],
+}

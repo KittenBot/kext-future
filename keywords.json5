@@ -1,0 +1,8 @@
+[
+  {
+    caption: 'openImage',
+    value: 'openImage',
+    score: 1, // 越大的排在越上面
+    meta: '打开一张本地图片', // 描述
+  },
+]

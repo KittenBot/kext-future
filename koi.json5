@@ -1,0 +1,457 @@
+{
+    id: "futureboard_koi",
+    name: 'KOI',
+    color1: "#9aa4d2",
+    color2: "#8c96bd",
+    color3: "#9aa4d2",
+    initcode:['from futureKOI import KOI'],
+    menus:{
+        directions: [
+        { text: '$$futureKoi_menu_direction_front', value: '0' },
+        { text: '$$futureKoi_menu_direction_back', value: '2' }
+      ],
+      xy: [
+        { text: 'X' , value: '0' },
+        { text: 'Y' , value: '1' }
+      ],
+      colorblock: [
+        { text: 'cx' , value: '0' },
+        { text: 'cy' , value: '1' },
+        { text: 'w' , value: '2' },
+        { text: 'h' , value: '3' }
+      ],
+      aprilTag: [
+        { text: 'id' , value: '0' },
+        { text: 'cx' , value: '1' },
+        { text: 'cy' , value: '2' },
+        { text: 'w' , value: '3' },
+        { text: 'h' , value: '4' }
+      ],
+      circle: [
+        { text: 'cx' , value: '0' },
+        { text: 'cy' , value: '1' },
+        { text: 'R' , value: '2' }
+      ],
+      trackingline: [
+        { text: 'X1' , value: '0' },
+        { text: 'Y1' , value: '1' },
+        { text: 'X2' , value: '2' },
+        { text: 'Y2' , value: '3' }
+      ],
+    },
+    blocks: 
+    [
+        "## $$futureKoi_title_base",
+        {
+            opcode: 'runInit', 
+            blockType: "command",
+            text: '$$futureKoi_runInit', 
+            pycode: "koi = KOI(tx='P2',rx='P12',id=1)",
+        },
+        {
+            opcode: 'runReboot', 
+            blockType: "command",
+            text: '$$futureKoi_runReboot', 
+            pycode: "koi.reset(cmd='k99')" 
+        },
+        {
+            opcode: 'runStopKpu', 
+            blockType: "command",
+            text: '$$futureKoi_runStopKpu', 
+            pycode: "koi.stop_kpu(cmd='k98')" 
+        },
+        {
+            opcode: 'runSetScreenDirection', 
+            blockType: "command",
+            text: '$$futureKoi_runSetScreenDirection', 
+            pycode: "koi.screen_mode([DIR], cmd='K6')",
+            arguments:{
+                DIR: { type: "string", defaultValue: '0', menu: 'directions' },
+            }
+            
+        },
+        {
+            opcode: 'runShowStr', 
+            blockType: "command",
+            text: '$$futureKoi_runShowStr', 
+            pycode: 'koi.text(x=[X], y=[Y], delay=[DELAY], text=[TEXT], cmd="K4")',
+            arguments:{
+                X: { type: "number", defaultValue: '5' },
+                Y: { type: "number", defaultValue: '5' },
+                DELAY: { type: "number", defaultValue: '500' },
+                TEXT: { type: "string", defaultValue: 'hello world' },
+            }
+            
+        },
+        {
+            opcode: 'runTakePhoto', 
+            blockType: "command",
+            text: '$$futureKoi_runTakePhoto', 
+            pycode: "koi.screen_save(pic=[JPGPATH] , cmd='K2')" ,
+            arguments:{
+                JPGPATH: { type: "string", defaultValue: 's1.jpg' },
+            }
+            
+        },
+        {
+            opcode: 'runShowImage', 
+            blockType: "command",
+            text: '$$futureKoi_runShowImage', 
+            pycode: "koi.screen_show(pic=[JPGPATH], cmd='K1')" ,
+            arguments:{
+                JPGPATH: { type: "string", defaultValue: 's1.jpg' },
+            }
+            
+        },
+    
+
+    
+        "## $$futureKoi_title_face",
+        {
+            opcode: 'runLoadYoloModel',
+            blockType: "command", 
+            text: '$$futureKoi_runLoadYoloModel', 
+            pycode: "koi.face_yolo_load(cmd='K30')" 
+        },
+        {
+            opcode: 'isFaceDetectSingle', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isFaceDetectSingle', 
+            pycode: "koi.face_detect(cmd='K31')" 
+        },
+        {
+            opcode: 'getFacePosition', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_getFacePosition', 
+            pycode: "koi.get_re(cmd='K31')[[XY]]" ,
+            arguments:{
+                XY: { type: "string", defaultValue: '0', menu: 'xy' },
+            }
+            
+        },
+        {
+            opcode: 'isFaceDetectMult', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isFaceDetectMult', 
+            pycode: "koi.face_count(cmd='K32')" 
+        },
+        {
+            opcode: 'getFaceCount', 
+            blockType: "reporter",
+            text: '$$futureKoi_getFaceCount', 
+            pycode: "koi.get_re(cmd='K32')[0]" ,
+        },
+    
+
+    
+        "## $$futureKoi_title_ml",
+        {
+            opcode: 'runResetClassifier', 
+            blockType: "command", 
+            text: '$$futureKoi_runResetClassifier', 
+            pycode: "koi.init_cls()" 
+        },
+        {
+            opcode: 'runAddTag', 
+            blockType: "command", 
+            text: '$$futureKoi_runAddTag', 
+            pycode: "koi.cls_add_tag(id='[TAG]',cmd='K41')", 
+            arguments:{
+                TAG: { type: "string", defaultValue: 'paper', disableParseNumber: true },
+                TAG: { type: "string", defaultValue: 'paper', disableParseNumber: true },
+            }
+            
+        },
+        {
+            opcode: 'getClassifierTag', 
+            blockType: "command", 
+            text: '$$futureKoi_getClassifierTag', 
+            pycode: "koi.cls_run(cmd='K42')" 
+        },
+        {
+            opcode: 'runSaveClassifierModel', 
+            blockType: "command", 
+            text: '$$futureKoi_runSaveClassifierModel', 
+            pycode: "koi.cls_save_model(model=[JSONPATH],cmd='K43')" ,
+            arguments:{
+                JSONPATH: { type: "string", defaultValue: 'abc.json' },
+            }
+            
+        },
+        {
+            opcode: 'runLoadClassifierModel', 
+            blockType: "command", 
+            text: '$$futureKoi_runLoadClassifierModel', 
+            pycode: "koi.cls_load_model(model=[JSONPATH],cmd='K44')" ,
+            arguments:{
+                JSONPATH: { type: "string", defaultValue: 'abc.json' },
+            }
+            
+        },
+    
+
+    
+        "## $$futureKoi_title_audio",
+        {
+            opcode: 'runRecordAudio', 
+            blockType: "command", 
+            text: '$$futureKoi_runRecordAudio', 
+            pycode: "koi.audio_record('[AUDIOPATH]')" ,
+            arguments:{
+                AUDIOPATH: { type: "string", defaultValue: 'hello.wav' },
+            }
+            
+        },
+        {
+            opcode: 'runPlayAudio', 
+            blockType: "command", 
+            text: '$$futureKoi_runPlayAudio', 
+            pycode: "koi.audio_play('[AUDIOPATH]')" ,
+            arguments:{
+                AUDIOPATH: { type: "string", defaultValue: 'hello.wav' },
+            }
+            
+        },
+        {
+            opcode: 'runNoiseCalibration', 
+            blockType: "command", 
+            text: '$$futureKoi_runNoiseCalibration', 
+            pycode: "koi.audio_noisetap()" 
+        },
+        {
+            opcode: 'runAddSpeechTag', 
+            blockType: "command", 
+            text: '$$futureKoi_runAddSpeechTag', 
+            pycode: "koi.speech_add_tag([TAG])",
+            arguments:{
+                TAG: { type: "string", defaultValue: 'paper', disableParseNumber: true },
+            }
+            
+        },
+        {
+            opcode: 'getSpeechTag', 
+            blockType: "reporter",
+            text: '$$futureKoi_getSpeechTag', 
+            pycode: "koi.speech_run(cmd='K65')" 
+        },
+        {
+            opcode: 'runSaveAudioModel', 
+            blockType: "command", 
+            text: '$$futureKoi_runSaveAudioModel', 
+            pycode: "koi.speech_save_model([JSONPATH])" ,
+            arguments:{
+                JSONPATH: { type: "string", defaultValue: 'abc.json' },
+            }
+            
+        },
+        {
+            opcode: 'runLoadAudioModel', 
+            blockType: "command", 
+            text: '$$futureKoi_runLoadAudioModel', 
+            pycode: "koi.speech_load_model([JSONPATH])" ,
+            arguments:{
+                JSONPATH: { type: "string", defaultValue: 'abc.json' },
+            }
+            
+        },
+    
+    
+        "## $$futureKoi_title_color",
+        {
+            opcode: 'runColorCalibration', 
+            blockType: "command", 
+            text: '$$futureKoi_runColorCalibration', 
+            pycode: "koi.color_cali(name=[COLORNAME] ,cmd='K16')" ,
+            arguments:{
+                COLORNAME: { type: "string", defaultValue: 'name' },
+            }
+            
+        },
+        {
+            opcode: 'isTrackColorBlock', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isTrackColorBlock', 
+            pycode: "koi.color_tracking(name='[PURESTR]', cmd='K15')" ,
+            arguments:{
+                PURESTR: { type: "string", defaultValue: 'name', disableParseNumber: true  },
+            }
+            
+        },
+        {
+            opcode: 'getColorBlock', 
+            blockType: "reporter",
+            text: '$$futureKoi_getColorBlock', 
+            pycode: "koi.get_re(cmd='K15')[[COLORBLOCK]]" ,
+            arguments:{
+                COLORBLOCK: { type: "string", defaultValue: '0', menu: 'colorblock' },
+            }
+            
+        },
+        {
+            opcode: 'isTraceColorLine', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isTraceColorLine', 
+            pycode: "koi.line_tracking(name='[PURESTR]' ,cmd='K12')" ,
+            arguments:{
+                PURESTR: { type: "string", defaultValue: 'name', disableParseNumber: true  },
+            }
+            
+        },
+        {
+            opcode: 'getTraceColorLine', 
+            blockType: "reporter",
+            text: '$$futureKoi_getTraceColorLine', 
+            pycode: "koi.get_re(cmd='K12')[[TRACKINGLINE]]" ,
+            arguments:{
+                TRACKINGLINE: { type: "string", defaultValue: '0', menu: 'trackingline' },
+            }
+            
+        },
+    
+    
+        "## $$futureKoi_title_shape",
+        {
+            opcode: 'isCircle', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isCircle', 
+            pycode: "koi.circle_detect(th=[THRESHOLD], cmd='K10')" ,
+            arguments:{
+                THRESHOLD: { type: "number", defaultValue: '4000' },
+            }
+            
+        },
+        {
+            opcode: 'GetCirclePosition', 
+            blockType: "reporter",
+            text: '$$futureKoi_GetCirclePosition', 
+            pycode: "koi.get_re(cmd='K10')[[CIRCLE]]" ,
+            arguments:{
+                CIRCLE: { type: "string", defaultValue: '0', menu: 'circle' },
+            }
+            
+        },
+        {
+            opcode: 'isSuare', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isSuare', 
+            pycode: "koi.rectangle_detect(th=[THRESHOLD],cmd='K11')" ,
+            arguments:{
+                THRESHOLD: { type: "number", defaultValue: '4000' },
+            }
+            
+        },
+        {
+            opcode: 'GetSquarePosition', 
+            blockType: "reporter",
+            text: '$$futureKoi_GetSquarePosition', 
+            pycode: "koi.get_re(cmd='K11')[[SQUARE]]" ,
+            arguments:{
+                SQUARE: { type: "string", defaultValue: '0', menu: 'colorblock' },
+            }
+            
+        },
+    
+    
+        "## $$futureKoi_title_scanCode",
+        {
+            opcode: 'getQrCode', 
+            blockType: "reporter",
+            text: '$$futureKoi_getQrCode', 
+            pycode: "koi.scan_qrcode(cmd='K20')" 
+        },
+        {
+            opcode: 'getBarCode', 
+            blockType: "reporter",
+            text: '$$futureKoi_getBarCode', 
+            pycode: "koi.scan_barcode(cmd='K22')" 
+        },
+        {
+            opcode: 'isApril', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isApril', 
+            pycode: "koi.scan_Apriltag(cmd='K23')" 
+        },
+        {
+            opcode: 'getAprilTag',
+            blockType: "reporter",
+            text: '$$futureKoi_getAprilTag', 
+            pycode: "koi.get_re(cmd='K23')[[APRILTAG]]" ,
+            arguments:{
+                APRILTAG: { type: "string", defaultValue: '0', menu: 'aprilTag' },
+            }
+            
+        },
+    
+    
+        "## $$futureKoi_title_net",
+        {
+            opcode: 'runConnectRouter', 
+            blockType: "command", 
+            text: '$$futureKoi_runConnectRouter', 
+            pycode: "koi.connect_wifi(router=[AP] ,pwd=[PWD] ,cmd='K50')", 
+            arguments:{
+                AP: { type: "string", defaultValue: 'apname' },
+                PWD: { type: "string", defaultValue: 'password' },
+            }
+            
+        },
+        {
+            opcode: 'runShowIpAddr', 
+            blockType: "command", 
+            text: '$$futureKoi_runShowIpAddr', 
+            pycode: "koi.get_ip(cmd='K54')" 
+        },
+    
+    
+        "## $$futureKoi_title_baiduAi",
+        {
+            opcode: 'isHumanFace', 
+            blockType: 'Boolean',
+            text: '$$futureKoi_isHumanFace', 
+            pycode: "koi.baiduAI_face_detect(cmd='K75')" 
+        },
+        {
+            opcode: 'getFaceChar', 
+            blockType: "reporter",
+            text: '$$futureKoi_getFaceChar', 
+            pycode: "koi.get_re(cmd='K75')[0]" ,
+        },
+        {
+            opcode: 'runAddTokenToGroup', 
+            blockType: "command",
+            text: '$$futureKoi_runAddTokenToGroup', 
+            pycode: "koi.baiduAI_face_add(face_token=[TOKEN],groupName=[GROUP] ,faceName=[NAME] ,cmd='K76')", 
+            arguments:{
+                TOKEN: { type: "string", defaultValue: 'token' },
+                GROUP: { type: "string", defaultValue: 'group' },
+                NAME: { type: "string", defaultValue: 'name' },
+            }
+            
+        },
+        {
+            opcode: 'getAddTokenFromGroup', 
+            blockType: "reporter",
+            text: '$$futureKoi_getAddTokenFromGroup', 
+            pycode: "koi.baiduAI_face_search(face_token=[TOKEN] ,groupName=[GROUP] ,cmd='K77')[0]",
+            arguments:{
+                TOKEN: { type: "string", defaultValue: 'token' },
+                GROUP: { type: "string", defaultValue: 'group' },
+                TOKEN: { type: "string", defaultValue: 'token' },
+                GROUP: { type: "string", defaultValue: 'group' },
+            }
+            
+        },
+        {
+            opcode: 'runTTS', 
+            blockType: "command",
+            text: '$$futureKoi_runTTS', 
+            pycode: "koi.baiduAI_tts(txt='[TEXT]' ,cmd='K78')",
+            arguments:{
+                TEXT: { type: "string", defaultValue: 'hello world' },
+                TEXT: { type: "string", defaultValue: 'hello world' },
+            }
+            
+        },
+        
+    ],
+}

@@ -1,0 +1,158 @@
+{
+  blocks: [
+    '## $$futureboard_title_wifi',
+    {
+      opcode: 'wificonnect',
+      blockType: 'command',
+      text: '$$futureboard_wifi_connect',
+      pycode: "wifi.connect([NAME], [PWD])",
+      isAsync: true,
+      timeout: 20000,
+      arguments: {
+        NAME: {
+          type: 'string',
+          defaultValue: 'name',
+        },
+        PWD: {
+          type: 'string',
+          defaultValue: 'pwd',
+        },
+      },
+    },
+    {
+      opcode: 'wifiisconnected',
+      blockType: 'Boolean',
+      text: '$$futureboard_wifi_isconnected',
+      pycode: 'wifi.sta.isconnected()',
+    },
+    {
+      opcode: 'wificonfig',
+      blockType: 'reporter',
+      text: '$$futureboard_wifi_config',
+      disableMonitor: 1,
+      pycode: 'wifi.sta.ifconfig()',
+    },
+    {
+      opcode: 'wificonfigwithopt',
+      blockType: 'reporter',
+      text: '$$futureboard_wifi_config_withopt',
+      pycode: 'wifi.sta.ifconfig()[[TYPE]]',
+      arguments: {
+        TYPE: {
+          type: 'string',
+          defaultValue: 0,
+          menu: 'IFTYPE',
+        },
+      },
+    },
+    {
+      opcode: 'wifimac',
+      blockType: 'reporter',
+      text: '$$futureboard_wifi_mac',
+      disableMonitor: 1,
+      importCode: {
+        _machine: 'import machine',
+        ubinascii: 'import ubinascii',
+      },
+      pycode: 'ubinascii.hexlify(machine.unique_id()).decode().upper()',
+    },
+    {
+      opcode: 'wifidisconected',
+      blockType: 'command',
+      text: '$$futureboard_wifi_disconected',
+      pycode: 'wifi.sta.disconnect()',
+    },
+    {
+      opcode: 'wifimqttconnect',
+      blockType: 'command',
+      text: '$$futureboard_wifi_mqtt_connect',
+      pycode: "mqtt = mqttsimple.MQTTClient([HOST], [ID],port=1883)\r\nmqtt.connect()",
+      importCode: {
+        _mqttsimple: 'import mqttsimple',
+      },
+      arguments: {
+        HOST: {
+          type: 'string',
+          defaultValue: 'iot.kittenbot.cn',
+        },
+        ID: {
+          type: 'string',
+          defaultValue: 'id',
+        },
+      },
+    },
+    {
+      opcode: 'wifimqttconnectwithopt',
+      blockType: 'command',
+      text: '$$futureboard_wifi_mqtt_connect_withopt',
+      pycode: "mqtt = mqttsimple.MQTTClient([HOST], [ID],user=str([NAME]), password=str([PWD]),port=1883)\r\nmqtt.connect()",
+      importCode: {
+        _mqttsimple: 'import mqttsimple',
+      },
+      arguments: {
+        HOST: {
+          type: 'string',
+          defaultValue: 'iot.kittenbot.cn',
+        },
+        ID: {
+          type: 'string',
+          defaultValue: 'id',
+        },
+        NAME: {
+          type: 'string',
+          defaultValue: 'name',
+        },
+        PWD: {
+          type: 'string',
+          defaultValue: 'password',
+        },
+      },
+    },
+    {
+      opcode: 'wifimqttsubscribe',
+      blockType: 'command',
+      text: '$$futureboard_wifi_mqtt_subscribe',
+      pycode: "mqtt.subscribe([TOPIC])",
+      arguments: {
+        TOPIC: {
+          type: 'string',
+          defaultValue: '/topic',
+        },
+      },
+    },
+    {
+      opcode: 'wifimqttread',
+      blockType: 'reporter',
+      text: '$$futureboard_wifi_mqtt_read',
+      pycode: "mqtt.mqttRead([TOPIC])",
+      arguments: {
+        TOPIC: {
+          type: 'string',
+          defaultValue: '/topic',
+        },
+      },
+    },
+    {
+      opcode: 'wifimqttpublish',
+      blockType: 'command',
+      text: '$$futureboard_wifi_mqtt_publish',
+      pycode: "mqtt.publish([TOPIC], [MSG])",
+      arguments: {
+        TOPIC: {
+          type: 'string',
+          defaultValue: '/topic',
+        },
+        MSG: {
+          type: 'string',
+          defaultValue: 'message',
+        },
+      },
+    },
+    // {
+    //   opcode: 'wifimqttcheck',
+    //   blockType: 'command',
+    //   text: '$$futureboard_wifi_mqtt_check',
+    //   pycode: 'mqtt.check_msg()',
+    // },
+  ],
+}

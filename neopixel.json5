@@ -1,0 +1,131 @@
+{
+  blocks: [
+    "## $$futureboard_title_neopixel",
+    {
+      opcode: 'neopixelinit',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_init',
+      pycode: 'neopix=NeoPixel([PIN],[PIXELS])',
+      arguments: {
+        PIN: {
+          type: 'string',
+          menu: 'portd',
+          defaultValue: 'P7',
+        },
+        PIXELS: {
+          type: 'number',
+          defaultValue: 3,
+        },
+      },
+    },
+    {
+      opcode: 'neopixelcolor',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_color',
+      pycode: 'neopix.setColor([PIXEL], [COLOR])',
+      arguments: {
+        PIXEL: {
+          type: 'number',
+          hook: 'INDEX0',
+          defaultValue: 1,
+        },
+        COLOR: {
+          type: 'colorrgb',
+        },
+      },
+    },
+    {
+      opcode: 'neopixelcolorrgb',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_color_rgb',
+      pycode: 'neopix.setColor([PIXEL], ([RED],[GREEN],[BLUE]))',
+      arguments: {
+        PIXEL: {
+          type: 'number',
+          hook: 'INDEX0',
+          defaultValue: 1,
+        },
+        RED: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 255,
+        },
+        GREEN: {
+          type: 'slider',
+          defaultValue: 125,
+          min: 0,
+          max: 255,
+        },
+        BLUE: {
+          type: 'slider',
+          defaultValue: 255,
+          min: 0,
+          max: 255,
+        },
+      },
+    },
+    {
+      opcode: 'neopixelall',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_all',
+      pycode: 'neopix.setColorAll([COLOR])',
+      arguments: {
+        COLOR: {
+          type: 'colorrgb',
+        },
+      },
+    },
+    {
+      opcode: 'neopixelallrgb',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_all_rgb',
+      pycode: 'neopix.setColorAll(([RED],[GREEN],[BLUE]))',
+      arguments: {
+        RED: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 255,
+        },
+        GREEN: {
+          type: 'slider',
+          defaultValue: 125,
+          min: 0,
+          max: 255,
+        },
+        BLUE: {
+          type: 'slider',
+          defaultValue: 255,
+          min: 0,
+          max: 255,
+        },
+      },
+    },
+    {
+      opcode: 'neopixelshut',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_shut',
+      pycode: 'neopix.setColor([PIXEL], (0,0,0))',
+      arguments: {
+        PIXEL: {
+          type: 'number',
+          hook: 'INDEX0',
+          defaultValue: 1,
+        },
+      },
+    },
+    {
+      opcode: 'neopixelshutall',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_shut_all',
+      pycode: 'neopix.setColorAll((0,0,0))',
+    },
+    {
+      opcode: 'neopixelupdate',
+      blockType: 'command',
+      text: '$$futureboard_neopixel_update',
+      pycode: 'neopix.update()',
+    },
+  ],
+}

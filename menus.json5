@@ -1,0 +1,263 @@
+{
+  menus: {
+    'CLAP_MENU': [
+        { text: '1/16', value: '0.0625'},
+        { text: '1/8', value: '0.125'},
+        { text: '1/4', value: '0.25'},
+        { text: '1/2', value: '0.5'},
+        { text: '1', value: '1'},
+        { text: '2', value: '2'},
+        { text: '4', value: '4'},
+    ],
+    FILL: [
+        { text: '$$futureboard_menu_fill_no', value: '0' },
+        { text: '$$futureboard_menu_fill_yes', value: '1' },
+    ],
+    LEDS: ['1', '2'],
+    ONOFF: [
+        { text: '$$futureboard_menu_onoff_off', value: '0', },
+        { text: '$$futureboard_menu_onoff_on', value: '1' },
+    ],
+    HIGHLOW: ['high', 'low'],
+    PINS: ['P0', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14', 'P15', 'P16'],
+    PINS_DIG: ['P0','P1','P2','P3','P7','P8','P9','P13','P14','P15','P16'],
+    // sugar dht11
+    PINS_DHT11: ['P0','P1','P2','P3','P8','P9','P12','P13','P14','P15','P16'],
+    PINS_ANALOG_READ: ['P0','P1','P3', 'P4', 'P5', 'P11', 'P12', 'P14','P15','P16'],
+    // sugar LED or ana wirte
+    PINS_ANALOG_WRITE: ['P0','P1','P2','P3','P8','P13','P14','P15','P16'],
+    PINS_SENSOR: ['P0','P1','P2','P3', 'P12','P14','P15','P16'],
+    PINS_NEOPIX: ['P0','P1','P2','P3','P7','P8','P13','P14','P15','P16'],
+    PORTMODE: ['IN', 'OUT', 'ADC', 'PWM', 'SERVO'],
+    PORTS: ['1', '2', '3', '4'],
+    UARTLIST: [
+        { text: '1 JAC', value: '1' },
+        { text: '2 P2/P12', value: '2' },
+        { text: '6 P9/P6', value: '6' }
+    ],
+    BTNLIST: [
+        { text: 'A', value: 'a' },
+        { text: 'B', value: 'b' },
+    ],
+    AXIS: ['X', 'Y', 'Z'],
+    AXIS_STRENTH: [
+        { text: 'X', value: 'X', },
+        { text: 'Y', value: 'Y', },
+        { text: 'Z', value: 'Z', },
+        { text: '$$futureboard_menu_AXIS_strenth', value: 'Strength', },
+    ],
+    PITCHROLL: [
+        { text: '$$futureboard_menu_pitchroll_pitch', value:'pitch', },
+        { text: '$$futureboard_menu_pitchroll_roll', value:'roll' },
+    ],
+    GESTURE: [
+        { text: '$$futureboard_menu_gesture_shake', value: 'shake', },
+        { text: '$$futureboard_menu_gesture_freefall', value: 'freefall', },
+        { text: '$$futureboard_menu_gesture_tiltup', value: 'tilt_up', },
+        { text: '$$futureboard_menu_gesture_tiltdown', value: 'tilt_down', },
+        { text: '$$futureboard_menu_gesture_tiltleft', value: 'tilt_left', },
+        { text: '$$futureboard_menu_gesture_tiltright', value: 'tilt_right', },
+        { text: '$$futureboard_menu_gesture_faceup', value: 'face_up', },
+        { text: '$$futureboard_menu_gesture_facedown', value: 'face_down' },
+    ],
+    gestureType: [
+        { text: '$$sugar_menu_gesture_hue', value: 'read(0)' },
+        { text: '$$sugar_menu_gesture_brightness', value: 'read(1)' },
+        { text: '$$sugar_menu_gesture_distance', value: 'distance()' },
+        { text: '$$sugar_menu_gesture_prevgesture', value: 'gesture()' },
+    ],
+    gestureMode: [
+        { text: '$$sugar_menu_gestureMode_color', value: '1' },
+        { text: '$$sugar_menu_gestureMode_distance', value: '2' },
+        { text: '$$sugar_menu_gestureMode_gesture', value: '3' },
+        { text: '$$sugar_menu_gestureMode_led', value: '4' },
+    ],
+    pinWidth: [
+        { text: '$$futureboard_menu_pinWidth_10', value: '10' },
+        { text: '$$futureboard_menu_pinWidth_12', value: '12' }
+    ],
+    SERVO: [
+        { text: 'P0', value: '1' },
+        { text: 'P1', value: '2' },
+        { text: 'P2', value: '3' },
+        { text: 'P12', value: '4' }
+    ],
+    MOTORS: [
+      { text: 'M1A', value: '1' },
+      { text: 'M1B', value: '2' },
+      { text: 'M2A', value: '3' },
+      { text: 'M2B', value: '4' },
+    ],
+    DIR: [
+        { text: '$$futureboard_menu_dir_forward', value: '1' },
+        { text: '$$futureboard_menu_dir_reverse', value: '0' },
+    ],
+    TEMPTYPE: ['C', 'F'],
+    TONEMENU: [
+        { text: 'CORRECT', value: '1' },
+        { text: 'ERROR', value: '2' },
+        { text: 'NOTICE', value: '3' },
+        { text: 'BA_DING', value: '4' },
+        { text: 'JUMP_UP', value: '5' },
+        { text: 'JUMP_DOWN', value: '6' },
+        { text: 'POWER_UP', value: '7' },
+        { text: 'POWER_DOWN', value: '8' },
+        { text: 'BADDY', value: '9' },
+        { text: 'DADA', value: '10' },
+        { text: 'WAWA', value: '11' },
+        { text: 'PUNCHLINE', value: '12' },
+        { text: 'RING', value: '13' },
+        { text: 'FUNK', value: '14' },
+        { text: 'ENTERTAINER', value: '15' },
+        { text: 'ODE', value: '16' },
+        { text: 'WEDDING', value: '17' },
+        { text: 'BIRTHDAY', value: '18' },
+        { text: 'CHASE', value: '19' },
+        { text: 'BLUES', value: '20' },
+        { text: 'PRELUDE', value: '21' },
+        { text: 'NYAN', value: '22' }
+    ],
+    ENLARGE_MENU: [
+        { text: '$$futureboard_menu_enlarge_normal', value: '1' },
+        { text: '$$futureboard_menu_enlarge_larger', value: '2' },
+        { text: '$$futureboard_menu_enlarge_bigest', value: '3' },
+    ],
+    mp3Operation: [
+        { text: '$$sugar_menu_mp3op_play', value: 'MP3().PLAY' },
+        { text: '$$sugar_menu_mp3op_stop', value: 'MP3().STOP' },
+        { text: '$$sugar_menu_mp3op_next', value: 'MP3().NEXT' },
+        { text: '$$sugar_menu_mp3op_prev', value: 'MP3().PREV' },
+    ],
+    M1M2: [
+        // {text: 'ALL', value: '0'}, // to implement in firmware~
+        {text: 'M1', value: '1'},
+        {text: 'M2', value: '2'},
+    ],
+    portd: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13', 'P14', 'P15'],
+    porta: ['P0', 'P1', 'P2'],
+    portsonar: ['P0', 'P1', 'P2', 'P8'],
+    onoffmenu: [
+        { text: '$$futureboard_menu_onoff_off', value: 'off', },
+        { text: '$$futureboard_menu_onoff_on', value: 'on' },
+    ],
+    
+    servoIndex: [
+        {text: 'S1', value: '1'},
+        {text: 'S2', value: '2'},
+        {text: 'S3', value: '3'},
+        {text: 'S4', value: '4'},
+        {text: 'S5', value: '5'},
+        {text: 'S6', value: '6'},
+        {text: 'S7', value: '7'},
+        {text: 'S8', value: '8'}
+    ],
+    btnvalue: [
+        {text: 'A', value: '0,1'},
+        {text: 'B', value: '1,0'},
+        {text: 'A+B', value: '0,0'}
+    ],
+    tracervalue: [
+        {text: '0 0', value: '0,0'},
+        {text: '0 1', value: '0,1'},
+        {text: '1 0', value: '1,0'},
+        {text: '1 1', value: '1,1'}
+    ],
+    menuslot: [
+        {text: 'A', value: '1'},
+        {text: 'B', value: '0'},
+    ],
+    XY: [
+        {text: 'X', value: '1'},
+        {text: 'Y', value: '2'},
+    ],
+    LANGUAGE: [
+        { text: '$$futureboard_menu_language_mardarine', value: '1537' },
+        { text: '$$futureboard_menu_language_cantonese', value: '1637' },
+        { text: '$$futureboard_menu_language_english', value: '1737' },
+        { text: '$$futureboard_menu_language_sichuan', value: '1837' },
+    ],
+    IFTYPE: [
+        { text: '$$futureboard_menu_iftype_ip', value: '0' },
+        { text: '$$futureboard_menu_iftype_mac', value: '1' },
+        { text: '$$futureboard_menu_iftype_gateway', value: '2' },
+        { text: '$$futureboard_menu_iftype_dns', value: '3' },
+    ],
+    TIMEZONE: [
+        { text: '$$futureboard_menu_timezone_west_1', value: '-12' },
+        { text: '$$futureboard_menu_timezone_west_2', value: '-11' },
+        { text: '$$futureboard_menu_timezone_west_3', value: '-10' },
+        { text: '$$futureboard_menu_timezone_west_4', value: '-9' },
+        { text: '$$futureboard_menu_timezone_west_5', value: '-8' },
+        { text: '$$futureboard_menu_timezone_west_6', value: '-7' },
+        { text: '$$futureboard_menu_timezone_west_7', value: '-6' },
+        { text: '$$futureboard_menu_timezone_west_8', value: '-5' },
+        { text: '$$futureboard_menu_timezone_west_9', value: '-4' },
+        { text: '$$futureboard_menu_timezone_west_10', value: '-3' },
+        { text: '$$futureboard_menu_timezone_west_11', value: '-2' },
+        { text: '$$futureboard_menu_timezone_west_12', value: '-1' },
+        { text: '$$futureboard_menu_timezone_mid', value: '0' },
+        { text: '$$futureboard_menu_timezone_east_1', value: '1' },
+        { text: '$$futureboard_menu_timezone_east_2', value: '2' },
+        { text: '$$futureboard_menu_timezone_east_3', value: '3' },
+        { text: '$$futureboard_menu_timezone_east_4', value: '4' },
+        { text: '$$futureboard_menu_timezone_east_5', value: '5' },
+        { text: '$$futureboard_menu_timezone_east_6', value: '6' },
+        { text: '$$futureboard_menu_timezone_east_7', value: '7' },
+        { text: '$$futureboard_menu_timezone_east_8', value: '8' },
+        { text: '$$futureboard_menu_timezone_east_9', value: '9' },
+        { text: '$$futureboard_menu_timezone_east_10', value: '10' },
+        { text: '$$futureboard_menu_timezone_east_11', value: '11' },
+        { text: '$$futureboard_menu_timezone_east_12', value: '12' },
+    ],
+    TIMEFORMAT: [
+        { text: '$$futureboard_menu_timeformat_Y', value: '0' },
+        { text: '$$futureboard_menu_timeformat_M', value: '1' },
+        { text: '$$futureboard_menu_timeformat_D', value: '2' },
+        { text: '$$futureboard_menu_timeformat_Week', value: '3' },
+        { text: '$$futureboard_menu_timeformat_H', value: '4' },
+        { text: '$$futureboard_menu_timeformat_m', value: '5' },
+        { text: '$$futureboard_menu_timeformat_S', value: '6' },
+        { text: '$$futureboard_menu_timeformat_MS', value: '7' },
+    ],
+    LEDSTATE: [
+        { text: '$$sugar_menu_ledstate_on', value: 'ON' },
+        { text: '$$sugar_menu_ledstate_off', value: 'OFF' },
+    ],
+    LEDSTATE0_1: [
+        { text: '$$sugar_menu_ledstate_on', value: '1' },
+        { text: '$$sugar_menu_ledstate_off', value: '0' },
+    ],
+    JOYSTICK_DIR: [
+        { text: '$$sugar_menu_joystick_dir_up', value: 'up' },
+        { text: '$$sugar_menu_joystick_dir_down', value: 'down' },
+        { text: '$$sugar_menu_joystick_dir_left', value: 'left' },
+        { text: '$$sugar_menu_joystick_dir_right', value: 'right' },
+        { text: '$$sugar_menu_btnstate_pressed', value: 'pressed' },
+    ],
+    JOYSTICK_XY: [
+        'x',
+        'y'
+    ],
+    BUTTONSTATE: [
+        { text: '$$sugar_menu_btnstate_pressed', value: '0' },
+        { text: '$$sugar_menu_btnstate_released', value: '1' },
+    ],
+    MOISTURETYPE: [
+        { text: '$$sugar_menu_moisture_tmp', value: '0' },
+        { text: '$$sugar_menu_moisture_humi', value: '1' },
+    ],
+    TempAndHumi: [
+        { text: '$$sugar_menu_moisture_tmp', value: 'temperature' },
+        { text: '$$sugar_menu_moisture_humi', value: 'humidity' },
+    ],
+    TRACK_STATE: [
+        { text: '$$sugar_menu_trackstate_black', value: '1' },
+        { text: '$$sugar_menu_trackstate_white', value: '0' },
+    ],
+    fmDir: [
+        { text: '$$sugar_menu_fmDir_up', value: 'seekUp' },
+        { text: '$$sugar_menu_fmDir_down', value: 'seekDown' },
+        { text: '$$sugar_menu_fmDir_stop', value: 'seekStop' },
+    ]
+  }
+}

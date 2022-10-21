@@ -1,0 +1,47 @@
+{
+  blocks: [
+    '## $$futureboard_title_radio',
+    {
+      opcode: 'radioinit',
+      blockType: 'command',
+      text: '$$futureboard_radio_init',
+      importCode: {
+        _radio: 'from radio import *',
+      },
+      pycode: 'r = Radio()',
+    },
+    {
+      opcode: 'radioset',
+      blockType: 'command',
+      text: '$$futureboard_radio_set',
+      pycode: 'r.channel = [CHANNEL]',
+      arguments: {
+        CHANNEL: {
+          type: 'slider',
+          defaultValue: 12,
+          max: 13,
+          min: 1,
+        },
+      },
+    },
+    {
+      opcode: 'radioreceive',
+      blockType: 'reporter',
+      disableMonitor: 1,
+      text: '$$futureboard_radio_receive',
+      pycode: 'r.read()',
+    },
+    {
+      opcode: 'radiosend',
+      blockType: 'command',
+      text: '$$futureboard_radio_send',
+      pycode: "r.send('[MSG]')",
+      arguments: {
+        MSG: {
+          type: 'string',
+          defaultValue: 'hello',
+        },
+      },
+    },
+  ],
+}

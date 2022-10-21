@@ -1,0 +1,361 @@
+{
+  id: "futureboard_sugarbox",
+  name: "$$sugarbox_title",
+  color1: "#8ab5ff",
+  color2: "#5282d1",
+  color3: "#8ab5ff",
+  initcode: ['import sugarbox'],
+  blocks: [
+    "## $$sugarbox_title_motor",
+    {
+      opcode: 'runMotor',
+      blockType: "command",
+      text: "$$sugarbox_runMotor",
+      pycode: 'sugarbox.motor([MOTOR], [SPD])',
+      arguments: {
+        MOTOR: {
+          type: "string",
+          defaultValue: "1",
+          menu: "motor",
+        },
+        SPD: {
+          type: "slider",
+          defaultValue: 120,
+          min: -255,
+          max: 255,
+        },
+      },
+    },
+    // {
+    //   opcode: 'runMotor2',
+    //   blockType: "command",
+    //   text: "$$sugarbox_runMotor2",
+    //   pycode: 'sugarbox.motor([[MOTOR1],[MOTOR2]],[[SPD1],[SPD2]])',
+    //   arguments: {
+    //     MOTOR1: {
+    //       type: "string",
+    //       defaultValue: "1",
+    //       menu: "motor",
+    //     },
+    //     SPD1: {
+    //       type: "slider",
+    //       defaultValue: 100,
+    //       min: -255,
+    //       max: 255,
+    //     },
+    //     MOTOR2: {
+    //       type: "string",
+    //       defaultValue: "2",
+    //       menu: "motor",
+    //     },
+    //     SPD2: {
+    //       type: "slider",
+    //       defaultValue: 100,
+    //       min: -255,
+    //       max: 255,
+    //     },
+    //   },
+    // },
+    {
+      opcode: 'stopMotor',
+      blockType: "command",
+      text: "$$sugarbox_stopMotor",
+      pycode: 'sugarbox.stop([MOTOR])',
+      arguments: {
+        MOTOR: {
+          type: "string",
+          defaultValue: "1",
+          menu: "motor",
+        }
+      },
+    },
+    {
+      opcode: 'rotateServo',
+      blockType: "command",
+      text: "$$sugarbox_rotateServo",
+      pycode: 'sugarbox.servo([SERVO], degree=[DEG])',
+      arguments: {
+        SERVO: {
+          type: "string",
+          defaultValue: "1",
+          menu: "servo",
+        },
+        DEG: {
+          type: "slider",
+          defaultValue: "180",
+          min: 0,
+          max: 360,
+        },
+      },
+    },
+    {
+      opcode: 'setServoPulseWidth',
+      blockType: "command",
+      text: "$$sugarbox_setServoPulseWidth",
+      pycode: 'sugarbox.servo([SERVO], us=[WIDTH])',
+      arguments: {
+        SERVO: {
+          type: "string",
+          defaultValue: "1",
+          menu: "servo",
+        },
+        WIDTH: {
+          type: "number",
+          defaultValue: "1500"
+        },
+      },
+    },
+    "## $$sugarbox_encodable_single",
+    {
+      opcode: 'setEncodableSingleInstance',
+      blockType: "command",
+      text: "$$sugarbox_setEncodableSingleInstance",
+      pycode: "em1 = sugarbox.EMotor(1)\r\nem2 = sugarbox.EMotor(2)",
+      importCode: {
+        _radio: 'import sugarbox',
+      },
+    },
+    {
+      opcode: 'setEncodableSpeed',
+      text: "$$sugarbox_setEncodableSpeed",
+      pycode: '[PORT].run(speed=[SPD])',
+      blockType: "command",
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: "em1",
+          menu: "emport",
+        },
+        SPD: {
+          type: "number",
+          defaultValue: "120"
+        },
+      },
+    },
+    {
+      opcode: 'setEncodableStop',
+      blockType: "command",
+      text: "$$sugarbox_setEncodableStop",
+      pycode: '[PORT].stop()',
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: "em1",
+          menu: "emport",
+        }
+      },
+    },
+    {
+      opcode: 'getEncodableSpd',
+      blockType: "reporter",
+      text: "$$sugarbox_getEncodableSpd",
+      pycode: '[PORT].get_speed()',
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: "em1",
+          menu: "emport",
+        }
+      },
+    },
+    {
+      opcode: 'rotateWithRoundEncodable',
+      blockType: "command",
+      text: "$$sugarbox_rotateWithRoundEncodable",
+      pycode: '[PORT].run_for_rotations(round=[ROUND], speed=[SPD], wait=True)',
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: "em1",
+          menu: "emport",
+        },
+        ROUND: {
+          type: "number",
+          defaultValue: "1"
+        },
+        SPD: {
+          type: "number",
+          defaultValue: "120"
+        }
+      },
+    },
+    {
+      opcode: 'rotateWithTimeEncodable',
+      blockType: "command",
+      text: "$$sugarbox_rotateWithTimeEncodable",
+      pycode: '[PORT].run_for_seconds(sec=[SECOND], speed=[SPD], wait=True)',
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: "em1",
+          menu: "emport",
+        },
+        SECOND: {
+          type: "number",
+          defaultValue: "1"
+        },
+        SPD: {
+          type: "number",
+          defaultValue: "120"
+        }
+      },
+    },
+    {
+      opcode: 'rotateWithDegreeEncodable',
+      blockType: "command",
+      text: "$$sugarbox_rotateWithDegreeEncodable",
+      pycode: '[PORT].run_for_degrees(degree=[DEG], speed=[SPD], wait=True)',
+      arguments: {
+        PORT: {
+          type: "number",
+          defaultValue: "em1",
+          menu: "emport",
+        },
+        DEG: {
+          type: "number",
+          defaultValue: "180"
+        },
+        SPD: {
+          type: "number",
+          defaultValue: "120"
+        }
+      },
+    },
+    "## $$sugarbox_title_encodable_double",
+    {
+      opcode: 'setEncodableProp',
+      blockType: "command",
+      text: "$$sugarbox_setEncodableProp",
+      pycode: 'sugar_robot = sugarbox.EMotorDual(diameter=[CM], gauge=[AXLE], left=[PORTLEFT], right=[PORTRIGHT], dir=[REVERSABLE])',
+      arguments: {
+        CM: {
+          type: "number",
+          defaultValue: 10,
+        },
+        AXLE: {
+          type: "number",
+          defaultValue: 0
+        },
+        PORTLEFT: {
+          type: "number",
+          defaultValue: "1",
+          menu: 'emportIdx'
+        },
+        PORTRIGHT: {
+          type: "number",
+          defaultValue: "2",
+          menu: 'emportIdx'
+        },
+        REVERSABLE: {
+          type: "string",
+          defaultValue: "True",
+          menu: 'reversable'
+        },
+      },
+    },
+    {
+      opcode: 'runEncodableWithSpd',
+      blockType: "command",
+      text: "$$sugarbox_runEncodableWithSpd",
+      pycode: 'sugar_robot.run(speed=[SPD], distance=[CM], wait=True)',
+      arguments: {
+        CM: {
+          type: "number",
+          defaultValue: 10,
+        },
+        SPD: {
+          type: "number",
+          defaultValue: 120
+        },
+      },
+    },
+    {
+      opcode: 'rotateEncodableRunWithSpd',
+      blockType: "command",
+      text: "$$sugarbox_rotateEncodableRunWithSpd",
+      pycode: 'sugar_robot.drive(steer=[STEER], degree=[DEG], speed=[SPD], wait=True)',
+      arguments: {
+        STEER: {
+          type: "number",
+          defaultValue: 360,
+        },
+        DEG: {
+          type: "number",
+          defaultValue: 180
+        },
+        SPD: {
+          type: "number",
+          defaultValue: 120
+        }
+      },
+    },
+    "## $$sugarbox_title_horn",
+    {
+      opcode: 'recordSound',
+      blockType: "command",
+      text: "$$sugarbox_recordSound",
+      isAsync: true,
+      timeout: 99999,
+      pycode: 'sugarbox.audio.savewav([WAVFILENAME], sec=[SECOND])',
+      arguments: {
+        WAVFILENAME: {
+          type: "string",
+          defaultValue: "abc.wav",
+        },
+        SECOND: {
+          type: "number",
+          defaultValue: 3
+        }
+      },
+    },
+    {
+      opcode: 'playSoundn',
+      blockType: "command",
+      text: "$$sugarbox_playSoundn",
+      isAsync: true,
+      timeout: 99999,
+      pycode: 'sugarbox.audio.playwav([WAVFILENAME])',
+      arguments: {
+        WAVFILENAME: {
+          type: "string",
+          defaultValue: "abc.wav",
+        }
+      },
+    },
+    { 
+      opcode: 'getBatteryVoltage',
+      blockType: "reporter",
+      text: "$$sugarbox_getBatteryVoltage",
+      pycode: 'sugarbox.voltage()' 
+    },
+  ],
+  menus: {
+    emport: [
+      { text: 'EM1', value: 'em1' },
+      { text: 'EM2', value: 'em2' },
+    ],
+    emportIdx: [
+      { text: 'EM1', value: '1' },
+      { text: 'EM2', value: '2' },
+    ],
+    reversable: [
+      { text: 'True', value: '-1' },
+      { text: 'False', value: '1' },
+    ],
+    servo: [
+      { text: 'S1', value: '1' },
+      { text: 'S2', value: '2' },
+      { text: 'S3', value: '3' },
+      { text: 'S4', value: '4' },
+    ],
+    motor: [
+      { text: 'M1A', value: '1' },
+      { text: 'M1B', value: '2' },
+      { text: 'M2A', value: '3' },
+      { text: 'M2B', value: '4' },
+      { text: 'All', value: '0' },
+    ]
+  }
+
+
+}

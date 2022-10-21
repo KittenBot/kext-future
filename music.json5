@@ -1,0 +1,106 @@
+{
+  blocks: [
+    "## $$futureboard_title_music",
+    {
+      opcode: 'buzztone',
+      blockType: 'command',
+      text: '$$futureboard_buzz_tone',
+      pycode: 'buzzer.tone([FREQ],[DELAY])',
+      arguments: {
+        FREQ: {
+          type: 'number',
+          defaultValue: 440,
+        },
+        DELAY: {
+          type: 'number',
+          defaultValue: 1,
+        },
+      },
+    },
+    {
+      opcode: 'buzztonelong',
+      blockType: 'command',
+      text: '$$futureboard_buzz_tone_long',
+      pycode: 'buzzer.tone([FREQ], -1)',
+      arguments: {
+        FREQ: {
+          type: 'number',
+          defaultValue: 440,
+        }
+      },
+    },
+    {
+      opcode: 'buzznote',
+      blockType: 'command',
+      text: '$$futureboard_buzz_note',
+      pycode: 'buzzer.note([NOTE],[CLAP])',
+      arguments: {
+        NOTE: {
+          type: 'note',
+          defaultValue: 60,
+        },
+        CLAP: {
+          type: 'string',
+          defaultValue: '0.5',
+          menu: 'CLAP_MENU',
+        },
+      },
+    },
+    {
+      opcode: 'buzzrest',
+      blockType: 'command',
+      text: '$$futureboard_buzz_rest',
+      pycode: 'buzzer.rest([CLAP])',
+      arguments: {
+        CLAP: {
+          type: 'string',
+          defaultValue: '0.5',
+          menu: 'CLAP_MENU',
+        },
+      },
+    },
+    {
+      opcode: 'buzzmusic',
+      blockType: 'command',
+      text: '$$futureboard_buzz_music',
+      pycode: "buzzer.melody([NOTES])",
+      arguments: {
+        NOTES: {
+          type: 'string',
+          defaultValue: 'c4:4 r d4:3 r:2 e4:2 ',
+        }
+      },
+    },
+    {
+      opcode: 'buzzmusicbuildin',
+      blockType: 'command',
+      text: '$$futureboard_buzz_musicbuildin',
+      pycode: 'buzzer.melody([NOTES])',
+      arguments: {
+        NOTES: {
+          type: 'number',
+          menu: 'TONEMENU',
+          defaultValue: 1,
+        },
+      },
+    },
+    {
+      opcode: 'buzzbpm',
+      blockType: 'command',
+      text: '$$futureboard_buzz_bpm',
+      pycode: 'buzzer.setBpm([BPM])',
+      arguments: {
+        BPM: {
+          type: 'number',
+          defaultValue: 125,
+        },
+      },
+    },
+    {
+      opcode: 'buzzstop',
+      blockType: 'command',
+      text: '$$futureboard_buzz_stop',
+      pycode: 'buzzer.stop()',
+    },
+  ],
+}
