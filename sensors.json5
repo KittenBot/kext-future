@@ -69,7 +69,7 @@
       pycode: 'sensor.acc[AXIS]()',
       arguments: {
         AXIS: {
-          type: 'string',
+          type: 'number',
           menu: 'AXIS',
           defaultValue: 'X',
         },
