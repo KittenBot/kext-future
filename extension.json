@@ -103,6 +103,6 @@
     "app": "https://www.yuque.com/kittenbot/software/controller-future"
   },
   "firmware": "firmware.bin",
-  "image": "future.png",
+  "image": "未来板.png",
   "fsrstcode": ["import inisetup", "inisetup.resetfs()"]
 }

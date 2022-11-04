@@ -430,9 +430,9 @@
         },
         {
             opcode: 'getAddTokenFromGroup', 
-            blockType: "reporter",
+            blockType: "boolean",
             text: '$$futureKoi_getAddTokenFromGroup', 
-            pycode: "koi.baiduAI_face_search(face_token=[TOKEN] ,groupName=[GROUP] ,cmd='K77')[0]",
+            pycode: "koi.baiduAI_face_search(face_token=[TOKEN] ,groupName=[GROUP] ,cmd='K77')",
             arguments:{
                 TOKEN: { type: "string", defaultValue: 'token' },
                 GROUP: { type: "string", defaultValue: 'group' },
