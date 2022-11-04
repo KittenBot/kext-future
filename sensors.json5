@@ -16,6 +16,7 @@
       opcode: 'rgbtuple',
       blockType: 'reporter',
       text: 'R [R] G [G] B [B]',
+      script: 'rgb2hex',
       pycode: '([R], [G], [B])',
       arguments: {
         R: {

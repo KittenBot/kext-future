@@ -102,6 +102,9 @@
     "kblock": "https://www.yuque.com/kittenbot/hardwares/futureboard-kittenblock",
     "app": "https://www.yuque.com/kittenbot/software/controller-future"
   },
+  "scripts":[
+		"extra.js"
+	],
   "firmware": "firmware.bin",
   "image": "未来板.png",
   "fsrstcode": ["import inisetup", "inisetup.resetfs()"]
