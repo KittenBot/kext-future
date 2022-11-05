@@ -106,6 +106,6 @@
 		"extra.js"
 	],
   "firmware": "firmware.bin",
-  "image": "未来板.png",
+  "image": "futureboard.png",
   "fsrstcode": ["import inisetup", "inisetup.resetfs()"]
 }
