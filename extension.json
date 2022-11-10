@@ -9,11 +9,11 @@
   "color3": "#0B7D69",
   "description": {
     "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
-    "zh-CN": "基于 ESP32 的彩屏主控板，适用于开展 AIoT 教学"
+    "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学"
   },
-  "version": "2.0.5",
+  "version": "2.0.6",
   "type": "micropy",
-  "firmwareDate": 20210803,
+  "firmwareDate": 20221110,
   "connect":{
     "baudrate": 1000000,
     "wait": 3000
