@@ -157,8 +157,8 @@
             text: '$$futureKoi_runAddTag', 
             pycode: "koi.cls_add_tag(id='[TAG]',cmd='K41')", 
             arguments:{
-                TAG: { type: "string", defaultValue: 'paper', disableParseNumber: true },
-                TAG: { type: "string", defaultValue: 'paper', disableParseNumber: true },
+                TAG: { type: "string!", defaultValue: 'paper' },
+                TAG: { type: "string!", defaultValue: 'paper' },
             }
             
         },
@@ -224,7 +224,7 @@
             text: '$$futureKoi_runAddSpeechTag', 
             pycode: "koi.speech_add_tag([TAG])",
             arguments:{
-                TAG: { type: "string", defaultValue: 'paper', disableParseNumber: true },
+                TAG: { type: "string!", defaultValue: 'paper' },
             }
             
         },
@@ -273,7 +273,7 @@
             text: '$$futureKoi_isTrackColorBlock', 
             pycode: "koi.color_tracking(name='[PURESTR]', cmd='K15')" ,
             arguments:{
-                PURESTR: { type: "string", defaultValue: 'name', disableParseNumber: true  },
+                PURESTR: { type: "string!", defaultValue: 'name' },
             }
             
         },
@@ -293,7 +293,7 @@
             text: '$$futureKoi_isTraceColorLine', 
             pycode: "koi.line_tracking(name='[PURESTR]' ,cmd='K12')" ,
             arguments:{
-                PURESTR: { type: "string", defaultValue: 'name', disableParseNumber: true  },
+                PURESTR: { type: "string!", defaultValue: 'name' },
             }
             
         },
