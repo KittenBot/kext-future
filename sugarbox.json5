@@ -4,7 +4,9 @@
   color1: "#8ab5ff",
   color2: "#5282d1",
   color3: "#8ab5ff",
-  initcode: ['import sugarbox'],
+  lib: {
+    import: 'import sugarbox'
+  },
   blocks: [
     "## $$sugarbox_title_motor",
     {
