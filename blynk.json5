@@ -10,7 +10,9 @@
         { text: "Multy" ,value: 'False' },
       ]
     },
-    initcode:['import blynklib'],
+    lib: {
+      import: 'import blynklib'
+    },
     blocks: [
       "## $$blynk_title_basic",
       {

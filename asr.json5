@@ -4,7 +4,9 @@
     color1: "#e04913",
     color2: "#e04913",
     color3: "#904913",
-    initcode:["from sugar_asr import SugarASR",],
+    lib: {
+        import: "from sugar_asr import SugarASR"
+    },
     menus:{
         executor: [
             { value: '300', text: '开门' },

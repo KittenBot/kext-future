@@ -4,7 +4,9 @@
   color1: "#9aa4d2",
   color2: "#8c96bd",
   color3: "#9aa4d2",
-  initcode: ["from futureKOI import KOI"],
+  lib: {
+    import: "from futureKOI import KOI",
+  },
   menus: {
     directions: [
       { text: "$$futureKoi_menu_direction_front", value: "0" },

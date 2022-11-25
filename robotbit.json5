@@ -4,13 +4,19 @@
   color2: "#107895",
   color3: "#107895",
   name: "$$futureboard_title_robotbit",
-  initcode: ['import robotbit', 'robot = robotbit.RobotBit()'],
+  lib: {
+    import: 'import robotbit'
+  },
+  instance: {
+    robot: 'robot = robotbit.RobotBit()'
+  },
   blocks: [
     {
       opcode: "rbmotor",
       blockType: "command",
       text: "$$futureboard_rb_motor",
       // isAsync: true,
+      instance: 'robot',
       pycode: "robot.motor([MOTOR],[SPD])",
       arguments: {
         MOTOR: {
@@ -61,14 +67,14 @@
       opcode: "rbmotorstopall",
       blockType: "command",
       text: "$$futureboard_rb_motor_stopall",
-      // isAsync: true,
+      instance: 'robot',
       pycode: "robot.motorStopAll()",
     },
     {
       opcode: "rbservo",
       blockType: "command",
       text: "$$futureboard_rb_servo",
-      // isAsync: true,
+      instance: 'robot',
       pycode: "robot.servo([PORT], [DEG])",
       arguments: {
         PORT: {
@@ -88,7 +94,7 @@
       opcode: "rbgeek9gservo",
       blockType: "command",
       text: "$$futureboard_rb_geek9gservo",
-      // isAsync: true,
+      instance: 'robot',
       pycode: "robot.geekServo9g([PORT], [DEG])",
       arguments: {
         PORT: {
@@ -108,7 +114,7 @@
       opcode: "rbgeek2kgservo",
       blockType: "command",
       text: "$$futureboard_rb_geek2kgservo",
-      // isAsync: true,
+      instance: 'robot',
       pycode: "robot.geekServo2kg([PORT], [DEG])",
       arguments: {
         PORT: {
@@ -128,7 +134,7 @@
       opcode: "rbstepper",
       blockType: "command",
       text: "$$futureboard_rb_stepper",
-      // isAsync: true,
+      instance: 'robot',
       pycode: "robot.stepperDual([DEG1], [DEG2])",
       arguments: {
         DEG1: {
@@ -145,7 +151,7 @@
       opcode: "rbstepperdegree",
       blockType: "command",
       text: "$$futureboard_rb_stepperdegree",
-      // isAsync: true,
+      instance: 'robot',
       pycode: "robot.stepperDegree([M1M2], [DEG])",
       arguments: {
         M1M2: {
