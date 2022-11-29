@@ -1,8 +1,408 @@
 [
   {
-    caption: 'openImage',
-    value: 'openImage',
-    score: 1, // 越大的排在越上面
-    meta: '打开一张本地图片', // 描述
+    name:"mqttsimple",
+    value: "mqttsimple",
+    meta: "MQTT库",
+    scroe: 100
   },
+  {
+    name:"RTC",
+    value: "RTC",
+    meta: "实时时钟库",
+    scroe: 100
+  },
+  {
+    name:"audio",
+    value: "audio",
+    meta: "音频库",
+    scroe: 100
+  },
+  {
+    name:"radio",
+    value: "radio",
+    meta: "无线通讯库",
+    scroe: 100
+  },
+
+  {
+    name:"robotbit",
+    value: "robotbit",
+    meta: "Robotbit库",
+    scroe: 100
+  },
+  {
+    name:"mqttsimple",
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user')",
+    meta: "MQTT",
+    scroe: 100
+  },
+  {
+    name:"NeoPixel",
+    value: "NeoPixel('P7', 4)",
+    meta: "关键字检索NeoPixel",
+    scroe: 100
+  },
+  {
+    name:"MeowPin",
+    value: "MeowPin('P1', 'IN')",
+    meta: "关键字检索MeowPin",
+    scroe: 100
+  },
+  {
+    name:"UART",
+    value: "UART(id = 1, baudrate = 9600, tx = PINMAP['P0'], rx = PINMAP['P1'])",
+    meta: "关键字检索UART",
+    scroe: 100
+  },
+  {
+    name:"rtc",
+    value: "RTC()",
+    meta: "实时时钟",
+    scroe: 100
+  },
+  {
+    name:"Audio",
+    value: "audio.Audio()",
+    meta: "麦克风",
+    scroe: 100
+  },
+  {
+    name:"Radio",
+    value: "radio.Radio()",
+    meta: "无线通讯",
+    scroe: 100
+  },
+  {
+    name:"Robotbit",
+    value: "radio.Radio()",
+    meta: "无线通讯",
+    scroe: 100
+  },
+  {
+    name:"radio",
+    value: "radio.write('hello')",
+    meta: "串口写",
+    scroe: 100
+  },
+  {
+    name:"radio",
+    value: "radio.any()",
+    meta: "串口数据？",
+    scroe: 100
+  },
+  {
+    name:"radio",
+    value: "radio.read()",
+    meta: "串口读取",
+    scroe: 100
+  },
+  {
+    name:"radio",
+    value: "radio.readline()",
+    meta: "串口读取行",
+    scroe: 100
+  },
+  {
+    name: "calibrateCompass",
+    value: "calibrateCompass()",
+    meta: "指南针校准",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.sync",
+    meta: "刷新显示",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.fill(color = (255,0,0))",
+    meta: "填充颜色",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.pixel(x, y, color = (255,0,0)) ",
+    meta: "绘制像素点",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.pixel(x, y, color = (255,0,0)) ",
+    meta: "绘制线条",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.rect(x1, y1, x2, y2, x3, y3, color = (255,0,0), fill)",
+    meta: "绘制矩形",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.triangle(x1, y1, x2, y2, x3, y3, color = (255,0,0), fill)",
+    meta: "绘制三角形",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.circle(cx, cy, r, color = (255,0,0), fill)",
+    meta: "绘制圆形",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.roundRect(x,y,r,w,h,color = (255,0,0),fill)",
+    meta: "绘制圆角矩形",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.polygon(x = 0, y = 0, sides = 3, r = 10, th = 1, rot = , color = (255,0,0) , fill) ",
+    meta: "绘制多边形",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.text('hello', x = 0, y = 20, ext = 1 , color = (255,0,0) )",
+    meta: "绘制字符",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.loadBmp('name.bmp', x, y) ",
+    meta: "显示Bmp图片",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.loadPng('name.png', x, y) ",
+    meta: "显示Png图片",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.loadGif('name.gif', x, y)",
+    meta: "显示Gif图片",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.btnValue('a')",
+    meta: "按键",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.getTemp()",
+    meta: "温度",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.getLight()",
+    meta: "亮度",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.accX() ",
+    meta: "X轴加速度",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.accY()",
+    meta: "Y轴加速度",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.accZ()",
+    meta: "Z轴加速度",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.roll()",
+    meta: "姿态横滚角",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.pitch()",
+    meta: "姿态俯仰角",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.gesture()",
+    meta: "姿态",
+    scroe: 100
+  },
+
+
+  
+  
+  {
+    name: "sensor",
+    value: "sensor.sensor.startSchedule()",
+    meta: "启动线程",
+    scroe: 100
+  },
+  {
+    name: "sensor",
+    value: "sensor.heading()",
+    meta: "指南针朝向",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.tone(freq, d)",
+    meta: "频率音调",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.note(note, beats)",
+    meta: "映射音调",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.rest(beats)",
+    meta: "休止",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.setBpm(bpm)",
+    meta: "设定速率",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.melody(m)  ",
+    meta: "旋律",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.melody(m)",
+    meta: "旋律",
+    scroe: 100
+  },
+  {
+    name: "buzzer",
+    value: "buzzer.stop()",
+    meta: "停止播放",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.goto(x = 50, y = 50)",
+    meta: "设置海龟坐标",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.setx(x = 50)",
+    meta: "设置海龟x坐标",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.setx(y = 50)",
+    meta: "设置海龟y坐标",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.penup()",
+    meta: "海龟抬笔",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.pendown()",
+    meta: "海龟落笔",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.forward(distance = 10)",
+    meta: "海龟前进",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.left(angle = 90)",
+    meta: "海龟左转",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.right(angle = 90)",
+    meta: "海龟右转",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.clear()",
+    meta: "海龟清屏",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.setheading(to_angle = 90)",
+    meta: "海龟朝向",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.circle(radius = 30, extent = None)",
+    meta: "海龟画圆",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.dot(size = 5)",
+    meta: "海龟画点",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.begin_fill()",
+    meta: "海龟开始填充",
+    scroe: 100
+  },
+  {
+    name: "turtle",
+    value: "turtle.end_fill()",
+    meta: "海龟结束填充",
+    scroe: 100
+  },
+  {
+    name: "wifi",
+    value: "wifi.connect(apName = '', apPass = '')",
+    meta: "WIFI连接",
+    scroe: 100
+  },
+  {
+    name: "wifi",
+    value: "wifi.sta.disconnect()",
+    meta: "WIFI断开",
+    scroe: 100
+  },
+  {
+    name: "wifi",
+    value: "wifi.sta.ifconfig()",
+    meta: "获取WIFI信息",
+    scroe: 100
+  },
+
+  
+
+  
+  
 ]
