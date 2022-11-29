@@ -400,6 +400,141 @@
     meta: "获取WIFI信息",
     scroe: 100
   },
+  {
+    name: "CORRECT",
+    value: "CORRECT",
+    meta: "CORRECT",
+    scroe: 100
+  },
+  {
+    name: "NOTICE",
+    value: "NOTICE",
+    meta: "NOTICE",
+    scroe: 100
+  },
+  {
+    name: "ERROR",
+    value: "ERROR",
+    meta: "ERROR",
+    scroe: 100
+  },
+  {
+    name: 'DADA',
+    value: 'DADA',
+    meta: 'DADA',
+    scroe:100
+  },
+  {
+    name: 'ENTERTAINER',
+    value: 'ENTERTAINER',
+    meta: 'ENTERTAINER',
+    scroe: 100
+  },
+  {
+    name: 'PRELUDE',
+    value: 'PRELUDE',
+    meta: 'PRELUDE',
+    scroe: 100
+  },
+  {
+    name: 'ODE',
+    value: 'ODE',
+    meta: 'ODE',
+    scroe: 100
+  },
+  {
+    name: 'NYAN',
+    value: 'NYAN',
+    meta: 'NYAN',
+    scroe: 100
+  },
+  {
+    name: 'RING',
+    value: 'RING',
+    meta: 'RING',
+    scroe: 100
+  },
+  {
+    name: 'FUNK',
+    value: 'FUNK',
+    meta: 'FUNK',
+    scroe: 100
+  },
+  {
+    name: 'BLUES',
+    value: 'BLUES',
+    meta: 'BLUES',
+    scroe: 100
+  },
+  {
+    name: 'BIRTHDAY',
+    value: 'BIRTHDAY',
+    meta: 'BIRTHDAY',
+    scroe: 100
+  },
+   {
+    name: 'FUNERAL',
+    value: 'FUNERAL',
+    meta: 'FUNERAL',
+    scroe: 100
+  },
+  {
+    name: 'PUNCHLINE',
+    value: 'PUNCHLINE',
+    meta: 'PUNCHLINE',
+    scroe: 100
+  },
+  {
+    name: 'BADDY',
+    value: 'BADDY',
+    meta: 'BADDY',
+    scroe: 100
+  },
+  {
+    name: 'CHASE',
+    value: 'CHASE',
+    meta: 'CHASE',
+    scroe: 100
+  },
+  {
+    name: 'BA_DING',
+    value: 'BA_DING',
+    meta: 'BA_DING',
+    scroe: 100
+  },
+  {
+    name: 'WAWA',
+    value: 'WAWA',
+    meta: 'WAWA',
+    scroe: 100
+  },
+  {
+    name: 'JUMP_UP',
+    value: 'JUMP_UP',
+    meta: 'JUMP_UP',
+    scroe: 100
+  },
+  {
+    name: 'JUMP_DOWN',
+    value: 'JUMP_DOWN',
+    meta: 'JUMP_DOWN',
+    scroe: 100
+  },
+  {
+    name: 'POWER_UP',
+    value: 'POWER_UP',
+    meta: 'POWER_UP',
+    scroe: 100
+  },
+  {
+    name: 'POWER_DOWN',
+    value: 'POWER_DOWN',
+    meta: 'POWER_DOWN',
+    scroe: 100
+  },
+  
+
+
 
   
 
