@@ -32,25 +32,25 @@
   },
   {
     name:"mqttsimple",
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user')",
+    value: "mqttsimple.MQTTClient()",
     meta: "MQTT",
     scroe: 100
   },
   {
     name:"NeoPixel",
-    value: "NeoPixel('P7', 4)",
+    value: "NeoPixel()",
     meta: "关键字检索NeoPixel",
     scroe: 100
   },
   {
     name:"MeowPin",
-    value: "MeowPin('P1', 'IN')",
+    value: "MeowPin()",
     meta: "关键字检索MeowPin",
     scroe: 100
   },
   {
     name:"UART",
-    value: "UART(id = 1, baudrate = 9600, tx = PINMAP['P0'], rx = PINMAP['P1'])",
+    value: "UART()",
     meta: "关键字检索UART",
     scroe: 100
   },
@@ -79,30 +79,6 @@
     scroe: 100
   },
   {
-    name:"radio",
-    value: "radio.write('hello')",
-    meta: "串口写",
-    scroe: 100
-  },
-  {
-    name:"radio",
-    value: "radio.any()",
-    meta: "串口数据？",
-    scroe: 100
-  },
-  {
-    name:"radio",
-    value: "radio.read()",
-    meta: "串口读取",
-    scroe: 100
-  },
-  {
-    name:"radio",
-    value: "radio.readline()",
-    meta: "串口读取行",
-    scroe: 100
-  },
-  {
     name: "calibrateCompass",
     value: "calibrateCompass()",
     meta: "指南针校准",
@@ -116,79 +92,79 @@
   },
   {
     name: "screen",
-    value: "screen.fill(color = (255,0,0))",
+    value: "screen.fill()",
     meta: "填充颜色",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.pixel(x, y, color = (255,0,0)) ",
+    value: "screen.pixel() ",
     meta: "绘制像素点",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.pixel(x, y, color = (255,0,0)) ",
+    value: "screen.pixel() ",
     meta: "绘制线条",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.rect(x1, y1, x2, y2, x3, y3, color = (255,0,0), fill)",
+    value: "screen.rect()",
     meta: "绘制矩形",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.triangle(x1, y1, x2, y2, x3, y3, color = (255,0,0), fill)",
+    value: "screen.triangle()",
     meta: "绘制三角形",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.circle(cx, cy, r, color = (255,0,0), fill)",
+    value: "screen.circle()",
     meta: "绘制圆形",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.roundRect(x,y,r,w,h,color = (255,0,0),fill)",
+    value: "screen.roundRect()",
     meta: "绘制圆角矩形",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.polygon(x = 0, y = 0, sides = 3, r = 10, th = 1, rot = , color = (255,0,0) , fill) ",
+    value: "screen.polygon() ",
     meta: "绘制多边形",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.text('hello', x = 0, y = 20, ext = 1 , color = (255,0,0) )",
+    value: "screen.text()",
     meta: "绘制字符",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.loadBmp('name.bmp', x, y) ",
+    value: "screen.loadBmp() ",
     meta: "显示Bmp图片",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.loadPng('name.png', x, y) ",
+    value: "screen.loadPng() ",
     meta: "显示Png图片",
     scroe: 100
   },
   {
     name: "screen",
-    value: "screen.loadGif('name.gif', x, y)",
+    value: "screen.loadGif()",
     meta: "显示Gif图片",
     scroe: 100
   },
   {
     name: "sensor",
-    value: "sensor.btnValue('a')",
+    value: "sensor.btnValue()",
     meta: "按键",
     scroe: 100
   },
@@ -258,37 +234,37 @@
   },
   {
     name: "buzzer",
-    value: "buzzer.tone(freq, d)",
+    value: "buzzer.tone()",
     meta: "频率音调",
     scroe: 100
   },
   {
     name: "buzzer",
-    value: "buzzer.note(note, beats)",
+    value: "buzzer.note()",
     meta: "映射音调",
     scroe: 100
   },
   {
     name: "buzzer",
-    value: "buzzer.rest(beats)",
+    value: "buzzer.rest()",
     meta: "休止",
     scroe: 100
   },
   {
     name: "buzzer",
-    value: "buzzer.setBpm(bpm)",
+    value: "buzzer.setBpm()",
     meta: "设定速率",
     scroe: 100
   },
   {
     name: "buzzer",
-    value: "buzzer.melody(m)  ",
+    value: "buzzer.melody()  ",
     meta: "旋律",
     scroe: 100
   },
   {
     name: "buzzer",
-    value: "buzzer.melody(m)",
+    value: "buzzer.melody()",
     meta: "旋律",
     scroe: 100
   },
@@ -300,19 +276,19 @@
   },
   {
     name: "turtle",
-    value: "turtle.goto(x = 50, y = 50)",
+    value: "turtle.goto()",
     meta: "设置海龟坐标",
     scroe: 100
   },
   {
     name: "turtle",
-    value: "turtle.setx(x = 50)",
+    value: "turtle.setx()",
     meta: "设置海龟x坐标",
     scroe: 100
   },
   {
     name: "turtle",
-    value: "turtle.setx(y = 50)",
+    value: "turtle.setx()",
     meta: "设置海龟y坐标",
     scroe: 100
   },
@@ -330,19 +306,19 @@
   },
   {
     name: "turtle",
-    value: "turtle.forward(distance = 10)",
+    value: "turtle.forward()",
     meta: "海龟前进",
     scroe: 100
   },
   {
     name: "turtle",
-    value: "turtle.left(angle = 90)",
+    value: "turtle.left()",
     meta: "海龟左转",
     scroe: 100
   },
   {
     name: "turtle",
-    value: "turtle.right(angle = 90)",
+    value: "turtle.right()",
     meta: "海龟右转",
     scroe: 100
   },
@@ -354,19 +330,19 @@
   },
   {
     name: "turtle",
-    value: "turtle.setheading(to_angle = 90)",
+    value: "turtle.setheading()",
     meta: "海龟朝向",
     scroe: 100
   },
   {
     name: "turtle",
-    value: "turtle.circle(radius = 30, extent = None)",
+    value: "turtle.circle()",
     meta: "海龟画圆",
     scroe: 100
   },
   {
     name: "turtle",
-    value: "turtle.dot(size = 5)",
+    value: "turtle.dot()",
     meta: "海龟画点",
     scroe: 100
   },
@@ -384,7 +360,7 @@
   },
   {
     name: "wifi",
-    value: "wifi.connect(apName = '', apPass = '')",
+    value: "wifi.connect()",
     meta: "WIFI连接",
     scroe: 100
   },
@@ -532,12 +508,172 @@
     meta: 'POWER_DOWN',
     scroe: 100
   },
-  
-
-
-
-  
-
-  
-  
+  {
+    name: 'radio.Radio()',
+    value: 'radio.Radio().write()',
+    meta: '串口写',
+    scroe: 100
+  },
+  {
+    name: 'radio.Radio()',
+    value: 'radio.Radio().any()',
+    meta: '串口数据',
+    scroe: 100
+  },
+  {
+    name: 'radio.Radio()',
+    value: 'radio.Radio().read()',
+    meta: '串口读取',
+    scroe: 100
+  },
+  {
+    name: 'radio.Radio()',
+    value: 'radio.Radio().readline()',
+    meta: '串口读取行',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().motor()',
+    meta: '电机速度',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().motorStopAll()',
+    meta: '停止所有点击',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().servo()',
+    meta: '蓝色小舵机',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().geekServo9g()',
+    meta: 'GeekServo 9g舵机',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().geekServo2kg()',
+    meta: 'GeekServo 2kg舵机',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().stepperDegree()',
+    meta: '28byj-48步进电机',
+    scroe: 100
+  },
+  {
+    name: 'robotbit.RobotBit()',
+    value: 'robotbit.RobotBit().stepperDual()',
+    meta: '28byj-48步进电机',
+    scroe: 100
+  },
+  {
+    name: 'audio.Audio()',
+    value: 'robotbit.RobotBit().loadness()',
+    meta: '麦克风声音强度',
+    scroe: 100
+  },
+  {
+    name: 'audio.Audio()',
+    value: 'robotbit.RobotBit().recognize()',
+    meta: '云端语音识别',
+    scroe: 100
+  },
+  {
+    name: 'radio.Radio()',
+    value: 'radio.Radio().send()',
+    meta: '无线发消息',
+    scroe: 100
+  },
+  {
+    name: 'radio.Radio()',
+    value: 'radio.Radio().read()',
+    meta: '无线收消息',
+    scroe: 100
+  },
+  {
+    name: 'RTC()',
+    value: 'RTC().datetime()',
+    meta: '无线收消息',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').connect()",
+    meta: '连接mqtt服务器',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').disconnect()",
+    meta: '断开mqtt服务器',
+    scroe: 100
+  },
+   {
+    name: 'mqtt',
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').subscribe()",
+    meta: '订阅话题',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').publish()",
+    meta: '发布消息',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').mqttRead()",
+    meta: '获取消息',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "MeowPin('P1', 'IN').getDigital()",
+    meta: '数字输入',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "MeowPin('P1', 'IN').setDigital()",
+    meta: '数字输出',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "MeowPin('P1', 'IN').getAnalog()",
+    meta: '模拟输入',
+    scroe: 100
+  },
+  {
+    name: 'mqtt',
+    value: "MeowPin('P1', 'IN').setAnalog()",
+    meta: '模拟输出',
+    scroe: 100
+  },
+  {
+    name: 'NeoPixel',
+    value: "NeoPixel('P7', 4).setcolor()",
+    meta: '设置单颗彩灯',
+    scroe: 100
+  },
+  {
+    name: 'NeoPixel',
+    value: "NeoPixel('P7', 4).setcolorAll()",
+    meta: '设置全部彩灯',
+    scroe: 100
+  },
+  {
+    name: 'NeoPixel',
+    value: "NeoPixel('P7', 4).update()",
+    meta: '彩灯显示',
+    scroe: 100
+  },
 ]
