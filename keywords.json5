@@ -6,12 +6,6 @@
     scroe: 100
   },
   {
-    name:"RTC",
-    value: "RTC",
-    meta: "实时时钟库",
-    scroe: 100
-  },
-  {
     name:"audio",
     value: "audio",
     meta: "音频库",
@@ -23,7 +17,6 @@
     meta: "无线通讯库",
     scroe: 100
   },
-
   {
     name:"robotbit",
     value: "robotbit",
@@ -31,45 +24,33 @@
     scroe: 100
   },
   {
-    name:"mqttsimple",
-    value: "mqttsimple.MQTTClient()",
-    meta: "MQTT",
-    scroe: 100
-  },
-  {
     name:"NeoPixel",
-    value: "NeoPixel()",
-    meta: "关键字检索NeoPixel",
+    value: "NeoPixel",
+    meta: "彩灯类",
     scroe: 100
   },
   {
     name:"MeowPin",
-    value: "MeowPin()",
-    meta: "关键字检索MeowPin",
+    value: "MeowPin",
+    meta: "引脚类",
     scroe: 100
   },
   {
     name:"UART",
-    value: "UART()",
-    meta: "关键字检索UART",
+    value: "UART",
+    meta: "串口类",
     scroe: 100
   },
   {
     name:"rtc",
-    value: "RTC()",
-    meta: "实时时钟",
+    value: "RTC",
+    meta: "时钟类",
     scroe: 100
   },
   {
     name:"Audio",
-    value: "audio.Audio()",
-    meta: "麦克风",
-    scroe: 100
-  },
-  {
-    name:"Radio",
-    value: "radio.Radio()",
-    meta: "无线通讯",
+    value: "Audio",
+    meta: "音频类",
     scroe: 100
   },
   {
@@ -81,7 +62,7 @@
   {
     name: "screen",
     value: "screen.sync",
-    meta: "刷新显示",
+    meta: "显示同步",
     scroe: 100
   },
   {
@@ -98,7 +79,7 @@
   },
   {
     name: "screen",
-    value: "screen.pixel() ",
+    value: "screen.line() ",
     meta: "绘制线条",
     scroe: 100
   },
@@ -135,7 +116,13 @@
   {
     name: "screen",
     value: "screen.text()",
-    meta: "绘制字符",
+    meta: "英文字符",
+    scroe: 100
+  },
+  {
+    name: "screen",
+    value: "screen.textCh()",
+    meta: "中文字符",
     scroe: 100
   },
   {
@@ -211,12 +198,9 @@
     scroe: 100
   },
 
-
-  
-  
   {
     name: "sensor",
-    value: "sensor.sensor.startSchedule()",
+    value: "sensor.startSchedule()",
     meta: "启动线程",
     scroe: 100
   },
@@ -258,12 +242,6 @@
   },
   {
     name: "buzzer",
-    value: "buzzer.melody()",
-    meta: "旋律",
-    scroe: 100
-  },
-  {
-    name: "buzzer",
     value: "buzzer.stop()",
     meta: "停止播放",
     scroe: 100
@@ -282,7 +260,7 @@
   },
   {
     name: "turtle",
-    value: "turtle.setx()",
+    value: "turtle.sety()",
     meta: "设置海龟y坐标",
     scroe: 100
   },
@@ -503,12 +481,6 @@
     scroe: 100
   },
   {
-    name: 'Radio',
-    value: 'Radio()',
-    meta: 'Radio类',
-    scroe: 100
-  },
-  {
     name: 'write',
     value: 'write',
     meta: '串口写',
@@ -534,7 +506,7 @@
   },
   {
     name: 'RobotBit',
-    value: 'RobotBit()',
+    value: 'RobotBit',
     meta: 'RobotBit类',
     scroe: 100
   },
@@ -547,7 +519,7 @@
   {
     name: 'motorStopAll',
     value: 'motorStopAll',
-    meta: '停止所有点击',
+    meta: '停止所有电机',
     scroe: 100
   },
   {
@@ -577,13 +549,7 @@
   {
     name: 'stepperDual',
     value: 'stepperDual',
-    meta: '28byj-48步进电机',
-    scroe: 100
-  },
-  {
-    name: 'audio.Audio()',
-    value: 'RobotBit()',
-    meta: 'RobotBit类',
+    meta: '28byj-48双步进电机',
     scroe: 100
   },
   {
@@ -600,8 +566,8 @@
   },
   {
     name: 'Radio',
-    value: 'Radio()',
-    meta: 'Radio 类',
+    value: 'Radio',
+    meta: 'Radio类',
     scroe: 100
   },
   {
@@ -617,8 +583,8 @@
     scroe: 100
   },
   {
-    name: 'RTC()',
-    value: 'RTC()',
+    name: 'RTC',
+    value: 'RTC',
     meta: 'RTC 类',
     scroe: 100
   },
@@ -630,7 +596,7 @@
   },
   {
     name: 'MQTTClient',
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user')",
+    value: "MQTTClient",
     meta: 'MQTTClient 类',
     scroe: 100
   },
