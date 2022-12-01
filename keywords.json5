@@ -73,12 +73,6 @@
     scroe: 100
   },
   {
-    name:"Robotbit",
-    value: "radio.Radio()",
-    meta: "无线通讯",
-    scroe: 100
-  },
-  {
     name: "calibrateCompass",
     value: "calibrateCompass()",
     meta: "指南针校准",
@@ -509,170 +503,212 @@
     scroe: 100
   },
   {
-    name: 'radio.Radio()',
-    value: 'radio.Radio().write()',
+    name: 'Radio',
+    value: 'Radio()',
+    meta: 'Radio类',
+    scroe: 100
+  },
+  {
+    name: 'write',
+    value: 'write',
     meta: '串口写',
     scroe: 100
   },
   {
-    name: 'radio.Radio()',
-    value: 'radio.Radio().any()',
+    name: 'any',
+    value: 'any',
     meta: '串口数据',
     scroe: 100
   },
   {
-    name: 'radio.Radio()',
-    value: 'radio.Radio().read()',
+    name: 'read',
+    value: 'read',
     meta: '串口读取',
     scroe: 100
   },
   {
-    name: 'radio.Radio()',
-    value: 'radio.Radio().readline()',
+    name: 'readline',
+    value: 'readline',
     meta: '串口读取行',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().motor()',
+    name: 'RobotBit',
+    value: 'RobotBit()',
+    meta: 'RobotBit类',
+    scroe: 100
+  },
+  {
+    name: 'motor',
+    value: 'motor',
     meta: '电机速度',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().motorStopAll()',
+    name: 'motorStopAll',
+    value: 'motorStopAll',
     meta: '停止所有点击',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().servo()',
+    name: 'servo',
+    value: 'servo',
     meta: '蓝色小舵机',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().geekServo9g()',
+    name: 'geekServo9g',
+    value: 'geekServo9g',
     meta: 'GeekServo 9g舵机',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().geekServo2kg()',
+    name: 'geekServo2kg',
+    value: 'geekServo2kg',
     meta: 'GeekServo 2kg舵机',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().stepperDegree()',
+    name: 'stepperDegree',
+    value: 'stepperDegree',
     meta: '28byj-48步进电机',
     scroe: 100
   },
   {
-    name: 'robotbit.RobotBit()',
-    value: 'robotbit.RobotBit().stepperDual()',
+    name: 'stepperDual',
+    value: 'stepperDual',
     meta: '28byj-48步进电机',
     scroe: 100
   },
   {
     name: 'audio.Audio()',
-    value: 'robotbit.RobotBit().loadness()',
+    value: 'RobotBit()',
+    meta: 'RobotBit类',
+    scroe: 100
+  },
+  {
+    name: 'loadness',
+    value: 'loadness',
     meta: '麦克风声音强度',
     scroe: 100
   },
   {
-    name: 'audio.Audio()',
-    value: 'robotbit.RobotBit().recognize()',
+    name: 'recognize',
+    value: 'recognize',
     meta: '云端语音识别',
     scroe: 100
   },
   {
-    name: 'radio.Radio()',
-    value: 'radio.Radio().send()',
+    name: 'Radio',
+    value: 'Radio()',
+    meta: 'Radio 类',
+    scroe: 100
+  },
+  {
+    name: 'send',
+    value: 'send',
     meta: '无线发消息',
     scroe: 100
   },
   {
-    name: 'radio.Radio()',
-    value: 'radio.Radio().read()',
+    name: 'read',
+    value: 'read',
     meta: '无线收消息',
     scroe: 100
   },
   {
     name: 'RTC()',
-    value: 'RTC().datetime()',
+    value: 'RTC()',
+    meta: 'RTC 类',
+    scroe: 100
+  },
+  {
+    name: 'datetime',
+    value: 'datetime',
     meta: '无线收消息',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').connect()",
+    name: 'MQTTClient',
+    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user')",
+    meta: 'MQTTClient 类',
+    scroe: 100
+  },
+  {
+    name: 'connect',
+    value: "connect",
     meta: '连接mqtt服务器',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').disconnect()",
+    name: 'disconnect',
+    value: "disconnect",
     meta: '断开mqtt服务器',
     scroe: 100
   },
    {
-    name: 'mqtt',
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').subscribe()",
+    name: 'subscribe',
+    value: "subscribe",
     meta: '订阅话题',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').publish()",
+    name: 'publish',
+    value: "publish",
     meta: '发布消息',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "mqttsimple.MQTTClient('iot.kittenbot.cn', client_id = 'user').mqttRead()",
+    name: 'mqttRead',
+    value: "mqttRead",
     meta: '获取消息',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "MeowPin('P1', 'IN').getDigital()",
+    name: 'MeowPin',
+    value: "MeowPin('P1', 'IN')",
+    meta: 'MeowPin 类',
+    scroe: 100
+  },
+  {
+    name: 'getDigital',
+    value: "getDigital",
     meta: '数字输入',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "MeowPin('P1', 'IN').setDigital()",
+    name: 'setDigital',
+    value: "setDigital",
     meta: '数字输出',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "MeowPin('P1', 'IN').getAnalog()",
+    name: 'getAnalog',
+    value: "getAnalog",
     meta: '模拟输入',
     scroe: 100
   },
   {
-    name: 'mqtt',
-    value: "MeowPin('P1', 'IN').setAnalog()",
+    name: 'setAnalog',
+    value: "setAnalog",
     meta: '模拟输出',
     scroe: 100
   },
   {
-    name: 'NeoPixel',
-    value: "NeoPixel('P7', 4).setcolor()",
+    name: 'setcolor',
+    value: "setcolor",
     meta: '设置单颗彩灯',
     scroe: 100
   },
   {
-    name: 'NeoPixel',
-    value: "NeoPixel('P7', 4).setcolorAll()",
+    name: 'setcolorAll',
+    value: 'setcolorAll',
     meta: '设置全部彩灯',
     scroe: 100
   },
   {
-    name: 'NeoPixel',
-    value: "NeoPixel('P7', 4).update()",
+    name: 'update',
+    value: "update",
     meta: '彩灯显示',
     scroe: 100
   },
