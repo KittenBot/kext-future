@@ -631,12 +631,6 @@
     scroe: 100
   },
   {
-    name: 'MeowPin',
-    value: "MeowPin('P1', 'IN')",
-    meta: 'MeowPin 类',
-    scroe: 100
-  },
-  {
     name: 'getDigital',
     value: "getDigital",
     meta: '数字输入',
