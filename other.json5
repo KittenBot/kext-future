@@ -1,5 +1,5 @@
 {
-    id: "futureboard_other",
+    id: "futureboard@kext_other",
     name: "$$sugar_title_extra",
     color1: "#E7B680",
     color2: "#d69d5e",

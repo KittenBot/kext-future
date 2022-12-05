@@ -1,5 +1,5 @@
 {
-    id: "futureboard_blynk",
+    id: "futureboard@kext_blynk",
     name: "$$blynk_title",
     color1: "#48e48b",
     color2: "#00D25B",
