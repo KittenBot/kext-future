@@ -6,7 +6,7 @@
   },
   "color1": "#23BDFD",
   "color2": "#13ADED",
-  "color3": "#0B7D69",
+  "color3": "#1A97CB",
   "description": {
     "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
     "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学"
