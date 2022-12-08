@@ -611,37 +611,37 @@
       //tooltip: '👋'
     },
 //----------------------------------------------------------------
-    "## $$sugar_title_tts",
-    {
-      opcode: 'runTTSSpeakUtildone',
-      blockType: "command",
-      text: "$$sugar_runTTSSpeakUtildone",
-      pycode: 'TTS().speak([[TEXTCH]], wait=1)',
-      arguments: {
-        TEXTCH: {
-          type: "string",
-          defaultValue: '小喵科技',
-        },
-      }
-    },
-    {
-      opcode: 'runtTTSSpeakBackground',
-      blockType: "command",
-      text: "$$sugar_runtTTSSpeakBackground",
-      pycode: 'TTS().speak([[TEXTCH]], background=[BACK], wait=1)',
-      arguments: {
-        TEXTCH: {
-          type: "string",
-          defaultValue: '小喵科技',
-        },
-        BACK: {
-          type: "slider",
-          defaultValue: 1,
-          max: 15,
-          min: 1,
-        }
-      }
-    },
+    // "## $$sugar_title_tts",
+    // {
+    //   opcode: 'runTTSSpeakUtildone',
+    //   blockType: "command",
+    //   text: "$$sugar_runTTSSpeakUtildone",
+    //   pycode: 'TTS().speak([[TEXTCH]], wait=1)',
+    //   arguments: {
+    //     TEXTCH: {
+    //       type: "string",
+    //       defaultValue: '小喵科技',
+    //     },
+    //   }
+    // },
+    // {
+    //   opcode: 'runtTTSSpeakBackground',
+    //   blockType: "command",
+    //   text: "$$sugar_runtTTSSpeakBackground",
+    //   pycode: 'TTS().speak([[TEXTCH]], background=[BACK], wait=1)',
+    //   arguments: {
+    //     TEXTCH: {
+    //       type: "string",
+    //       defaultValue: '小喵科技',
+    //     },
+    //     BACK: {
+    //       type: "slider",
+    //       defaultValue: 1,
+    //       max: 15,
+    //       min: 1,
+    //     }
+    //   }
+    // },
     // {
     //   opcode: 'runBuzz',
     //   text: "$$sugar_runBuzz",
@@ -654,93 +654,93 @@
     //     }
     //   }
     // },
-    {
-      opcode: 'runRing',
-      blockType: "command",
-      text: "$$sugar_runRing",
-      pycode: 'TTS().speak(msg[LETTER], wait=1)',
-      arguments: {
-        LETTER: {
-          type: "slider",
-          defaultValue: 1,
-          min: 1,
-          max: 8
-        }
-      }
-    },
-    {
-      opcode: 'runChord',
-      blockType: "command",
-      text: "$$sugar_runChord",
-      pycode: 'TTS().speak(ring[LETTER], wait=1)',
-      arguments: {
-        LETTER: {
-          type: "slider",
-          defaultValue: 1,
-          min: 1,
-          max: 15
-        }
-      }
-    },
-    {
-      opcode: 'runTTSOpt',
-      blockType: "command",
-      text: "$$sugar_runTTSOpt",
-      pycode: 'TTS().[TTSSTATE]()',
-      arguments: {
-        TTSSTATE: {
-          type: "string",
-          defaultValue: 'pause',
-          menu: 'ttsstate'
-        }
-      }
-    },
-    {
-      opcode: 'isIdle',
-      blockType: "boolean",
-      text: "$$sugar_isIdle",
-      pycode: 'TTS().idle()',
-    },
+    // {
+    //   opcode: 'runRing',
+    //   blockType: "command",
+    //   text: "$$sugar_runRing",
+    //   pycode: 'TTS().speak(msg[LETTER], wait=1)',
+    //   arguments: {
+    //     LETTER: {
+    //       type: "slider",
+    //       defaultValue: 1,
+    //       min: 1,
+    //       max: 8
+    //     }
+    //   }
+    // },
+    // {
+    //   opcode: 'runChord',
+    //   blockType: "command",
+    //   text: "$$sugar_runChord",
+    //   pycode: 'TTS().speak(ring[LETTER], wait=1)',
+    //   arguments: {
+    //     LETTER: {
+    //       type: "slider",
+    //       defaultValue: 1,
+    //       min: 1,
+    //       max: 15
+    //     }
+    //   }
+    // },
+    // {
+    //   opcode: 'runTTSOpt',
+    //   blockType: "command",
+    //   text: "$$sugar_runTTSOpt",
+    //   pycode: 'TTS().[TTSSTATE]()',
+    //   arguments: {
+    //     TTSSTATE: {
+    //       type: "string",
+    //       defaultValue: 'pause',
+    //       menu: 'ttsstate'
+    //     }
+    //   }
+    // },
+    // {
+    //   opcode: 'isIdle',
+    //   blockType: "boolean",
+    //   text: "$$sugar_isIdle",
+    //   pycode: 'TTS().idle()',
+    // },
 //-------------------------------------------------------------------------
-    "## $$sugar_title_matrix",
-    {
-      opcode: '$$sugar_runLetmatrixpixel',
-      blockType: "command",
-      text: "$$sugar_runLetmatrixpixel",
-      pycode: 'Matrix16x8().pixel([X], [Y])',
-      arguments: {
-        X: {
-          type: "slider",
-          defaultValue: 1,
-          min: 0,
-          max: 15
-        },
-        Y: {
-          type: "slider",
-          defaultValue: 2,
-          min: 0,
-          max: 7
-        }
-      }
-    },
-    {
-      opcode: '$$sugar_runLetmatrixdraw',
-      blockType: "command",
-      text: "$$sugar_runLetmatrixdraw",
-      pycode: 'Matrix16x8().draw("[MAT]")',
-      arguments: {
-        MAT: {
-          type: "ledmatrix",
-          defaultValue: '00000000024000000000042003c00000'
-        }
-      }
-    },
-    {
-      opcode: '$$sugar_runLetmatrixclear',
-      blockType: "command",
-      text: "$$sugar_runLetmatrixclear",
-      pycode: 'Matrix16x8().clear()',
-    },
+    // "## $$sugar_title_matrix",
+    // {
+    //   opcode: '$$sugar_runLetmatrixpixel',
+    //   blockType: "command",
+    //   text: "$$sugar_runLetmatrixpixel",
+    //   pycode: 'Matrix16x8().pixel([X], [Y])',
+    //   arguments: {
+    //     X: {
+    //       type: "slider",
+    //       defaultValue: 1,
+    //       min: 0,
+    //       max: 15
+    //     },
+    //     Y: {
+    //       type: "slider",
+    //       defaultValue: 2,
+    //       min: 0,
+    //       max: 7
+    //     }
+    //   }
+    // },
+    // {
+    //   opcode: '$$sugar_runLetmatrixdraw',
+    //   blockType: "command",
+    //   text: "$$sugar_runLetmatrixdraw",
+    //   pycode: 'Matrix16x8().draw("[MAT]")',
+    //   arguments: {
+    //     MAT: {
+    //       type: "ledmatrix",
+    //       defaultValue: '00000000024000000000042003c00000'
+    //     }
+    //   }
+    // },
+    // {
+    //   opcode: '$$sugar_runLetmatrixclear',
+    //   blockType: "command",
+    //   text: "$$sugar_runLetmatrixclear",
+    //   pycode: 'Matrix16x8().clear()',
+    // },
 //----------------------------------------------------------------------------
     "## $$sugar_title_infra",
     {
