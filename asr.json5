@@ -133,12 +133,12 @@
               pycode: "asr = SugarASR([PORT1], [PORT2])",
               arguments:{
                 PORT1:{
-                    type: "string",
+                    type: "number",
                     defaultValue: 'P2', 
                     menu: 'port'
                 },
                 PORT2:{
-                    type: "string",
+                    type: "number",
                     defaultValue: 'P12', 
                     menu: 'port'
                 },

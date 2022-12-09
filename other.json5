@@ -24,7 +24,7 @@
         pycode: 'dht11_[PORT].measure()',
             arguments: {
                 PORT: {
-                type: "string",
+                type: "number",
                 defaultValue: 'P0',
                 menu: 'PINS'
                 }
@@ -38,12 +38,12 @@
         disableInstance: 1,
             arguments: {
                 PORT: {
-                type: "string",
+                type: "number",
                 defaultValue: 'P0',
                 menu: 'PINS'
                 },
                 TYPE: {
-                type: "string",
+                type: "number",
                 defaultValue: 'temperature',
                 menu: 'TempAndHumi'
                 },
@@ -56,12 +56,12 @@
         pycode: 'hcsr04[PORT1][PORT2].checkdist()',
             arguments: {
                 PORT1: {
-                type: "string",
+                type: "number",
                 defaultValue: 'P0',
                 menu: 'portsonar'
                 },
                 PORT2: {
-                type: "string",
+                type: "number",
                 defaultValue: 'P1',
                 menu: 'portsonar'
                 },

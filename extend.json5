@@ -69,7 +69,7 @@
       blockType: "command",
       text: "$$futureExtend_controlTime",
       instance: "kclock",
-      pycode: "kclock.modeSet(state='[TYPE]')",
+      pycode: "kclock.modeSet(state=[TYPE])",
       arguments: {
         TYPE: {
           type: "string",
@@ -132,7 +132,7 @@
       opcode: 'gdKey',
       blockType: "command",
       text: "$$futureExtend_gdKey",
-      pycode: "weather = Weather('[KEY]')",
+      pycode: "weather = Weather([KEY])",
       arguments: {
         KEY: {
           type: "string",
@@ -201,7 +201,7 @@
       opcode: 'soundSave',
       blockType: "command",
       text: "$$futureExtend_soundSave",
-      pycode: "au.savewav('[WAVFILENAME]', [SECOND])",
+      pycode: "au.savewav([WAVFILENAME], [SECOND])",
       arguments: {
         WAVFILENAME: {
           type: "string",

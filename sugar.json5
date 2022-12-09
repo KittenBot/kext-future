@@ -881,7 +881,7 @@
       pycode: 'fm.[TYPE]()',
       arguments: {
         TYPE: {
-          type: "string",
+          type: "number",
           defaultValue: 'seekUp',
           menu: 'fmDir'
         },
