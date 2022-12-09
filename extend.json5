@@ -17,7 +17,7 @@
       blockType: "reporter",
       text: "$$futureExtend_getTime",
       instance: "kclock",
-      pycode: "kclock.getTime('[TYPE]')",
+      pycode: "kclock.getTime([TYPE])",
       arguments: {
         TYPE: {
           type: "string",
