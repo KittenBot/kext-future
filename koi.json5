@@ -4,8 +4,10 @@
   color1: "#9aa4d2",
   color2: "#8c96bd",
   color3: "#9aa4d2",
-  lib: {
-    import: "from futureKOI import KOI",
+  libs: {
+    "*": {
+      import: "from futureKOI import KOI",
+    }
   },
   menus: {
     directions: [
@@ -244,16 +246,16 @@
       text: "$$futureKoi_runColorCalibration",
       pycode: "koi.color_cali(name=[COLORNAME] ,cmd='K16')",
       arguments: {
-        COLORNAME: { type: "string", defaultValue: "name" },
+        COLORNAME: { type: "string", defaultValue: "color" },
       },
     },
     {
       opcode: "isTrackColorBlock",
       blockType: "Boolean",
       text: "$$futureKoi_isTrackColorBlock",
-      pycode: "koi.color_tracking(name='[PURESTR]', cmd='K15')",
+      pycode: "koi.color_tracking(name=[COLORNAME], cmd='K15')",
       arguments: {
-        PURESTR: { type: "string!", defaultValue: "name" },
+        COLORNAME: { type: "string!", defaultValue: "color" },
       },
     },
     {
@@ -269,7 +271,7 @@
       opcode: "isTraceColorLine",
       blockType: "Boolean",
       text: "$$futureKoi_isTraceColorLine",
-      pycode: "koi.line_tracking(name='[PURESTR]' ,cmd='K12')",
+      pycode: "koi.line_tracking(name=[PURESTR] ,cmd='K12')",
       arguments: {
         PURESTR: { type: "string!", defaultValue: "name" },
       },
