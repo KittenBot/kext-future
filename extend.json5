@@ -8,6 +8,10 @@
     kclock: {
       import: 'from kwatch import KClock',
       instance: 'KClock()'
+    },
+    intercom: {
+      import: 'from intercom import Intercom',
+      instance: 'Intercom()'
     }
   },
   blocks:[
@@ -129,6 +133,9 @@
       blockType: "command",
       text: "$$futureExtend_gdKey",
       pycode: "weather = Weather([KEY])",
+      micropy: {
+        import: 'from kwatch import Weather'
+      },
       arguments: {
         KEY: {
           type: "string",
@@ -201,7 +208,7 @@
       arguments: {
         WAVFILENAME: {
           type: "string",
-          defaultValue: 'file name'
+          defaultValue: 'abc.wav'
         },
         SECOND: {
           type: "slider",
@@ -215,11 +222,11 @@
       opcode: 'soundPlay',
       blockType: "command",
       text: "$$futureExtend_soundPlay",
-      pycode: "au.playwav('[WAVFILENAME]')",
+      pycode: "au.playwav([WAVFILENAME])",
       arguments: {
         WAVFILENAME: {
           type: "string",
-          defaultValue: 'filename'
+          defaultValue: 'paly.wav'
         }
       }
     },
