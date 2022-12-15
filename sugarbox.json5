@@ -4,8 +4,14 @@
   color1: "#8ab5ff",
   color2: "#5282d1",
   color3: "#8ab5ff",
-  lib: {
-    import: 'import sugarbox'
+  libs: {
+    sugarbox: {
+      import: 'import sugarbox'
+    },
+    "[PORT]": {
+      import: 'import sugarbox',
+      instance: 'em[PORT]=sugarbox.EMotor([PORT])'
+    }
   },
   blocks: [
     "## $$sugarbox_title_motor",
@@ -108,15 +114,15 @@
       },
     },
     "## $$sugarbox_encodable_single",
-    {
-      opcode: 'setEncodableSingleInstance',
-      blockType: "command",
-      text: "$$sugarbox_setEncodableSingleInstance",
-      pycode: "em1 = sugarbox.EMotor(1)\r\nem2 = sugarbox.EMotor(2)",
-      importCode: {
-        _radio: 'import sugarbox',
-      },
-    },
+    // {
+    //   opcode: 'setEncodableSingleInstance',
+    //   blockType: "command",
+    //   text: "$$sugarbox_setEncodableSingleInstance",
+    //   pycode: "em1 = sugarbox.EMotor(1)\r\nem2 = sugarbox.EMotor(2)",
+    //   micropy: {
+    //     import: 'import sugarbox',
+    //   },
+    // },
     {
       opcode: 'setEncodableSpeed',
       text: "$$sugarbox_setEncodableSpeed",
@@ -228,6 +234,9 @@
       opcode: 'setEncodableProp',
       blockType: "command",
       text: "$$sugarbox_setEncodableProp",
+      micropy: {
+        import: 'import sugarbox'
+      },
       pycode: 'sugar_robot = sugarbox.EMotorDual(diameter=[CM], gauge=[AXLE], left=[PORTLEFT], right=[PORTRIGHT], dir=[REVERSABLE])',
       arguments: {
         CM: {

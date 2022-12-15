@@ -18,10 +18,10 @@
     blocks: 
     [
         {
-        opcode: 'setTandHMode',
-        blockType: "command",
-        text: "$$sugar_setTandHMode",
-        pycode: 'dht11_[PORT].measure()',
+            opcode: 'setTandHMode',
+            blockType: "command",
+            text: "$$sugar_setTandHMode",
+            pycode: 'dht11_[PORT].measure()',
             arguments: {
                 PORT: {
                 type: "number",
@@ -31,11 +31,10 @@
             },
         },
         {
-        opcode: 'getTandHValue',
-        blockType: "reporter",
-        text: "$$sugar_getTandHValue",
-        pycode: 'dht11_[PORT].[TYPE]()',
-        disableInstance: 1,
+            opcode: 'getTandHValue',
+            blockType: "reporter",
+            text: "$$sugar_getTandHValue",
+            pycode: 'dht11_[PORT].[TYPE]()',
             arguments: {
                 PORT: {
                 type: "number",
@@ -50,10 +49,10 @@
             },
         },
         {
-        opcode: 'getHcSonarDistance',
-        blockType: "reporter",
-        text: "$$sugar_getHcSonarDistance",
-        pycode: 'hcsr04[PORT1][PORT2].checkdist()',
+            opcode: 'getHcSonarDistance',
+            blockType: "reporter",
+            text: "$$sugar_getHcSonarDistance",
+            pycode: 'hcsr04[PORT1][PORT2].checkdist()',
             arguments: {
                 PORT1: {
                 type: "number",

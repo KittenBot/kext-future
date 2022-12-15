@@ -1,4 +1,10 @@
 {
+  libs: {
+    turtle: {
+      imports: 'from turtle import Turtle',
+      instance: 'Turtle()'
+    }
+  },
   blocks: [
     "## $$futureboard_title_turtle",
     {

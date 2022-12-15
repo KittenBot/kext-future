@@ -50,9 +50,8 @@
       blockType: 'reporter',
       text: '$$futureboard_wifi_mac',
       disableMonitor: 1,
-      importCode: {
-        _machine: 'import machine',
-        ubinascii: 'import ubinascii',
+      micropy: {
+        import: 'import machine, ubinascii'
       },
       pycode: 'ubinascii.hexlify(machine.unique_id()).decode().upper()',
     },
@@ -66,10 +65,10 @@
       opcode: 'wifimqttconnect',
       blockType: 'command',
       text: '$$futureboard_wifi_mqtt_connect',
-      pycode: "mqtt = mqttsimple.MQTTClient([HOST], [ID],port=1883)\r\nmqtt.connect()",
-      importCode: {
-        _mqttsimple: 'import mqttsimple',
+      micropy: {
+        import: 'from mqttsimple import MQTTClient',
       },
+      pycode: "mqtt = MQTTClient([HOST], [ID],port=1883)\r\nmqtt.connect()",
       arguments: {
         HOST: {
           type: 'string',
@@ -85,10 +84,10 @@
       opcode: 'wifimqttconnectwithopt',
       blockType: 'command',
       text: '$$futureboard_wifi_mqtt_connect_withopt',
-      pycode: "mqtt = mqttsimple.MQTTClient([HOST], [ID],user=str([NAME]), password=str([PWD]),port=1883)\r\nmqtt.connect()",
-      importCode: {
-        _mqttsimple: 'import mqttsimple',
+      micropy: {
+        import: 'from mqttsimple import MQTTClient',
       },
+      pycode: "mqtt = MQTTClient([HOST], [ID],user=str([NAME]), password=str([PWD]),port=1883)\r\nmqtt.connect()",
       arguments: {
         HOST: {
           type: 'string',

@@ -4,11 +4,11 @@
   color1: "#ED6A47",
   color2: "#BF5235",
   color3: "#B83E1D",
-  lib: {
-    import: 'from kwatch import *'
-  },
-  instance: {
-    kclock: 'KClock()'
+  libs: {
+    kclock: {
+      import: 'from kwatch import KClock',
+      instance: 'KClock()'
+    }
   },
   blocks:[
     "## $$futureboard_title_watch",
@@ -16,7 +16,6 @@
       opcode: 'getTime',
       blockType: "reporter",
       text: "$$futureExtend_getTime",
-      instance: "kclock",
       pycode: "kclock.getTime([TYPE])",
       arguments: {
         TYPE: {
@@ -30,7 +29,6 @@
       opcode: 'resetTime',
       blockType: "command",
       text: "$$futureExtend_resetTime",
-      instance: "kclock",
       pycode: 'kclock.setTime(([Y],[M],[D],[W],[H],[m],[S]))',
       arguments: {
         Y: {
@@ -68,7 +66,6 @@
       opcode: 'controlTime',
       blockType: "command",
       text: "$$futureExtend_controlTime",
-      instance: "kclock",
       pycode: "kclock.modeSet(state=[TYPE])",
       arguments: {
         TYPE: {
@@ -82,7 +79,6 @@
       opcode: 'refreshTime',
       blockType: "command",
       text: "$$futureExtend_refreshTime",
-      instance: "kclock",
       pycode: 'kclock.refreshTime([TIMEZONE])',
       arguments: {
         TIMEZONE: {
