@@ -4,9 +4,6 @@
     color1: "#e04913",
     color2: "#e04913",
     color3: "#904913",
-    lib: {
-        import: "from sugar_asr import SugarASR"
-    },
     menus:{
         executor: [
             { value: '300', text: '开门' },
@@ -143,6 +140,9 @@
                     menu: 'port'
                 },
               },
+              micropy: {
+                import: "from sugar_asr import SugarASR"
+              }
             },
             { 
                 opcode: 'isAudioFired', 
