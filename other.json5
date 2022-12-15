@@ -4,8 +4,18 @@
     color1: "#E7B680",
     color2: "#d69d5e",
     color3: "#d69d5e",
-    lib: {
-        import: 'from sugar import *'
+    libs: {
+        "*": {
+            import: 'from sugar import *'
+        },
+        "hcsr04[PORT1][PORT2]": {
+            import: 'from sonar import *',
+            instance: 'HCSR04([PORT1],[PORT2])',
+        },
+        "dht11_[PORT]": {
+            import: 'from sugar import DHT11',
+            instance: 'DHT11([PORT])',
+        }
     },
     menus:{
         portsonar: ['P0', 'P1', 'P2', 'P8'],
@@ -18,10 +28,10 @@
     blocks: 
     [
         {
-        opcode: 'setTandHMode',
-        blockType: "command",
-        text: "$$sugar_setTandHMode",
-        pycode: 'dht11_[PORT].measure()',
+            opcode: 'setTandHMode',
+            blockType: "command",
+            text: "$$sugar_setTandHMode",
+            pycode: 'dht11_[PORT].measure()',
             arguments: {
                 PORT: {
                 type: "number",
@@ -31,11 +41,10 @@
             },
         },
         {
-        opcode: 'getTandHValue',
-        blockType: "reporter",
-        text: "$$sugar_getTandHValue",
-        pycode: 'dht11_[PORT].[TYPE]()',
-        disableInstance: 1,
+            opcode: 'getTandHValue',
+            blockType: "reporter",
+            text: "$$sugar_getTandHValue",
+            pycode: 'dht11_[PORT].[TYPE]()',
             arguments: {
                 PORT: {
                 type: "number",
@@ -50,10 +59,10 @@
             },
         },
         {
-        opcode: 'getHcSonarDistance',
-        blockType: "reporter",
-        text: "$$sugar_getHcSonarDistance",
-        pycode: 'hcsr04[PORT1][PORT2].checkdist()',
+            opcode: 'getHcSonarDistance',
+            blockType: "reporter",
+            text: "$$sugar_getHcSonarDistance",
+            pycode: 'hcsr04[PORT1][PORT2].checkdist()',
             arguments: {
                 PORT1: {
                 type: "number",

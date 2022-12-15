@@ -1,4 +1,18 @@
 {
+  libs: {
+    "[PIN]_in": {
+      instance: "MeowPin('[PIN]', 'IN')"
+    },
+    "[PIN]_out": {
+      instance: "MeowPin([PIN], 'OUT')"
+    },
+    "a_[PIN]": {
+      instance: "MeowPin('[PIN]', 'ANALOG')"
+    },
+    "pwm_[PIN]": {
+      instance: "MeowPin('[PIN]', 'PWM')"
+    }
+  },
   blocks: [
     "## $$futureboard_title_pin",
     {
@@ -9,16 +23,12 @@
       isImportMulty: true,
       arguments: {
         PIN: {
-          type: 'string',
+          type: 'value',
           defaultValue: 'P0',
           menu: 'PINS_DIG',
-          instance: '[PIN]_in'
         },
       },
       // importCode is aligned to instance
-      instance: {
-        "[PIN]_in": "MeowPin('[PIN]', 'IN')",
-      },
       pycode: '[PIN]_in.getDigital()',
     },
     {
@@ -28,10 +38,9 @@
       isImportMulty: true,
       arguments: {
         PIN: {
-          type: 'string',
+          type: 'value',
           defaultValue: 'P0',
           menu: 'PINS_DIG',
-          instance: '[PIN]_out'
         },
         MODE: {
           type: 'slider',
@@ -39,9 +48,6 @@
           max: 1,
           min: 0,
         },
-      },
-      instance: {
-        "[PIN]_out": "MeowPin([PIN], 'OUT')",
       },
       pycode: '[PIN]_out.setDigital([MODE])',
     },
@@ -53,19 +59,15 @@
       isImportMulty: true,
       arguments: {
         PIN: {
-          type: 'string',
+          type: 'value',
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
-          instance: 'a_[PIN]'
         },
         WIDTH: {
           type: 'string',
           menu: 'pinWidth',
           defaultValue: 12,
         },
-      },
-      instance: {
-        "a_[PIN]": "MeowPin('[PIN]', 'ANALOG')",
       },
       pycode: 'a_[PIN].getAnalog([WIDTH])',
     },
@@ -76,10 +78,9 @@
       isImportMulty: true,
       arguments: {
         PIN: {
-          type: 'string',
+          type: 'value',
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_WRITE',
-          instance: 'pwm_[PIN]'
         },
         VALUE: {
           type: 'slider',
@@ -87,9 +88,6 @@
           max: 1023,
           min: 0,
         },
-      },
-      instance: {
-        "pwm_[PIN]": "MeowPin('[PIN]', 'PWM')\r\n",
       },
       pycode: 'pwm_[PIN].setAnalog([VALUE])',
     },

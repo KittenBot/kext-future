@@ -7,9 +7,9 @@
       text: '$$futureboard_gettime',
       pycode: 'time.ticks_ms()',
       disableMonitor: true,
-      importCode: {
-        _timer: 'import time',
-      },
+      micropy: {
+        import: 'import time'
+      }
     },
     
     {

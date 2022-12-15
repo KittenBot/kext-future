@@ -4,8 +4,14 @@
   color1: "#8ab5ff",
   color2: "#5282d1",
   color3: "#8ab5ff",
-  lib: {
-    import: 'import sugarbox'
+  libs: {
+    sugarbox: {
+      import: 'import sugarbox'
+    },
+    "em[PORT]": {
+      import: 'import sugarbox',
+      instance: 'em[PORT]=sugarbox.EMotor([PORT])'
+    }
   },
   blocks: [
     "## $$sugarbox_title_motor",
@@ -109,23 +115,14 @@
     },
     "## $$sugarbox_encodable_single",
     {
-      opcode: 'setEncodableSingleInstance',
-      blockType: "command",
-      text: "$$sugarbox_setEncodableSingleInstance",
-      pycode: "em1 = sugarbox.EMotor(1)\r\nem2 = sugarbox.EMotor(2)",
-      importCode: {
-        _radio: 'import sugarbox',
-      },
-    },
-    {
       opcode: 'setEncodableSpeed',
       text: "$$sugarbox_setEncodableSpeed",
-      pycode: '[PORT].run(speed=[SPD])',
+      pycode: 'em[PORT].run(speed=[SPD])',
       blockType: "command",
       arguments: {
         PORT: {
           type: "number",
-          defaultValue: "em1",
+          defaultValue: "1",
           menu: "emport",
         },
         SPD: {
@@ -138,11 +135,11 @@
       opcode: 'setEncodableStop',
       blockType: "command",
       text: "$$sugarbox_setEncodableStop",
-      pycode: '[PORT].stop()',
+      pycode: 'em[PORT].stop()',
       arguments: {
         PORT: {
           type: "number",
-          defaultValue: "em1",
+          defaultValue: "1",
           menu: "emport",
         }
       },
@@ -151,11 +148,11 @@
       opcode: 'getEncodableSpd',
       blockType: "reporter",
       text: "$$sugarbox_getEncodableSpd",
-      pycode: '[PORT].get_speed()',
+      pycode: 'em[PORT].get_speed()',
       arguments: {
         PORT: {
           type: "number",
-          defaultValue: "em1",
+          defaultValue: "1",
           menu: "emport",
         }
       },
@@ -164,11 +161,11 @@
       opcode: 'rotateWithRoundEncodable',
       blockType: "command",
       text: "$$sugarbox_rotateWithRoundEncodable",
-      pycode: '[PORT].run_for_rotations(round=[ROUND], speed=[SPD], wait=True)',
+      pycode: 'em[PORT].run_for_rotations(round=[ROUND], speed=[SPD], wait=True)',
       arguments: {
         PORT: {
           type: "number",
-          defaultValue: "em1",
+          defaultValue: "1",
           menu: "emport",
         },
         ROUND: {
@@ -185,11 +182,11 @@
       opcode: 'rotateWithTimeEncodable',
       blockType: "command",
       text: "$$sugarbox_rotateWithTimeEncodable",
-      pycode: '[PORT].run_for_seconds(sec=[SECOND], speed=[SPD], wait=True)',
+      pycode: 'em[PORT].run_for_seconds(sec=[SECOND], speed=[SPD], wait=True)',
       arguments: {
         PORT: {
           type: "number",
-          defaultValue: "em1",
+          defaultValue: "1",
           menu: "emport",
         },
         SECOND: {
@@ -206,11 +203,11 @@
       opcode: 'rotateWithDegreeEncodable',
       blockType: "command",
       text: "$$sugarbox_rotateWithDegreeEncodable",
-      pycode: '[PORT].run_for_degrees(degree=[DEG], speed=[SPD], wait=True)',
+      pycode: 'em[PORT].run_for_degrees(degree=[DEG], speed=[SPD], wait=True)',
       arguments: {
         PORT: {
           type: "number",
-          defaultValue: "em1",
+          defaultValue: "1",
           menu: "emport",
         },
         DEG: {
@@ -228,6 +225,9 @@
       opcode: 'setEncodableProp',
       blockType: "command",
       text: "$$sugarbox_setEncodableProp",
+      micropy: {
+        import: 'import sugarbox'
+      },
       pycode: 'sugar_robot = sugarbox.EMotorDual(diameter=[CM], gauge=[AXLE], left=[PORTLEFT], right=[PORTRIGHT], dir=[REVERSABLE])',
       arguments: {
         CM: {
@@ -333,8 +333,8 @@
   ],
   menus: {
     emport: [
-      { text: 'EM1', value: 'em1' },
-      { text: 'EM2', value: 'em2' },
+      { text: 'EM1', value: '1' },
+      { text: 'EM2', value: '2' },
     ],
     emportIdx: [
       { text: 'EM1', value: '1' },

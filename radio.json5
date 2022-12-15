@@ -1,20 +1,23 @@
 {
+  libs: {
+    radio: {
+      import: 'from radio import Radio',
+      instance: 'Radio()'
+    }
+  },
   blocks: [
     '## $$futureboard_title_radio',
     {
       opcode: 'radioinit',
       blockType: 'command',
       text: '$$futureboard_radio_init',
-      importCode: {
-        _radio: 'from radio import *',
-      },
-      pycode: 'r = Radio()',
+      pycode: 'radio = Radio()',
     },
     {
       opcode: 'radioset',
       blockType: 'command',
       text: '$$futureboard_radio_set',
-      pycode: 'r.channel = [CHANNEL]',
+      pycode: 'radio.channel = [CHANNEL]',
       arguments: {
         CHANNEL: {
           type: 'slider',
@@ -29,13 +32,13 @@
       blockType: 'reporter',
       disableMonitor: 1,
       text: '$$futureboard_radio_receive',
-      pycode: 'r.read()',
+      pycode: 'radio.read()',
     },
     {
       opcode: 'radiosend',
       blockType: 'command',
       text: '$$futureboard_radio_send',
-      pycode: "r.send('[MSG]')",
+      pycode: "radio.send('[MSG]')",
       arguments: {
         MSG: {
           type: 'string',

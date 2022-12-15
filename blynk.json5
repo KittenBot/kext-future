@@ -10,8 +10,10 @@
         { text: "Multy" ,value: 'False' },
       ]
     },
-    lib: {
-      import: 'import blynklib'
+    libs: {
+      '*': {
+        import: 'import blynklib'
+      }
     },
     blocks: [
       "## $$blynk_title_basic",
@@ -166,7 +168,7 @@
         },
         pycode: [
           "@blynk_timer.register(interval=[SEC], run_once=[TYPE])",
-          "def blynk_timer[IDX]():"
+          "def blynk_timer():"
         ]
       },
       {

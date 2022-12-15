@@ -1,4 +1,10 @@
 {
+  libs: {
+    au: {
+      import: 'from audio import Audio',
+      instance: 'Audio()'
+    }
+  },
   blocks: [
     "## $$futureboard_title_microphone",
     {
@@ -6,10 +12,6 @@
       blockType: 'reporter',
       text: '$$futureboard_audio_strentch',
       disableMonitor: 1,
-      importCode: {
-        __auimport: 'import audio',
-        _au: 'au = audio.Audio()',
-      },
       pycode: 'au.loudness()',
     },
     {
@@ -19,10 +21,6 @@
       disableMonitor: 1,
       timeout: 10000,
       pycode: 'au.recognize(vid=[LANG], sec=[DELAY])',
-      importCode: {
-        __auimport: 'import audio',
-        _au: 'au = audio.Audio()',
-      },
       arguments: {
         LANG: {
           type: 'string',
