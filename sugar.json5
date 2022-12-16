@@ -742,25 +742,25 @@
     //   pycode: 'Matrix16x8().clear()',
     // },
 //----------------------------------------------------------------------------
-    "## $$sugar_title_infra",
-    {
-      opcode: 'runInfratx',
-      blockType: "command",
-      text: "$$sugar_runInfratx",
-      pycode: 'IrTRx().write([HEX])',
-      arguments: {
-        HEX: {
-          type: "string",
-          defaultValue: 'aabbccdd',
-        }
-      }
-    },
-    {
-      opcode: 'getInfrarx',
-      blockType: "reporter",
-      text: "$$sugar_getInfrarx",
-      pycode: 'IrTRx().read()',
-    },
+    // "## $$sugar_title_infra",
+    // {
+    //   opcode: 'runInfratx',
+    //   blockType: "command",
+    //   text: "$$sugar_runInfratx",
+    //   pycode: 'IrTRx().write([HEX])',
+    //   arguments: {
+    //     HEX: {
+    //       type: "string",
+    //       defaultValue: 'aabbccdd',
+    //     }
+    //   }
+    // },
+    // {
+    //   opcode: 'getInfrarx',
+    //   blockType: "reporter",
+    //   text: "$$sugar_getInfrarx",
+    //   pycode: 'IrTRx().read()',
+    // },
 //------------------------------------------------------
     "## $$sugar_title_watch",
     {
