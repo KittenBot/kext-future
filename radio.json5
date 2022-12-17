@@ -13,8 +13,9 @@
       opcode: 'radioinit',
       blockType: 'command',
       text: '$$futureboard_radio_init',
-      pycode: ['from radio import Radio',
-      'r = Radio()']
+      // pycode: ['from radio import Radio',
+      // 'r = Radio()']
+      pycode: ' '
     },
     {
       opcode: 'radioset',
