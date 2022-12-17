@@ -123,171 +123,171 @@
     },
     blocks: 
     [
-            {
-              opcode: 'runInit',
-              blockType: "command",
-              text: "$$ASR_runInit",
-              pycode: "asr = SugarASR([PORT1], [PORT2])",
-              arguments:{
-                PORT1:{
-                    type: "string",
-                    defaultValue: 'P2', 
-                    menu: 'port'
+        {
+            opcode: 'runInit',
+            blockType: "command",
+            text: "$$ASR_runInit",
+            pycode: "asr = SugarASR([PORT1], [PORT2])",
+            arguments:{
+            PORT1:{
+                type: "string",
+                defaultValue: 'P2', 
+                menu: 'port'
+            },
+            PORT2:{
+                type: "string",
+                defaultValue: 'P12', 
+                menu: 'port'
+            },
+            },
+            micropy: {
+            import: "from sugar_asr import SugarASR"
+            }
+        },
+        { 
+            opcode: 'isAudioFired', 
+            blockType: 'Boolean',
+            pycode: 'asr.detected()', 
+            text: "$$ASR_isAudioFired"
+        },
+        { 
+            opcode: 'isAudioAwake', 
+            blockType: 'Boolean',
+            pycode: "asr.cmd == '100'", 
+            text: "$$ASR_isAudioAwake"
+        },
+        { 
+            opcode: 'isLEDWord', 
+            blockType: 'Boolean',
+            pycode: "asr.cmd == '[LEDWORD]'", 
+            arguments:{
+                LEDWORD:{
+                    type:"number",
+                    defaultValue: '200', 
+                    menu: 'led'
                 },
-                PORT2:{
-                    type: "string",
-                    defaultValue: 'P12', 
-                    menu: 'port'
+            },
+            text: "$$ASR_isLEDWord"
+        },
+        { 
+            opcode: 'isExecutorWord', 
+            blockType: 'Boolean',
+            pycode: "asr.cmd == [EXECUTORWORD]", 
+            arguments:{
+                EXECUTORWORD:{
+                    type:"string",
+                    defaultValue: '300', 
+                    menu: 'executor'
                 },
-              },
-              micropy: {
-                import: "from sugar_asr import SugarASR"
-              }
             },
-            { 
-                opcode: 'isAudioFired', 
-                blockType: 'Boolean',
-                pycode: 'asr.detected()', 
-                text: "$$ASR_isAudioFired"
-            },
-            { 
-                opcode: 'isAudioAwake', 
-                blockType: 'Boolean',
-                pycode: "asr.cmdParse() == '100'", 
-                text: "$$ASR_isAudioAwake"
-            },
-            { 
-                opcode: 'isLEDWord', 
-                blockType: 'Boolean',
-                pycode: "asr.cmdParse() == '[LEDWORD]'", 
-                arguments:{
-                    LEDWORD:{
-                        type:"number",
-                        defaultValue: '200', 
-                        menu: 'led'
-                    },
+            text: "$$ASR_isExecutorWord"
+        },
+        { 
+            opcode: 'isQueryWord', 
+            blockType: 'Boolean',
+            pycode: "asr.cmd == '[QUERYWORD]'", 
+            arguments:{
+                QUERYWORD:{
+                    type:"number",
+                    defaultValue: '400', 
+                    menu: 'query'
                 },
-                text: "$$ASR_isLEDWord"
             },
-            { 
-                opcode: 'isExecutorWord', 
-                blockType: 'Boolean',
-                pycode: "asr.cmdParse() == '[EXECUTORWORD]'", 
-                arguments:{
-                    EXECUTORWORD:{
-                        type:"number",
-                        defaultValue: '300', 
-                        menu: 'executor'
-                    },
+            text: "$$ASR_isQueryWord"
+        },
+        { 
+            opcode: 'isCustomizeWord', 
+            blockType: 'Boolean',
+            pycode: "asr.cmd == '[CUSTOMIZE]'", 
+            arguments:{
+                CUSTOMIZE:{
+                    type:"number",
+                    defaultValue: '901', 
+                    menu: 'customize'
                 },
-                text: "$$ASR_isExecutorWord"
             },
-            { 
-                opcode: 'isQueryWord', 
-                blockType: 'Boolean',
-                pycode: "asr.cmdParse() == '[QUERYWORD]'", 
-                arguments:{
-                    QUERYWORD:{
-                        type:"number",
-                        defaultValue: '400', 
-                        menu: 'query'
-                    },
+            text: "$$ASR_isCustomizeWord"
+        },
+        { 
+            opcode: 'runAudioWord', 
+            blockType: "command",
+            pycode: "asr.tts_words([KEYWORD])", 
+            arguments:{
+                KEYWORD:{
+                    type:"number",
+                    defaultValue: '1', 
+                    menu: 'keyword'
                 },
-                text: "$$ASR_isQueryWord"
             },
-            { 
-                opcode: 'isCustomizeWord', 
-                blockType: 'Boolean',
-                pycode: "asr.cmdParse() == '[CUSTOMIZE]'", 
-                arguments:{
-                    CUSTOMIZE:{
-                        type:"number",
-                        defaultValue: '901', 
-                        menu: 'customize'
-                    },
+            text: "$$ASR_runAudioWord"
+        },
+        { 
+            opcode: 'runInt', 
+            blockType: "command",
+            pycode: "asr.tts_int([INT])", 
+            arguments:{
+                INT:{
+                    type:"number",
+                    defaultValue: '1', 
+                    type: "number"
                 },
-                text: "$$ASR_isCustomizeWord"
             },
-            { 
-                opcode: 'runAudioWord', 
-                blockType: "command",
-                pycode: "asr.tts_words([KEYWORD])", 
-                arguments:{
-                    KEYWORD:{
-                        type:"number",
-                        defaultValue: '1', 
-                        menu: 'keyword'
-                    },
+            text: "$$ASR_runInt"
+        },
+        { 
+            opcode: 'runDouble', 
+            blockType: "command",
+            pycode: "asr.tts_double([DOUBLE])", 
+            arguments:{
+                DOUBLE:{
+                    type:"number",
+                    defaultValue: '1.1', 
+                    type: "number"
                 },
-                text: "$$ASR_runAudioWord"
             },
-            { 
-                opcode: 'runInt', 
-                blockType: "command",
-                pycode: "asr.tts_int([INT])", 
-                arguments:{
-                    INT:{
-                        type:"number",
-                        defaultValue: '1', 
-                        type: "number"
-                    },
+            text: "$$ASR_runDouble"
+        },
+        { 
+            opcode: 'runDate', 
+            blockType: "command",
+            pycode: "asr.tts_date([Y], [M], [D])", 
+            arguments:{
+                Y:{
+                    type:"number",
+                    defaultValue: '1', 
+                    type: "number"                       
                 },
-                text: "$$ASR_runInt"
-            },
-            { 
-                opcode: 'runDouble', 
-                blockType: "command",
-                pycode: "asr.tts_double([DOUBLE])", 
-                arguments:{
-                    DOUBLE:{
-                        type:"number",
-                        defaultValue: '1.1', 
-                        type: "number"
-                    },
+                M:{
+                    type:"number",
+                    defaultValue: '1', 
+                    type: "number"
                 },
-                text: "$$ASR_runDouble"
-            },
-            { 
-                opcode: 'runDate', 
-                blockType: "command",
-                pycode: "asr.tts_date([Y], [M], [D])", 
-                arguments:{
-                    Y:{
-                        type:"number",
-                        defaultValue: '1', 
-                        type: "number"                       
-                    },
-                    M:{
-                        type:"number",
-                        defaultValue: '1', 
-                        type: "number"
-                    },
-                    D:{
-                        type:"number",
-                        defaultValue: '1', 
-                        type: "number"
-                    },
+                D:{
+                    type:"number",
+                    defaultValue: '1', 
+                    type: "number"
                 },
-                text: "$$ASR_runDate"
             },
-            { 
-                opcode: 'runHour', 
-                blockType: "command",
-                pycode: "asr.tts_clock([H], [MIN])", 
-                arguments:{
-                    H:{
-                        type:"number",
-                        defaultValue: '1', 
-                        type: "number"
-                    },
-                    MIN:{
-                        type:"number",
-                        defaultValue: '1', 
-                        type: "number"
-                    },
+            text: "$$ASR_runDate"
+        },
+        { 
+            opcode: 'runHour', 
+            blockType: "command",
+            pycode: "asr.tts_clock([H], [MIN])", 
+            arguments:{
+                H:{
+                    type:"number",
+                    defaultValue: '1', 
+                    type: "number"
                 },
-                text: "$$ASR_runHour"
+                MIN:{
+                    type:"number",
+                    defaultValue: '1', 
+                    type: "number"
+                },
             },
+            text: "$$ASR_runHour"
+        },
     ],
 
 }

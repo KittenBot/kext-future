@@ -38,7 +38,8 @@
   "filesystem": "pyboard",
   "afterConnect": [
     "from future import *",
-    "buzzer.melody(1)"
+    "buzzer.melody(1)",
+    "screen.clear()"
   ],
   "gen": {
     "imports": {"fb": "from future import *"}

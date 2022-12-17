@@ -157,7 +157,7 @@
     },
     {
       opcode: "getClassifierTag",
-      blockType: "command",
+      blockType: "reporter",
       text: "$$futureKoi_getClassifierTag",
       pycode: "koi.cls_run(cmd='K42')",
     },

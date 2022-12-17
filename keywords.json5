@@ -625,8 +625,8 @@
     scroe: 100
   },
   {
-    name: 'mqttRead',
-    value: "mqttRead",
+    name: 'read',
+    value: "read",
     meta: '获取消息',
     scroe: 100
   },
