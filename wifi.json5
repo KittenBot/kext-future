@@ -123,7 +123,7 @@
       opcode: 'wifimqttread',
       blockType: 'reporter',
       text: '$$futureboard_wifi_mqtt_read',
-      pycode: "mqtt.mqttRead([TOPIC])",
+      pycode: "mqtt.read([TOPIC])",
       arguments: {
         TOPIC: {
           type: 'string',
