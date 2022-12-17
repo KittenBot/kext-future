@@ -1,7 +1,9 @@
 {
   libs: {
-    radio: {
-      import: 'from radio import Radio',
+    "*": {
+      import: "from radio import Radio",
+    },
+    r: {
       instance: 'Radio()'
     }
   },
@@ -11,13 +13,14 @@
       opcode: 'radioinit',
       blockType: 'command',
       text: '$$futureboard_radio_init',
-      pycode: 'radio = Radio()',
+      pycode: ['from radio import Radio',
+      'r = Radio()']
     },
     {
       opcode: 'radioset',
       blockType: 'command',
       text: '$$futureboard_radio_set',
-      pycode: 'radio.channel = [CHANNEL]',
+      pycode: 'r.channel = [CHANNEL]',
       arguments: {
         CHANNEL: {
           type: 'slider',
@@ -32,13 +35,13 @@
       blockType: 'reporter',
       disableMonitor: 1,
       text: '$$futureboard_radio_receive',
-      pycode: 'radio.read()',
+      pycode: 'r.read()',
     },
     {
       opcode: 'radiosend',
       blockType: 'command',
       text: '$$futureboard_radio_send',
-      pycode: "radio.send('[MSG]')",
+      pycode: "r.send('[MSG]')",
       arguments: {
         MSG: {
           type: 'string',
