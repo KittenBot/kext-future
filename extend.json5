@@ -12,6 +12,10 @@
     intercom: {
       import: 'from intercom import Intercom',
       instance: 'Intercom()'
+    },
+    au: {
+      import: 'from audio import Audio',
+      instance: 'Audio()'
     }
   },
   blocks:[

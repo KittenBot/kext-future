@@ -141,7 +141,7 @@
             },
             },
             micropy: {
-            import: "from sugar_asr import SugarASR"
+                import: "from sugar_asr import SugarASR"
             }
         },
         { 
