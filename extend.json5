@@ -41,7 +41,7 @@
       arguments: {
         Y: {
           type: "number",
-          defaultValue: '2021',
+          defaultValue: '2016',
         },
         M: {
           type: "number",
@@ -49,24 +49,24 @@
         },
         D: {
           type: "number",
-          defaultValue: '1',
+          defaultValue: '6',
         },
         W: {
           type: "string",
           menu: 'WEEK',
-          defaultValue: '5'
+          defaultValue: '3'
         },
         H: {
           type: "number",
-          defaultValue: '1',
+          defaultValue: '0',
         },
         m: {
           type: "number",
-          defaultValue: '1',
+          defaultValue: '0',
         },
         S: {
           type: "number",
-          defaultValue: '1',
+          defaultValue: '0',
         },
       }
     },
@@ -143,7 +143,7 @@
       arguments: {
         KEY: {
           type: "string",
-          defaultValue: 'key'
+          defaultValue: ' '
         }
       }
     },
@@ -230,7 +230,7 @@
       arguments: {
         WAVFILENAME: {
           type: "string",
-          defaultValue: 'paly.wav'
+          defaultValue: 'abc.wav'
         }
       }
     },
