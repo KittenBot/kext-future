@@ -1,9 +1,7 @@
 {
   libs: {
-    "*": {
-      import: "from radio import Radio",
-    },
     r: {
+      import: 'from radio import Radio',
       instance: 'Radio()'
     }
   },
@@ -13,9 +11,10 @@
       opcode: 'radioinit',
       blockType: 'command',
       text: '$$futureboard_radio_init',
-      // pycode: ['from radio import Radio',
-      // 'r = Radio()']
-      pycode: ' '
+      micropy: {
+        import: 'from radio import Radio'
+      },
+      pycode: 'r = Radio()'
     },
     {
       opcode: 'radioset',
