@@ -1,9 +1,9 @@
 {
     id: "futureboard@kext_ASR",
     name: "$$ASR_title",
-    color1: "#e04913",
-    color2: "#e04913",
-    color3: "#904913",
+    color1: "#EC541E",
+    color2: "#CC4515",
+    color3: "#BF3E0F",
     menus:{
         executor: [
             { value: '300', text: '开门' },
@@ -127,6 +127,9 @@
             opcode: 'runInit',
             blockType: "command",
             text: "$$ASR_runInit",
+            micropy: {
+                import: "from sugar_asr import SugarASR"
+            },
             pycode: "asr = SugarASR([PORT1], [PORT2])",
             arguments:{
             PORT1:{
@@ -139,9 +142,6 @@
                 defaultValue: 'P12', 
                 menu: 'port'
             },
-            },
-            micropy: {
-                import: "from sugar_asr import SugarASR"
             }
         },
         { 
@@ -172,10 +172,10 @@
         { 
             opcode: 'isExecutorWord', 
             blockType: 'Boolean',
-            pycode: "asr.cmd == [EXECUTORWORD]", 
+            pycode: "asr.cmd == '[EXECUTORWORD]'", 
             arguments:{
                 EXECUTORWORD:{
-                    type:"string",
+                    type:"number",
                     defaultValue: '300', 
                     menu: 'executor'
                 },
@@ -241,7 +241,7 @@
             arguments:{
                 DOUBLE:{
                     type:"number",
-                    defaultValue: '1.1', 
+                    defaultValue: '1.23', 
                     type: "number"
                 },
             },
@@ -254,7 +254,7 @@
             arguments:{
                 Y:{
                     type:"number",
-                    defaultValue: '1', 
+                    defaultValue: '2016', 
                     type: "number"                       
                 },
                 M:{
@@ -264,7 +264,7 @@
                 },
                 D:{
                     type:"number",
-                    defaultValue: '1', 
+                    defaultValue: '6', 
                     type: "number"
                 },
             },
@@ -277,12 +277,12 @@
             arguments:{
                 H:{
                     type:"number",
-                    defaultValue: '1', 
+                    defaultValue: '0', 
                     type: "number"
                 },
                 MIN:{
                     type:"number",
-                    defaultValue: '1', 
+                    defaultValue: '0', 
                     type: "number"
                 },
             },
