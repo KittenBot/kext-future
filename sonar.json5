@@ -1,0 +1,56 @@
+{
+    id: "futureboard@kext_sonar",
+    name: "$$sonar",
+    color1: "#363F6A",
+    color2: "#22294A",
+    color3: "#191F3B",
+    libs: {
+        '*': {
+            import: 'from sonar import *'
+        },
+        "hcsr04[PORT1][PORT2]": {
+            instance: 'HCSR04([PORT1],[PORT2])'
+        },
+        "meowSonar[PIN]": {
+            instance: 'MeowSonar([PIN])'
+        }
+    },
+    menus:{
+        PIN_LIST: ['P0', 'P1', 'P2', 'P8']
+    },
+    blocks: 
+    [
+        {
+            opcode: 'getHcSonarDistance',
+            blockType: "reporter",
+            text: "$$sonar_getHcSonarDistance",
+            pycode: 'hcsr04[PORT1][PORT2].checkdist()',
+            arguments: {
+                PORT1: {
+                type: "number",
+                defaultValue: 'P0',
+                menu: 'PIN_LIST'
+                },
+                PORT2: {
+                type: "number",
+                defaultValue: 'P1',
+                menu: 'PIN_LIST'
+                }
+            },
+        },
+        '---',
+        {
+            opcode: 'getMeowSonarDisance',
+            blockType: "reporter",
+            text: "$$sonar_getMeowSonarDistance",
+            pycode: 'MeowSonar[PIN].checkdist()',
+            arguments: {
+                PIN: {
+                type: "number",
+                defaultValue: 'P0',
+                menu: 'PIN_LIST'
+                }
+            },
+        },
+    ],
+}

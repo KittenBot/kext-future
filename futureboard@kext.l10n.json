@@ -367,7 +367,6 @@
     "sugar_title_moisture": "Soil Moisture",
     "sugar_title_waterlevel": "Water Level",
     "sugar_title_infra": "Infrare",
-    "sugar_title_sonao": "Sonar",
     "sugar_title_temp": "Temperature(DS18B20)",
     "sugar_title_lazer": "Lazer",
     "sugar_title_tmphum": "Environment",
@@ -418,7 +417,6 @@
     "sugar_setGestureBrightness": "Color Gesture Set LED brightness [VALUE]%",
     "sugar_setGestureLed": "Color Gesture turn on LED 1[LED1] 2[LED2] 3[LED3] 4[LED4]",
     "sugar_getTempValue": "Temp sensor (DS18B20) [PORT] get Temperature",
-    "sugar_getSonarDistance": "Sonar [PORT] get distance(mm)",
     "sugar_getInfraDecodeValue": "Infrared received decoded data",
     "sugar_whenInfraReceice": "When Infrared [PORT] received data",
     "sugar_getInfraValueDiff": "Infrared received get decoded data is equal [VALUE]",
@@ -464,7 +462,6 @@
     "sugar_menu_gestureMode_gesture": "Gesture",
     "sugar_menu_gestureMode_distance": "Distance",
     "sugar_menu_gestureMode_led": "LED",
-    "sugar_getHcSonarDistance": "HC-SR04 Sonar Distance Trig [PORT1] Echo [PORT2]",
     "sugar_huetohsv": "HSV to HEX Hue [H] Saturation [S] Value [V]",
 
     "ASR_title": "ASR",
@@ -479,7 +476,11 @@
     "ASR_runInt": "Voice announcement integer [INT]",
     "ASR_runDouble": "Voice Announcement Double Decimal [DOUBLE]",
     "ASR_runDate": "Voice broadcast date [Y] year [M] month [D] day",
-    "ASR_runHour": "Voice announcement Clock: [H] hours [MIN] minutes"
+    "ASR_runHour": "Voice announcement Clock: [H] hours [MIN] minutes",
+
+    "sonar": "Sonar",
+    "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] Distance (cm)",
+    "sonar_getMeowSonarDistance": "MeowSonar [PIN] Distance (cm)"
 
     
   },
@@ -966,7 +967,13 @@
     "ASR_runInt": "语音播报 整数 [INT]",
     "ASR_runDouble": "语音播报 双精度小数 [DOUBLE]",
     "ASR_runDate": "语音播报 日期 [Y]年 [M]月 [D]日",
-    "ASR_runHour": "语音播报 时钟: [H] 时 [MIN]分"
+    "ASR_runHour": "语音播报 时钟: [H] 时 [MIN]分",
+
+    "sonar": "超声波",
+    "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] 距离 (厘米)",
+    "sonar_getMeowSonarDistance": "猫头超声波 [PIN] 距离 (厘米)"
+
+
   },
   "zh-tw": {
     "futureboard_title_uart": "串口",
@@ -1303,7 +1310,6 @@
     "sugar_title_moisture": "土壤模塊",
     "sugar_title_waterlevel": "雨滴水位模塊",
     "sugar_title_infra": "紅外接收模塊",
-    "sugar_title_sonao": "超聲波模塊",
     "sugar_title_temp": "溫度模塊(D S18B20)",
     "sugar_title_lazer": "激光測距模塊",
     "sugar_title_tmphum": "溫濕度模塊",
@@ -1417,6 +1423,10 @@
     "ASR_runInt": "語音播報 整數 [INT]",
     "ASR_runDouble": "語音播報 雙精度小數 [DOUBLE]",
     "ASR_runDate": "語音播報 日期 [Y]年 [M]月 [D]日",
-    "ASR_runHour": "語音播報 時鐘: [H] 時 [MIN]分"
+    "ASR_runHour": "語音播報 時鐘: [H] 時 [MIN]分",
+
+    "sonar": "超聲波",
+    "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] 距離 (厘米)",
+    "sonar_getMeowSonarDistance": "貓頭超聲波 [PIN] 距離 (厘米)"
   }
 }

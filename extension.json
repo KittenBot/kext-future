@@ -92,11 +92,11 @@
   "subextensions": [
     "extend.json5",
     "robotbit.json5",
-    "sugarbox.json5",
     "sugar.json5",
-    "other.json5",
+    "sugarbox.json5",
     "asr.json5",
     "koi.json5",
+    "sonar.json5",
     "blynk.json5"
   ],
   "helplink":{

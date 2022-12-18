@@ -5,15 +5,12 @@
     color2: "#d69d5e",
     color3: "#d69d5e",
     libs: {
-        "*": {
-            import: 'from sugar import *'
-        },
         "hcsr04[PORT1][PORT2]": {
             import: 'from sonar import *',
             instance: 'HCSR04([PORT1],[PORT2])',
         },
         "dht11_[PORT]": {
-            import: 'from sugar import DHT11',
+            import: 'from dht import DHT11',
             instance: 'DHT11([PORT])',
         }
     },
