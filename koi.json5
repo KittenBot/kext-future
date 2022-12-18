@@ -1,9 +1,9 @@
 {
   id: "futureboard@kext_koi",
   name: "KOI",
-  color1: "#9aa4d2",
-  color2: "#8c96bd",
-  color3: "#9aa4d2",
+  color1: "#9AA4D2",
+  color2: "#8C96BD",
+  color3: "#8C96BD",
   libs: {
     "*": {
       import: "from futureKOI import KOI",
