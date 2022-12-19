@@ -1,4 +1,9 @@
 {
+  libs: {
+    screen: {
+      keywords: ['screen']
+    }
+  },
   blocks: [
     "## $$futureboard_title_screen",
     {

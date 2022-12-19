@@ -1,4 +1,9 @@
 {
+  libs: {
+    neopix: {
+      keywords: ['NeoPixel']
+    }
+  },
   blocks: [
     "## $$futureboard_title_neopixel",
     {

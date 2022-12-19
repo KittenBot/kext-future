@@ -9,64 +9,49 @@
       import: 'import sugar'
     },
     "pir_[PORT]": {
-      instance: "sugar.PIR('[PORT]')"
+      instance: "PIR('[PORT]')"
     },
     "tracker_[PORT]": {
-      instance: "sugar.Tracker('[PORT]')"
+      instance: "Tracker('[PORT]')"
     },
     "hall_[PORT]": {
-      instance: "sugar.Hall('[PORT]')"
+      instance: "Hall('[PORT]')"
     },
     "button_[PORT]": {
-      instance: "sugar.Button('[PORT]')"
-    },
-    "vibrate_[PORT]": {
-      instance: "sugar.Vibrate('[PORT]')"
-    },
-    "buzzerA_[PORT]": {
-      instance: "sugar.BuzzerA('[PORT]')"
-    },
-    "laser_[PORT]": {
-      instance: "sugar.Laser('[PORT]')"
+      instance: "Button('[PORT]')"
     },
     "ds18b20_[PORT]": {
-      instance: "sugar.DS18B20('[PORT]')"
+      instance: "DS18B20('[PORT]')"
     },
     "flame_[PORT]": {
-      instance: "sugar.Flame('[PORT]')"
+      instance: "Flame('[PORT]')"
     },
     "angle_[PORT]": {
-      instance: "sugar.Angle('[PORT]')"
+      instance: "Angle('[PORT]')"
     },
     "light_[PORT]": {
-      instance: "sugar.Light('[PORT]')"
+      instance: "Light('[PORT]')"
     },
     "soil_[PORT]": {
-      instance: "sugar.Soil('[PORT]')"
+      instance: "Soil('[PORT]')"
     },
-    "waterLever_[PORT]": {
-      instance: "sugar.WaterLevel('[PORT]')"
+    "water_[PORT]": {
+      instance: "Water('[PORT]')"
     },
     "led_[PORT]": {
-      instance: "sugar.LED('[PORT]')"
+      instance: "LED('[PORT]')"
     },
     "tofDis": {
-      instance: "sugar.TOFDistance()"
+      instance: "TOFDistance()"
     },
     "env1": {
-      instance: "sugar.ENV()"
+      instance: "ENV()"
     },
     "joystick": {
-      instance: "sugar.Joystick()"
-    },
-    "display": {
-      instance: "sugar.Display()"
-    },
-    "env2": {
-      instance: "sugar.ENV2()"
+      instance: "Joystick()"
     },
     "rtc": {
-      instance: "sugar.Clock()"
+      instance: "Clock()"
     }
   },
 
@@ -150,7 +135,7 @@
       // mode: ['micropython'],
       pycode:[
         "infra = InfraRx('[PORT]', [PORT]_code)",
-        "def [PORT]_code(infraV)"
+        "def [PORT]_code(infraV):"
       ],
       arguments: {
         PORT: {

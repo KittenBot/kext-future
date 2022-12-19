@@ -1,10 +1,11 @@
 {
   libs: {
     "[PIN]_in": {
-      instance: "MeowPin('[PIN]', 'IN')"
+      instance: "MeowPin('[PIN]', 'IN')",
+      keywords: ['MeowPin']
     },
     "[PIN]_out": {
-      instance: "MeowPin([PIN], 'OUT')"
+      instance: "MeowPin('[PIN]', 'OUT')"
     },
     "[PIN]_analog": {
       instance: "MeowPin('[PIN]', 'ANALOG')"

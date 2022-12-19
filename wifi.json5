@@ -1,4 +1,9 @@
 {
+  libs:{
+    wifi: {
+      keywords: ['wifi']
+    }
+  },
   blocks: [
     '## $$futureboard_title_wifi',
     {
