@@ -31,43 +31,47 @@
         },
       },
     },
-    // {
-    //   opcode: "rbmotor2",
-    //   blockType: "command",
-    //   text: "$$futureboard_rb_motor2",
-    //   isAsync: true,
-    //   pycode: "robot.motor([[MOTOR1],[MOTOR2]],[[SPD1],[SPD2]])",
-    //   arguments: {
-    //     MOTOR1: {
-    //       type: "string",
-    //       defaultValue: "1",
-    //       menu: "MOTORS",
-    //     },
-    //     SPD1: {
-    //       type: "slider",
-    //       defaultValue: 100,
-    //       min: -255,
-    //       max: 255,
-    //     },
-    //     MOTOR2: {
-    //       type: "string",
-    //       defaultValue: "2",
-    //       menu: "MOTORS",
-    //     },
-    //     SPD2: {
-    //       type: "slider",
-    //       defaultValue: 100,
-    //       min: -255,
-    //       max: 255,
-    //     },
-    //   },
-    // },
+// -------------------------------------------------------
+    {
+      opcode: "rbmotor2",
+      blockType: "command",
+      text: "$$futureboard_rb_motor2",
+      // isAsync: true,
+      pycode: "robot.motor([[MOTOR1],[MOTOR2]],[[SPD1],[SPD2]])",
+      arguments: {
+        MOTOR1: {
+          type: "string",
+          defaultValue: "1",
+          menu: "MOTORS",
+        },
+        SPD1: {
+          type: "slider",
+          defaultValue: 100,
+          min: -255,
+          max: 255,
+        },
+        MOTOR2: {
+          type: "string",
+          defaultValue: "2",
+          menu: "MOTORS",
+        },
+        SPD2: {
+          type: "slider",
+          defaultValue: 100,
+          min: -255,
+          max: 255,
+        },
+      },
+    },
+// -------------------------------------------------------
     {
       opcode: "rbmotorstopall",
       blockType: "command",
       text: "$$futureboard_rb_motor_stopall",
       pycode: "robot.motorStopAll()",
     },
+    '---',
+// -------------------------------------------------------
     {
       opcode: "rbservo",
       blockType: "command",
@@ -87,6 +91,7 @@
         },
       },
     },
+// -------------------------------------------------------
     {
       opcode: "rbgeek9gservo",
       blockType: "command",
@@ -106,6 +111,7 @@
         },
       },
     },
+// -------------------------------------------------------
     {
       opcode: "rbgeek2kgservo",
       blockType: "command",
@@ -125,6 +131,8 @@
         },
       },
     },
+    '---',
+// -------------------------------------------------------
     {
       opcode: "rbstepper",
       blockType: "command",
@@ -141,6 +149,7 @@
         },
       },
     },
+// -------------------------------------------------------
     {
       opcode: "rbstepperdegree",
       blockType: "command",
@@ -158,7 +167,9 @@
         },
       },
     },
+    '---',
   ],
+
   menus: {
     MOTORS: [
       { text: "M1A", value: "1" },
