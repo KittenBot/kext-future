@@ -9,9 +9,11 @@
             import: 'from sonar import *'
         },
         "hcsr04[PORT1][PORT2]": {
+            keywords: ['HCSR04','P0', 'P1', 'P2', 'P8'],
             instance: 'HCSR04([PORT1],[PORT2])'
         },
         "meowSonar[PIN]": {
+            keywords: ['MeowSonar'],
             instance: 'MeowSonar([PIN])'
         }
     },
@@ -43,7 +45,7 @@
             opcode: 'getMeowSonarDisance',
             blockType: "reporter",
             text: "$$sonar_getMeowSonarDistance",
-            pycode: 'MeowSonar[PIN].checkdist()',
+            pycode: 'meowSonar[PIN].checkdist()',
             arguments: {
                 PIN: {
                 type: "number",

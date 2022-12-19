@@ -9,49 +9,67 @@
       import: 'from sugar import *'
     },
     "pir_[PORT]": {
-      instance: "PIR('[PORT]')"
+      instance: "PIR('[PORT]')",
+      keywords: ['PIR']
+    },
+    "infra": {
+      keywords: ['InfraRx', 'infraV', 'P0_code']
     },
     "tracker_[PORT]": {
-      instance: "Tracker('[PORT]')"
+      instance: "Tracker('[PORT]')",
+      keywords: ['Tracker']
     },
     "hall_[PORT]": {
-      instance: "Hall('[PORT]')"
+      instance: "Hall('[PORT]')",
+      keywords: ['Hall']
     },
     "button_[PORT]": {
-      instance: "Button('[PORT]')"
+      instance: "Button('[PORT]')",
+      keywords: ['Button']
     },
     "ds18b20_[PORT]": {
-      instance: "DS18B20('[PORT]')"
+      instance: "DS18B20('[PORT]')",
+      keywords: ['DS18B20']
     },
     "flame_[PORT]": {
-      instance: "Flame('[PORT]')"
+      instance: "Flame('[PORT]')",
+      keywords: ['Flame']
     },
     "angle_[PORT]": {
-      instance: "Angle('[PORT]')"
+      instance: "Angle('[PORT]')",
+      keywords: ['Angle']
     },
     "light_[PORT]": {
-      instance: "Light('[PORT]')"
+      instance: "Light('[PORT]')",
+      keywords: ['Light']
     },
     "soil_[PORT]": {
-      instance: "Soil('[PORT]')"
+      instance: "Soil('[PORT]')",
+      keywords: ['Soil']
     },
     "water_[PORT]": {
-      instance: "Water('[PORT]')"
+      instance: "Water('[PORT]')",
+      keywords: ['Water']
     },
     "led_[PORT]": {
-      instance: "LED('[PORT]')"
+      instance: "LED('[PORT]')",
+      keywords: ['LED']
     },
     "tofDis": {
-      instance: "TOFDistance()"
+      instance: "TOFDistance()",
+      keywords: ['TOFDistance']
     },
     "env1": {
-      instance: "ENV()"
+      instance: "ENV()",
+      keywords: ['ENV']
     },
     "joystick": {
-      instance: "Joystick()"
+      instance: "Joystick()",
+      keywords: ['Joystick']
     },
     "rtc": {
-      instance: "Clock()"
+      instance: "Clock()",
+      keywords: ['Clock']
     }
   },
 
@@ -135,7 +153,7 @@
       // mode: ['micropython'],
       pycode:[
         "infra = InfraRx('[PORT]', [PORT]_code)",
-        "def [PORT]_code(infraV)"
+        "def [PORT]_code(infraV):"
       ],
       arguments: {
         PORT: {
