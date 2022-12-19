@@ -1,9 +1,9 @@
 {
     id: "futureboard@kext_blynk",
     name: "$$blynk_title",
-    color1: "#48e48b",
-    color2: "#00D25B",
-    color3: "#48F894",
+    color1: "#2ACC91",
+    color2: "#29B582",
+    color3: "#23AA79",
     menus:{
       intervalType: [
         { text: "Once" ,value: 'True' },
@@ -21,7 +21,7 @@
         opcode: 'portInit',
         text: "$$blynk_portInit",
         blockType: "command",
-        pycode: '\r\n',
+        pycode: 'blynk = blynklib.Blynk([AUTH], server=[HOST], port=[PORT])',
         arguments: {
           AUTH: {
             type: "string",
@@ -35,15 +35,16 @@
             type: "number",
             defaultValue: '8080',
           },
-        },
-        pycode: 'blynk = blynklib.Blynk([AUTH], server=[HOST], port=[PORT])'
+        }
       },
+// -------------------------------------------------------
       {
         opcode: 'run',
         text: "$$blynk_run",
         blockType: "command",
         pycode: 'blynk.run()'
       },
+// -------------------------------------------------------
       {
         opcode: 'whenConnected',
         text: "$$blynk_whenConnected",
@@ -53,6 +54,7 @@
           'def connect_handler():',
         ]
       },
+// -------------------------------------------------------
       {
         opcode: 'whenDisconnected',
         text: "$$blynk_whenDisconnected",
@@ -62,6 +64,7 @@
           'def disconn_handler():',
         ]
       },
+// -------------------------------------------------------
       {
         opcode: 'showNotify',
         text: "$$blynk_showNotify",
@@ -74,6 +77,7 @@
           },
         }
       },
+// -------------------------------------------------------
       "## $$blynk_title_anaPin",
       {
         opcode: 'sendData',
@@ -91,6 +95,7 @@
           },
         }
       },
+// -------------------------------------------------------
       {
         opcode: 'whenAcceptData',
         text: "$$blynk_whenAcceptData",
@@ -106,12 +111,14 @@
           "def write_virtual_pin_handler_[PIN](pin, _value):"
         ]
       },
+// -------------------------------------------------------
       {
         opcode: 'acceptData',
         text: "$$blynk_acceptData",
         blockType: "reporter",
         pycode: "_value"
       },
+// -------------------------------------------------------
       {
         opcode: 'syncData',
         text: "$$blynk_syncData",
@@ -124,6 +131,7 @@
           },
         }
       },
+// -------------------------------------------------------
       {
         opcode: 'setAnaProps',
         text: "$$blynk_setAnaProps",
@@ -140,6 +148,7 @@
           },
         }
       },
+// -------------------------------------------------------
       "## $$blynk_title_timer",
       {
         opcode: 'runTimer',
@@ -147,6 +156,7 @@
         blockType: "command",
         pycode: "blynk_timer.run()",
       },
+// -------------------------------------------------------
       {
         opcode: 'setTimer',
         text: "$$blynk_setTimer",
@@ -171,6 +181,7 @@
           "def blynk_timer():"
         ]
       },
+// -------------------------------------------------------
       {
         opcode: 'stopTimer',
         text: "$$blynk_stopTimer",
@@ -183,12 +194,14 @@
           },
         }
       },
+// -------------------------------------------------------
       {
         opcode: 'getTimer',
         text: "$$blynk_getTimer",
         blockType: "reporter",
         pycode: "blynk_timer.get_timers()",
       },
+// -------------------------------------------------------
       "## $$blynk_title_other",
       {
         opcode: 'sendEmail',
