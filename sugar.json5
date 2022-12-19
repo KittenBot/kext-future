@@ -9,43 +9,43 @@
       import: 'from sugar import *'
     },
     "pir_[PORT]": {
-      instance: "PIR([PORT])"
+      instance: "PIR('[PORT]')"
     },
     "tracker_[PORT]": {
-      instance: "Tracker([PORT])"
+      instance: "Tracker('[PORT]')"
     },
     "hall_[PORT]": {
-      instance: "Hall([PORT])"
+      instance: "Hall('[PORT]')"
     },
     "button_[PORT]": {
-      instance: "Button([PORT])"
+      instance: "Button('[PORT]')"
     },
     "ds18b20_[PORT]": {
-      instance: "DS18B20([PORT])"
+      instance: "DS18B20('[PORT]')"
     },
     "flame_[PORT]": {
-      instance: "Flame([PORT])"
+      instance: "Flame('[PORT]')"
     },
     "angle_[PORT]": {
-      instance: "Angle([PORT])"
+      instance: "Angle('[PORT]')"
     },
     "light_[PORT]": {
-      instance: "Light([PORT])"
+      instance: "Light('[PORT]')"
     },
     "soil_[PORT]": {
-      instance: "Soil([PORT])"
+      instance: "Soil('[PORT]')"
     },
     "water_[PORT]": {
-      instance: "Water([PORT])"
+      instance: "Water('[PORT]')"
     },
     "led_[PORT]": {
-      instance: "LED([PORT])"
+      instance: "LED('[PORT]')"
     },
     "tofDis": {
       instance: "TOFDistance()"
     },
     "env1": {
-      instance: "ENV([PORT])"
+      instance: "ENV()"
     },
     "joystick": {
       instance: "Joystick()"
@@ -133,24 +133,24 @@
       blockType: "hat",
       text: "$$sugar_whenInfraReceice",
       // mode: ['micropython'],
+      pycode:[
+        "infra = InfraRx('[PORT]', [PORT]_code)",
+        "def [PORT]_code(infraV)"
+      ],
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           menu: 'PIN_DIG',
           defaultValue: 'P0',
-        },
-      },
-      micropy: {
-        import: 'infra = InfraRx([PORT], printCode)'
-      },
-      pycode:"def printCode(infraV):",
+        }
+      }
     },
     {
       opcode: 'getInfraDecodeValue',
       blockType: "reporter",
       text: "$$sugar_getInfraDecodeValue",
       // mode: ['micropython'],
-      disableMonitor: true,
+      // disableMonitor: true,
       pycode: 'infraV',
     },
     {
@@ -324,7 +324,7 @@
       opcode: 'getJoyStickValue',
       blockType: "reporter",
       text: "$$sugar_getJoyStickValue",
-      pycode: 'joystick_[PORT].value([TYPE])',
+      pycode: 'joystick.value([TYPE])',
       arguments: {
         TYPE: {
           type: "string",
@@ -455,7 +455,7 @@
         }
       }
     },
-
+    '---',
 //----------------------------------------------------------------------------
 //     "## $$sugar_title_rfid",
 //     {
