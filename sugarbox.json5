@@ -1,9 +1,9 @@
 {
   id: "futureboard@kext_sugarbox",
   name: "$$sugarbox_title",
-  color1: "#8ab5ff",
-  color2: "#5282d1",
-  color3: "#8ab5ff",
+  color1: "#87B6FC",
+  color2: "#5E93DE",
+  color3: "#5A81B7",
   libs: {
     sugarbox: {
       import: 'import sugarbox'
@@ -12,6 +12,7 @@
       instance: 'em[PORT]=sugarbox.EMotor([PORT])'
     }
   },
+
   blocks: [
     "## $$sugarbox_title_motor",
     {
@@ -33,6 +34,7 @@
         },
       },
     },
+//-----------------------------------------------------------------
     // {
     //   opcode: 'runMotor2',
     //   blockType: "command",
@@ -76,6 +78,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'rotateServo',
       blockType: "command",
@@ -95,6 +98,7 @@
         },
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'setServoPulseWidth',
       blockType: "command",
@@ -112,7 +116,9 @@
         },
       },
     },
+
     "## $$sugarbox_encodable_single",
+//-----------------------------------------------------------------
     {
       opcode: 'setEncodableSpeed',
       text: "$$sugarbox_setEncodableSpeed",
@@ -130,6 +136,7 @@
         },
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'setEncodableStop',
       blockType: "command",
@@ -143,6 +150,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'getEncodableSpd',
       blockType: "reporter",
@@ -156,6 +164,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'rotateWithRoundEncodable',
       blockType: "command",
@@ -177,6 +186,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'rotateWithTimeEncodable',
       blockType: "command",
@@ -198,6 +208,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'rotateWithDegreeEncodable',
       blockType: "command",
@@ -219,6 +230,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     "## $$sugarbox_title_encodable_double",
     {
       opcode: 'setEncodableProp',
@@ -254,6 +266,7 @@
         },
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'runEncodableWithSpd',
       blockType: "command",
@@ -270,6 +283,7 @@
         },
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'rotateEncodableRunWithSpd',
       blockType: "command",
@@ -290,7 +304,9 @@
         }
       },
     },
+
     "## $$sugarbox_title_horn",
+//-----------------------------------------------------------------
     {
       opcode: 'recordSound',
       blockType: "command",
@@ -309,6 +325,7 @@
         }
       },
     },
+//-----------------------------------------------------------------
     {
       opcode: 'playSoundn',
       blockType: "command",
@@ -323,13 +340,16 @@
         }
       },
     },
+//-----------------------------------------------------------------
     { 
       opcode: 'getBatteryVoltage',
       blockType: "reporter",
       text: "$$sugarbox_getBatteryVoltage",
       pycode: 'sugarbox.voltage()' 
     },
+    '---',
   ],
+
   menus: {
     emport: [
       { text: 'EM1', value: '1' },
