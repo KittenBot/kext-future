@@ -1,4 +1,9 @@
 {
+  libs: {
+    buzzer: {
+      keywords: ['buzzer']
+    }
+  },
   blocks: [
     "## $$futureboard_title_music",
     {

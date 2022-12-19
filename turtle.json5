@@ -1,7 +1,7 @@
 {
   libs: {
     turtle: {
-      imports: 'from turtle import Turtle',
+      import: 'from turtle import Turtle',
       instance: 'Turtle()'
     }
   },

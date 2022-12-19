@@ -1,4 +1,9 @@
 {
+  libs: {
+    sensor: {
+      keywords: ['sensor', 'calibrateCompass']
+    }
+  },
   blocks: [
     "## $$futureboard_title_sensor",
     {
