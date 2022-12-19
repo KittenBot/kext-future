@@ -28,6 +28,7 @@
             },
             }
         },
+        '---',
         { 
             opcode: 'isAudioFired', 
             blockType: 'Boolean',
@@ -92,6 +93,7 @@
             },
             text: "$$ASR_isCustomizeWord"
         },
+        '---',
         { 
             opcode: 'runAudioWord', 
             blockType: "command",
@@ -172,6 +174,7 @@
             },
             text: "$$ASR_runHour"
         },
+        '---',
     ],
     menus:{
         executor: [

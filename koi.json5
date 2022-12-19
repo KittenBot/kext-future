@@ -1,54 +1,24 @@
 {
   id: "futureboard@kext_koi",
   name: "KOI",
-  color1: "#9AA4D2",
-  color2: "#8C96BD",
-  color3: "#8C96BD",
+  color1: "#61D1E5",
+  color2: "#4BB7CB",
+  color3: "#3EAEC3",
   libs: {
     "*": {
       import: "from futureKOI import KOI",
     }
   },
-  menus: {
-    directions: [
-      { text: "$$futureKoi_menu_direction_front", value: "0" },
-      { text: "$$futureKoi_menu_direction_back", value: "2" },
-    ],
-    xy: [
-      { text: "X", value: "0" },
-      { text: "Y", value: "1" },
-    ],
-    colorblock: [
-      { text: "cx", value: "0" },
-      { text: "cy", value: "1" },
-      { text: "w", value: "2" },
-      { text: "h", value: "3" },
-    ],
-    aprilTag: [
-      { text: "id", value: "0" },
-      { text: "cx", value: "1" },
-      { text: "cy", value: "2" },
-      { text: "w", value: "3" },
-      { text: "h", value: "4" },
-    ],
-    circle: [
-      { text: "cx", value: "0" },
-      { text: "cy", value: "1" },
-      { text: "R", value: "2" },
-    ],
-    trackingline: [
-      { text: "X1", value: "0" },
-      { text: "Y1", value: "1" },
-      { text: "X2", value: "2" },
-      { text: "Y2", value: "3" },
-    ],
-  },
+
   blocks: [
     "## $$futureKoi_title_base",
     {
       opcode: "runInit",
       blockType: "command",
       text: "$$futureKoi_runInit",
+      micropy: {
+        import: 'from futureKOI import KOI'
+      },
       pycode: "koi = KOI(tx='P2',rx='P12',id=1)",
     },
     {
@@ -421,5 +391,40 @@
         TEXT: { type: "string", defaultValue: "hello world" },
       },
     },
+    '---',
   ],
+  menus: {
+    directions: [
+      { text: "$$futureKoi_menu_direction_front", value: "0" },
+      { text: "$$futureKoi_menu_direction_back", value: "2" },
+    ],
+    xy: [
+      { text: "X", value: "0" },
+      { text: "Y", value: "1" },
+    ],
+    colorblock: [
+      { text: "cx", value: "0" },
+      { text: "cy", value: "1" },
+      { text: "w", value: "2" },
+      { text: "h", value: "3" },
+    ],
+    aprilTag: [
+      { text: "id", value: "0" },
+      { text: "cx", value: "1" },
+      { text: "cy", value: "2" },
+      { text: "w", value: "3" },
+      { text: "h", value: "4" },
+    ],
+    circle: [
+      { text: "cx", value: "0" },
+      { text: "cy", value: "1" },
+      { text: "R", value: "2" },
+    ],
+    trackingline: [
+      { text: "X1", value: "0" },
+      { text: "Y1", value: "1" },
+      { text: "X2", value: "2" },
+      { text: "Y2", value: "3" },
+    ],
+  },
 }
