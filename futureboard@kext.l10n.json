@@ -470,6 +470,7 @@
     "sugar_menu_gestureMode_gesture": "Gesture",
     "sugar_menu_gestureMode_distance": "Distance",
     "sugar_menu_gestureMode_led": "LED",
+    "sugar_getHcSonarDistance": "HC-SR04 Trig [PORT1] Output [PORT2]",
     "sugar_huetohsv": "HSV to HEX Hue [H] Saturation [S] Value [V]",
 
     "ASR_title": "ASR",
