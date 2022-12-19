@@ -38,21 +38,21 @@
     "water_[PORT]": {
       instance: "Water([PORT])"
     },
-    "tofDis_[PORT]": {
-      instance: "TOFDistance([PORT])"
-    },
-    "env1_[PORT]": {
-      instance: "ENV([PORT])"
-    },
-    "joystick_[PORT]": {
-      instance: "Joystick([PORT])"
-    },
     "led_[PORT]": {
       instance: "LED([PORT])"
     },
-    "rtc_[PORT]": {
-      instance: "Clock([PORT])"
+    "tofDis": {
+      instance: "TOFDistance()"
     },
+    "env1": {
+      instance: "ENV([PORT])"
+    },
+    "joystick": {
+      instance: "Joystick()"
+    },
+    "rtc": {
+      instance: "Clock()"
+    }
   },
 
 
@@ -66,7 +66,7 @@
       pycode: 'pir_[PORT].value()',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PIN_DIG',
         }
@@ -82,7 +82,7 @@
       pycode: 'tracker_[PORT].value() == [TYPE]',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PIN_DIG',
         },
@@ -103,7 +103,7 @@
       pycode: 'hall_[PORT].value() == 0',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PIN_DIG',
         }
@@ -119,7 +119,7 @@
       pycode: 'button_[PORT].value() == 0',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PIN_DIG',
         }
@@ -194,7 +194,7 @@
       pycode: 'flame_[PORT].value() > 100',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
         }
@@ -207,7 +207,7 @@
       pycode: 'flame_[PORT].value()',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
         }
@@ -223,7 +223,7 @@
       pycode: 'angle_[PORT].value()',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
         }
@@ -239,7 +239,7 @@
       pycode: 'light_[PORT].value()',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
         }
@@ -255,7 +255,7 @@
       pycode: 'soil_[PORT].value()',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
         }
@@ -270,7 +270,7 @@
       pycode: 'water_[PORT].value()',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_READ',
         }
@@ -285,7 +285,7 @@
       opcode: 'getDistanceValue',
       blockType: "reporter",
       text: "$$sugar_getDistanceValue",
-      pycode: 'tofDis_[PORT].value()',
+      pycode: 'tofDis.value()',
       disableMonitor: 1,
     },
     '---',
@@ -295,7 +295,7 @@
       opcode: 'getTmpValue',
       blockType: "reporter",
       text: "$$sugar_getTmpValue",
-      pycode: 'env1_[PORT].update()[[TYPE]]',
+      pycode: 'env1.update()[[TYPE]]',
       arguments: {
         TYPE: {
           type: "string",
@@ -311,7 +311,7 @@
       opcode: 'getJoyStickStatus',
       blockType: "Boolean",
       text: "$$sugar_getJoyStickStatus",
-      pycode: 'joystick_[PORT].state() == [STATE]',
+      pycode: 'joystick.state() == [STATE]',
       arguments: {
         STATE: {
           type: "string",
@@ -345,7 +345,7 @@
       pycode: 'led_[PORT].state([STATE])',
       arguments:{
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_WRITE',
         },
@@ -363,7 +363,7 @@
       pycode: 'led_[PORT].brightness([BRIGHTNESS])',
       arguments: {
         PORT: {
-          type: "string",
+          type: "value",
           defaultValue: 'P0',
           menu: 'PINS_ANALOG_WRITE',
         },
@@ -383,7 +383,7 @@
       opcode: 'getTime',
       blockType: "reporter",
       text: "$$sugar_getTime",
-      pycode: "rtc_[PORT].getTime([TYPE])",
+      pycode: "rtc.getTime([TYPE])",
       arguments: {
         TYPE: {
           type: "string",
@@ -396,7 +396,7 @@
       opcode: 'resetTime',
       blockType: "command",
       text: "$$sugar_resetTime",
-      pycode: 'rtc_[PORT].setTime(([Y],[M],[D],[W],[H],[m],[S]))',
+      pycode: 'rtc.setTime(([Y],[M],[D],[W],[H],[m],[S]))',
       arguments: {
         Y: {
           type: "number",
@@ -433,7 +433,7 @@
       opcode: 'controlTime',
       blockType: "command",
       text: "$$sugar_controlTime",
-      pycode: "rtc_[PORT].modeSet(state=[TYPE])",
+      pycode: "rtc.modeSet(state=[TYPE])",
       arguments: {
         TYPE: {
           type: "string",
@@ -446,7 +446,7 @@
       opcode: 'refreshTime',
       blockType: "command",
       text: "$$sugar_refreshTime",
-      pycode: 'rtc_[PORT].refreshTime([TIMEZONE])',
+      pycode: 'rtc.refreshTime([TIMEZONE])',
       arguments: {
         TIMEZONE: {
           type: "string",
