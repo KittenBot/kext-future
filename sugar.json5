@@ -6,52 +6,67 @@
   color3: "#1C5FA2",
   libs: {
     '*': {
-      import: 'from sugar import *'
+      import: 'import sugar'
     },
     "pir_[PORT]": {
-      instance: "PIR('[PORT]')"
+      instance: "sugar.PIR('[PORT]')"
     },
     "tracker_[PORT]": {
-      instance: "Tracker('[PORT]')"
+      instance: "sugar.Tracker('[PORT]')"
     },
     "hall_[PORT]": {
-      instance: "Hall('[PORT]')"
+      instance: "sugar.Hall('[PORT]')"
     },
     "button_[PORT]": {
-      instance: "Button('[PORT]')"
+      instance: "sugar.Button('[PORT]')"
+    },
+    "vibrate_[PORT]": {
+      instance: "sugar.Vibrate('[PORT]')"
+    },
+    "buzzerA_[PORT]": {
+      instance: "sugar.BuzzerA('[PORT]')"
+    },
+    "laser_[PORT]": {
+      instance: "sugar.Laser('[PORT]')"
     },
     "ds18b20_[PORT]": {
-      instance: "DS18B20('[PORT]')"
+      instance: "sugar.DS18B20('[PORT]')"
     },
     "flame_[PORT]": {
-      instance: "Flame('[PORT]')"
+      instance: "sugar.Flame('[PORT]')"
     },
     "angle_[PORT]": {
-      instance: "Angle('[PORT]')"
+      instance: "sugar.Angle('[PORT]')"
     },
     "light_[PORT]": {
-      instance: "Light('[PORT]')"
+      instance: "sugar.Light('[PORT]')"
     },
     "soil_[PORT]": {
-      instance: "Soil('[PORT]')"
+      instance: "sugar.Soil('[PORT]')"
     },
-    "water_[PORT]": {
-      instance: "Water('[PORT]')"
+    "waterLever_[PORT]": {
+      instance: "sugar.WaterLevel('[PORT]')"
     },
     "led_[PORT]": {
-      instance: "LED('[PORT]')"
+      instance: "sugar.LED('[PORT]')"
     },
     "tofDis": {
-      instance: "TOFDistance()"
+      instance: "sugar.TOFDistance()"
     },
     "env1": {
-      instance: "ENV()"
+      instance: "sugar.ENV()"
     },
     "joystick": {
-      instance: "Joystick()"
+      instance: "sugar.Joystick()"
+    },
+    "display": {
+      instance: "sugar.Display()"
+    },
+    "env2": {
+      instance: "sugar.ENV2()"
     },
     "rtc": {
-      instance: "Clock()"
+      instance: "sugar.Clock()"
     }
   },
 
@@ -68,7 +83,7 @@
         PORT: {
           type: "value",
           defaultValue: 'P0',
-          menu: 'PIN_DIG',
+          menu: 'PIN_DIG_READ',
         }
       }
     },
@@ -84,7 +99,7 @@
         PORT: {
           type: "value",
           defaultValue: 'P0',
-          menu: 'PIN_DIG',
+          menu: 'PIN_DIG_READ',
         },
         TYPE: {
           type: "string",
@@ -105,7 +120,7 @@
         PORT: {
           type: "value",
           defaultValue: 'P0',
-          menu: 'PIN_DIG',
+          menu: 'PIN_DIG_READ',
         }
       }
     },
@@ -121,7 +136,7 @@
         PORT: {
           type: "value",
           defaultValue: 'P0',
-          menu: 'PIN_DIG',
+          menu: 'PIN_DIG_READ',
         }
       }
     },
@@ -140,7 +155,7 @@
       arguments: {
         PORT: {
           type: "value",
-          menu: 'PIN_DIG',
+          menu: 'PIN_DIG_READ',
           defaultValue: 'P0',
         }
       }
@@ -178,7 +193,7 @@
         PORT: {
           type: "number",
           defaultValue: 'P0',
-          menu: 'PIN_DIG'
+          menu: 'PIN_DIG_READ'
         }
       }
     },
@@ -261,13 +276,14 @@
         }
       }
     },
+    '---',
 //-----------------------------------------------------------------
     // "## $$sugar_title_waterlevel",
     {
       opcode: 'getWaterLevelValue',
       blockType: "reporter",
       text: "$$sugar_getWaterLevelValue",
-      pycode: 'water_[PORT].value()',
+      pycode: 'waterLever_[PORT].value()',
       arguments: {
         PORT: {
           type: "value",
@@ -298,9 +314,45 @@
       pycode: 'env1.update()[[TYPE]]',
       arguments: {
         TYPE: {
-          type: "string",
-          defaultValue: '0',
+          type: "number",
+          defaultValue: 0,
           menu: 'MOISTURETYPE'
+        }
+      }
+    },
+    '---',
+//-----------------------------------------------------------------
+    {
+      opcode: 'ENV2Update',
+      blockType: "command",
+      text: "$$sugar_ENV2Update",
+      pycode: 'env2.update()'
+    },
+//-----------------------------------------------------------------
+    {
+      opcode: 'getENV2Pressure',
+      blockType: "reporter",
+      text: "$$sugar_getENV2Pressure",
+      pycode: 'env2.read_pres()'
+    },
+//-----------------------------------------------------------------
+    {
+      opcode: 'getENV2Altitude',
+      blockType: "reporter",
+      text: "$$sugar_getENV2Altitude",
+      pycode: 'env2.read_altitude()'
+    },
+//-----------------------------------------------------------------
+    {
+      opcode: 'getENV2Temp',
+      blockType: "reporter",
+      text: "$$sugar_getENV2Temp",
+      pycode: 'env2.read_temp()[TYPE]',
+      arguments: {
+        TYPE: {
+          type: "number",
+          defaultValue: 0,
+          menu: 'ENV2_TEMP_TYPE'
         }
       }
     },
@@ -330,6 +382,68 @@
           type: "string",
           defaultValue: 'x',
           menu: 'JOYSTICK_XY'
+        }
+      }
+    },
+    '---',
+
+    "## $$sugar_title_actuator", 
+//-----------------------------------------------------------------
+    {
+      opcode: 'vibrateState',
+      blockType: 'command',
+      text: "$$sugar_vibrateState",
+      pycode: 'vibrate_[PORT].state([STATE])',
+      arguments: {
+        PORT: {
+          type: "value",
+          defaultValue: 'P0',
+          menu: 'PIN_DIG_WRITE',
+        },
+        STATE: {
+          type: "number",
+          defaultValue: 1,
+          menu: 'DIGI_STATE',
+        }
+      }
+    },
+    '---',
+//-----------------------------------------------------------------
+    {
+      opcode: 'buzzerAState',
+      blockType: 'command',
+      text: "$$sugar_buzzerAState",
+      pycode: 'buzzerA_[PORT].state([STATE])',
+      arguments: {
+        PORT: {
+          type: "value",
+          defaultValue: 'P0',
+          menu: 'PIN_DIG_WRITE',
+        },
+        STATE: {
+          type: "number",
+          defaultValue: 1,
+          menu: 'DIGI_STATE',
+        }
+      }
+    },
+    '---',
+//-----------------------------------------------------------------
+    {
+      opcode: 'laserState',
+      blockType: 'command',
+      text: "$$sugar_laserState",
+      pycode: 'laserState_[PORT].state([STATE])',
+      arguments: {
+        PORT: {
+          type: "value",
+          defaultValue: 'P0',
+          menu: 'PIN_DIG_WRITE',
+        },
+        STATE: {
+          type: "number",
+          defaultValue: 1,
+          menu: 'DIGI_STATE',
         }
       }
     },
@@ -374,6 +488,126 @@
           min: 0,
         }
       },
+    },
+    '---',
+//------------------------------------------------------
+    {
+      opcode: 'tm1650ShowNumber',
+      blockType: "command",
+      text: "$$sugar_tm1650ShowNumber",
+      pycode: 'display.shownum([NUM])',
+      arguments: {
+        NUM: {
+          type: "number",
+          defaultValue: 1234
+        }
+      }
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650ShowBit',
+      blockType: "command",
+      text: "$$sugar_tm1650ShowBit",
+      pycode: 'display.showbit([NUM],[POS]-1)',
+      arguments: {
+        NUM: {
+          type: "slider",
+          defaultValue: 0,
+          max: 15,
+          min: 0, 
+        },
+        POS: {
+          type: "slider",
+          defaultValue: 1,
+          max: 4,
+          min: 1, 
+        }
+      }
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650ShowBar',
+      blockType: "command",
+      text: "$$sugar_tm1650ShowBar",
+      pycode: 'display.showbit("-",[POS]-1)',
+      arguments: {
+        POS: {
+          type: "slider",
+          defaultValue: 1,
+          max: 4,
+          min: 1, 
+        }
+      }
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650ShowColon',
+      blockType: "command",
+      text: "$$sugar_tm1650ShowColon",
+      pycode: 'display.showDP(1,[STATE])',
+      arguments: {
+        STATE: {
+          type: "number",
+          defaultValue: 1,
+          menu: 'COLON_STATE',
+        },
+      }
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650ShowDP',
+      blockType: "command",
+      text: "$$sugar_tm1650ShowDP",
+      pycode: 'display.showDP([POS]-1,[STATE])',
+      arguments: {
+        POS: {
+          type: "slider",
+          defaultValue: 2,
+          max: 4,
+          min: 2, 
+        },
+        STATE: {
+          type: "number",
+          defaultValue: 1,
+          menu: 'COLON_STATE',
+        },
+      }
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650Intensity',
+      blockType: "command",
+      text: "$$sugar_tm1650Intensity",
+      pycode: 'display.intensity([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "slider",
+          defaultValue: 8,
+          max: 8,
+          min: 0, 
+        }
+      }
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650Clear',
+      blockType: "command",
+      text: "$$sugar_tm1650Clear",
+      pycode: 'display.clear()',
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650Open',
+      blockType: "command",
+      text: "$$sugar_tm1650Open",
+      pycode: 'display.on()',
+    },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650Close',
+      blockType: "command",
+      text: "$$sugar_tm1650Close",
+      pycode: 'display.off()',
     },
     '---',
 
@@ -868,7 +1102,8 @@
     // },
   ],
   menus: {
-    PIN_DIG: ['P0','P1','P2','P3','P7','P8','P9','P13','P14','P15','P16'],
+    PIN_DIG_WRITE: ['P0','P1','P2','P3','P7','P8','P9','P13','P14','P15','P16'],
+    PIN_DIG_READ: ['P0','P1','P2','P3','P7','P8','P9','P12','P13','P14','P15','P16'],
     PINS_ANALOG_WRITE: ['P0','P1','P2','P3','P8','P13','P14','P15','P16'],
     PINS_ANALOG_READ: ['P0','P1','P3', 'P4', 'P5', 'P11', 'P12', 'P14','P15','P16'],
     PINS_SPCL: ['P0', 'P1', 'P2', 'P8'],
@@ -887,6 +1122,10 @@
     MOISTURETYPE: [
         { text: '$$sugar_menu_moisture_tmp', value: '0' },
         { text: '$$sugar_menu_moisture_humi', value: '1' },
+    ],
+    ENV2_TEMP_TYPE: [
+        { text: '$$sugar_menu_env2Temp_c', value: '0' },
+        { text: '$$sugar_menu_env2Temp_f', value: '1' },
     ],
     JOYSTICK_DIR: [
         { text: '$$sugar_menu_joystick_dir_up', value: 'up' },
@@ -980,10 +1219,18 @@
       { text: "$$futureExtend_menu_timeformat_minute", value: 'minute' },
       { text: "$$futureExtend_menu_timeformat_second", value: 'second' },
     ],
-      fmDir: [
-        { text: '$$sugar_menu_fmDir_up', value: 'seekUp' },
-        { text: '$$sugar_menu_fmDir_down', value: 'seekDown' },
-        { text: '$$sugar_menu_fmDir_stop', value: 'seekStop' },
+    fmDir: [
+      { text: '$$sugar_menu_fmDir_up', value: 'seekUp' },
+      { text: '$$sugar_menu_fmDir_down', value: 'seekDown' },
+      { text: '$$sugar_menu_fmDir_stop', value: 'seekStop' },
     ],
+    COLON_STATE: [
+      { text: '$$sugar_menu_colon_on', value: 1 },
+      { text: '$$sugar_menu_colon_off', value: 0 },
+    ],
+    DIGI_STATE: [
+      { text: '$$sugar_menu_digital_on', value: 1 },
+      { text: '$$sugar_menu_digital_off', value: 0 },
+    ]
   },
 }
