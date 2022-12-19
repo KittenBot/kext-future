@@ -332,7 +332,7 @@
       opcode: 'getENV2Temp',
       blockType: "reporter",
       text: "$$sugar_getENV2Temp",
-      pycode: 'env2.read_temp()[TYPE]',
+      pycode: 'env2.read_temp[[TYPE]]',
       arguments: {
         TYPE: {
           type: "number",
