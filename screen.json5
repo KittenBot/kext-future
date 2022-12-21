@@ -359,30 +359,6 @@
       pycode: 'screen.loadPng([PATH],[X],[Y])',
     },
     {
-      opcode: 'tftbmp',
-      blockType: 'command',
-      text: '$$futureboard_tft_bmp',
-      arguments: {
-        PATH: {
-          type: 'string',
-          defaultValue: 'fileName',
-        },
-        X: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 160,
-        },
-        Y: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 128,
-        },
-      },
-      pycode: 'screen.loadBmp([PATH],[X],[Y])',
-    },
-    {
       opcode: 'tftgif',
       blockType: 'command',
       text: '$$futureboard_tft_gif',
