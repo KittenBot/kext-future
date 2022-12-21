@@ -10,11 +10,11 @@
         },
         "hcsr04[PORT1][PORT2]": {
             keywords: ['HCSR04','P0', 'P1', 'P2', 'P8'],
-            instance: 'HCSR04([PORT1],[PORT2])'
+            instance: "HCSR04('[PORT1]','[PORT2]')"
         },
         "meowSonar[PIN]": {
             keywords: ['MeowSonar'],
-            instance: 'MeowSonar([PIN])'
+            instance: "MeowSonar('[PIN]')"
         }
     },
     menus:{

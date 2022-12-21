@@ -16,7 +16,7 @@
   "firmwareDate": 20221110,
   "connect":{
     "baudrate": 1000000,
-    "wait": 3000
+    "wait": 2500
   },
   "io": ["ble"],
   "listdevice": {
