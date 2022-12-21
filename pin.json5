@@ -92,5 +92,6 @@
       },
       pycode: '[PIN]_pwm.setAnalog([VALUE])',
     },
+    '---'
   ],
 }

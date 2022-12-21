@@ -107,5 +107,6 @@
       text: '$$futureboard_buzz_stop',
       pycode: 'buzzer.stop()',
     },
+    '---'
   ],
 }

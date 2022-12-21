@@ -406,5 +406,6 @@
       },
       pycode: 'screen.loadGif([PATH],[X],[Y])',
     },
+    '---'
   ],
 }

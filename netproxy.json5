@@ -47,6 +47,8 @@
         },
       },
     },
+    '---',
+
     "## $$futureboard_title_onenet",
     {
       opcode: 'onenetconnect',
@@ -95,5 +97,6 @@
         },
       },
     },
+    '---'
   ],
 }

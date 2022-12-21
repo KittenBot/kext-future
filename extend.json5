@@ -234,6 +234,7 @@
         }
       }
     },
+    '---'
   ],
   menus: {
     TIMEFORMAT_TEXT: [

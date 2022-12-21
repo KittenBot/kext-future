@@ -137,5 +137,6 @@
       pycode: 'sensor.heading()',
       disableMonitor: 1,
     },
+    '---'
   ],
 }
