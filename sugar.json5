@@ -6,7 +6,7 @@
   color3: "#1C5FA2",
   libs: {
     '*': {
-      import: 'import sugar'
+      import: 'from sugar import *'
     },
     "pir_[PORT]": {
       instance: "PIR('[PORT]')"
