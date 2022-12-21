@@ -260,8 +260,8 @@
           menu: 'emportIdx'
         },
         REVERSABLE: {
-          type: "string",
-          defaultValue: "True",
+          type: "number",
+          defaultValue: 1,
           menu: 'reversable'
         },
       },
@@ -360,8 +360,8 @@
       { text: 'EM2', value: '2' },
     ],
     reversable: [
-      { text: 'True', value: '-1' },
-      { text: 'False', value: '1' },
+      { text: 'True', value: -1 },
+      { text: 'False', value: 1 },
     ],
     servo: [
       { text: 'S1', value: '1' },

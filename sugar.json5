@@ -41,6 +41,15 @@
     "led_[PORT]": {
       instance: "LED('[PORT]')"
     },
+    "buzzerA_[PORT]": {
+      instance: "BuzzerA('[PORT]')"
+    },
+    "vibrate_[PORT]": {
+      instance: "Vibrate('[PORT]')"
+    },
+    "laser_[PORT]": {
+      instance: "Laser('[PORT]')"
+    },
     "tofDis": {
       instance: "TOFDistance()"
     },
@@ -418,7 +427,7 @@
       opcode: 'laserState',
       blockType: 'command',
       text: "$$sugar_laserState",
-      pycode: 'laserState_[PORT].state([STATE])',
+      pycode: 'laser_[PORT].state([STATE])',
       arguments: {
         PORT: {
           type: "value",
