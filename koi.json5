@@ -4,11 +4,6 @@
   color1: "#61D1E5",
   color2: "#4BB7CB",
   color3: "#3EAEC3",
-  libs: {
-    "*": {
-      import: "from futureKOI import KOI",
-    }
-  },
 
   blocks: [
     "## $$futureKoi_title_base",

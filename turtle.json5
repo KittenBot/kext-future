@@ -1,8 +1,7 @@
 {
   libs: {
     turtle: {
-      import: 'from turtle import Turtle',
-      instance: 'Turtle()'
+      keywords: ['turtle']
     }
   },
   blocks: [

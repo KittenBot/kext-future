@@ -8,17 +8,14 @@
         '*': {
             import: 'from sonar import *'
         },
-        "hcsr04[PORT1][PORT2]": {
+        "hcsr04_[PORT1][PORT2]": {
             keywords: ['HCSR04','P0', 'P1', 'P2', 'P8'],
             instance: "HCSR04('[PORT1]','[PORT2]')"
         },
-        "meowSonar[PIN]": {
+        "meowSonar_[PIN]": {
             keywords: ['MeowSonar'],
             instance: "MeowSonar('[PIN]')"
         }
-    },
-    menus:{
-        PIN_LIST: ['P0', 'P1', 'P2', 'P8']
     },
     blocks: 
     [
@@ -26,7 +23,7 @@
             opcode: 'getHcSonarDistance',
             blockType: "reporter",
             text: "$$sonar_getHcSonarDistance",
-            pycode: 'hcsr04[PORT1][PORT2].checkdist()',
+            pycode: 'hcsr04_[PORT1][PORT2].checkdist()',
             arguments: {
                 PORT1: {
                 type: "number",
@@ -45,7 +42,7 @@
             opcode: 'getMeowSonarDisance',
             blockType: "reporter",
             text: "$$sonar_getMeowSonarDistance",
-            pycode: 'meowSonar[PIN].checkdist()',
+            pycode: 'meowSonar_[PIN].checkdist()',
             arguments: {
                 PIN: {
                 type: "number",
@@ -56,4 +53,8 @@
         },
         '---',
     ],
+    
+    menus:{
+        PIN_LIST: ['P0', 'P1', 'P2', 'P8']
+    },
 }
