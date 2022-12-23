@@ -24,12 +24,14 @@
         },
       },
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wifiisconnected',
       blockType: 'Boolean',
       text: '$$futureboard_wifi_isconnected',
       pycode: 'wifi.sta.isconnected()',
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wificonfig',
       blockType: 'reporter',
@@ -37,6 +39,7 @@
       disableMonitor: 1,
       pycode: 'wifi.sta.ifconfig()',
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wificonfigwithopt',
       blockType: 'reporter',
@@ -50,6 +53,7 @@
         },
       },
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wifimac',
       blockType: 'reporter',
@@ -60,12 +64,16 @@
       },
       pycode: 'ubinascii.hexlify(machine.unique_id()).decode().upper()',
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wifidisconected',
       blockType: 'command',
       text: '$$futureboard_wifi_disconected',
       pycode: 'wifi.sta.disconnect()',
     },
+    '---',
+    
+    //-----------------------------------------------------------------
     {
       opcode: 'wifimqttconnect',
       blockType: 'command',
@@ -85,6 +93,7 @@
         },
       },
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wifimqttconnectwithopt',
       blockType: 'command',
@@ -92,7 +101,10 @@
       micropy: {
         import: 'from mqttsimple import MQTTClient',
       },
-      pycode: "mqtt = MQTTClient([HOST], [ID],user=str([NAME]), password=str([PWD]),port=1883)\r\nmqtt.connect()",
+      pycode: [
+        "mqtt = MQTTClient([HOST], [ID],user=str([NAME]), password=str([PWD]))",
+        "mqtt.connect()"
+        ],
       arguments: {
         HOST: {
           type: 'string',
@@ -104,14 +116,15 @@
         },
         NAME: {
           type: 'string',
-          defaultValue: 'name',
+          defaultValue: '',
         },
         PWD: {
           type: 'string',
-          defaultValue: 'password',
+          defaultValue: '',
         },
       },
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wifimqttsubscribe',
       blockType: 'command',
@@ -124,6 +137,7 @@
         },
       },
     },
+    //-----------------------------------------------------------------
     {
       opcode: 'wifimqttread',
       blockType: 'reporter',
@@ -153,6 +167,8 @@
       },
     },
     '---'
+
+    //-----------------------------------------------------------------
     // {
     //   opcode: 'wifimqttcheck',
     //   blockType: 'command',

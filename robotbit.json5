@@ -6,7 +6,7 @@
   color3: "#107895",
 
   libs: {
-    "robot": {
+    robot: {
       import: 'from robotbit import RobotBit',
       instance: 'RobotBit()'
     }
