@@ -1,6 +1,6 @@
 {
   libs: {
-    ntptime: {
+    "ntptime": {
       import: 'import ntptime'
     },
     rtc: {
