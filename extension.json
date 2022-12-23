@@ -109,5 +109,8 @@
   "firmware": "firmware.bin",
   "image": "futureboard.png",
   "fsrstcode": ["import inisetup", "inisetup.resetfs()"],
+  "imageconvert": {
+    "type": "png"
+  },
   "weights":999
 }
