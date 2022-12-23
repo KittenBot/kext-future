@@ -90,7 +90,7 @@
     },
     {
       opcode: "getFacePosition",
-      blockType: "Boolean",
+      blockType: "reporter",
       text: "$$futureKoi_getFacePosition",
       pycode: "koi.get_re(cmd='K31')[[XY]]",
       arguments: {
