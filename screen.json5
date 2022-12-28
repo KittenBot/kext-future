@@ -300,7 +300,7 @@
           defaultValue: '1',
         },
       },
-      pycode: "screen.text([TXT],[X],[Y],[EXT],[COLOR])",
+      pycode: "screen.text(str([TXT]),[X],[Y],[EXT],[COLOR])",
     },
     {
       opcode: 'tfttextcn',
@@ -332,7 +332,7 @@
           defaultValue: '1',
         },
       },
-      pycode: 'screen.textCh([TEXTCH],[X],[Y],[EXT],[COLOR])',
+      pycode: 'screen.textCh(str([TEXTCH]),[X],[Y],[EXT],[COLOR])',
     },
     {
       opcode: 'tftpng',
