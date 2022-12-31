@@ -911,7 +911,7 @@
     "sugar_tm1650ShowBit": "数码管模块 显示数字[NUM] 在第[POS]位(从左到右)",
     "sugar_tm1650ShowBar": "数码管模块 显示 - 在第[POS]位(从左到右)",
     "sugar_tm1650ShowColon": "数码管模块 [STATE]冒号显示",
-    "sugar_tm1650ShowDP": "数码管模块 显示小数点 在第[POS]位(从左到右)",
+    "sugar_tm1650ShowDP": "数码管模块 显示小数点 在第[POS]位(从左到右)[STATE]",
     "sugar_tm1650Intensity": "数码管模块 设置亮度[VALUE]",
     "sugar_tm1650Clear": "数码管模块 清除显示",
     "sugar_tm1650Open": "数码管模块 开启显示",
