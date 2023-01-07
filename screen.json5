@@ -332,7 +332,7 @@
           defaultValue: '1',
         },
       },
-      pycode: 'screen.textCh(str([TEXTCH]),[X],[Y],[EXT],[COLOR])',
+      pycode: 'screen.textCh([TEXTCH],[X],[Y],[EXT],[COLOR])',
     },
     {
       opcode: 'tftpng',
