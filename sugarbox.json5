@@ -35,36 +35,36 @@
       },
     },
 //-----------------------------------------------------------------
-    // {
-    //   opcode: 'runMotor2',
-    //   blockType: "command",
-    //   text: "$$sugarbox_runMotor2",
-    //   pycode: 'sugarbox.motor([[MOTOR1],[MOTOR2]],[[SPD1],[SPD2]])',
-    //   arguments: {
-    //     MOTOR1: {
-    //       type: "string",
-    //       defaultValue: "1",
-    //       menu: "motor",
-    //     },
-    //     SPD1: {
-    //       type: "slider",
-    //       defaultValue: 100,
-    //       min: -255,
-    //       max: 255,
-    //     },
-    //     MOTOR2: {
-    //       type: "string",
-    //       defaultValue: "2",
-    //       menu: "motor",
-    //     },
-    //     SPD2: {
-    //       type: "slider",
-    //       defaultValue: 100,
-    //       min: -255,
-    //       max: 255,
-    //     },
-    //   },
-    // },
+    {
+      opcode: 'runMotor2',
+      blockType: "command",
+      text: "$$sugarbox_runMotor2",
+      pycode: 'sugarbox.motor([[MOTOR1],[MOTOR2]],[[SPD1],[SPD2]])',
+      arguments: {
+        MOTOR1: {
+          type: "string",
+          defaultValue: "1",
+          menu: "motorDual",
+        },
+        SPD1: {
+          type: "slider",
+          defaultValue: 100,
+          min: -255,
+          max: 255,
+        },
+        MOTOR2: {
+          type: "string",
+          defaultValue: "2",
+          menu: "motorDual",
+        },
+        SPD2: {
+          type: "slider",
+          defaultValue: 100,
+          min: -255,
+          max: 255,
+        },
+      },
+    },
     {
       opcode: 'stopMotor',
       blockType: "command",
@@ -375,6 +375,12 @@
       { text: 'M2A', value: '3' },
       { text: 'M2B', value: '4' },
       { text: 'All', value: '0' },
+    ],
+    motorDual: [
+      { text: 'M1A', value: '1' },
+      { text: 'M1B', value: '2' },
+      { text: 'M2A', value: '3' },
+      { text: 'M2B', value: '4' },
     ]
   }
 
