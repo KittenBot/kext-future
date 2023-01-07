@@ -494,6 +494,7 @@
     "sugar_menu_colon_off": "Close",
     "sugar_menu_digital_on": "Open",
     "sugar_menu_digital_off": "Close",
+
     "ASR_title": "ASR",
     "ASR_runInit": "Initialize ASR Speech Recognition TX(Blue) [PORT1], RX(Green) [PORT2]",
     "ASR_isAudioFired": "Speech recognition triggered?",
@@ -1480,6 +1481,7 @@
     "sugar_menu_env2Temp_c": "攝氏度­℃",
     "sugar_menu_env2Temp_f": "華氏度℉",
     "sugar_menu_trackstate_black": "黑線",
+    "sugar_menu_trackstate_white": "白色",
     "sugar_menu_gesture_hue": "色環HUE",
     "sugar_menu_gesture_brightness": "亮度",
     "sugar_menu_gesture_distance": "手指距離",
