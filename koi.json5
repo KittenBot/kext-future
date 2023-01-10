@@ -342,7 +342,7 @@
     },
     {
       opcode: "runShowIpAddr",
-      blockType: "command",
+      blockType: "reporter",
       text: "$$futureKoi_runShowIpAddr",
       pycode: "koi.get_ip(cmd='K54')",
     },
