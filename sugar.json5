@@ -56,6 +56,9 @@
     "env1": {
       instance: "ENV()"
     },
+    "env2": {
+      instance: "ENV2()"
+    },
     "joystick": {
       instance: "Joystick()"
     },
@@ -341,7 +344,7 @@
       opcode: 'getENV2Temp',
       blockType: "reporter",
       text: "$$sugar_getENV2Temp",
-      pycode: 'env2.read_temp[[TYPE]]',
+      pycode: 'env2.read_temp()[[TYPE]]',
       arguments: {
         TYPE: {
           type: "number",
@@ -1114,12 +1117,12 @@
         { text: '$$sugar_menu_ledstate_off', value: 'OFF' },
     ],
     MOISTURETYPE: [
-        { text: '$$sugar_menu_moisture_tmp', value: '0' },
-        { text: '$$sugar_menu_moisture_humi', value: '1' },
+        { text: '$$sugar_menu_moisture_tmp', value: 0 },
+        { text: '$$sugar_menu_moisture_humi', value: 1},
     ],
     ENV2_TEMP_TYPE: [
-        { text: '$$sugar_menu_env2Temp_c', value: '0' },
-        { text: '$$sugar_menu_env2Temp_f', value: '1' },
+        { text: '$$sugar_menu_env2Temp_c', value: 0 },
+        { text: '$$sugar_menu_env2Temp_f', value: 1 },
     ],
     JOYSTICK_DIR: [
         { text: '$$sugar_menu_joystick_dir_up', value: 'up' },
