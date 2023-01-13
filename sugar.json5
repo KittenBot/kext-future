@@ -35,8 +35,8 @@
     "soil_[PORT]": {
       instance: "Soil('[PORT]')"
     },
-    "water_[PORT]": {
-      instance: "Water('[PORT]')"
+    "waterLever_[PORT]": {
+      instance: "WaterLevel('[PORT]')"
     },
     "led_[PORT]": {
       instance: "LED('[PORT]')"
@@ -78,7 +78,7 @@
       opcode: 'getHumandetectStatus',
       blockType: 'Boolean',
       text: "$$sugar_getHumandetectStatus",
-      pycode: 'pir_[PORT].value()',
+      pycode: 'pir_[PORT].value() == 1',
       arguments: {
         PORT: {
           type: "value",

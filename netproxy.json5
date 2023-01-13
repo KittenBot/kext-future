@@ -55,9 +55,9 @@
       blockType: 'command',
       text: '$$futureboard_onenet_connect',
       micropy: {
-        import: 'import onenet'
+        import: 'from onenet import *'
       },
-      pycode: "onenet = onenet.OneNet([ID], [KEY])",
+      pycode: "onenet = OneNet([ID], [KEY])",
       arguments: {
         ID: {
           type: 'string',

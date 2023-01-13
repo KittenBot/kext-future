@@ -344,16 +344,12 @@
           defaultValue: 'fileName',
         },
         X: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 160,
+          type: 'number',
+          defaultValue: 0
         },
         Y: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 128,
+          type: 'number',
+          defaultValue: 0
         },
       },
       pycode: 'screen.loadPng([PATH],[X],[Y])',
@@ -368,16 +364,12 @@
           defaultValue: 'fileName',
         },
         X: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 160,
+          type: 'number',
+          defaultValue: 0
         },
         Y: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 128,
+          type: 'number',
+          defaultValue: 0
         },
       },
       pycode: 'screen.loadGif([PATH],[X],[Y])',
