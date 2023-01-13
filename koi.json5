@@ -121,7 +121,7 @@
       opcode: "runAddTag",
       blockType: "command",
       text: "$$futureKoi_runAddTag",
-      pycode: "koi.cls_add_tag(id='[TAG]',cmd='K41')",
+      pycode: "koi.cls_add_tag(id=[TAG],cmd='K41')",
       arguments: {
         TAG: { type: "string!", defaultValue: "paper" },
         TAG: { type: "string!", defaultValue: "paper" },
