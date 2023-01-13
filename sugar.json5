@@ -64,6 +64,9 @@
     },
     "rtc": {
       instance: "Clock()"
+    },
+    "display": {
+      instance: "Display()"
     }
   },
 
