@@ -5,7 +5,6 @@
     }
   },
   blocks: [
-    "## $$futureboard_title_sensor",
     {
       opcode: 'runtime',
       blockType: 'reporter',
@@ -38,6 +37,7 @@
         },
       },
     },
+    "## $$futureboard_title_sensor",
     {
       opcode: 'buttonget',
       blockType: 'Boolean',

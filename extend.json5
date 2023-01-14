@@ -41,32 +41,40 @@
       arguments: {
         Y: {
           type: "number",
-          defaultValue: '2016',
+          defaultValue: '2023',
         },
         M: {
-          type: "number",
+          type: "slider",
           defaultValue: '1',
+          max: 12,
+          min: 1 
         },
         D: {
           type: "number",
-          defaultValue: '6',
+          defaultValue: '13',
         },
         W: {
-          type: "string",
+          type: "number",
           menu: 'WEEK',
-          defaultValue: '3'
+          defaultValue: '5'
         },
         H: {
-          type: "number",
-          defaultValue: '0',
+          type: "slider",
+          defaultValue: '18',
+          max: 24,
+          min: 0
         },
         m: {
-          type: "number",
+          type: "slider",
           defaultValue: '0',
+          max: 60,
+          min: 0
         },
         S: {
-          type: "number",
+          type: "slider",
           defaultValue: '0',
+          max: 60,
+          min: 0
         },
       }
     },
