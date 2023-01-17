@@ -11,7 +11,7 @@
     "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
     "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学"
   },
-  "version": "2.1.0",
+  "version": "2.1.4",
   "type": "micropy",
   "firmwareDate": 20230117,
   "connect":{
