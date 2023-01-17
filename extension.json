@@ -13,7 +13,7 @@
   },
   "version": "2.1.0",
   "type": "micropy",
-  "firmwareDate": 20230116,
+  "firmwareDate": 20230117,
   "connect":{
     "baudrate": 1000000,
     "wait": 2500
