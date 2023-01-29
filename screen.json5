@@ -341,7 +341,7 @@
       arguments: {
         PATH: {
           type: 'string',
-          defaultValue: 'fileName',
+          menu: 'IMGLIST'
         },
         X: {
           type: 'number',
@@ -376,4 +376,7 @@
     },
     '---'
   ],
+  menus: {
+    IMGLIST: {type: 'fs', filter: '.png'},
+  }
 }
