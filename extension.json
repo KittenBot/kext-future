@@ -13,7 +13,7 @@
   },
   "version": "2.1.4",
   "type": "micropy",
-  "firmwareDate": 20230117,
+  "firmwareDate": 20230202,
   "connect":{
     "baudrate": 1000000,
     "wait": 2500
@@ -42,7 +42,7 @@
   "afterConnect": [
     "from future import *",
     "screen.clear()",
-    "screen.text('Hello Future',36,60,1,(71,233,0))"
+    "screen.text('Hello Future',32,60,1,(71,233,0))"
   ],
   "gen": {
     "imports": {"fb": "from future import *"}

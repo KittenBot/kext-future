@@ -361,7 +361,7 @@
       arguments: {
         PATH: {
           type: 'string',
-          defaultValue: 'fileName',
+          menu: 'GIFLIST'
         },
         X: {
           type: 'number',
@@ -378,5 +378,6 @@
   ],
   menus: {
     IMGLIST: {type: 'fs', filter: '.png'},
+    GIFLIST: {type: 'fs', filter: '.gif'},
   }
 }
