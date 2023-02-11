@@ -1,8 +1,7 @@
 {
   libs: {
     turtle: {
-      imports: 'from turtle import Turtle',
-      instance: 'Turtle()'
+      keywords: ['turtle']
     }
   },
   blocks: [
@@ -172,5 +171,6 @@
       text: '$$futureboard_turtle_clear',
       pycode: 'turtle.clear()',
     },
+    '---'
   ],
 }

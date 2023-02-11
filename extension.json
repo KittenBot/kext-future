@@ -11,12 +11,12 @@
     "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
     "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学"
   },
-  "version": "2.1.0",
+  "version": "2.1.5",
   "type": "micropy",
-  "firmwareDate": 20221110,
+  "firmwareDate": 20230202,
   "connect":{
     "baudrate": 1000000,
-    "wait": 3000
+    "wait": 2500
   },
   "io": ["ble"],
   "listdevice": {
@@ -29,6 +29,9 @@
     "txChar": "6E400003-B5A3-F393-E0A9-E50E24DCCA9E",
     "rxChar": "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
   },
+  "esptool": {
+   "fullerase": true
+  },
   "fwtype": "esptool",
   "replmode": true,
   "execmode": true,
@@ -38,7 +41,8 @@
   "filesystem": "pyboard",
   "afterConnect": [
     "from future import *",
-    "buzzer.melody(1)"
+    "screen.clear()",
+    "screen.text('Hello Future',32,60,1,(71,233,0))"
   ],
   "gen": {
     "imports": {"fb": "from future import *"}
@@ -89,13 +93,13 @@
     }
   },
   "subextensions": [
-    "extend.json5",
     "robotbit.json5",
-    "sugarbox.json5",
     "sugar.json5",
-    "other.json5",
+    "sugarbox.json5",
     "asr.json5",
     "koi.json5",
+    "sonar.json5",
+    "extend.json5",
     "blynk.json5"
   ],
   "helplink":{
@@ -111,5 +115,8 @@
   "firmware": "firmware.bin",
   "image": "futureboard.png",
   "fsrstcode": ["import inisetup", "inisetup.resetfs()"],
+  "imageconvert": {
+    "type": "png"
+  },
   "weights":999
 }

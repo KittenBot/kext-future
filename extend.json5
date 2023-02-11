@@ -12,6 +12,10 @@
     intercom: {
       import: 'from intercom import Intercom',
       instance: 'Intercom()'
+    },
+    au: {
+      import: 'from audio import Audio',
+      instance: 'Audio()'
     }
   },
   blocks:[
@@ -37,32 +41,40 @@
       arguments: {
         Y: {
           type: "number",
-          defaultValue: '2021',
+          defaultValue: '2023',
         },
         M: {
-          type: "number",
+          type: "slider",
           defaultValue: '1',
+          max: 12,
+          min: 1 
         },
         D: {
           type: "number",
-          defaultValue: '1',
+          defaultValue: '13',
         },
         W: {
-          type: "string",
+          type: "number",
           menu: 'WEEK',
           defaultValue: '5'
         },
         H: {
-          type: "number",
-          defaultValue: '1',
+          type: "slider",
+          defaultValue: '18',
+          max: 24,
+          min: 0
         },
         m: {
-          type: "number",
-          defaultValue: '1',
+          type: "slider",
+          defaultValue: '0',
+          max: 60,
+          min: 0
         },
         S: {
-          type: "number",
-          defaultValue: '1',
+          type: "slider",
+          defaultValue: '0',
+          max: 60,
+          min: 0
         },
       }
     },
@@ -139,7 +151,7 @@
       arguments: {
         KEY: {
           type: "string",
-          defaultValue: 'key'
+          defaultValue: ' '
         }
       }
     },
@@ -226,10 +238,11 @@
       arguments: {
         WAVFILENAME: {
           type: "string",
-          defaultValue: 'paly.wav'
+          defaultValue: 'abc.wav'
         }
       }
     },
+    '---'
   ],
   menus: {
     TIMEFORMAT_TEXT: [

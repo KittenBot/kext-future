@@ -1,4 +1,9 @@
 {
+  libs: {
+    neopix: {
+      keywords: ['NeoPixel']
+    }
+  },
   blocks: [
     "## $$futureboard_title_neopixel",
     {
@@ -127,5 +132,6 @@
       text: '$$futureboard_neopixel_update',
       pycode: 'neopix.update()',
     },
+    '---'
   ],
 }

@@ -1,6 +1,10 @@
 {
+  libs: {
+    sensor: {
+      keywords: ['sensor', 'calibrateCompass']
+    }
+  },
   blocks: [
-    "## $$futureboard_title_sensor",
     {
       opcode: 'runtime',
       blockType: 'reporter',
@@ -11,7 +15,7 @@
         import: 'import time'
       }
     },
-    
+    //----------------------------------------
     {
       opcode: 'rgbtuple',
       blockType: 'reporter',
@@ -33,6 +37,36 @@
         },
       },
     },
+    //----------------------------------------
+    {
+      opcode: 'hsltuple',
+      blockType: 'reporter',
+      text: 'H [H] S [S] L [L] => RGB',
+      pycode: 'hsl([H],[S],[L])',
+      arguments: {
+        H: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 360
+        },
+        S: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 100
+        },
+        L: {
+          type: 'slider',
+          defaultValue: 0,
+          min: 0,
+          max: 100
+        },
+      },
+    },
+    //----------------------------------------
+
+    "## $$futureboard_title_sensor",
     {
       opcode: 'buttonget',
       blockType: 'Boolean',
@@ -132,5 +166,6 @@
       pycode: 'sensor.heading()',
       disableMonitor: 1,
     },
+    '---'
   ],
 }

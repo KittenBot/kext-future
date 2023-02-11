@@ -1,4 +1,9 @@
 {
+  libs: {
+    screen: {
+      keywords: ['screen']
+    }
+  },
   blocks: [
     "## $$futureboard_title_screen",
     {
@@ -295,7 +300,7 @@
           defaultValue: '1',
         },
       },
-      pycode: "screen.text([TXT],[X],[Y],[EXT],[COLOR])",
+      pycode: "screen.text(str([TXT]),[X],[Y],[EXT],[COLOR])",
     },
     {
       opcode: 'tfttextcn',
@@ -336,46 +341,18 @@
       arguments: {
         PATH: {
           type: 'string',
-          defaultValue: 'fileName',
+          menu: 'IMGLIST'
         },
         X: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 160,
+          type: 'number',
+          defaultValue: 0
         },
         Y: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 128,
+          type: 'number',
+          defaultValue: 0
         },
       },
       pycode: 'screen.loadPng([PATH],[X],[Y])',
-    },
-    {
-      opcode: 'tftbmp',
-      blockType: 'command',
-      text: '$$futureboard_tft_bmp',
-      arguments: {
-        PATH: {
-          type: 'string',
-          defaultValue: 'fileName',
-        },
-        X: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 160,
-        },
-        Y: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 128,
-        },
-      },
-      pycode: 'screen.loadBmp([PATH],[X],[Y])',
     },
     {
       opcode: 'tftgif',
@@ -384,22 +361,23 @@
       arguments: {
         PATH: {
           type: 'string',
-          defaultValue: 'fileName',
+          menu: 'GIFLIST'
         },
         X: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 160,
+          type: 'number',
+          defaultValue: 0
         },
         Y: {
-          type: 'slider',
-          defaultValue: 0,
-          min: 0,
-          max: 128,
+          type: 'number',
+          defaultValue: 0
         },
       },
       pycode: 'screen.loadGif([PATH],[X],[Y])',
     },
+    '---'
   ],
+  menus: {
+    IMGLIST: {type: 'fs', filter: '.png'},
+    GIFLIST: {type: 'fs', filter: '.gif'},
+  }
 }

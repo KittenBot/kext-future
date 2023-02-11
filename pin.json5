@@ -1,15 +1,16 @@
 {
   libs: {
     "[PIN]_in": {
-      instance: "MeowPin('[PIN]', 'IN')"
+      instance: "MeowPin('[PIN]', 'IN')",
+      keywords: ['MeowPin']
     },
     "[PIN]_out": {
-      instance: "MeowPin([PIN], 'OUT')"
+      instance: "MeowPin('[PIN]', 'OUT')"
     },
-    "a_[PIN]": {
+    "[PIN]_analog": {
       instance: "MeowPin('[PIN]', 'ANALOG')"
     },
-    "pwm_[PIN]": {
+    "[PIN]_pwm": {
       instance: "MeowPin('[PIN]', 'PWM')"
     }
   },
@@ -69,7 +70,7 @@
           defaultValue: 12,
         },
       },
-      pycode: 'a_[PIN].getAnalog([WIDTH])',
+      pycode: '[PIN]_analog.getAnalog([WIDTH])',
     },
     {
       opcode: 'pinsetAnalog',
@@ -89,7 +90,8 @@
           min: 0,
         },
       },
-      pycode: 'pwm_[PIN].setAnalog([VALUE])',
+      pycode: '[PIN]_pwm.setAnalog([VALUE])',
     },
+    '---'
   ],
 }

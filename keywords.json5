@@ -25,31 +25,31 @@
   },
   {
     name:"NeoPixel",
-    value: "NeoPixel",
+    value: "NeoPixel()",
     meta: "彩灯类",
     scroe: 100
   },
   {
     name:"MeowPin",
-    value: "MeowPin",
+    value: "MeowPin()",
     meta: "引脚类",
     scroe: 100
   },
   {
     name:"UART",
-    value: "UART",
+    value: "UART()",
     meta: "串口类",
     scroe: 100
   },
   {
     name:"rtc",
-    value: "RTC",
+    value: "RTC()",
     meta: "时钟类",
     scroe: 100
   },
   {
     name:"Audio",
-    value: "Audio",
+    value: "Audio()",
     meta: "音频类",
     scroe: 100
   },
@@ -480,196 +480,489 @@
     meta: 'POWER_DOWN',
     scroe: 100
   },
-  {
-    name: 'write',
-    value: 'write',
-    meta: '串口写',
-    scroe: 100
-  },
-  {
-    name: 'any',
-    value: 'any',
-    meta: '串口数据',
-    scroe: 100
-  },
-  {
-    name: 'read',
-    value: 'read',
-    meta: '串口读取',
-    scroe: 100
-  },
-  {
-    name: 'readline',
-    value: 'readline',
-    meta: '串口读取行',
-    scroe: 100
-  },
+  // {
+  //   name: 'write',
+  //   value: 'write',
+  //   meta: '串口写',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'any',
+  //   value: 'any',
+  //   meta: '串口数据',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'read',
+  //   value: 'read',
+  //   meta: '串口读取',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'readline',
+  //   value: 'readline',
+  //   meta: '串口读取行',
+  //   scroe: 100
+  // },
   {
     name: 'RobotBit',
-    value: 'RobotBit',
+    value: 'RobotBit()',
     meta: 'RobotBit类',
     scroe: 100
   },
-  {
-    name: 'motor',
-    value: 'motor',
-    meta: '电机速度',
-    scroe: 100
-  },
-  {
-    name: 'motorStopAll',
-    value: 'motorStopAll',
-    meta: '停止所有电机',
-    scroe: 100
-  },
-  {
-    name: 'servo',
-    value: 'servo',
-    meta: '蓝色小舵机',
-    scroe: 100
-  },
-  {
-    name: 'geekServo9g',
-    value: 'geekServo9g',
-    meta: 'GeekServo 9g舵机',
-    scroe: 100
-  },
-  {
-    name: 'geekServo2kg',
-    value: 'geekServo2kg',
-    meta: 'GeekServo 2kg舵机',
-    scroe: 100
-  },
-  {
-    name: 'stepperDegree',
-    value: 'stepperDegree',
-    meta: '28byj-48步进电机',
-    scroe: 100
-  },
-  {
-    name: 'stepperDual',
-    value: 'stepperDual',
-    meta: '28byj-48双步进电机',
-    scroe: 100
-  },
-  {
-    name: 'loadness',
-    value: 'loadness',
-    meta: '麦克风声音强度',
-    scroe: 100
-  },
-  {
-    name: 'recognize',
-    value: 'recognize',
-    meta: '云端语音识别',
-    scroe: 100
-  },
+  // {
+  //   name: 'motor',
+  //   value: 'motor',
+  //   meta: '电机速度',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'motorStopAll',
+  //   value: 'motorStopAll',
+  //   meta: '停止所有电机',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'servo',
+  //   value: 'servo',
+  //   meta: '蓝色小舵机',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'geekServo9g',
+  //   value: 'geekServo9g',
+  //   meta: 'GeekServo 9g舵机',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'geekServo2kg',
+  //   value: 'geekServo2kg',
+  //   meta: 'GeekServo 2kg舵机',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'stepperDegree',
+  //   value: 'stepperDegree',
+  //   meta: '28byj-48步进电机',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'stepperDual',
+  //   value: 'stepperDual',
+  //   meta: '28byj-48双步进电机',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'loadness',
+  //   value: 'loadness',
+  //   meta: '麦克风声音强度',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'recognize',
+  //   value: 'recognize',
+  //   meta: '云端语音识别',
+  //   scroe: 100
+  // },
   {
     name: 'Radio',
-    value: 'Radio',
+    value: 'Radio()',
     meta: 'Radio类',
     scroe: 100
   },
-  {
-    name: 'send',
-    value: 'send',
-    meta: '无线发消息',
-    scroe: 100
-  },
-  {
-    name: 'read',
-    value: 'read',
-    meta: '无线收消息',
-    scroe: 100
-  },
-  {
-    name: 'RTC',
-    value: 'RTC',
-    meta: 'RTC 类',
-    scroe: 100
-  },
-  {
-    name: 'datetime',
-    value: 'datetime',
-    meta: '无线收消息',
-    scroe: 100
-  },
+  // {
+  //   name: 'send',
+  //   value: 'send',
+  //   meta: '无线发消息',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'read',
+  //   value: 'read',
+  //   meta: '无线收消息',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'datetime',
+  //   value: 'datetime',
+  //   meta: '无线收消息',
+  //   scroe: 100
+  // },
   {
     name: 'MQTTClient',
-    value: "MQTTClient",
-    meta: 'MQTTClient 类',
+    value: "MQTTClient()",
+    meta: 'MQTTClient类',
+    scroe: 100
+  },
+  // {
+  //   name: 'connect',
+  //   value: "connect",
+  //   meta: '连接mqtt服务器',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'disconnect',
+  //   value: "disconnect",
+  //   meta: '断开mqtt服务器',
+  //   scroe: 100
+  // },
+  //  {
+  //   name: 'subscribe',
+  //   value: "subscribe",
+  //   meta: '订阅话题',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'publish',
+  //   value: "publish",
+  //   meta: '发布消息',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'read',
+  //   value: "read",
+  //   meta: '获取消息',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'getDigital',
+  //   value: "getDigital",
+  //   meta: '数字输入',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'setDigital',
+  //   value: "setDigital",
+  //   meta: '数字输出',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'getAnalog',
+  //   value: "getAnalog",
+  //   meta: '模拟输入',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'setAnalog',
+  //   value: "setAnalog",
+  //   meta: '模拟输出',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'setcolor',
+  //   value: "setcolor",
+  //   meta: '设置单颗彩灯',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'setcolorAll',
+  //   value: 'setcolorAll',
+  //   meta: '设置全部彩灯',
+  //   scroe: 100
+  // },
+  // {
+  //   name: 'update',
+  //   value: "update",
+  //   meta: '彩灯显示',
+  //   scroe: 100
+  // },
+  //---------------------------------------------
+  {
+    name:"koi",
+    value: "koi",
+    meta: "KOI库",
+    scroe: 100
+  }, 
+  {
+    name: 'koi',
+    value: 'koi.screen_mode()',
+    meta: '旋转摄像头',
     scroe: 100
   },
   {
-    name: 'connect',
-    value: "connect",
-    meta: '连接mqtt服务器',
+    name: 'koi',
+    value: 'koi.text()',
+    meta: '显示字符串',
     scroe: 100
   },
   {
-    name: 'disconnect',
-    value: "disconnect",
-    meta: '断开mqtt服务器',
-    scroe: 100
-  },
-   {
-    name: 'subscribe',
-    value: "subscribe",
-    meta: '订阅话题',
+    name: 'koi',
+    value: 'koi.screen_save()',
+    meta: '拍照截屏',
     scroe: 100
   },
   {
-    name: 'publish',
-    value: "publish",
-    meta: '发布消息',
+    name: 'koi',
+    value: 'koi.screen_show()',
+    meta: '显示图片',
     scroe: 100
   },
   {
-    name: 'mqttRead',
-    value: "mqttRead",
-    meta: '获取消息',
+    name: 'koi',
+    value: 'koi.btnValue()',
+    meta: '按键检测',
     scroe: 100
   },
   {
-    name: 'getDigital',
-    value: "getDigital",
-    meta: '数字输入',
+    name: 'koi',
+    value: 'koi.face_yolo_load()',
+    meta: '导入人脸模型',
     scroe: 100
   },
   {
-    name: 'setDigital',
-    value: "setDigital",
-    meta: '数字输出',
+    name: 'koi',
+    value: 'koi.face_detect()',
+    meta: '追踪人脸',
     scroe: 100
   },
   {
-    name: 'getAnalog',
-    value: "getAnalog",
-    meta: '模拟输入',
+    name: 'koi',
+    value: 'koi.face_count()',
+    meta: '人脸数量',
     scroe: 100
   },
   {
-    name: 'setAnalog',
-    value: "setAnalog",
-    meta: '模拟输出',
+    name: 'koi',
+    value: 'koi.connect_wifi()',
+    meta: '连接WiFi',
     scroe: 100
   },
   {
-    name: 'setcolor',
-    value: "setcolor",
-    meta: '设置单颗彩灯',
+    name: 'koi',
+    value: 'koi.get_ip()',
+    meta: '获取IP',
     scroe: 100
   },
   {
-    name: 'setcolorAll',
-    value: 'setcolorAll',
-    meta: '设置全部彩灯',
+    name: 'koi',
+    value: 'koi.baiduAI_face_detect()',
+    meta: 'baiduAI人脸识别',
     scroe: 100
   },
   {
-    name: 'update',
-    value: "update",
-    meta: '彩灯显示',
+    name: 'koi',
+    value: 'koi.baiduAI_face_add()',
+    meta: 'baiduAI添加人脸到组',
     scroe: 100
   },
+  {
+    name: 'koi',
+    value: 'koi.baiduAI_face_search()',
+    meta: 'baiduAI人脸组中搜索人脸',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.baiduAI_tts()',
+    meta: 'baiduAI文字转语音',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.init_cls()',
+    meta: '初始化特征分类器',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.cls_add_tag()',
+    meta: '分类器增加标签',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.cls_run()',
+    meta: '运行分类器',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.cls_save_model()',
+    meta: '分类器保存模型文件',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.cls_load_model()',
+    meta: '分类器加载模型文件',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.audio_record()',
+    meta: '录制音频',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.audio_play()',
+    meta: '播放音频',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.audio_noisetap()',
+    meta: '设置环境噪声基准'
+  },
+  {
+    name: 'koi',
+    value: 'koi.speech_add_tag()',
+    meta: '添加语音关键词标签'
+  },
+  {
+    name: 'koi',
+    value: 'koi.speech_run()',
+    meta: '识别语音关键词'
+  },
+  {
+    name: 'koi',
+    value: 'koi.speech_save_model()',
+    meta: '保存语音关键词模型文件'
+  },
+  {
+    name: 'koi',
+    value: 'koi.speech_load_model()',
+    meta: '加载语音关键词模型文件'
+  },
+  {
+    name: 'koi',
+    value: 'koi.scan_qrcode()',
+    meta: '二维码扫描'
+  },
+  {
+    name: 'koi',
+    value: 'koi.scan_barcode()',
+    meta: '条形码扫描'
+  },
+  {
+    name: 'koi',
+    value: 'koi.scan_Apriltag()',
+    meta: 'Apriltag扫描'
+  },
+  {
+    name: 'koi',
+    value: 'koi.color_cali()',
+    meta: '校准颜色'
+  },
+  {
+    name: 'koi',
+    value: 'koi.color_tracking()',
+    meta: '色块追踪'
+  },
+  {
+    name: 'koi',
+    value: 'koi.line_tracking()',
+    meta: '线条识别',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.circle_detect()',
+    meta: '圆形识别',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.rectangle_detect()',
+    meta: '矩形识别',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.stop_kpu()',
+    meta: '停止yolo和分类器',
+    scroe: 100
+  },
+  {
+    name: 'koi',
+    value: 'koi.reset()',
+    meta: '重启KOI',
+    scroe: 100
+  },
+  //---------------------------------------------
+  {
+    name:"sugar",
+    value: "sugar",
+    meta: "方糖库",
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.PIR()',
+    meta: 'PIR类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Tracker()',
+    meta: '方糖数字巡线类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Hall()',
+    meta: '方糖霍尔类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Button()',
+    meta: '方糖按键类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Flame()',
+    meta: '方糖火焰类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Light()',
+    meta: '方糖光敏类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Angle()',
+    meta: '方糖电位器类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Soil()',
+    meta: '方糖土壤湿度器类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.WaterLevel()',
+    meta: '方糖雨滴水位器类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.TOFDistance()',
+    meta: '方糖激光测距类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.ENV()',
+    meta: '方糖温湿度类',
+    scroe: 100
+  },
+  {
+    name: 'sugar',
+    value: 'sugar.Joystick()',
+    meta: '方糖五向摇杆类',
+    scroe: 100
+  },
+  //---------------------------------------------
+  {
+    name: 'RFID',
+    value: 'sugar.RFID()',
+    meta: '能量模块RFID类',
+    scroe: 100
+  }
 ]
