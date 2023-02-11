@@ -109,9 +109,6 @@
   "scripts":[
 		"extra.js"
 	],
-  "imageconvert": {
-    "type": "png"
-  },
   "firmware": "firmware.bin",
   "image": "futureboard.png",
   "fsrstcode": ["import inisetup", "inisetup.resetfs()"],
