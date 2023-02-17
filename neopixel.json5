@@ -43,6 +43,7 @@
       opcode: 'neopixelcolorrgb',
       blockType: 'command',
       text: '$$futureboard_neopixel_color_rgb',
+      hide: true,
       pycode: 'neopix.setColor([PIXEL], ([RED],[GREEN],[BLUE]))',
       arguments: {
         PIXEL: {
@@ -85,6 +86,7 @@
       opcode: 'neopixelallrgb',
       blockType: 'command',
       text: '$$futureboard_neopixel_all_rgb',
+      hide: true,
       pycode: 'neopix.setColorAll(([RED],[GREEN],[BLUE]))',
       arguments: {
         RED: {
