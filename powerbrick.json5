@@ -1,0 +1,263 @@
+{
+  id: "futureboard@kext_powerbrick",
+  name: "$$powerbrick",
+  color1: "#D16848",
+  color2: "#AD563B",
+  color3: "#9D452A",
+  libs: {
+    'rfid': {
+        import: 'from sugar import *',
+        instance: 'RFID()'
+    },
+    'colorges': {
+        import: 'from sugar import *',
+        instance: 'ColorGes()'
+    },
+    'mp3': {
+        import: 'from sugar import *',
+        instance: 'MP3()'
+    },
+    
+  },
+
+
+  blocks:[
+    "## $$powerbrick_title_rfid",
+    // {
+    //   opcode: 'scanRfid',
+    //   blockType: "command",
+    //   text: "$$powerbrick_scanRfid",
+    //   pycode: 'rfid.probe(probeCallback if probeCallback in dir() else None)'
+    // },
+    // {
+    //   opcode: 'whenProbeRfid',
+    //   blockType: "hat",
+    //   isEdgeActivated: false,
+    //   text: "$$powerbrick_whenProbeRfid",
+    //   pycode:"def probeCallback()",
+    // },    
+    // {
+    //   opcode: 'stopRfid',
+    //   blockType: "command",
+    //   text: "$$powerbrick_stopRfid",
+    //   pycode: 'rfid.stop()'
+    // },
+    {
+      opcode: 'getRfidUUID',
+      blockType: "reporter",
+      text: "$$powerbrick_getRfidUUID",
+      pycode: 'rfid.uuid()'
+    },
+    {
+      opcode: 'getIsRfidUUIDEqual',
+      blockType: "Boolean",
+      text: "$$powerbrick_getRfidUUIDEqual",
+      pycode: 'rfid.uuid() == [VALUE]',
+      arguments: {
+        VALUE: {
+          type: "string",
+          defaultValue: 'AABBCCDD'
+        }
+      }
+    },
+    {
+      opcode: 'getRfidWrite',
+      blockType: "command",
+      text: "$$powerbrick_getRfidWrite",
+      pycode: 'rfid.write([SECTION], [BLOCK], [VALUE])',
+      arguments: {
+        SECTION: {
+          type: "slider",
+          defaultValue: '8',
+          min: 1,
+          max: 15
+        },
+        BLOCK: {
+          type: "slider",
+          defaultValue: '1',
+
+        },
+        VALUE: {
+          type: "string",
+          defaultValue: 'hello'
+        }
+      }
+    },
+    {
+      opcode: 'getRfidRead',
+      blockType: "reporter",
+      text: "$$powerbrick_getRfidRead",
+      pycode: 'rfid.read([SECTION], [BLOCK])',
+      arguments: {
+        SECTION: {
+          type: "slider",
+          defaultValue: '8',
+          min: 1,
+          max: 15
+        },
+        BLOCK: {
+          type: "slider",
+          defaultValue: '1',
+          min: 0,
+          max: 2
+        },
+
+      }
+    },
+
+//-------------------------------------------------------------------
+    "## $$powerbrick_title_mp3",
+    {
+      opcode: 'setMP3Operation',
+      blockType: "command",
+      text: "$$powerbrick_setMP3Operation",
+      pycode: 'mp3.operate([TYPE])',
+      arguments: {
+        TYPE: {
+          type: "string",
+          defaultValue: 'mp3.PLAY',
+          menu: 'mp3Operation'
+        }
+      }
+    },
+    {
+      opcode: 'setMP3Volumn',
+      blockType: "command",
+      text: "$$powerbrick_setMP3Volumn",
+      pycode: 'mp3.vol([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "number",
+          defaultValue: '32',
+        }
+      }
+    },
+    {
+      opcode: 'setMP3playIdx',
+      blockType: "command",
+      text: "$$powerbrick_setMP3playIdx",
+      pycode: 'mp3.playIndex([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "number",
+          defaultValue: '3',
+        }
+      }
+    },
+    {
+      opcode: 'setMP3playname',
+      blockType: "command",
+      text: "$$powerbrick_setMP3playname",
+      pycode: 'mp3.playName([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "string",
+          defaultValue: 'apple',
+        }
+      },
+      //onHelp: () => window.open('www.baidu.com'),
+      //tooltip: '👋'
+    },
+
+//-------------------------------------------------------------------
+    "## $$powerbrick_title_gesture",
+    {
+      opcode: 'setGestureMode',
+      blockType: "command",
+      text: "$$powerbrick_setGestureMode",
+      pycode: 'colorges.mode([TYPE])',
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'gestureMode',
+          defaultValue: '1'
+        }
+      },
+    },
+    {
+      opcode: 'getGestureValue',
+      blockType: "reporter",
+      text: "$$powerbrick_getGestureValue",
+      pycode: 'colorges.[TYPE]',
+      arguments: {
+        TYPE: {
+          type: "string",
+          menu: 'gestureType',
+          defaultValue: 'read(0)'
+        }
+      },
+    },
+    // {
+    //   opcode: 'getHSVToHex',
+    //   blockType: "reporter",
+    //   func: 'getHSVToHex',
+    //   text: "$$powerbrick_huetohsv",
+    //   arguments: {
+    //     H: {
+    //       type: "number",
+    //       defaultValue: '150'
+    //     },
+    //     S: {
+    //       type: "number",
+    //       defaultValue: '50'
+    //     },
+    //     V: {
+    //       type: "number",
+    //       defaultValue: '50'
+    //     },
+    //   },
+    // },
+
+    {
+      opcode: 'setGestureBrightness',
+      blockType: "command",
+      text: "$$powerbrick_setGestureBrightness",
+      pycode: 'colorges.ledpwm([VALUE])',
+      arguments: {
+        VALUE: {
+          type: "slider",
+          defaultValue: 0,
+          max: 100,
+          min: 0,
+        }
+      },
+    },
+    {
+      opcode: 'setGestureLed',
+      blockType: "command",
+      text: "$$powerbrick_setGestureLed",
+      pycode: 'colorges.led(([LED1],[LED2],[LED3],[LED4]))',
+      arguments: {
+        LED1: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED2: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED3: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED4: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+      },
+    },
+
+  ],
+  menus: {
+    gestureMode: [
+        { text: '$$powerbrick_menu_gestureMode_color', value: '1' },
+        { text: '$$powerbrick_menu_gestureMode_distance', value: '2' },
+        { text: '$$powerbrick_menu_gestureMode_gesture', value: '3' },
+        { text: '$$powerbrick_menu_gestureMode_led', value: '4' },
+    ],
+    gestureType: [
+        { text: '$$powerbrick_menu_gesture_hue', value: 'read(0)' },
+        { text: '$$powerbrick_menu_gesture_brightness', value: 'read(1)' },
+        { text: '$$powerbrick_menu_gesture_distance', value: 'distance()' },
+        { text: '$$powerbrick_menu_gesture_prevgesture', value: 'gesture()' },
+    ],
+    LEDSTATE0_1: [
+        { text: '$$powerbrick_menu_ledstate_on', value: '1' },
+        { text: '$$powerbrick_menu_ledstate_off', value: '0' },
+    ],
+    mp3Operation: [
+        { text: '$$powerbrick_menu_mp3op_play', value: 'mp3.PLAY' },
+        { text: '$$powerbrick_menu_mp3op_stop', value: 'mp3.STOP' },
+        { text: '$$powerbrick_menu_mp3op_next', value: 'mp3.NEXT' },
+        { text: '$$powerbrick_menu_mp3op_prev', value: 'mp3.PREV' },
+    ],
+  },
+}

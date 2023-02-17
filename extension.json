@@ -2,16 +2,18 @@
   "id": "futureboard@kext",
   "name": {
     "en": "FutureBoard",
-    "zh-CN": "未来板"
+    "zh-CN": "未来板",
+    "zh-TW": "未來板"
   },
-  "color1": "#23BDFD",
-  "color2": "#13ADED",
-  "color3": "#1A97CB",
+  "color1": "#3EC2EB",
+  "color2": "#3AB2D8",
+  "color3": "#26A4CC",
   "description": {
     "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
-    "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学"
+    "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学",
+    "zh-TW": "基於ESP32的彩屏主控闆，適用於開展AIoT教學"
   },
-  "version": "2.1.6",
+  "version": "2.1.7",
   "type": "micropy",
   "firmwareDate": 20230202,
   "connect":{
@@ -100,6 +102,7 @@
     "koi.json5",
     "sonar.json5",
     "extend.json5",
+    "powerbrick.json5",
     "blynk.json5"
   ],
   "helplink":{
