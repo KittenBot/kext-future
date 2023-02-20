@@ -310,6 +310,7 @@
         TEXTCH: {
           type: 'string',
           defaultValue: '你好呀',
+          hook: 'TEXTCH'
         },
         X: {
           type: 'slider',
