@@ -41,7 +41,7 @@
       opcode: 'radiosend',
       blockType: 'command',
       text: '$$futureboard_radio_send',
-      pycode: "r.send('[MSG]')",
+      pycode: "r.send([MSG])",
       arguments: {
         MSG: {
           type: 'string',
