@@ -594,6 +594,7 @@
       blockType: "command",
       text: "$$sugar_tm1650Clear",
       pycode: 'display.clear()',
+      hide: true
     },
 //------------------------------------------------------
     {
@@ -601,6 +602,7 @@
       blockType: "command",
       text: "$$sugar_tm1650Open",
       pycode: 'display.on()',
+      hide: true
     },
 //------------------------------------------------------
     {
@@ -608,10 +610,28 @@
       blockType: "command",
       text: "$$sugar_tm1650Close",
       pycode: 'display.off()',
+      hide: true
     },
+//------------------------------------------------------
+    {
+      opcode: 'tm1650DisplaySta',
+      blockType: "command",
+      text: "$$sugar_tm1650DisSta",
+      pycode: "display.[STA]()",
+      arguments: {
+        STA: {
+          type: "value",
+          defaultValue: 'clear',
+          menu: "DISPLAY_STATE"
+        }
+      }
+      
+    },
+
     '---',
 
     "## $$sugar_title_watch",
+
 //------------------------------------------------------
     {
       opcode: 'getTime',
@@ -1231,6 +1251,11 @@
     DIGI_STATE: [
       { text: '$$sugar_menu_digital_on', value: 1 },
       { text: '$$sugar_menu_digital_off', value: 0 },
+    ],
+    DISPLAY_STATE: [
+      { text: '$$sugar_menu_display_clear', value: 'clear' },
+      { text: '$$sugar_menu_display_on', value: 'on' },
+      { text: '$$sugar_menu_display_off', value: 'off' },
     ]
   },
 }
