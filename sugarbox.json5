@@ -275,11 +275,11 @@
       arguments: {
         CM: {
           type: "number",
-          defaultValue: 10,
+          defaultValue: 6,
         },
         SPD: {
           type: "number",
-          defaultValue: 120
+          defaultValue: 60
         },
       },
     },
@@ -292,7 +292,7 @@
       arguments: {
         STEER: {
           type: "number",
-          defaultValue: 360,
+          defaultValue: 60,
         },
         DEG: {
           type: "number",
@@ -300,7 +300,7 @@
         },
         SPD: {
           type: "number",
-          defaultValue: 120
+          defaultValue: 60
         }
       },
     },

@@ -47,7 +47,7 @@
             pycode: "asr.cmd == '[LEDWORD]'", 
             arguments:{
                 LEDWORD:{
-                    type:"number",
+                    type: "string",
                     defaultValue: '200', 
                     menu: 'led'
                 },
@@ -60,7 +60,7 @@
             pycode: "asr.cmd == '[EXECUTORWORD]'", 
             arguments:{
                 EXECUTORWORD:{
-                    type:"number",
+                    type: "string",
                     defaultValue: '300', 
                     menu: 'executor'
                 },
@@ -73,7 +73,7 @@
             pycode: "asr.cmd == '[QUERYWORD]'", 
             arguments:{
                 QUERYWORD:{
-                    type:"number",
+                    type: "string",
                     defaultValue: '400', 
                     menu: 'query'
                 },
@@ -86,7 +86,7 @@
             pycode: "asr.cmd == '[CUSTOMIZE]'", 
             arguments:{
                 CUSTOMIZE:{
-                    type:"number",
+                    type: "string",
                     defaultValue: '901', 
                     menu: 'customize'
                 },
@@ -100,8 +100,8 @@
             pycode: "asr.tts_words([KEYWORD])", 
             arguments:{
                 KEYWORD:{
-                    type:"number",
-                    defaultValue: '1', 
+                    type: "number",
+                    defaultValue: 1, 
                     menu: 'keyword'
                 },
             },
@@ -113,9 +113,8 @@
             pycode: "asr.tts_int([INT])", 
             arguments:{
                 INT:{
-                    type:"number",
-                    defaultValue: '1', 
-                    type: "number"
+                    type: "number",
+                    defaultValue: 1, 
                 },
             },
             text: "$$ASR_runInt"
@@ -126,9 +125,8 @@
             pycode: "asr.tts_double([DOUBLE])", 
             arguments:{
                 DOUBLE:{
-                    type:"number",
-                    defaultValue: '1.23', 
-                    type: "number"
+                    type: "number",
+                    defaultValue: 1.23, 
                 },
             },
             text: "$$ASR_runDouble"
@@ -139,19 +137,20 @@
             pycode: "asr.tts_date([Y], [M], [D])", 
             arguments:{
                 Y:{
-                    type:"number",
-                    defaultValue: '2016', 
-                    type: "number"                       
+                    type: "number",
+                    defaultValue: 2016,              
                 },
                 M:{
-                    type:"number",
-                    defaultValue: '1', 
-                    type: "number"
+                    type:"slider",
+                    max: 12,
+                    min: 1,
+                    defaultValue: 1, 
                 },
                 D:{
-                    type:"number",
-                    defaultValue: '6', 
-                    type: "number"
+                    type:"slider",
+                    max: 31,
+                    min: 1,
+                    defaultValue: 6, 
                 },
             },
             text: "$$ASR_runDate"
@@ -162,14 +161,16 @@
             pycode: "asr.tts_clock([H], [MIN])", 
             arguments:{
                 H:{
-                    type:"number",
-                    defaultValue: '0', 
-                    type: "number"
+                    type:"slider",
+                    max: 24,
+                    min: 0,
+                    defaultValue: 0, 
                 },
                 MIN:{
-                    type:"number",
-                    defaultValue: '0', 
-                    type: "number"
+                    type:"slider",
+                    max: 60,
+                    min: 0,
+                    defaultValue: 0, 
                 },
             },
             text: "$$ASR_runHour"

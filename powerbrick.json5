@@ -114,7 +114,7 @@
       pycode: 'mp3.operate([TYPE])',
       arguments: {
         TYPE: {
-          type: "string",
+          type: "value",
           defaultValue: 'mp3.PLAY',
           menu: 'mp3Operation'
         }
@@ -228,10 +228,10 @@
       text: "$$powerbrick_setGestureLed",
       pycode: 'colorges.led(([LED1],[LED2],[LED3],[LED4]))',
       arguments: {
-        LED1: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
-        LED2: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
-        LED3: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
-        LED4: { type: "string",menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED1: { type: "number", menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED2: { type: "number", menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED3: { type: "number", menu: 'LEDSTATE0_1', defaultValue: 0, },
+        LED4: { type: "number", menu: 'LEDSTATE0_1', defaultValue: 0, },
       },
     },
 
@@ -250,8 +250,8 @@
         { text: '$$powerbrick_menu_gesture_prevgesture', value: 'gesture()' },
     ],
     LEDSTATE0_1: [
-        { text: '$$powerbrick_menu_ledstate_on', value: '1' },
-        { text: '$$powerbrick_menu_ledstate_off', value: '0' },
+        { text: '$$powerbrick_menu_ledstate_on', value: 1 },
+        { text: '$$powerbrick_menu_ledstate_off', value: 0 },
     ],
     mp3Operation: [
         { text: '$$powerbrick_menu_mp3op_play', value: 'mp3.PLAY' },

@@ -133,12 +133,23 @@
         },
       }
     },
+
+    {
+      opcode: 'isSoundReceive',
+      blockType: "boolean",
+      text: "$$futureExtend_isSoundReceive",
+      pycode: 'intercom.playmsg',
+    },
+
     {
       opcode: 'soundReceive',
       blockType: "command",
       text: "$$futureExtend_soundReceive",
       pycode: 'intercom.play()',
     },
+
+//-----------------------------------------------------------------
+
     "## $$futureboard_title_weather",
     {
       opcode: 'gdKey',
@@ -224,9 +235,9 @@
         },
         SECOND: {
           type: "slider",
-          defaultValue: '3',
-          max: 15,
-          min: 3
+          defaultValue: 3,
+          max: 5,
+          min: 1
         }
       }
     },

@@ -13,9 +13,9 @@
     "zh-CN": "基于ESP32的彩屏主控板，适用于开展AIoT教学",
     "zh-TW": "基於ESP32的彩屏主控闆，適用於開展AIoT教學"
   },
-  "version": "2.1.7",
+  "version": "2.1.9",
   "type": "micropy",
-  "firmwareDate": 20230202,
+  "firmwareDate": 20230311,
   "connect":{
     "baudrate": 1000000,
     "wait": 2500
