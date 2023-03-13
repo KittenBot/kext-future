@@ -170,11 +170,12 @@
       opcode: 'weatherCity',
       blockType: "command",
       text: "$$futureExtend_weatherCity",
-      pycode: 'weather.getActual([CITY])',
+      pycode: 'weather.getActual([TEXTCH])',
       arguments: {
-        CITY: {
+        TEXTCH: {
           type: "string",
-          defaultValue: '深圳'
+          defaultValue: '深圳',
+          hook: 'TEXTCH'
         }
       }
     },
@@ -182,11 +183,12 @@
       opcode: 'weatherDate',
       blockType: "command",
       text: "$$futureExtend_weatherDate",
-      pycode: 'weather.getForecast([CITY],[DAY])',
+      pycode: 'weather.getForecast([TEXTCH],[DAY])',
       arguments: {
-        CITY: {
+        TEXTCH: {
           type: "string",
-          defaultValue: '深圳'
+          defaultValue: '深圳',
+          hook: 'TEXTCH'
         },
         DAY: {
           type: "slider",
