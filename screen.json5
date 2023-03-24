@@ -342,7 +342,8 @@
       arguments: {
         PATH: {
           type: 'string',
-          menu: 'IMGLIST'
+          menu: 'IMGLIST',
+          ahook: 'PATH'
         },
         X: {
           type: 'number',
