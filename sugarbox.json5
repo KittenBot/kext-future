@@ -311,8 +311,8 @@
       opcode: 'recordSound',
       blockType: "command",
       text: "$$sugarbox_recordSound",
-      isAsync: true,
-      timeout: 99999,
+      // isAsync: true,
+      // timeout: 99999,
       pycode: 'sugarbox.audio.savewav([WAVFILENAME], sec=[SECOND])',
       arguments: {
         WAVFILENAME: {
@@ -330,8 +330,8 @@
       opcode: 'playSoundn',
       blockType: "command",
       text: "$$sugarbox_playSoundn",
-      isAsync: true,
-      timeout: 99999,
+      // isAsync: true,
+      // timeout: 99999,
       pycode: 'sugarbox.audio.playwav([WAVFILENAME])',
       arguments: {
         WAVFILENAME: {

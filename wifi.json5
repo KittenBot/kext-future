@@ -11,8 +11,8 @@
       blockType: 'command',
       text: '$$futureboard_wifi_connect',
       pycode: "wifi.connect([NAME], [PWD])",
-      isAsync: true,
-      timeout: 20000,
+      // isAsync: true,
+      // timeout: 10000,
       arguments: {
         NAME: {
           type: 'string',
