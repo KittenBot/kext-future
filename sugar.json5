@@ -147,7 +147,7 @@
       opcode: 'whenInfraReceice',
       blockType: "hat",
       text: "$$sugar_whenInfraReceice",
-      mode: ['micropython'],
+      mode: ['micropy'],
       pycode:[
         "infra = InfraRx('[PORT]', [PORT]_code)",
         "def [PORT]_code(infraV):"
@@ -164,7 +164,7 @@
       opcode: 'getInfraDecodeValue',
       blockType: "reporter",
       text: "$$sugar_getInfraDecodeValue",
-      mode: ['micropython'],
+      mode: ['micropy'],
       // disableMonitor: true,
       pycode: 'infraV',
     },
@@ -172,7 +172,7 @@
       opcode: 'getInfraValueDiff',
       blockType: "Boolean",
       text: "$$sugar_getInfraValueDiff",
-      mode: ['micropython'],
+      mode: ['micropy'],
       pycode: 'infraV == [VALUE]',
       arguments: {
         VALUE: {

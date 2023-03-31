@@ -340,10 +340,10 @@
       blockType: 'command',
       text: '$$futureboard_tft_png',
       arguments: {
-        PATH: {
+        IMGPATH: {
           type: 'string',
           menu: 'IMGLIST',
-          ahook: 'PATH'
+          ahook: 'IMGPATH'
         },
         X: {
           type: 'number',
@@ -354,14 +354,14 @@
           defaultValue: 0
         },
       },
-      pycode: 'screen.loadPng([PATH],[X],[Y])',
+      pycode: 'screen.loadPng([IMGPATH],[X],[Y])',
     },
     {
       opcode: 'tftgif',
       blockType: 'command',
       text: '$$futureboard_tft_gif',
       arguments: {
-        PATH: {
+        IMGPATH: {
           type: 'string',
           menu: 'GIFLIST'
         },
