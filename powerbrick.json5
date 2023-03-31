@@ -108,6 +108,28 @@
 //-------------------------------------------------------------------
     "## $$powerbrick_title_mp3",
     {
+      opcode: 'mp3Init',
+      blockType: "command",
+      text: "$$powerbrick_mp3Init",
+      // micropy: {
+      //   instance: 'MP3([TX],[RX])'
+      // },
+      // pycode: 'mp3.operate([TYPE])',
+      arguments: {
+        TX: {
+          type: "string",
+          defaultValue: 'P2',
+          menu: 'PIN_TX'
+        },
+        RX: {
+          type: "string",
+          defaultValue: 'P12',
+          menu: 'PIN_RX'
+        },
+      },
+      pycode: 'MP3(tx=[TX], rx=[RX])'
+    },
+    {
       opcode: 'setMP3Operation',
       blockType: "command",
       text: "$$powerbrick_setMP3Operation",
@@ -259,5 +281,7 @@
         { text: '$$powerbrick_menu_mp3op_next', value: 'mp3.NEXT' },
         { text: '$$powerbrick_menu_mp3op_prev', value: 'mp3.PREV' },
     ],
+    PIN_RX: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13'],
+    PIN_TX: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
   },
 }

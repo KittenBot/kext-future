@@ -14,7 +14,7 @@
       micropy: {
         import: 'from radio import Radio'
       },
-      pycode: 'r = Radio()'
+      // pycode: 'r = Radio()'
     },
     {
       opcode: 'radioset',

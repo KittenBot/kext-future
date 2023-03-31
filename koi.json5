@@ -22,6 +22,28 @@
         import: 'from futureKOI import KOI'
       },
       pycode: "koi = KOI(tx='P2',rx='P12',id=1)",
+      hide : true
+    },
+    {
+      opcode: "runInit2",
+      blockType: "command",
+      text: "$$futureKoi_init",
+      arguments: {
+        TX: {
+          type: "string",
+          defaultValue: 'P2',
+          menu: 'PIN_TX'
+        },
+        RX: {
+          type: "string",
+          defaultValue: 'P12',
+          menu: 'PIN_RX'
+        },
+      },
+      micropy: {
+        import: 'from futureKOI import KOI'
+      },
+      pycode: "koi = KOI(tx=[TX],rx=[RX],id=1)",
     },
     {
       opcode: "runReboot",
@@ -428,5 +450,7 @@
       { text: "X2", value: "2" },
       { text: "Y2", value: "3" },
     ],
+    PIN_RX: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13'],
+    PIN_TX: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
   },
 }

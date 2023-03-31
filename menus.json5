@@ -27,14 +27,8 @@
     // sugar LED or ana wirte
     PINS_ANALOG_WRITE: ['P0','P1','P2','P3','P8','P13','P14','P15','P16'],
     PINS_SENSOR: ['P0','P1','P2','P3', 'P12','P14','P15','P16'],
-    PINS_NEOPIX: ['P0','P1','P2','P3','P7','P8','P13','P14','P15','P16'],
     PORTMODE: ['IN', 'OUT', 'ADC', 'PWM', 'SERVO'],
     PORTS: ['1', '2', '3', '4'],
-    UARTLIST: [
-        { text: '1 JAC', value: '1' },
-        { text: '2 P2/P12', value: '2' },
-        { text: '6 P9/P6', value: '6' }
-    ],
     BTNLIST: [
         { text: 'A', value: 'a' },
         { text: 'B', value: 'b' },
@@ -133,9 +127,11 @@
         {text: 'M1', value: '1'},
         {text: 'M2', value: '2'},
     ],
-    portd: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13', 'P14', 'P15'],
+    portd: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
     porta: ['P0', 'P1', 'P2'],
     portsonar: ['P0', 'P1', 'P2', 'P8'],
+    PIN_RX: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13'],
+    PIN_TX: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
     onoffmenu: [
         { text: '$$futureboard_menu_onoff_off', value: 'off', },
         { text: '$$futureboard_menu_onoff_on', value: 'on' },
