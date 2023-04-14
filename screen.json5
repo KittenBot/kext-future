@@ -374,7 +374,7 @@
           defaultValue: 0
         },
       },
-      pycode: 'screen.loadGif([PATH],[X],[Y])',
+      pycode: 'screen.loadGif([IMGPATH],[X],[Y])',
     },
     '---'
   ],

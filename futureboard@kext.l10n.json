@@ -899,6 +899,7 @@
     "sugar_getHumandetectStatus": "PIR传感器 [PORT] 检测有人(5米内)",
     "sugar_getTractStatus": "巡线传感器 [PORT] 识别到[TYPE]",
     "sugar_getFrameStatus": "火焰传感器 [PORT] 检测有火源(100厘米内)",
+    "sugar_getTempValue": "温度模块(DS18B20) [PORT] 获取温度",
     "sugar_getHallStatus": "霍尔传感器 [PORT] 检测有磁铁",
     "sugar_getButtonStatus": "按键传感器 [PORT] 被按下",
     "sugar_vibrateState": "振动模块 [PORT] 振动[STATE]",
