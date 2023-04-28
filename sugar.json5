@@ -3,6 +3,7 @@
   name: "$$sugar",
   color1: "#388EE5",
   color2: "#2771BC",
+  tags: ['modules'],
   color3: "#1C5FA2",
   libs: {
     '*': {

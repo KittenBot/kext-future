@@ -2,6 +2,7 @@
     id: "futureboard@kext_blynk",
     name: "$$blynk_title",
     color1: "#2ACC91",
+    tags: ["advanced"],
     color2: "#29B582",
     color3: "#23AA79",
     menus:{

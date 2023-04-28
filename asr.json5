@@ -3,6 +3,7 @@
     name: "$$ASR_title",
     color1: "#EC541E",
     color2: "#CC4515",
+    tags: ['modules'],
     color3: "#BF3E0F",
 
     blocks: 

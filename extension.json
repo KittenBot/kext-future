@@ -105,6 +105,12 @@
     "powerbrick.json5",
     "blynk.json5"
   ],
+  "loadedextensions":[
+      "robotbit.json5",
+      "sugar.json5",
+      "asr.json5",
+      "sugarbox.json5"
+  ],
   "helplink":{
     "kblock": "https://www.yuque.com/kittenbot/hardwares/futureboard-kittenblock",
     "app": "https://www.yuque.com/kittenbot/software/controller-future"

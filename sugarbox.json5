@@ -3,6 +3,7 @@
   name: "$$sugarbox_title",
   color1: "#87B6FC",
   color2: "#5E93DE",
+  tags: ['modules'],
   color3: "#5A81B7",
   libs: {
     sugarbox: {

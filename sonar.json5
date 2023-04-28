@@ -3,6 +3,7 @@
     name: "$$sonar",
     color1: "#363F6A",
     color2: "#22294A",
+    tags: ['modules'],
     color3: "#191F3B",
     libs: {
         '*': {

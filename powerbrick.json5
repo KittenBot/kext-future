@@ -3,6 +3,7 @@
   name: "$$powerbrick",
   color1: "#D16848",
   color2: "#AD563B",
+  tags: ['modules'],
   color3: "#9D452A",
   libs: {
     'rfid': {

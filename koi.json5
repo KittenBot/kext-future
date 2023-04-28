@@ -4,6 +4,7 @@
   color1: "#61D1E5",
   color2: "#4BB7CB",
   color3: "#3EAEC3",
+  tags: ['shield'],
   libs:{
     koi: {
       import: "from futureKOI import KOI",

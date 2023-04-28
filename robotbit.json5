@@ -3,6 +3,7 @@
   name: "$$futureboard_robotbit",
   color1: "#1395BA",
   color2: "#107895",
+  tags: ["shield"],
   color3: "#107895",
 
   libs: {

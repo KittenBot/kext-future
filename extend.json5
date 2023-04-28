@@ -1,6 +1,7 @@
 {
   id: "futureboard@kext_extend",
   name: "$$futureExtend_name",
+  tags: ["shield"],
   color1: "#ED6A47",
   color2: "#BF5235",
   color3: "#B83E1D",
