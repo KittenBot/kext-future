@@ -68,6 +68,10 @@
     },
     "display": {
       instance: "Display()"
+    },
+    "rfid":{
+      import: "from rfidAL import *",
+      instance: "RfidAL()"
     }
   },
 
@@ -711,6 +715,41 @@
       }
     },
     '---',
+    "## $$sugar_title_rfid",
+    {
+      opcode: 'getRfidUid',
+      blockType: "reporter",
+      text: "$$sugar_getRfidUid",
+      pycode: "rfid.scan()",
+    },
+    {
+      opcode: 'RfidWrite',
+      blockType: "command",
+      text: "$$sugar_RfidWrite",
+      pycode: 'rfid.write([ADDR],[DATA])',
+      arguments: {
+        ADDR: {
+          type: "number",
+          defaultValue: '1'
+        },
+        DATA: {
+          type: "string",
+          defaultValue: 'hello kittenbot'
+        }
+      }
+    },
+    {
+      opcode: 'RfidRead',
+      blockType: "reporter",
+      text: "$$sugar_RfidRead",
+      pycode: 'rfid.read([ADDR])',
+      arguments: {
+        ADDR: {
+          type: "number",
+          defaultValue: '1'
+        }
+      }
+    },
 //----------------------------------------------------------------------------
 //     "## $$sugar_title_rfid",
 //     {
