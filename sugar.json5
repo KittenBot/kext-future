@@ -729,8 +729,10 @@
       pycode: 'rfid.write([ADDR],[DATA])',
       arguments: {
         ADDR: {
-          type: "number",
-          defaultValue: '1'
+          type: "slider",
+          defaultValue: 0,
+          min:0,
+          max:46
         },
         DATA: {
           type: "string",
@@ -745,8 +747,10 @@
       pycode: 'rfid.read([ADDR])',
       arguments: {
         ADDR: {
-          type: "number",
-          defaultValue: '1'
+          type: "slider",
+          defaultValue: 0,
+          min:0,
+          max:46
         }
       }
     },

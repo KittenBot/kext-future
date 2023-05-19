@@ -1037,7 +1037,7 @@
     "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] 距离 (厘米)",
     "sonar_getMeowSonarDistance": "猫头超声波 [PIN] 距离 (厘米)",
     "sugar_title_rfid": "方糖 RFID 模块",
-    "sugar_getRfidUid":"获取卡片id",
+    "sugar_getRfidUid":"获取卡片ID",
     "sugar_RfidWrite":"把数据 [DATA] 写入块 [ADDR]",
     "sugar_RfidRead":"读取块[ADDR]数据"
 
@@ -1523,7 +1523,7 @@
     "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] 距離 (厘米)",
     "sonar_getMeowSonarDistance": "貓頭超聲波 [PIN] 距離 (厘米)",
     "sugar_title_rfid": "方糖 RFID 模塊",
-    "sugar_getRfidUid":"獲取卡片id",
+    "sugar_getRfidUid":"獲取卡片ID",
     "sugar_RfidWrite":"把數據 [DATA] 寫入塊 [ADDR]",
     "sugar_RfidRead":"讀取塊 [ADDR] 數據"
   }

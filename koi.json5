@@ -180,7 +180,7 @@
       opcode: "runRecordAudio",
       blockType: "command",
       text: "$$futureKoi_runRecordAudio",
-      pycode: "koi.audio_record('[AUDIOPATH]')",
+      pycode: "koi.audio_record([AUDIOPATH])",
       arguments: {
         AUDIOPATH: { type: "string", defaultValue: "hello.wav" },
       },
@@ -189,7 +189,7 @@
       opcode: "runPlayAudio",
       blockType: "command",
       text: "$$futureKoi_runPlayAudio",
-      pycode: "koi.audio_play('[AUDIOPATH]')",
+      pycode: "koi.audio_play([AUDIOPATH])",
       arguments: {
         AUDIOPATH: { type: "string", defaultValue: "hello.wav" },
       },
@@ -410,10 +410,9 @@
       opcode: "runTTS",
       blockType: "command",
       text: "$$futureKoi_runTTS",
-      pycode: "koi.baiduAI_tts(txt='[TEXT]' ,cmd='K78')",
+      pycode: "koi.baiduAI_tts(txt=[TEXT] ,cmd='K78')",
       arguments: {
-        TEXT: { type: "string", defaultValue: "hello world" },
-        TEXT: { type: "string", defaultValue: "hello world" },
+        TEXT: { type: "string", defaultValue: "hello" },
       },
     },
     '---',
