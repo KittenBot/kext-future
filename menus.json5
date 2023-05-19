@@ -127,7 +127,7 @@
         {text: 'M1', value: '1'},
         {text: 'M2', value: '2'},
     ],
-    portd: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
+    portd: ['P7', 'P0', 'P1', 'P2', 'P8', 'P13'],
     porta: ['P0', 'P1', 'P2'],
     portsonar: ['P0', 'P1', 'P2', 'P8'],
     PIN_RX: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13'],
