@@ -81,6 +81,10 @@
       "name": "$$futureboard_title_microphone",
       "file": "microphone.json5"
     },
+    "uart":{
+      "name": "$$futureboard_title_uart",
+      "file": "uart.json5"
+    },
     "wifi": {
       "name": "$$futureboard_title_wifi",
       "file": "wifi.json5"
@@ -103,7 +107,8 @@
     "sonar.json5",
     "extend.json5",
     "powerbrick.json5",
-    "blynk.json5"
+    "blynk.json5",
+    "sugarcamera.json5"
   ],
   "loadedextensions":[
       "robotbit.json5",

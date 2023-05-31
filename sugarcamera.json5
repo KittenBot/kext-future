@@ -1,0 +1,104 @@
+{
+    id: "futureboard_sugarCamera",
+    name: "$$sugarCamera",
+    color1: "#388EE5",
+    color2: "#2771BC",
+    color3: "#1C5FA2",
+
+    blocks: 
+    [
+        {
+            opcode: 'CamRunInit',
+            blockType: "command",
+            text: "$$sugarCamera_CamRunInit",
+            micropy: {
+                import: "from sugar_cam import SugarCam"
+            },
+            pycode: "sugarCam = SugarCam([PORT1], [PORT2])",
+            arguments:{
+                PORT1:{
+                    type: "string",
+                    defaultValue: 'P2', 
+                    menu: 'port'
+                },
+                PORT2:{
+                    type: "string",
+                    defaultValue: 'P12', 
+                    menu: 'port'
+                },
+            }
+        },
+        {
+            opcode: "CamGetQRcode",
+            blockType: "reporter",
+            text: "$$sugarCamera_CamGetQRcode",
+            pycode: "sugarCam.getQRcode()",
+        },
+        {
+            opcode: "CamPlayWAV",
+            blockType: "command",
+            text: "$$sugarCamera_CamPlayAudio",
+            pycode: "sugarCam.playAudio([MP3])",
+            arguments:{
+                MP3:{
+                    type: "string",
+                    defaultValue: 'kittenblock.mp3', 
+                },
+            }
+        },
+        {
+            opcode: "CamSetColor",
+            blockType: "command",
+            text: "$$sugarCamera_CamSetColor",
+            pycode: "sugarCam.setColor([COLOR1],[COLOR2])",
+            arguments:{
+                COLOR1: {
+                type: 'colorrgb',
+                defaultValue: '#FF0000',
+                
+                },
+                COLOR2: {
+                type: 'colorrgb',
+                defaultValue: '#FF0000',
+                
+                }                
+            }
+        }, 
+        {
+            opcode: "CamSetAllColor",
+            blockType: "command",
+            text: "$$sugarCamera_CamSetAllColor",
+            pycode: "sugarCam.setAllColor([COLOR1])",
+            arguments:{
+                COLOR1: {
+                type: 'colorrgb',
+                defaultValue: '#FF0000',
+                }                
+            }
+        }, 
+        {
+            opcode: "CamButtonState",
+            blockType: "Boolean",
+            text: "$$sugarCamera_CamButtonState",
+            pycode: "sugarCam.buttonState([BUTTON])",
+            arguments:{
+                BUTTON: {
+                    type: 'string',
+                    menu: 'butten',
+                    defaultValue: 'BTNA'
+                }            
+            }
+        }
+    ],
+    menus:{
+        uartPoart:[
+            {value:'uart0', text:'UART0'},
+            {value:'uart1', text:'UART1'}
+        ],
+        butten:[
+            {text:'$$sugarCamera_BtnMenuA', value:'BTNA'},
+            {text:'$$sugarCamera_BtnMenuB', value:'BTNB'}
+        ],
+        port: ['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12']
+    }
+}

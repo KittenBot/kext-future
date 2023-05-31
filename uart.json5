@@ -1,0 +1,90 @@
+{
+blocks: [
+    '## $$futureboard_title_uart',
+    {
+        opcode: 'uartInit',
+        blockType: "command",
+        text: "$$futureboard_uartInit",
+        micropy: {
+            import: "from machine import UART"
+            
+        },
+        pycode: "[UARTNAME] = UART(1,baudrate=[BAUDRATE],tx=PINMAP[[PORT1]],rx=PINMAP[[PORT2]])",
+        arguments:{
+            BAUDRATE:{
+                type: "number",
+                defaultValue: '115200', 
+            },
+            UARTNAME:{
+                type: "value",
+                defaultValue: 'uart0', 
+                menu: 'uartPoart'
+            },
+            PORT1:{
+                type: "string",
+                defaultValue: 'P2', 
+                menu: 'port'
+            },
+            PORT2:{
+                type: "string",
+                defaultValue: 'P12', 
+                menu: 'port'
+            },
+        }
+    },
+    //-------------------------------------------
+    {
+        opcode: 'uartReadAll',
+        blockType: "reporter",
+        text: "$$futureboard_uartReadAll",
+        pycode: "[UARTNAME].read()",
+        arguments:{
+            UARTNAME:{
+                type: "value",
+                defaultValue: 'uart0',
+                menu: 'uartPoart'
+            },
+        }
+    },
+    //-------------------------------------------
+    {
+        opcode: 'uartReadLine',
+        blockType: "reporter",
+        text: "$$futureboard_uartReadLine",
+        pycode: "[UARTNAME].readline()",
+        arguments:{
+            UARTNAME:{
+                type: "value",
+                defaultValue: 'uart0',
+                menu: 'uartPoart'
+            },
+        }
+    },
+    //-------------------------------------------
+    {
+        opcode: 'uartWrite',
+        blockType: "command",
+        text: "$$futureboard_uartWrite",
+        pycode: "[UARTNAME].write([DATA])",
+        arguments: {
+          UARTNAME:{
+              type: "value",
+              defaultValue: 'uart0',
+              menu: 'uartPoart'
+          },
+          DATA: {
+            type: 'string',
+            defaultValue: 'kittenbot',
+          },
+        },
+    },
+],
+menus:{
+    port: ['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12'],
+    uartPoart:[
+        {value:'uart0', text:'UART0'},
+        {value:'uart1', text:'UART1'},
+        {value:'uart2', text:'UART2'}
+    ],
+}
+}

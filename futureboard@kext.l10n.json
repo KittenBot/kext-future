@@ -1039,7 +1039,30 @@
     "sugar_title_rfid": "方糖 RFID 模块",
     "sugar_getRfidUid":"获取卡片ID",
     "sugar_RfidWrite":"把数据 [DATA] 写入块 [ADDR]",
-    "sugar_RfidRead":"读取块[ADDR]数据"
+    "sugar_RfidRead":"读取块[ADDR]数据",
+
+    "sugarCamera": "方糖摄像头模块",
+    "sugarCamera_CamRunInit": "初始化 方糖摄像头 TX[PORT1], RX[PORT2]",
+    "sugarCamera_CamGetQRcode": "获取扫码结果",
+    "sugarCamera_CamPlayAudio": "播放音频[MP3]",
+    "sugarCamera_CamRecognize": "语音识别[SEC]秒",
+    "sugarCamera_CamSetColor": "彩灯 颜色[COLOR1][COLOR2]",
+    "sugarCamera_CamSetAllColor": "彩灯 所有颜色[COLOR1]",
+
+    "sugarCamera_BtnMenuA" :"按钮A",
+    "sugarCamera_BtnMenuB" :"按钮B",
+    "sugarCamera_CamButtonState" :"[BUTTON]",
+
+    "sugarCamera_CamMqttConnect" :"连接mqtt服务器[ADDR] 设备标识[ID]",
+    "sugarCamera_CamMqttConnectForUser" :"连接mqtt服务器[ADDR] 设备标识[ID] 用户名[USER] 密码[PWD]",
+    "sugarCamera_CamMqttSubscription" :"订阅话题[TOPIC]",
+    "sugarCamera_CamMqttSend" :"向话题[TOPIC] 发送消息[MESSAGE]",
+    "sugarCamera_CamMqttMessage" :"获取mqtt消息",
+
+    "futureboard_uartInit": "初始化串口[UARTNAME] 波特率[BAUDRATE] RX[PORT1] TX[PORT2]",
+    "futureboard_uartReadAll": "读取串口[UARTNAME]所有数据",
+    "futureboard_uartReadLine": "读取串口[UARTNAME]一行数据",
+    "futureboard_uartWrite": "向串口[UARTNAME]写入数据[DATA]"
 
 
   },
@@ -1525,6 +1548,24 @@
     "sugar_title_rfid": "方糖 RFID 模塊",
     "sugar_getRfidUid":"獲取卡片ID",
     "sugar_RfidWrite":"把數據 [DATA] 寫入塊 [ADDR]",
-    "sugar_RfidRead":"讀取塊 [ADDR] 數據"
+    "sugar_RfidRead":"讀取塊 [ADDR] 數據",
+
+    "futureboardSugarCamera": "方糖摄像头模块",
+    "sugarCamera_CamRunInit": "初始化 方糖摄像头[UARTPOART]",
+    "sugarCamera_CamGetQRcode": "获取扫码结果",
+    "sugarCamera_CamPlayWAV": "播放音频[WAVFILE]",
+    "sugarCamera_CamRecognize": "语音识别[SEC]秒",
+    "sugarCamera_CamSetColor": "彩灯 颜色[COLOR1][COLOR2]",
+    "sugarCamera_CamSetAllColor": "彩灯 所有颜色[COLOR1]",
+
+    "sugarCamera_BtnMenuA" :"按钮A",
+    "sugarCamera_BtnMenuB" :"按钮B",
+    "sugarCamera_CamButtonState" :"[BUTTON]",
+
+    "sugarCamera_CamMqttConnect" :"连接mqtt服务器[ADDR] 设备标识[ID]",
+    "sugarCamera_CamMqttConnectForUser" :"连接mqtt服务器[ADDR] 设备标识[ID] 用户名[USER] 密码[PWD]",
+    "sugarCamera_CamMqttSubscription" :"订阅话题[TOPIC]",
+    "sugarCamera_CamMqttSend" :"向话题[TOPIC] 发送消息[MESSAGE]",
+    "sugarCamera_CamMqttMessage" :"获取mqtt消息"
   }
 }
