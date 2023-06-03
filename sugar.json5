@@ -71,7 +71,9 @@
     },
     "rfid":{
       import: "from rfidAL import *",
-      instance: "RfidAL()"
+      instance: "RfidAL()",
+      file: 'rfidAL.py',
+      version: '1.0.3'
     }
   },
 
@@ -720,13 +722,13 @@
       opcode: 'getRfidUid',
       blockType: "reporter",
       text: "$$sugar_getRfidUid",
-      pycode: "rfid.scan()",
+      pycode: "rfid.scanCar()",
     },
     {
       opcode: 'RfidWrite',
       blockType: "command",
       text: "$$sugar_RfidWrite",
-      pycode: 'rfid.write([ADDR],[DATA])',
+      pycode: 'rfid.writeBlock([ADDR],[DATA])',
       arguments: {
         ADDR: {
           type: "slider",
@@ -744,7 +746,7 @@
       opcode: 'RfidRead',
       blockType: "reporter",
       text: "$$sugar_RfidRead",
-      pycode: 'rfid.read([ADDR])',
+      pycode: 'rfid.readBlock([ADDR])',
       arguments: {
         ADDR: {
           type: "slider",
