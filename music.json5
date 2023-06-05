@@ -41,7 +41,7 @@
       pycode: 'buzzer.note([NOTE],[CLAP])',
       arguments: {
         NOTE: {
-          type: 'note',
+          type: 'number',
           defaultValue: 60,
         },
         CLAP: {
