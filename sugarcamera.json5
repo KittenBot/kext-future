@@ -4,9 +4,16 @@
     color1: "#388EE5",
     color2: "#2771BC",
     color3: "#1C5FA2",
+    lib:{
+        "*":{
+            file: 'sugar_cam.py',
+            version: '1.0.7'
+        }
+    },   
 
     blocks: 
     [
+        "## $$sugarCamera_title_uart",
         {
             opcode: 'CamRunInit',
             blockType: "command",
@@ -88,7 +95,40 @@
                     defaultValue: 'BTNA'
                 }            
             }
-        }
+        },
+        "## $$sugarCamera_title_fpv",
+        {
+            opcode: "FPVInitConnect",
+            blockType: "command",
+            text: "$$sugarCamera_FPVInitConnect",
+            micropy: {
+                import: "from sugar_cam import FPV"
+            },
+            pycode: "fpv = FPV([IP],[SECRET])",
+            arguments:{
+                IP: {
+                    type: 'string',
+                    defaultValue: '192.168.0.9',
+                },
+                SECRET: {
+                    type: 'string',
+                    defaultValue: 'miao',
+                }            
+            }
+        }, 
+        {
+            opcode: "FPVSetStatus",
+            blockType: "command",
+            text: "$$sugarCamera_FPVSetStatus",
+            pycode: "fpv.setStatus([STATUS])",
+            arguments:{
+                STATUS: {
+                    type: 'value',
+                    defaultValue: 'True',
+                    menu:'status'
+                },
+            }
+        }, 
     ],
     menus:{
         uartPoart:[
@@ -98,6 +138,10 @@
         butten:[
             {text:'$$sugarCamera_BtnMenuA', value:'BTNA'},
             {text:'$$sugarCamera_BtnMenuB', value:'BTNB'}
+        ],
+        status:[
+            {text:'$$FVP_STATUS_OPEN', value:'True'},
+            {text:'$$FVP_STATUS_CLOSE', value:'False'}
         ],
         port: ['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12']
     }

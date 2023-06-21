@@ -1,8 +1,12 @@
 from machine import UART
-from future import PINMAP
-from time import sleep
+from future import *
+from time import *
+import socket
+import errno
+import ubinascii
+import _thread
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
 VERSIONS = 'K0'
 QRCODE = 'K11'
 RECOGNIZE = "K12"
@@ -145,4 +149,62 @@ class SugarCam:
                     return bool(int(data[2]))
             except:
                 return None
-                
+
+class FPV:
+  def __init__(self,ip,secret):
+    self.ip = ip
+    self.secret = secret
+    self.status = False
+
+  def setStatus(self,status):
+      self.status = status
+      if self.status:
+          _thread.start_new_thread(self.startMonitor,(9233,))
+
+  def decodeCmd(self,data):
+      cmds = data.split(' ')
+      if len(cmds) < 2:
+          return
+      if cmds[0] == "K1":
+          buff = ubinascii.a2b_base64(cmds[1])
+          fb.loadjpg(buff)
+          screen.refresh()
+  
+  def startMonitor(self, port=9233):
+      ip = self.ip
+      secret = self.secret
+      cmd = "K1 %s \r\n" %secret
+      s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+      s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+      s.bind(socket.getaddrinfo("0.0.0.0", 17758)[0][-1])
+      addr = socket.getaddrinfo(ip, port)[0][-1]
+      t0 = ticks_ms()
+      s.setblocking(False)
+      # s.settimeout(1)
+      res = s.sendto(cmd, addr)
+      data = b""
+      print("Monitor start")
+      while self.status:
+          try:
+              rx, addr = s.recvfrom(16*1024)
+              print("rx", len(data), addr)
+              if rx:
+                  data += rx
+                  _tmp = data.split(b'\n')
+                  if len(_tmp) > 1:
+                      data = _tmp[-1]
+                      try:
+                          self.decodeCmd(_tmp[0].decode('utf-8'))
+                      except:
+                          pass
+          except OSError as err:
+              if err.args[0] != errno.EAGAIN and err.args[0] != errno.EWOULDBLOCK:
+                  raise
+              else:
+                  sleep_ms(100)
+          if ticks_diff(ticks_ms(), t0) > 8000:
+              t = s.sendto(cmd, addr)
+              print("send to", addr, t)
+              t0 = ticks_ms() 
+      _thread.exit()    
+    

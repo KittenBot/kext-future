@@ -1062,7 +1062,12 @@
     "futureboard_uartInit": "初始化串口[UARTNAME] 波特率[BAUDRATE] RX[PORT1] TX[PORT2]",
     "futureboard_uartReadAll": "读取串口[UARTNAME]所有数据",
     "futureboard_uartReadLine": "读取串口[UARTNAME]一行数据",
-    "futureboard_uartWrite": "向串口[UARTNAME]写入数据[DATA]"
+    "futureboard_uartWrite": "向串口[UARTNAME]写入数据[DATA]",
+    "sugarCamera_title_fpv":"无线图传方式",
+    "sugarCamera_FPVInitConnect":"连接摄像头ip[IP]密钥[SECRET]",
+    "sugarCamera_FPVSetStatus":"将摄像头状态设置为[STATUS]",
+    "FVP_STATUS_OPEN":"开启",
+    "FVP_STATUS_CLOSE":"关闭"
 
 
   },
