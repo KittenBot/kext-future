@@ -4,10 +4,11 @@
     color1: "#388EE5",
     color2: "#2771BC",
     color3: "#1C5FA2",
-    lib:{
+    libs:{
         "*":{
             file: 'sugar_cam.py',
-            version: '1.0.7'
+            import: 'from sugar_cam import SugarCam',
+            version: '1.0.8'
         }
     },   
 
@@ -18,9 +19,6 @@
             opcode: 'CamRunInit',
             blockType: "command",
             text: "$$sugarCamera_CamRunInit",
-            micropy: {
-                import: "from sugar_cam import SugarCam"
-            },
             pycode: "sugarCam = SugarCam([PORT1], [PORT2])",
             arguments:{
                 PORT1:{

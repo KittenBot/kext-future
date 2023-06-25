@@ -6,7 +6,7 @@ import errno
 import ubinascii
 import _thread
 
-__version__ = "1.0.7"
+__version__ = "1.0.8"
 VERSIONS = 'K0'
 QRCODE = 'K11'
 RECOGNIZE = "K12"
@@ -181,7 +181,19 @@ class FPV:
       t0 = ticks_ms()
       s.setblocking(False)
       # s.settimeout(1)
-      res = s.sendto(cmd, addr)
+      try:
+        res = s.sendto(cmd, addr)
+      except OSError as e:
+        if e.args[0] == 118:
+          _sync = screen.sync
+          screen.sync = 1
+          screen.clear()
+          screen.showmsg(translate('Connect wifi first'), translate("Camera connect fail"), type='err')
+          screen.sync = _sync
+          print("Please connect wifi first")
+        # 处理其他类型的 OSError 异常
+        else:
+          print(e)
       data = b""
       print("Monitor start")
       while self.status:

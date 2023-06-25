@@ -70,10 +70,10 @@
       instance: "Display()"
     },
     "rfid":{
-      import: "from rfidAL import *",
-      instance: "RfidAL()",
-      file: 'rfidAL.py',
-      version: '1.0.3'
+      import: "from rfid import *",
+      instance: "RFID()",
+      file: 'rfid.py',
+      version: '1.0.4'
     }
   },
 
