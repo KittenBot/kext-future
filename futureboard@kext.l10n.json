@@ -514,7 +514,18 @@
 
     "sonar": "Sonar",
     "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] Distance (cm)",
-    "sonar_getMeowSonarDistance": "MeowSonar [PIN] Distance (cm)"
+    "sonar_getMeowSonarDistance": "MeowSonar [PIN] Distance (cm)",
+
+    "sugarCamera_title_uart": "uart",
+    "futureboard_uartInit": "init uart [UARTNAME] baudrate[BAUDRATE] RX[PORT1] TX[PORT2]",
+    "futureboard_uartReadAll": "read uart [UARTNAME] Data All",
+    "futureboard_uartReadLine": "read uart [UARTNAME] Data Line",
+    "futureboard_uartWrite": "for [UARTNAME] write data[DATA]",
+    "sugarCamera_title_fpv": "udp",
+    "sugarCamera_FPVInitConnect": "connection ip [IP] key [SECRET]",
+    "sugarCamera_FPVSetStatus": "set Camera status[STATUS]",
+    "FVP_STATUS_OPEN": "open",
+    "FVP_STATUS_CLOSE": "clone"
 
     
   },
@@ -1059,6 +1070,7 @@
     "sugarCamera_CamMqttSend" :"向话题[TOPIC] 发送消息[MESSAGE]",
     "sugarCamera_CamMqttMessage" :"获取mqtt消息",
 
+    "sugarCamera_title_uart":"串口通讯方式",
     "futureboard_uartInit": "初始化串口[UARTNAME] 波特率[BAUDRATE] RX[PORT1] TX[PORT2]",
     "futureboard_uartReadAll": "读取串口[UARTNAME]所有数据",
     "futureboard_uartReadLine": "读取串口[UARTNAME]一行数据",
@@ -1571,6 +1583,17 @@
     "sugarCamera_CamMqttConnectForUser" :"连接mqtt服务器[ADDR] 设备标识[ID] 用户名[USER] 密码[PWD]",
     "sugarCamera_CamMqttSubscription" :"订阅话题[TOPIC]",
     "sugarCamera_CamMqttSend" :"向话题[TOPIC] 发送消息[MESSAGE]",
-    "sugarCamera_CamMqttMessage" :"获取mqtt消息"
+    "sugarCamera_CamMqttMessage" :"获取mqtt消息",
+
+    "sugarCamera_title_uart": "串口通訊方式",
+    "futureboard_uartInit": "初始化串口[UARTNAME] 波特率[BAUDRATE] RX[PORT1] TX[PORT2]",
+    "futureboard_uartReadAll": "讀取串口[UARTNAME]所有數據",
+    "futureboard_uartReadLine": "讀取串口[UARTNAME]一行數據",
+    "futureboard_uartWrite": "向串口[UARTNAME]寫入數據[DATA]",
+    "sugarCamera_title_fpv": "無線圖傳方式",
+    "sugarCamera_FPVInitConnect": "連接攝像頭ip[IP]密鑰[SECRET]",
+    "sugarCamera_FPVSetStatus": "將攝像頭狀態設置為[STATUS]",
+    "FVP_STATUS_OPEN": "開啟",
+    "FVP_STATUS_CLOSE": "關閉"
   }
 }
