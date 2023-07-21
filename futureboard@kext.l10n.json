@@ -1,5 +1,6 @@
 {
   "en": {
+    "koi_description": "Artificial Intelligence Advanced Module.",
     "futureKoi_title_base": "Basic",
     "futureKoi_runInit": "KOI init",
     "futureKoi_init": "KOI init tx [TX] rx [RX]",
@@ -67,7 +68,9 @@
     "futureboard_getI2cScanResult": "I2c get device scan result",
     "futureboard_getI2cValueFromAddr": "I2c read from address [ADDR] read [BYTE] bytes data",
     "futureboard_runI2cWriteData": "I2c write data [DATA] to [ADDR]",
+
     "sugarbox_title": "Sugar Box",
+    "sugarbox_description": "Expansion board of KittenBot Sugar System for competition.",
     "sugarbox_title_motor": "Normal Executor",
     "sugarbox_runMotor": "Motor [MOTOR] Speed [SPD]",
     "sugarbox_runMotor2": "Motor1 [MOTOR1] [SPD1] Motor2 [MOTOR2] [SPD2]",
@@ -94,6 +97,7 @@
     "sugarbox_playSoundn": "play audio [WAVFILENAME](.wav 8k 8bit single track)",
     "sugarbox_getBatteryVoltage": "get Battery voltage",
     "blynk_title": "Blynk",
+    "blynk_description": "A Platform for IoT Application Development for Mobile Devices.",
     "blynk_title_basic": "Basic",
     "blynk_portInit": "Blynk initialize port Host [HOST] Port [PORT] Auth Token [AUTH]",
     "blynk_run": "Blynk Run",
@@ -249,6 +253,7 @@
     "futureboard_title_microphone": "Microphone",
     "futureboard_title_wifi": "Wifi",
     "futureboard_robotbit": "Robotbit",
+    "robotbit_description": "PBL education expansion board with motor driver.",
     "futureboard_audio_strentch": "audio strentch",
     "futureboard_audio_reconize_ch": "audio reconize [LANG] timeout=[DELAY]s",
     "futureboard_wifi_connect": "connect wifi [NAME] [PWD]",
@@ -352,12 +357,14 @@
     "futureExtend_menu_weather_daypower": "day wind power",
     "futureExtend_menu_weather_nightpower": "night wind power",
     "futureExtend_name": "K-Watch",
+    "extend_description": "Watch extension board for futureboard",
     "futureboard_title_watch": "Clock",
     "futureboard_title_audio": "Audio",
     "futureboard_title_weather": "GaoDe Weather",
     "futureboard_title_intercom": "Audio Communication",
 
     "sugar": "Sugar",
+    "sugar_description": "Sugar module system by KittenBot.",
     "sugar_title_digitalSensor": "Digital Sensor",
     "sugar_title_analogSensor": "Analog Sensor",
     "sugar_title_iicSensor": "I2C Sensor",
@@ -458,6 +465,7 @@
     "sugar_menu_display_off": "Close",
 
     "powerbrick": "Powerbrick",
+    "powerbrick_description": "Powerbrick modules for futureboard.",
     "powerbrick_title_gesture": "Color Gesture",
     "powerbrick_itle_rfid": "RFID",
     "powerbrick_title_mp3": "MP3",
@@ -499,6 +507,7 @@
     "powerbrick_menu_ledstate_off": "off",
 
     "ASR_title": "ASR",
+    "ASR_description": "Offline speech recognition, built-in commonly used reading sentences.",
     "ASR_runInit": "Initialize ASR Speech Recognition TX(Blue) [PORT1], RX(Green) [PORT2]",
     "ASR_isAudioFired": "Speech recognition triggered?",
     "ASR_isAudioAwake": "Wake word recognized",
@@ -513,9 +522,13 @@
     "ASR_runHour": "Voice announcement Clock: [H] hours [MIN] minutes",
 
     "sonar": "Sonar",
+    "sonar_description": "The three-wire driven ultrasonic sensor by KittenBot.",
     "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] Distance (cm)",
     "sonar_getMeowSonarDistance": "MeowSonar [PIN] Distance (cm)",
 
+
+    "sugarCamera": "Sugar Camera",
+    "sugarCamera_description": "Expansion board of KittenBot Sugar System for competition.",
     "sugarCamera_title_uart": "uart",
     "futureboard_uartInit": "init uart [UARTNAME] baudrate[BAUDRATE] RX[PORT1] TX[PORT2]",
     "futureboard_uartReadAll": "read uart [UARTNAME] Data All",
@@ -541,6 +554,8 @@
     "futureboard_getI2cScanResult": "I2c 获取设备地址扫描结果",
     "futureboard_getI2cValueFromAddr": "I2c 从地址 [ADDR] 读取 [BYTE] bytes 数据",
     "futureboard_runI2cWriteData": "I2c 往地址 [ADDR] 写入 [DATA]",
+
+    "koi_description": "锦鲤人工智能高级模块",
     "futureKoi_title_base": "基础",
     "futureKoi_runInit": "KOI 初始化",
     "futureKoi_init": "KOI 初始化 tx [TX] rx [RX]",
@@ -597,7 +612,9 @@
     "futureKoi_runTTS": "百度 AI TTS [TEXT]",
     "futureKoi_menu_direction_front": "前置",
     "futureKoi_menu_direction_back": "后置",
+
     "sugarbox_title": "方糖盒",
+    "sugarbox_description": "方糖体系比赛用卧式扩展盒",
     "sugarbox_title_motor": "普通执行器",
     "sugarbox_runMotor": "电机 [MOTOR] 速度 [SPD]",
     "sugarbox_runMotor2": "电机1 [MOTOR1] [SPD1] 电机2 [MOTOR2] [SPD2]",
@@ -624,6 +641,7 @@
     "sugarbox_playSoundn": "播放音频 [WAVFILENAME](wav格式 8k采样 8bit比特率 单声道)",
     "sugarbox_getBatteryVoltage": "电池电压（伏）",
     "blynk_title": "Blynk",
+    "blynk_description": "移动设备物联网应用程序开发的平台",
     "blynk_title_basic": "基础",
     "blynk_portInit": "Blynk 设置 服务器[HOST] 端口[PORT] 授权码[AUTH]",
     "blynk_run": "运行 Blynk 进程",
@@ -779,6 +797,7 @@
     "futureboard_title_microphone": "麦克风",
     "futureboard_title_wifi": "Wifi",
     "futureboard_robotbit": "Robotbit",
+    "robotbit_description": "带电机驱动的项目教学扩展板",
     "futureboard_audio_strentch": "获取声音强度",
     "futureboard_audio_reconize_ch": "语音识别 语言 [LANG] 超时 [DELAY]秒",
     "futureboard_wifi_connect": "连接WIFI[NAME] 密码 [PWD]",
@@ -882,12 +901,14 @@
     "futureExtend_menu_weather_daypower": "白天风力等级",
     "futureExtend_menu_weather_nightpower": "夜间风力等级",
     "futureExtend_name": "K-Watch",
+    "extend_description": "未来板手表扩展板",
     "futureboard_title_watch": "时钟",
     "futureboard_title_audio": "音频",
     "futureboard_title_weather": "高德天气",
     "futureboard_title_intercom": "语音对讲",
 
     "sugar": "方糖",
+    "sugar_description": "喵家方糖模块体系",
     "sugar_title_digitalSensor": "数字传感器",
     "sugar_title_analogSensor": "模拟传感器",
     "sugar_title_iicSensor": "I2C传感器",
@@ -988,6 +1009,7 @@
     "sugar_menu_display_off": "关闭",
 
     "powerbrick": "能量魔块",
+    "powerbrick_description": "能量魔块系列传感器",
     "powerbrick_title_gesture": "颜色手势",
     "powerbrick_title_rfid": "RFID",
     "powerbrick_title_mp3": "MP3",
@@ -1031,6 +1053,7 @@
     "powerbrick_menu_ledstate_off": "熄灭",
 
     "ASR_title": "方糖语音识别",
+    "ASR_description": "离线语音识别，内置常用的朗读语句",
     "ASR_runInit": "初始化 ASR 语音识别 TX(蓝) [PORT1], RX(绿) [PORT2]",
     "ASR_isAudioFired": "语音识别被触发?",
     "ASR_isAudioAwake": "识别到 唤醒词",
@@ -1045,6 +1068,7 @@
     "ASR_runHour": "语音播报 时钟: [H] 时 [MIN]分",
 
     "sonar": "超声波",
+    "sonar_description": "喵家三线超声波",
     "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] 距离 (厘米)",
     "sonar_getMeowSonarDistance": "猫头超声波 [PIN] 距离 (厘米)",
     "sugar_title_rfid": "方糖 RFID 模块",
@@ -1052,7 +1076,8 @@
     "sugar_RfidWrite":"把数据 [DATA] 写入块 [ADDR]",
     "sugar_RfidRead":"读取块[ADDR]数据",
 
-    "sugarCamera": "方糖摄像头模块",
+    "sugarCamera": "方糖摄像头",
+    "sugarCamera_description": "方糖体系无线多功能摄像头",
     "sugarCamera_CamRunInit": "初始化 方糖摄像头 TX[PORT1], RX[PORT2]",
     "sugarCamera_CamGetQRcode": "获取扫码结果",
     "sugarCamera_CamPlayAudio": "播放音频[MP3]",
@@ -1095,6 +1120,8 @@
     "futureboard_getI2cScanResult": "I2c 獲取設備地址掃描結果",
     "futureboard_getI2cValueFromAddr": "I2c 從地址 [ADDR] 讀取 [BYTE] bytes 數據",
     "futureboard_runI2cWriteData": "I2c 往地址 [ADDR] 寫入 [DATA]",
+
+    "koi_description": "錦鯉人工智能高級模塊",
     "futureKoi_title_base": "基礎",
     "futureKoi_runInit": "KOI 初始化",
     "futureKoi_init": "KOI 初始化 tx [TX] rx [RX]",
@@ -1151,7 +1178,9 @@
     "futureKoi_runTTS": "百度 AI TTS [TEXT]",
     "futureKoi_menu_direction_front": "前置",
     "futureKoi_menu_direction_back": "後置",
+
     "sugarbox_title": "方糖盒",
+    "sugarbox_description": "方糖體系比賽用臥式擴展盒",
     "sugarbox_title_motor": "普通執行器",
     "sugarbox_runMotor": "電機 [MOTOR] 速度 [SPD]",
     "sugarbox_runMotor2": "電機1 [MOTOR1] [SPD1] 電機2 [MOTOR2] [SPD2]",
@@ -1178,6 +1207,7 @@
     "sugarbox_playSoundn": "播放音頻 [WAVFILENAME](wav格式 8k采樣 8bit比特率 單聲道)",
     "sugarbox_getBatteryVoltage": "電池電壓（伏）",
     "blynk_title": "Blynk",
+    "blynk_description": "移動設備物聯網應用程序開發的平臺",
     "blynk_title_basic": "基礎",
     "blynk_portInit": "Blynk 設置 服務器[HOST] 端口[PORT] 授權碼[AUTH]",
     "blynk_run": "運行 Blynk 進程",
@@ -1334,6 +1364,7 @@
     "futureboard_title_microphone": "麥克風",
     "futureboard_title_wifi": "無線上網\t",
     "futureboard_robotbit": "Robotbit",
+    "robotbit_description": "帶電機驅動的項目教學擴展板",
     "futureboard_audio_strentch": "獲取聲音強度",
     "futureboard_audio_reconize_ch": "語音辯識語言[LANG] 超時 [DELAY]",
     "futureboard_wifi_connect": "連接WIFI [NAME]密碼[PWD]",
@@ -1403,12 +1434,14 @@
     "futureExtend_menu_weather_daypower": "白天風力等級",
     "futureExtend_menu_weather_nightpower": "夜間風力等級",
     "futureExtend_name": "扩展板",
+    "extend_description": "未來板手表擴展板",
     "futureboard_title_watch": "手表",
     "futureboard_title_audio": "音頻",
     "futureboard_title_weather": "天氣",
     "futureboard_title_intercom": "無線",
 
     "sugar": "方糖",
+    "sugar_description": "喵家方糖模塊體系",
     "sugar_title_digitalSensor": "数字傳感器",
     "sugar_title_analogSensor": "模拟傳感器",
     "sugar_title_iicSensor": "I2C传感器",
@@ -1506,6 +1539,7 @@
     "sugar_menu_display_off": "關閉",
 
     "powerbrick": "能量魔塊",
+    "powerbrick_description": "能量魔塊系列傳感器",
     "powerbrick_title_gesture": "顏色手勢模塊",
     "powerbrick_title_rfid": "RFID模塊",
     "powerbrick_title_mp3": "MP3模塊",
@@ -1546,6 +1580,7 @@
     "powerbrick_menu_ledstate_off": "熄滅",
 
     "ASR_title": "方糖語音識別",
+    "ASR_description": "離線語音識別，內置常用的朗讀語句",
     "ASR_runInit": "初始化 ASR 語音識別 TX(藍) [PORT1], RX(綠) [PORT2]",
     "ASR_isAudioFired": "語音識別被觸發?",
     "ASR_isAudioAwake": "識別到 喚醒詞",
@@ -1560,6 +1595,7 @@
     "ASR_runHour": "語音播報 時鐘: [H] 時 [MIN]分",
 
     "sonar": "超聲波",
+    "sonar_description": "喵家三線超聲波",
     "sonar_getHcSonarDistance": "HCSR04 trig[PORT1] echo[PORT2] 距離 (厘米)",
     "sonar_getMeowSonarDistance": "貓頭超聲波 [PIN] 距離 (厘米)",
     "sugar_title_rfid": "方糖 RFID 模塊",
@@ -1567,7 +1603,8 @@
     "sugar_RfidWrite":"把數據 [DATA] 寫入塊 [ADDR]",
     "sugar_RfidRead":"讀取塊 [ADDR] 數據",
 
-    "futureboardSugarCamera": "方糖摄像头模块",
+    "sugarCamera": "方糖摄像头模块",
+    "sugarCamera_description": "方糖體系無線多功能攝像頭",
     "sugarCamera_CamRunInit": "初始化 方糖摄像头[UARTPOART]",
     "sugarCamera_CamGetQRcode": "获取扫码结果",
     "sugarCamera_CamPlayWAV": "播放音频[WAVFILE]",

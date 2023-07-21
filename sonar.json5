@@ -4,6 +4,8 @@
     color1: "#363F6A",
     color2: "#22294A",
     tags: ['modules'],
+    image: "./_ext/meowsonar.png",
+    description: "$$sonar_description",
     color3: "#191F3B",
     libs: {
         '*': {

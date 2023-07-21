@@ -5,6 +5,8 @@
     tags: ["advanced"],
     color2: "#29B582",
     color3: "#23AA79",
+    image: "./_ext/blynk.png",
+    description: "$$blynk_description",
     menus:{
       intervalType: [
         { text: "Once" ,value: 'True' },

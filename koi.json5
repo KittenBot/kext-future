@@ -1,10 +1,12 @@
 {
   id: "futureboard@kext_koi",
   name: "KOI",
+  tags: ['shield'],
   color1: "#61D1E5",
   color2: "#4BB7CB",
   color3: "#3EAEC3",
-  tags: ['shield'],
+  image: "./_ext/koi.png",
+  description: "$$koi_description",
   libs:{
     koi: {
       import: "from futureKOI import KOI",
