@@ -4,8 +4,9 @@
     color1: "#388EE5",
     color2: "#2771BC",
     color3: "#1C5FA2",
-    image: "./_ext/camera.png",
+    image: "./_img/camera.png",
     description: "$$sugarCamera_description",
+    tags: ['module'],
     libs:{
         "*":{
             file: 'sugar_cam.py',

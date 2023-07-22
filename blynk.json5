@@ -2,11 +2,11 @@
     id: "futureboard@kext_blynk",
     name: "$$blynk_title",
     color1: "#2ACC91",
-    tags: ["advanced"],
     color2: "#29B582",
     color3: "#23AA79",
-    image: "./_ext/blynk.png",
+    image: "./_img/blynk.png",
     description: "$$blynk_description",
+    tags: ["advanced"],
     menus:{
       intervalType: [
         { text: "Once" ,value: 'True' },

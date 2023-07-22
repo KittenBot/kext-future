@@ -4,9 +4,9 @@
   color1: "#388EE5",
   color2: "#2771BC",
   color3: "#1C5FA2",
-  tags: ['modules'],
-  image: "./_ext/sugar.png",
+  image: "./_img/sugar.png",
   description: "$$sugar_description",
+  tags: ['module','sensor','actuator','display'],
   libs: {
     '*': {
       import: 'from sugar import *'

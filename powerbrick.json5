@@ -1,12 +1,12 @@
 {
   id: "futureboard@kext_powerbrick",
   name: "$$powerbrick",
-  tags: ['modules'],
   color1: "#D16848",
   color2: "#AD563B",
   color3: "#9D452A",
-  image: "./_ext/powerbrick.png",
+  image: "./_img/powerbrick.png",
   description: "$$powerbrick_description",
+  tags: ['module'],
   libs: {
     'rfid': {
         import: 'from sugar import *',

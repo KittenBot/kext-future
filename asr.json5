@@ -1,12 +1,12 @@
 {
     id: "futureboard@kext_ASR",
     name: "$$ASR_title",
-    tags: ['modules'],
     color1: "#EC541E",
     color2: "#CC4515",
     color3: "#BF3E0F",
-    image: "./_ext/asr.png",
+    image: "./_img/asr.png",
     description: "$$ASR_description",
+    tags: ['module'],
     blocks: 
     [
         {

@@ -5,7 +5,7 @@
   color1: "#ED6A47",
   color2: "#BF5235",
   color3: "#B83E1D",
-  image: "./_ext/kwatch.png",
+  image: "./_img/kwatch.png",
   description: "$$extend_description",
   libs: {
     kclock: {

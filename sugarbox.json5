@@ -1,12 +1,12 @@
 {
   id: "futureboard@kext_sugarbox",
   name: "$$sugarbox_title",
-  tags: ['modules'],
   color1: "#87B6FC",
   color2: "#5E93DE",
   color3: "#5A81B7",
-  image: "./_ext/sugarbox.png",
+  image: "./_img/sugarbox.png",
   description: "$$sugarbox_description",
+  tags: ['actuator'],
   libs: {
     sugarbox: {
       import: 'import sugarbox'
