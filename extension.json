@@ -1,133 +1,141 @@
 {
-  "id": "futureboard@kext",
-  "name": {
-    "en": "FutureBoard",
-    "zh-CN": "未来板",
-    "zh-TW": "未來板"
-  },
-  "color1": "#3EC2EB",
-  "color2": "#3AB2D8",
-  "color3": "#26A4CC",
-  "description": {
-    "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
-    "zh-cn": "基于ESP32的彩屏主控板，适用于开展AIoT教学",
-    "zh-tw": "基於ESP32的彩屏主控闆，適用於開展AIoT教學"
-  },
-  "version": "2.2.2",
-  "type": "micropy",
-  "firmwareDate": 20230625,
-  "connect":{
-    "baudrate": 1000000,
-    "wait": 2500
-  },
-  "io": ["ble"],
-  "listdevice": {
-    "pid": 394,
-    "vid": 10473
-  },
-  "ble": {
-    "boardcast": "0x6e40",
-    "service": "6E400001-B5A3-F393-E0A9-E50E24DCCA9E",
-    "txChar": "6E400003-B5A3-F393-E0A9-E50E24DCCA9E",
-    "rxChar": "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
-  },
-  "esptool": {
-   "fullerase": true
-  },
-  "fwtype": "esptool",
-  "replmode": true,
-  "execmode": true,
-  "kittenext": true,
-  "masterExt": "futureboard@kext",
-  "buildinpyb": true,
-  "filesystem": "pyboard",
-  "afterConnect": [
-    "from future import *",
-    "screen.clear()",
-    "screen.text('Hello Future',32,60,1,(71,233,0))"
-  ],
-  "gen": {
-    "imports": {"fb": "from future import *"}
-  },
-  "categories": {
-    "main": {
-      "file": "menus.json5"
+    "id": "futureboard@kext",
+    "name": {
+        "en": "FutureBoard",
+        "zh-CN": "未来板",
+        "zh-TW": "未來板"
     },
-    "sensors": {
-      "name": "$$futureboard_title_sensor",
-      "file": "sensors.json5"
+    "color1": "#3EC2EB",
+    "color2": "#3AB2D8",
+    "color3": "#26A4CC",
+    "description": {
+        "en": "Based on ESP32 comes with a full-colored screen, suitable for AIoT education",
+        "zh-cn": "基于ESP32的彩屏主控板，适用于开展AIoT教学",
+        "zh-tw": "基於ESP32的彩屏主控闆，適用於開展AIoT教學"
     },
-    "music": {
-      "name": "$$futureboard_title_Melody",
-      "file": "music.json5"
+    "version": "2.2.2",
+    "type": "micropy",
+    "firmwareDate": 20230625,
+    "connect": {
+        "baudrate": 1000000,
+        "wait": 2500
     },
-    "screen": {
-      "name": "$$futureboard_title_Screen",
-      "file": "screen.json5"
+    "io": [
+        "ble"
+    ],
+    "listdevice": {
+        "pid": 394,
+        "vid": 10473
     },
-    "turtle": {
-      "name": "$$futureboard_title_Turtle_Drawing",
-      "file": "turtle.json5"
+    "ble": {
+        "boardcast": "0x6e40",
+        "service": "6E400001-B5A3-F393-E0A9-E50E24DCCA9E",
+        "txChar": "6E400003-B5A3-F393-E0A9-E50E24DCCA9E",
+        "rxChar": "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
     },
-    "pin": {
-      "name": "$$futureboard_title_pin",
-      "file": "pin.json5"
+    "esptool": {
+        "fullerase": true
     },
-    "neopixel": {
-      "name": "$$futureboard_title_neopixel",
-      "file": "neopixel.json5"
+    "fwtype": "esptool",
+    "replmode": true,
+    "execmode": true,
+    "kittenext": true,
+    "masterExt": "futureboard@kext",
+    "buildinpyb": true,
+    "filesystem": "pyboard",
+    "afterConnect": [
+        "from future import *",
+        "screen.clear()",
+        "screen.text('Hello Future',32,60,1,(71,233,0))"
+    ],
+    "gen": {
+        "imports": {
+            "fb": "from future import *"
+        }
     },
-    "microphone": {
-      "name": "$$futureboard_title_microphone",
-      "file": "microphone.json5"
+    "categories": {
+        "main": {
+            "file": "menus.json5"
+        },
+        "sensors": {
+            "name": "$$futureboard_title_sensor",
+            "file": "sensors.json5"
+        },
+        "music": {
+            "name": "$$futureboard_title_Melody",
+            "file": "music.json5"
+        },
+        "screen": {
+            "name": "$$futureboard_title_Screen",
+            "file": "screen.json5"
+        },
+        "turtle": {
+            "name": "$$futureboard_title_Turtle_Drawing",
+            "file": "turtle.json5"
+        },
+        "pin": {
+            "name": "$$futureboard_title_pin",
+            "file": "pin.json5"
+        },
+        "neopixel": {
+            "name": "$$futureboard_title_neopixel",
+            "file": "neopixel.json5"
+        },
+        "microphone": {
+            "name": "$$futureboard_title_microphone",
+            "file": "microphone.json5"
+        },
+        "uart": {
+            "name": "$$futureboard_title_uart",
+            "file": "uart.json5"
+        },
+        "wifi": {
+            "name": "$$futureboard_title_wifi",
+            "file": "wifi.json5"
+        },
+        "netproxy": {
+            "name": "$$futureboard_title_onenet",
+            "file": "netproxy.json5"
+        },
+        "radio": {
+            "name": "$$futureboard_title_radio",
+            "file": "radio.json5"
+        }
     },
-    "uart":{
-      "name": "$$futureboard_title_uart",
-      "file": "uart.json5"
+    "subextensions": [
+        "robotbit.json5",
+        "sugar.json5",
+        "sugarbox.json5",
+        "asr.json5",
+        "koi.json5",
+        "sonar.json5",
+        "extend.json5",
+        "powerbrick.json5",
+        "blynk.json5",
+        "sugarcamera.json5"
+    ],
+    "loadedextensions": [
+        "robotbit.json5",
+        "sugar.json5",
+        "asr.json5",
+        "sugarbox.json5"
+    ],
+    "helplink": {
+        "kblock": "https://www.yuque.com/kittenbot/hardwares/futureboard-kittenblock",
+        "app": "https://www.yuque.com/kittenbot/software/controller-future"
     },
-    "wifi": {
-      "name": "$$futureboard_title_wifi",
-      "file": "wifi.json5"
+    "scripts": [
+        "extra.js"
+    ],
+    "firmware": "firmware.bin",
+    "image": "futureboard.png",
+    "fsrstcode": [
+        "import inisetup",
+        "inisetup.resetfs()"
+    ],
+    "imageconvert": {
+        "type": "png"
     },
-    "netproxy": {
-      "name": "$$futureboard_title_onenet",
-      "file": "netproxy.json5"
-    },
-    "radio": {
-      "name": "$$futureboard_title_radio",
-      "file": "radio.json5"
-    }
-  },
-  "subextensions": [
-    "robotbit.json5",
-    "sugar.json5",
-    "sugarbox.json5",
-    "asr.json5",
-    "koi.json5",
-    "sonar.json5",
-    "extend.json5",
-    "powerbrick.json5",
-    "blynk.json5",
-    "sugarcamera.json5"
-  ],
-  "loadedextensions":[
-      "robotbit.json5",
-      "sugar.json5",
-      "asr.json5",
-      "sugarbox.json5"
-  ],
-  "helplink":{
-    "kblock": "https://www.yuque.com/kittenbot/hardwares/futureboard-kittenblock",
-    "app": "https://www.yuque.com/kittenbot/software/controller-future"
-  },
-  "scripts":[
-		"extra.js"
-	],
-  "firmware": "firmware.bin",
-  "image": "futureboard.png",
-  "fsrstcode": ["import inisetup", "inisetup.resetfs()"],
-  "imageconvert": {
-    "type": "png"
-  },
-  "weights":999
+    "weights": 999,
+    "mainboard": true
 }
