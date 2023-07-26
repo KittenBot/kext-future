@@ -612,6 +612,9 @@
     "futureKoi_runTTS": "百度 AI TTS [TEXT]",
     "futureKoi_menu_direction_front": "前置",
     "futureKoi_menu_direction_back": "后置",
+    "futureKoi_title_asr":"语音识别",
+    "futureKoi_asrRegisterKey":"注册关键词[KEY]（六个字以内）",
+    "futureKoi_asrResult":"语音识别结果",
 
     "sugarbox_title": "方糖盒",
     "sugarbox_description": "方糖体系比赛用卧式扩展盒",

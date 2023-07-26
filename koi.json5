@@ -9,8 +9,10 @@
   tags: ['module'],
   libs:{
     koi: {
-      import: "from futureKOI import KOI",
-      instancde: "koi = KOI(tx='P2',rx='P12',id=1)"
+      import: "from futureKOI2 import KOI",
+      instancde: "koi = KOI(tx='P2',rx='P12',id=1)",
+      file: 'futureKOI2.py',
+      version: '1.0.4'
     }
   },
   
@@ -22,7 +24,7 @@
       blockType: "command",
       text: "$$futureKoi_runInit",
       micropy: {
-        import: 'from futureKOI import KOI'
+        import: 'from futureKOI2 import KOI'
       },
       pycode: "koi = KOI(tx='P2',rx='P12',id=1)",
       hide : true
@@ -44,7 +46,7 @@
         },
       },
       micropy: {
-        import: 'from futureKOI import KOI'
+        import: 'from futureKOI2 import KOI'
       },
       pycode: "koi = KOI(tx=[TX],rx=[RX],id=1)",
     },
@@ -196,46 +198,22 @@
         AUDIOPATH: { type: "string", defaultValue: "hello.wav" },
       },
     },
+    "## $$futureKoi_title_asr",
     {
-      opcode: "runNoiseCalibration",
+      opcode: "asrRegisterKey",
       blockType: "command",
-      text: "$$futureKoi_runNoiseCalibration",
-      pycode: "koi.audio_noisetap()",
-    },
-    {
-      opcode: "runAddSpeechTag",
-      blockType: "command",
-      text: "$$futureKoi_runAddSpeechTag",
-      pycode: "koi.speech_add_tag([TAG])",
+      text: "$$futureKoi_asrRegisterKey",
+      pycode: "koi.asr_register_key([KEY])",
       arguments: {
-        TAG: { type: "string!", defaultValue: "paper" },
+        KEY: { type: "string", defaultValue: "tiao-wu" },
       },
     },
     {
-      opcode: "getSpeechTag",
+      opcode: "asrResult",
       blockType: "reporter",
-      text: "$$futureKoi_getSpeechTag",
-      pycode: "koi.speech_run(cmd='K65')",
+      text: "$$futureKoi_asrResult",
+      pycode: "koi.asr_result()",
     },
-    {
-      opcode: "runSaveAudioModel",
-      blockType: "command",
-      text: "$$futureKoi_runSaveAudioModel",
-      pycode: "koi.speech_save_model([JSONPATH])",
-      arguments: {
-        JSONPATH: { type: "string", defaultValue: "abc.json" },
-      },
-    },
-    {
-      opcode: "runLoadAudioModel",
-      blockType: "command",
-      text: "$$futureKoi_runLoadAudioModel",
-      pycode: "koi.speech_load_model([JSONPATH])",
-      arguments: {
-        JSONPATH: { type: "string", defaultValue: "abc.json" },
-      },
-    },
-
     "## $$futureKoi_title_color",
     {
       opcode: "runColorCalibration",
