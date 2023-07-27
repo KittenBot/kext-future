@@ -214,6 +214,47 @@
       text: "$$futureKoi_asrResult",
       pycode: "koi.asr_result()",
     },
+    "## $$futureKoi_mask_title",
+    {
+      opcode: "faceMask",
+      blockType: "Boolean",
+      text: "$$futureKoi_faceMask",
+      pycode: "koi.face_mask()",
+    },
+    {
+      opcode: "faceMaskAttribute",
+      blockType: "reporter",
+      text: "$$futureKoi_faceMaskAttribute",
+      pycode: "koi.face_mask_attribute([OP])",
+      arguments: {
+        OP: { type: "number", defaultValue: "1" ,menu : "MASK"},
+      },
+    },
+    "## $$futureKoi_Attribute_title",
+    {
+      opcode: "faceAttribute",
+      blockType: "Boolean",
+      text: "$$futureKoi_faceAttribute",
+      pycode: "koi.face_attribute()",
+    },
+    {
+      opcode: "faceAttributeNum",
+      blockType: "reporter",
+      text: "$$futureKoi_faceAttributeNum",
+      pycode: "koi.face_attribute_num([NUMOP])",
+      arguments: {
+        NUMOP: { type: "number", defaultValue: "1" ,menu : "NUMATTR"},
+      },
+    },
+    {
+      opcode: "faceAttributeMain",
+      blockType: "reporter",
+      text: "$$futureKoi_faceAttributeMain",
+      pycode: "koi.face_attribute_main([MAINOP])",
+      arguments: {
+        MAINOP: { type: "number", defaultValue: "1" ,menu : "MAINATTR"},
+      },
+    },  
     "## $$futureKoi_title_color",
     {
       opcode: "runColorCalibration",
@@ -430,7 +471,31 @@
       { text: "X2", value: "2" },
       { text: "Y2", value: "3" },
     ],
+    MASK: [
+      { text: "$$futureKoi_menu_FaceMask_1", value: "1" },
+      { text: "$$futureKoi_menu_FaceMask_2", value: "2" },
+      { text: "$$futureKoi_menu_FaceMask_3", value: "3" },
+      { text: "$$futureKoi_menu_FaceMask_4", value: "4" },
+      { text: "$$futureKoi_menu_FaceMask_5", value: "5" },
+    ],
+    NUMATTR: [
+      { text: "$$futureKoi_menu_FaceNumAttr_1", value: "1" },
+      { text: "$$futureKoi_menu_FaceNumAttr_2", value: "2" },
+      { text: "$$futureKoi_menu_FaceNumAttr_3", value: "3" },
+      { text: "$$futureKoi_menu_FaceNumAttr_4", value: "4" },
+      { text: "$$futureKoi_menu_FaceNumAttr_5", value: "5" },
+      { text: "$$futureKoi_menu_FaceNumAttr_6", value: "6" },
+    ],
+    MAINATTR: [
+      { text: "$$futureKoi_menu_FaceMainAttr_1", value: "1" },
+      { text: "$$futureKoi_menu_FaceMainAttr_2", value: "2" },
+      { text: "$$futureKoi_menu_FaceMainAttr_3", value: "3" },
+      { text: "$$futureKoi_menu_FaceMainAttr_4", value: "4" },
+      { text: "$$futureKoi_menu_FaceMainAttr_5", value: "5" },
+      { text: "$$futureKoi_menu_FaceMainAttr_6", value: "6" },
+    ],   
     PIN_RX: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13'],
     PIN_TX: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
+    
   },
 }

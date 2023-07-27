@@ -210,6 +210,122 @@ class KOI:
         except UnicodeError:
             return None
 
+    # 口罩识别，检测到人脸？
+    def face_mask(self):
+        try:
+            result = self.uart.readline()
+            if result:
+                result = result.decode()
+                if result[:3] == 'K33':
+                    data = (result[4:]).strip()
+                    try:
+                        data = eval(data)
+                    except:
+                        #data missing
+                        return False
+                    self.re_temp = data
+                    return True
+            return False
+        except UnicodeError:
+            return False   
+
+    # 口罩识别，属性分析
+    # options 1: 主要人脸中心X
+    # options 2: 主要人脸中心Y
+    # options 3: 主要人脸是否佩戴口罩
+    # options 4: 戴口罩人数
+    # options 5: 不带口罩人数
+    def face_mask_attribute(self,options):
+        try:
+            data = None
+            if options == 1:
+                data = self.re_temp[2][0]
+            if options == 2:
+                data = self.re_temp[2][1]
+            elif options == 3:
+                data = self.re_temp[2][4]
+            elif options == 4:
+                data = self.re_temp[0]
+            elif options == 5:
+                data = self.re_temp[1]
+            return data
+        except:
+            return None
+
+    # 人脸属性，检测到人脸？
+    def face_attribute(self):
+        try:
+            result = self.uart.readline()
+            if result:
+                result = result.decode()
+                if result[:3] == 'K34':
+                    data = (result[4:]).strip()
+                    try:
+                        data = eval(data)
+                    except:
+                        #data missing
+                        return False
+                    self.re_temp = data
+                    return True
+            return False
+        except UnicodeError:
+            return False   
+
+    # 人脸属性，数量分析
+    # options 1: 总人数
+    # options 2: 男生数量
+    # options 3: 女生数量
+    # options 4: 张嘴人数
+    # options 5: 微笑人数
+    # options 6: 戴眼镜人数
+    def face_attribute_num(self,options):
+        try:
+            data = None
+            if options == 1:
+                data = self.re_temp[0]
+            elif options == 2:
+                data = self.re_temp[1]
+            elif options == 3:
+                data = self.re_temp[0] - self.re_temp[1]
+            elif options == 4:
+                data = self.re_temp[2]
+            elif options == 5:
+                data = self.re_temp[3]
+            elif options == 6:
+                data = self.re_temp[4]
+            return data
+        except:
+            return None
+
+    # 人脸属性，主角分析
+    # options 1: 坐标X
+    # options 2: 坐标Y
+    # options 3: 性别
+    # options 4: 是否张嘴
+    # options 5: 是否微笑
+    # options 6: 是否戴眼镜
+    def face_attribute_main(self,options):
+        try:
+            data = None
+            if options == 1:
+                data = self.re_temp[5][0]
+            elif options == 2:
+                data = self.re_temp[5][1]
+            elif options == 3:
+                data = self.re_temp[5][2]
+            elif options == 4:
+                data = self.re_temp[5][3]
+            elif options == 5:
+                data = self.re_temp[5][4]
+            elif options == 6:
+                data = self.re_temp[5][5]
+            return data
+        except:
+            return None
+
+
+
+
             
     
     # # 设置环境噪声基准
