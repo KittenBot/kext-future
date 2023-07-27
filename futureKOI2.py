@@ -323,7 +323,34 @@ class KOI:
         except:
             return None
 
-
+    def hand_detect(self):
+        try:
+            result = self.uart.readline()
+            if result:
+                result = result.decode()
+                if result[:3] == 'K70':
+                    data = (result[4:]).strip()
+                    try:
+                        data = eval(data)
+                    except:
+                        #data missing
+                        return False
+                    self.re_temp = data
+                    return True
+            return False
+        except UnicodeError:
+            return False   
+    
+    def hand_coordinate(self,options):
+        try:
+            data = None
+            if options == 0:
+                data = self.re_temp[0]
+            elif options == 1:
+                data = self.re_temp[1]
+            return data
+        except:
+            return None
 
 
             

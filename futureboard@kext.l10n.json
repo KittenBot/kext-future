@@ -644,6 +644,10 @@
     "futureKoi_faceAttributeNum":"数量相关信息[NUMOP]",
     "futureKoi_faceAttributeMain":"主要人脸属性[MAINOP]",
 
+    "futureKoi_title_handDetect":"人手检测",
+    "futureKoi_handDetect":"检测到人手？",
+    "futureKoi_hand_coordinate":"人手坐标[COORD]",
+
     "sugarbox_title": "方糖盒",
     "sugarbox_description": "方糖体系比赛用卧式扩展盒",
     "sugarbox_title_motor": "普通执行器",

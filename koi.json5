@@ -255,6 +255,22 @@
         MAINOP: { type: "number", defaultValue: "1" ,menu : "MAINATTR"},
       },
     },  
+    "## $$futureKoi_title_handDetect",
+    {
+      opcode: "handDetect",
+      blockType: "Boolean",
+      text: "$$futureKoi_handDetect",
+      pycode: "koi.hand_detect()",
+    },
+    {
+      opcode: "handCoordinate",
+      blockType: "reporter",
+      text: "$$futureKoi_hand_coordinate",
+      pycode: "koi.hand_coordinate([COORD])",
+      arguments: {
+        COORD: { type: "number", defaultValue: "0" ,menu : "xy"},
+      },
+    }, 
     "## $$futureKoi_title_color",
     {
       opcode: "runColorCalibration",
