@@ -230,6 +230,12 @@
         OP: { type: "number", defaultValue: "1" ,menu : "MASK"},
       },
     },
+    {
+      opcode: "faceMaskMain",
+      blockType: "Boolean",
+      text: "$$futureKoi_faceMaskMain",
+      pycode: "koi.face_mask_attribute(3)",
+    },
     "## $$futureKoi_Attribute_title",
     {
       opcode: "faceAttribute",
@@ -247,14 +253,32 @@
       },
     },
     {
-      opcode: "faceAttributeMain",
+      opcode: "faceAttributeMainCoord",
       blockType: "reporter",
-      text: "$$futureKoi_faceAttributeMain",
+      text: "$$futureKoi_faceAttributeMainCoord",
       pycode: "koi.face_attribute_main([MAINOP])",
       arguments: {
         MAINOP: { type: "number", defaultValue: "1" ,menu : "MAINATTR"},
       },
-    },  
+    },
+    {
+      opcode: "faceAttributeMainGender",
+      blockType: "Boolean",
+      text: "$$futureKoi_faceAttributeMainGender",
+      pycode: "koi.face_attribute_main(3)==[GENDER]",
+      arguments: {
+        GENDER: { type: "number", defaultValue: "0" ,menu : "MENUGENDER"},
+      },
+    },
+    {
+      opcode: "faceAttributeMainBEHAVIOR",
+      blockType: "Boolean",
+      text: "$$futureKoi_faceAttributeMainBehavior",
+      pycode: "koi.face_attribute_main([BEHAVIOR])",
+      arguments: {
+        BEHAVIOR: { type: "number", defaultValue: "4" ,menu : "MENUBEHAVIOR"},
+      },
+    }, 
     "## $$futureKoi_title_handDetect",
     {
       opcode: "handDetect",
@@ -490,7 +514,6 @@
     MASK: [
       { text: "$$futureKoi_menu_FaceMask_1", value: "1" },
       { text: "$$futureKoi_menu_FaceMask_2", value: "2" },
-      { text: "$$futureKoi_menu_FaceMask_3", value: "3" },
       { text: "$$futureKoi_menu_FaceMask_4", value: "4" },
       { text: "$$futureKoi_menu_FaceMask_5", value: "5" },
     ],
@@ -505,11 +528,16 @@
     MAINATTR: [
       { text: "$$futureKoi_menu_FaceMainAttr_1", value: "1" },
       { text: "$$futureKoi_menu_FaceMainAttr_2", value: "2" },
-      { text: "$$futureKoi_menu_FaceMainAttr_3", value: "3" },
+    ], 
+    MENUBEHAVIOR: [
       { text: "$$futureKoi_menu_FaceMainAttr_4", value: "4" },
       { text: "$$futureKoi_menu_FaceMainAttr_5", value: "5" },
       { text: "$$futureKoi_menu_FaceMainAttr_6", value: "6" },
-    ],   
+    ],
+    MENUGENDER : [
+      { text: "$$futureKoi_menu_GENDER_1", value: "1" },
+      { text: "$$futureKoi_menu_GENDER_2", value: "0" },
+    ],  
     PIN_RX: ['P0', 'P1', 'P2', 'P7','P8', 'P12', 'P13'],
     PIN_TX: ['P0', 'P1', 'P2', 'P7','P8', 'P13'],
     

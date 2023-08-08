@@ -76,7 +76,11 @@
       instance: "RFID()",
       file: 'rfid.py',
       version: '1.0.4'
-    }
+    },
+    "sugarMP3s":{
+      file: 'sugarMP3.py',
+      version: '1.0.0'
+    } 
   },
 
 
@@ -759,6 +763,68 @@
       }
     },
 //----------------------------------------------------------------------------
+    '---',
+    "## $$sugar_title_mp3", 
+      {
+        opcode: 'mp3runInit',
+        blockType: "command",
+        text: "$$sugarMP3_runInit",
+        micropy: {
+            import: "from sugarMP3 import *",
+        },
+        pycode: "sugarMP3s = SugarMP3(tx=[PORT1], rx=[PORT2])",
+        arguments:{
+        PORT1:{
+            type: "string",
+            defaultValue: 'P2', 
+            menu: 'port'
+        },
+        PORT2:{
+            type: "string",
+            defaultValue: 'P12', 
+            menu: 'port'
+        },
+        }
+    },
+    {
+      opcode: 'mp3Mode',
+      blockType: "command",
+      text: "$$sugar_mp3Mode",
+      pycode: 'sugarMP3s.[MODE]',
+      arguments: {
+        MODE: {
+          type: "value",
+          defaultValue: "mp3_mode()",
+          menu: 'MP3MODE',
+        }
+      }
+    },
+    {
+      opcode: 'mp3Operate',
+      blockType: "command",
+      text: "$$sugar_mp3Operate",
+      pycode: 'sugarMP3s.[OPERATE]',
+      arguments: {
+        OPERATE: {
+          type: "value",
+          defaultValue: "next()",
+          menu: 'MP3OPERATE',
+        }
+      }
+    },
+    {
+      opcode: 'mp3PlayText',
+      blockType: "command",
+      text: "$$sugar_playText",
+      pycode: 'sugarMP3s.play_text([TEXT])',
+      arguments: {
+        TEXT: {
+          type: "string",
+          defaultValue: "你好啊",
+        }
+      }
+    },
+//----------------------------------------------------------------------------
 //     "## $$sugar_title_rfid",
 //     {
 //       opcode: 'scanRfid',
@@ -1170,6 +1236,7 @@
     // },
   ],
   menus: {
+    port: ['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12'],
     PIN_DIG_WRITE: ['P0','P1','P2','P3','P7','P8','P9','P13','P14','P15','P16'],
     PIN_DIG_READ: ['P0','P1','P2','P3','P7','P8','P9','P12','P13','P14','P15','P16'],
     PINS_ANALOG_WRITE: ['P0','P1','P2','P3','P8','P13','P14','P15','P16'],
@@ -1304,6 +1371,16 @@
       { text: '$$sugar_menu_display_clear', value: 'clear' },
       { text: '$$sugar_menu_display_on', value: 'on' },
       { text: '$$sugar_menu_display_off', value: 'off' },
+    ],
+    MP3OPERATE: [
+      { text: '$$sugar_menu_mp3operate_pause', value: 'pause()' },
+      { text: '$$sugar_menu_mp3operate_stop', value: 'stop()' },
+      { text: '$$sugar_menu_mp3operate_next', value: 'next()' },
+      { text: '$$sugar_menu_mp3operate_prev', value: 'prev()' },
+    ],
+    MP3MODE: [
+      { text: '$$sugar_menu_mp3operate_mp3', value: 'mp3_mode()' },
+      { text: '$$sugar_menu_mp3operate_tts', value: 'tts_mode()' },
     ]
   },
 }

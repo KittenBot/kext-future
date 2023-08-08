@@ -624,6 +624,7 @@
     "futureKoi_menu_FaceMask_3":"主要人脸口罩佩戴情况",
     "futureKoi_menu_FaceMask_4":"戴口罩人数",
     "futureKoi_menu_FaceMask_5":"未戴口罩人数",
+    "futureKoi_faceMaskMain":"主要人脸是否佩戴口罩？",
 
     "futureKoi_menu_FaceNumAttr_1":"总人数",
     "futureKoi_menu_FaceNumAttr_2":"男生数量",
@@ -632,17 +633,22 @@
     "futureKoi_menu_FaceNumAttr_5":"微笑人数",
     "futureKoi_menu_FaceNumAttr_6":"戴眼镜人数",
 
-    "futureKoi_menu_FaceMainAttr_1":"坐标X",
-    "futureKoi_menu_FaceMainAttr_2":"坐标Y",
+    "futureKoi_menu_FaceMainAttr_1":"X",
+    "futureKoi_menu_FaceMainAttr_2":"Y",
     "futureKoi_menu_FaceMainAttr_3":"性别",
-    "futureKoi_menu_FaceMainAttr_4":"是否张嘴",
-    "futureKoi_menu_FaceMainAttr_5":"是否微笑",
-    "futureKoi_menu_FaceMainAttr_6":"是否戴眼镜",
+    "futureKoi_menu_FaceMainAttr_4":"张嘴",
+    "futureKoi_menu_FaceMainAttr_5":"微笑",
+    "futureKoi_menu_FaceMainAttr_6":"戴眼镜",
+
+    "futureKoi_menu_GENDER_1":"男",
+    "futureKoi_menu_GENDER_2":"女",
 
     "futureKoi_Attribute_title":"人脸属性",
     "futureKoi_faceAttribute":"检测到人脸？",
     "futureKoi_faceAttributeNum":"数量相关信息[NUMOP]",
-    "futureKoi_faceAttributeMain":"主要人脸属性[MAINOP]",
+    "futureKoi_faceAttributeMainCoord":"主要人脸坐标[MAINOP]",
+    "futureKoi_faceAttributeMainGender":"主要人物性别[GENDER]",
+    "futureKoi_faceAttributeMainBehavior":"主要人物行为[BEHAVIOR]？",
 
     "futureKoi_title_handDetect":"人手检测",
     "futureKoi_handDetect":"检测到人手？",
@@ -1139,8 +1145,20 @@
     "sugarCamera_FPVInitConnect":"连接摄像头ip[IP]密钥[SECRET]",
     "sugarCamera_FPVSetStatus":"将摄像头状态设置为[STATUS]",
     "FVP_STATUS_OPEN":"开启",
-    "FVP_STATUS_CLOSE":"关闭"
+    "FVP_STATUS_CLOSE":"关闭",
 
+    "sugar_menu_mp3operate_pause":"播放/暂停",
+    "sugar_menu_mp3operate_stop":"停止",
+    "sugar_menu_mp3operate_next":"下一曲",
+    "sugar_menu_mp3operate_prev":"上一曲",
+
+    "sugar_mp3Mode":"切换到[MODE]模式",
+    "sugar_mp3Operate":"MP3模式操作[OPERATE]",
+    "sugar_playText":"播放文本[TEXT]",
+
+    "sugar_menu_mp3operate_mp3":"MP3",
+    "sugar_menu_mp3operate_tts":"TTS",
+    "sugarMP3_runInit":"初始化方糖mp3模块TX[PORT1]RX[PORT2]"
 
   },
   "zh-tw": {
