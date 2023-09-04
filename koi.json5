@@ -12,7 +12,7 @@
       import: "from futureKOI2 import KOI",
       instancde: "koi = KOI(tx='P2',rx='P12',id=1)",
       file: 'futureKOI2.py',
-      version: '1.0.4'
+      version: '1.0.5'
     }
   },
   
@@ -155,10 +155,22 @@
       },
     },
     {
-      opcode: "getClassifierTag",
-      blockType: "reporter",
-      text: "$$futureKoi_getClassifierTag",
+      opcode: "getClassifier",
+      blockType: "command",
+      text: "$$futureKoi_getClassifier",
       pycode: "koi.cls_run(cmd='K42')",
+    },
+    {
+      opcode: "getClassifierResult",
+      blockType: "reporter",
+      text: "$$futureKoi_getClassifierResult",
+      pycode: "koi.cls_result(cmd='K42')",
+    },
+    {
+      opcode: "getClassifierError",
+      blockType: "reporter",
+      text: "$$futureKoi_getClassifierError",
+      pycode: "koi.cls_error(cmd='K42')",
     },
     {
       opcode: "runSaveClassifierModel",

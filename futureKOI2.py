@@ -5,7 +5,7 @@ from future import screen,PINMAP
 import time
 from machine import UART
 from l10n import translate
-__version__ = "1.0.0"
+__version__ = "1.0.5"
 class KOI:
     def __init__(self,tx='P2',rx='P12',id=1):
         self.space = ['0']*8
@@ -171,7 +171,14 @@ class KOI:
         time.sleep_ms(1000) 
         self.cmd = cmd
         self._uart_re(cmd)
+
+    # 分类结果
+    def cls_result(self,cmd="K42"):
         return self.get_re(cmd)[0]
+    
+    # 结果误差
+    def cls_error(self,cmd="K42"):
+        return self.get_re(cmd)[1]
 
     # 分类器保存模型文件 / eg:'cls.json'
     def cls_save_model(self,model,cmd="K43"):
