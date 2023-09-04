@@ -21,6 +21,7 @@
         "wait": 2500
     },
     "io": [
+        "serial",
         "ble"
     ],
     "listdevice": {
