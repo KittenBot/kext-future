@@ -71,7 +71,7 @@
     "display": {
       instance: "Display()"
     },
-    "rfid":{
+    "rfids":{
       import: "from rfid import *",
       instance: "RFID()",
       file: 'rfid.py',
@@ -728,13 +728,13 @@
       opcode: 'getRfidUid',
       blockType: "reporter",
       text: "$$sugar_getRfidUid",
-      pycode: "rfid.scanCar()",
+      pycode: "rfids.scanCar()",
     },
     {
       opcode: 'RfidWrite',
       blockType: "command",
       text: "$$sugar_RfidWrite",
-      pycode: 'rfid.writeBlock([ADDR],[DATA])',
+      pycode: 'rfids.writeBlock([ADDR],[DATA])',
       arguments: {
         ADDR: {
           type: "slider",
@@ -752,7 +752,7 @@
       opcode: 'RfidRead',
       blockType: "reporter",
       text: "$$sugar_RfidRead",
-      pycode: 'rfid.readBlock([ADDR])',
+      pycode: 'rfids.readBlock([ADDR])',
       arguments: {
         ADDR: {
           type: "slider",

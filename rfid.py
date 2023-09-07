@@ -76,7 +76,7 @@ class RFID:
 
     MAX_LEN = 16
 
-    i2cbus = I2C(0,freq=1000000)
+    i2cbus = I2C(0,freq=100000)
     i2caddress = 0x28
 
     def __init__(self):
