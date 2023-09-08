@@ -128,7 +128,7 @@
       opcode: 'getHallStatus',
       blockType: 'Boolean',
       text: "$$sugar_getHallStatus",
-      pycode: 'hall_[PORT].value() == 0',
+      pycode: 'hall_[PORT].value() == 1',
       arguments: {
         PORT: {
           type: "value",
