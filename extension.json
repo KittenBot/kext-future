@@ -13,7 +13,7 @@
         "zh-cn": "基于ESP32的彩屏主控板，适用于开展AIoT教学",
         "zh-tw": "基於ESP32的彩屏主控闆，適用於開展AIoT教學"
     },
-    "version": "2.2.4",
+    "version": "2.2.5",
     "type": "micropy",
     "firmwareDate": 20230625,
     "connect": {
@@ -101,6 +101,10 @@
         "radio": {
             "name": "$$futureboard_title_radio",
             "file": "radio.json5"
+        },
+        "debug": {
+            "name": "$$futureboard_title_debug",
+            "file": "debug.json5"
         }
     },
     "subextensions": [

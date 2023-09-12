@@ -1162,7 +1162,10 @@
 
     "sugar_menu_mp3operate_mp3":"MP3",
     "sugar_menu_mp3operate_tts":"TTS",
-    "sugarMP3_runInit":"初始化方糖mp3模块TX[PORT1]RX[PORT2]"
+    "sugarMP3_runInit":"初始化方糖mp3模块TX[PORT1]RX[PORT2]",
+
+    "futureboard_title_debug": "调试",
+    "futureboard_debug_print": "USB调试打印[MSG]"
 
   },
   "zh-tw": {

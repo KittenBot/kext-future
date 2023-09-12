@@ -1,0 +1,18 @@
+{
+  blocks: [
+    '## $$futureboard_title_debug',
+    {
+      opcode: 'debugPrint',
+      blockType: 'command',
+      text: '$$futureboard_debug_print',
+      pycode: "print([MSG])",
+      arguments: {
+        MSG: {
+          type: 'string',
+          defaultValue: 'test',
+        },
+      },
+    },
+    '---',
+  ],
+}
