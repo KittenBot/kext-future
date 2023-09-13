@@ -12,6 +12,7 @@
       import: 'import sugarbox'
     },
     "em[PORT]": {
+      import: 'import sugarbox',
       instance: 'em[PORT]=sugarbox.EMotor([PORT])'
     }
   },
