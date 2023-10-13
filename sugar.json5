@@ -830,6 +830,8 @@
         }
       }
     },
+    '---',
+    "## $$sugarMpu6050_title",
     {
       opcode: 'sugarIMUUpdate',
       blockType: "command",

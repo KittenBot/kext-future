@@ -1130,6 +1130,7 @@
     "sugarCamera_CamSetColor": "彩灯 颜色[COLOR1][COLOR2]",
     "sugarCamera_CamSetAllColor": "彩灯 所有颜色[COLOR1]",
 
+    "sugarMpu6050_title": "mpu6050",
     "sugarMpu6050_updateValue": "更新数据",
 
     "sugarMpu6050_detectionPostrue":"姿态检测[POSTRUE]",
