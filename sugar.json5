@@ -80,6 +80,12 @@
     "sugarMP3s":{
       file: 'sugarMP3.py',
       version: '1.0.0'
+    },
+    "imu":{
+      import: "from mpu6050 import *",
+      file: 'mpu6050.py',
+      instance: "Accel()",
+      version: '1.0.0'
     } 
   },
 
@@ -824,6 +830,64 @@
         }
       }
     },
+    {
+      opcode: 'sugarIMUUpdate',
+      blockType: "command",
+      text: "$$sugarMpu6050_updateValue",
+      pycode: 'imu.get_values()',
+    },
+    {
+      opcode: 'sugarIMUdetectPosture',
+      blockType: "boolean",
+      text: "$$sugarMpu6050_detectionPostrue",
+      pycode: 'imu.get_posture()==[POSTRUE]',
+      arguments: {
+        POSTRUE: {
+          type: "string",
+          defaultValue: "tilt_up",
+          menu: "POSTRUEMENU"
+        }
+      }
+    },
+    {
+      opcode: 'sugarGetAcc',
+      blockType: "reporter",
+      text: "$$sugarMpu6050_acc",
+      pycode: 'imu.vals[[ACC]]',
+      arguments: {
+        ACC: {
+          type: "string",
+          defaultValue: "AcX",
+          menu: "IMUACC"
+        }
+      }
+    },
+    {
+      opcode: 'sugarGetGyro',
+      blockType: "reporter",
+      text: "$$sugarMpu6050_gyro",
+      pycode: 'imu.vals[[GYRO]]',
+      arguments: {
+        GYRO: {
+          type: "string",
+          defaultValue: "GyX",
+          menu: "IMUGYRO"
+        }
+      }
+    },
+    {
+      opcode: 'sugarGetAngle',
+      blockType: "reporter",
+      text: "$$sugarMpu6050_getAngle",
+      pycode: 'imu.[DIR]()',
+      arguments: {
+        DIR: {
+          type: "value",
+          defaultValue: "pitch",
+          menu: "POSTRUEANGLE"
+        }
+      }
+    },
 //----------------------------------------------------------------------------
 //     "## $$sugar_title_rfid",
 //     {
@@ -1381,6 +1445,30 @@
     MP3MODE: [
       { text: '$$sugar_menu_mp3operate_mp3', value: 'mp3_mode()' },
       { text: '$$sugar_menu_mp3operate_tts', value: 'tts_mode()' },
+    ],
+    IMUACC:[
+      { text: '$$sugarMpu6050_menuValueX', value: 'AcX' },
+      { text: '$$sugarMpu6050_menuValueY', value: 'AcY' },
+      { text: '$$sugarMpu6050_menuValueZ', value: 'AcZ' },
+    ],
+    IMUGYRO:[
+      { text: '$$sugarMpu6050_menuValueX', value: 'GyX'},
+      { text: '$$sugarMpu6050_menuValueY', value: 'GyY'},
+      { text: '$$sugarMpu6050_menuValueZ', value: 'GyZ'},
+    ],
+    POSTRUEMENU:[
+      { text: '$$sugarMpu6050_menuPostrueShakeDect', value: 'shakeDect'},
+      { text: '$$sugarMpu6050_menuPostrueTiltLeft', value: 'tilt_left'},
+      { text: '$$sugarMpu6050_menuPostrueFreefall', value: 'freefall'},
+      { text: '$$sugarMpu6050_menuPostrueTiltRight', value: 'tilt_right'},
+      { text: '$$sugarMpu6050_menuPostrueTiltDown', value: 'tilt_down'},
+      { text: '$$sugarMpu6050_menuPostrueTiltUp', value: 'tilt_up'},
+      { text: '$$sugarMpu6050_menuPostrueFaceUp', value: 'face_up'},
+      { text: '$$sugarMpu6050_menuPostrueFaceDown', value: 'face_down'},
+    ],
+    POSTRUEANGLE:[
+      { text: '$$sugarMpu6050_menuPitch', value: 'pitch'},
+      { text: '$$sugarMpu6050_menuRoll', value: 'roll'},
     ]
   },
 }

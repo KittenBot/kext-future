@@ -2,9 +2,12 @@ import machine
 import math
 import time
 ACC_REST = 400
-class accel():
-    def __init__(self, i2c, addr=0x69):
-        self.iic = i2c
+
+__version__ = "1.0.0"
+
+class Accel():
+    def __init__(self, addr=0x69):
+        self.iic = machine.I2C(0)
         self.addr = addr
         self.iic.writeto(self.addr, bytearray([107, 0]))
         self.vals = {}
@@ -51,7 +54,7 @@ class accel():
             shakeDect = True
         detGes = ""
         if shakeDect:
-            detGes = 'shakeDect'
+            detGes ='shakeDect'
         elif y > 2*400:
             detGes='tilt_left'#左倾
         elif x*x+y*y+z*z < 200*200:
@@ -82,25 +85,10 @@ class accel():
         except:
             return None
 
-    def yaw(self):
-      self.get_values()
-      accel_x = self.vals["AcX"]
-      accel_y = self.vals["AcY"]
-      
-      try:
-        return math.degrees(math.atan2(accel_y, accel_x))
-      except:
-        return None
-
     def val_test(self):  # ONLY FOR TESTING! Also, fast reading sometimes crashes IIC
         from time import sleep
         while 1:
             #print(self.get_values())
             #print()
             #print()
-            print(self.fusion())
-i2c = machine.I2C(0)
-
-acc = accel(i2c)
-
-acc.val_test()
+            print(self.get_values())

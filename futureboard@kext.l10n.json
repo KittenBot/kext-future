@@ -1130,9 +1130,31 @@
     "sugarCamera_CamSetColor": "彩灯 颜色[COLOR1][COLOR2]",
     "sugarCamera_CamSetAllColor": "彩灯 所有颜色[COLOR1]",
 
-    "sugarCamera_BtnMenuA" :"按钮A",
-    "sugarCamera_BtnMenuB" :"按钮B",
-    "sugarCamera_CamButtonState" :"[BUTTON]",
+    "sugarMpu6050_updateValue": "更新数据",
+
+    "sugarMpu6050_detectionPostrue":"姿态检测[POSTRUE]",
+
+    "sugarMpu6050_menuPostrueShakeDect" :"摇晃",
+    "sugarMpu6050_menuPostrueTiltLeft" :"左倾",
+    "sugarMpu6050_menuPostrueFreefall" :"自由落体",
+    "sugarMpu6050_menuPostrueTiltRight" :"右倾",
+    "sugarMpu6050_menuPostrueTiltDown" :"倒立",
+    "sugarMpu6050_menuPostrueTiltUp" :"正立",
+    "sugarMpu6050_menuPostrueFaceUp" :"面朝上",
+    "sugarMpu6050_menuPostrueFaceDown" :"面朝下",
+
+    "sugarMpu6050_acc":"获取加速度计数据[ACC]",
+    "sugarMpu6050_gyro":"获取陀螺仪数据[GYRO]",
+
+    "sugarMpu6050_menuValueX" :"X",
+    "sugarMpu6050_menuValueY" :"Y",
+    "sugarMpu6050_menuValueZ" :"Z",
+
+    "sugarMpu6050_getAngle":"获取[DIR]角度",
+    "sugarMpu6050_menuPitch": "倾斜角",
+    "sugarMpu6050_menuRoll": "翻滚角",
+    "sugarMpu6050_menuYaw": "偏航",
+    
 
     "sugarCamera_CamMqttConnect" :"连接mqtt服务器[ADDR] 设备标识[ID]",
     "sugarCamera_CamMqttConnectForUser" :"连接mqtt服务器[ADDR] 设备标识[ID] 用户名[USER] 密码[PWD]",
@@ -1165,7 +1187,11 @@
     "sugarMP3_runInit":"初始化方糖mp3模块TX[PORT1]RX[PORT2]",
 
     "futureboard_title_debug": "调试",
-    "futureboard_debug_print": "USB调试打印[MSG]"
+    "futureboard_debug_print": "USB调试打印[MSG]",
+
+    "sugarCamera_BtnMenuA" :"按钮A",
+    "sugarCamera_BtnMenuB" :"按钮B",
+    "sugarCamera_CamButtonState" :"[BUTTON]",
 
   },
   "zh-tw": {
